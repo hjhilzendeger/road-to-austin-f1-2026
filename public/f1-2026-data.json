@@ -1,0 +1,3751 @@
+{
+  "meta": {
+    "title": "F1 2026 Season Tracker — underlying dataset",
+    "generatedFrom": "f1-2026-season-tracker.html",
+    "exportedAt": "2026-07-24T15:37:26.494Z",
+    "sources": {
+      "calendarEntryListAndSeasonNarrative": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship",
+      "raceClassificationsAndPoints": "https://www.formula1.com/en/results/2026/races",
+      "calendarCancellations": "https://www.formula1.com/en/latest/article/bahrain-and-saudi-arabian-grands-prix-will-not-take-place-in-april.1hnqllVG85RSt8pbFc5Ivx",
+      "trackOutlineGeometry": "https://github.com/bacinger/f1-circuits (MIT licensed GeoJSON, satellite/GPS-traced, reprojected to a 200x120 SVG viewBox)"
+    },
+    "notes": [
+      "teams/drivers/tracks/calendar are the season-long static reference data.",
+      "raceResults (keyed by round number) is the per-weekend results data (Grand Prix + sprint where applicable); this is what the in-app Update tab edits.",
+      "trackOutlinePaths contains the real traced SVG path 'd' strings per track id, used to render the circuit outlines.",
+      "This file reflects the dashboard's built-in defaults as of export. It does NOT include any favorites, predictions, or edits made inside your browser session — for that, use the dashboard's own 'Save file' button, which exports a matching-format JSON plus your personal additions."
+    ]
+  },
+  "pointsSystem": {
+    "racePoints": {
+      "1": 25,
+      "2": 18,
+      "3": 15,
+      "4": 12,
+      "5": 10,
+      "6": 8,
+      "7": 6,
+      "8": 4,
+      "9": 2,
+      "10": 1
+    },
+    "sprintPoints": {
+      "1": 8,
+      "2": 7,
+      "3": 6,
+      "4": 5,
+      "5": 4,
+      "6": 3,
+      "7": 2,
+      "8": 1
+    }
+  },
+  "teams": [
+    {
+      "id": "mercedes",
+      "name": "Mercedes-AMG Petronas F1 Team",
+      "shortName": "Mercedes",
+      "country": "Germany",
+      "yearsInF1": 16,
+      "championships": 8,
+      "color": "#00A19C",
+      "color2": "#1E1E1E",
+      "engine": "Mercedes-AMG F1 M17 (works)",
+      "chassis": "F1 W17",
+      "note": "Works team since 2010; Mercedes also raced briefly in 1954-55.",
+      "principal": "Toto Wolff",
+      "hq": "Brackley, United Kingdom",
+      "driverOrder": [
+        "RUS",
+        "ANT"
+      ],
+      "newFor2026": false,
+      "storyline2026": "Antonelli's rapid rise has Mercedes leading both championships at the season's midpoint, the team's strongest start in years.",
+      "usConnection": null
+    },
+    {
+      "id": "ferrari",
+      "name": "Scuderia Ferrari HP",
+      "shortName": "Ferrari",
+      "country": "Italy",
+      "yearsInF1": 76,
+      "championships": 16,
+      "color": "#E8002D",
+      "color2": "#0A0A0A",
+      "engine": "Ferrari 067/6 (works)",
+      "chassis": "SF-26",
+      "note": "Founding constructor of the World Championship, racing continuously since 1950.",
+      "principal": "Fred Vasseur",
+      "hq": "Maranello, Italy",
+      "driverOrder": [
+        "LEC",
+        "HAM"
+      ],
+      "newFor2026": false,
+      "storyline2026": "Hamilton's long-awaited first win for the team came in Barcelona, snapping Mercedes' early winning streak.",
+      "usConnection": null
+    },
+    {
+      "id": "mclaren",
+      "name": "McLaren Mastercard F1 Team",
+      "shortName": "McLaren",
+      "country": "United Kingdom",
+      "yearsInF1": 60,
+      "championships": 9,
+      "color": "#FF8000",
+      "color2": "#1B1E23",
+      "engine": "Mercedes-AMG F1 M17 (customer)",
+      "chassis": "MCL40",
+      "note": "Reigning Constructors' Champions, founded 1966.",
+      "principal": "Andrea Stella",
+      "hq": "Woking, United Kingdom",
+      "driverOrder": [
+        "NOR",
+        "PIA"
+      ],
+      "newFor2026": false,
+      "storyline2026": "A difficult title defense so far, including both cars failing to start in China.",
+      "usConnection": null
+    },
+    {
+      "id": "redbull",
+      "name": "Oracle Red Bull Racing",
+      "shortName": "Red Bull",
+      "country": "Austria",
+      "yearsInF1": 21,
+      "championships": 6,
+      "color": "#1E3A8A",
+      "color2": "#FFC300",
+      "engine": "Red Bull Ford DM01 (works, new PU brand for 2026)",
+      "chassis": "RB22",
+      "note": "Founded 2005; introduces its own Red Bull Ford power unit in 2026 after the Honda partnership ended.",
+      "principal": "Laurent Mekies",
+      "hq": "Milton Keynes, United Kingdom",
+      "driverOrder": [
+        "VER",
+        "HAD"
+      ],
+      "newFor2026": false,
+      "storyline2026": "The new in-house Red Bull Ford power unit has been a reliability step backward so far in its debut year.",
+      "usConnection": "Power unit co-developed with Ford Motor Company (United States)."
+    },
+    {
+      "id": "astonmartin",
+      "name": "Aston Martin Aramco F1 Team",
+      "shortName": "Aston Martin",
+      "country": "United Kingdom",
+      "yearsInF1": 5,
+      "championships": 0,
+      "color": "#00352F",
+      "color2": "#CFE6DC",
+      "engine": "Honda RA626H (works, new for 2026)",
+      "chassis": "AMR26",
+      "note": "Racing as \"Aston Martin\" since 2021; lineage runs through Jordan/Force India/Racing Point back to 1991.",
+      "principal": "Adrian Newey (Team Principal & Managing Technical Partner)",
+      "hq": "Silverstone, United Kingdom",
+      "driverOrder": [
+        "ALO",
+        "STR"
+      ],
+      "newFor2026": false,
+      "storyline2026": "A troubled debut for the new Honda works partnership — the AMR26 has struggled with power-unit reliability, and Newey's leadership role has been the subject of ongoing succession speculation since March 2026.",
+      "usConnection": null
+    },
+    {
+      "id": "alpine",
+      "name": "BWT Alpine F1 Team",
+      "shortName": "Alpine",
+      "country": "France",
+      "yearsInF1": 5,
+      "championships": 0,
+      "color": "#0090FF",
+      "color2": "#FF87BC",
+      "engine": "Mercedes-AMG F1 M17 (customer, new for 2026)",
+      "chassis": "A526",
+      "note": "Racing as \"Alpine\" since 2021 (Enstone-based lineage since 1986). Switched from Renault to a customer Mercedes power unit in 2026.",
+      "principal": "Flavio Briatore (Executive Advisor) / Steve Nielsen (Managing Director)",
+      "hq": "Enstone, United Kingdom",
+      "driverOrder": [
+        "GAS",
+        "COL"
+      ],
+      "newFor2026": false,
+      "storyline2026": "Colapinto's promotion to a full-time seat alongside Gasly has been one of the year's feel-good stories for Alpine's home fans in Argentina.",
+      "usConnection": null
+    },
+    {
+      "id": "williams",
+      "name": "Atlassian Williams F1 Team",
+      "shortName": "Williams",
+      "country": "United Kingdom",
+      "yearsInF1": 49,
+      "championships": 9,
+      "color": "#00A3E0",
+      "color2": "#041E42",
+      "engine": "Mercedes-AMG F1 M17 (customer)",
+      "chassis": "FW48",
+      "note": "Founded 1977 by Frank Williams; one of the sport's most successful independent constructors.",
+      "principal": "James Vowles",
+      "hq": "Grove, United Kingdom",
+      "driverOrder": [
+        "ALB",
+        "SAI"
+      ],
+      "newFor2026": false,
+      "storyline2026": "Continuing its rebuild under Vowles with a fully customer Mercedes package for 2026.",
+      "usConnection": null
+    },
+    {
+      "id": "haas",
+      "name": "TGR Haas F1 Team",
+      "shortName": "Haas",
+      "country": "United States",
+      "yearsInF1": 10,
+      "championships": 0,
+      "color": "#E10600",
+      "color2": "#FFFFFF",
+      "engine": "Ferrari 067/6 (customer)",
+      "chassis": "VF-26",
+      "note": "Founded 2016; expanded Toyota Gazoo Racing (TGR) partnership prompted a 2026 team rebrand.",
+      "principal": "Ayao Komatsu",
+      "hq": "Kannapolis, North Carolina, United States (F1 operations: Banbury, United Kingdom)",
+      "driverOrder": [
+        "OCO",
+        "BEA"
+      ],
+      "newFor2026": false,
+      "storyline2026": "The expanded Toyota Gazoo Racing partnership prompted the team's 2026 rebrand from Haas to TGR Haas.",
+      "usConnection": "American-owned (founder Gene Haas); the only originally-American-owned team on the grid besides Cadillac."
+    },
+    {
+      "id": "audi",
+      "name": "Audi Revolut F1 Team",
+      "shortName": "Audi",
+      "country": "Germany",
+      "yearsInF1": 1,
+      "championships": 0,
+      "color": "#BB0A21",
+      "color2": "#111111",
+      "engine": "Audi AFR 26 Hybrid (works, new for 2026)",
+      "chassis": "R26",
+      "note": "Audi's first year as a full works team/engine manufacturer, after acquiring Sauber in 2024 (that chassis lineage has raced since 1993).",
+      "principal": "Mattia Binotto",
+      "hq": "Hinwil, Switzerland (power unit: Neuburg, Germany)",
+      "driverOrder": [
+        "BOR",
+        "HUL"
+      ],
+      "newFor2026": true,
+      "storyline2026": "Team principal Jonathan Wheatley departed abruptly in March 2026 amid reports he would join Aston Martin; Binotto, previously Head of the Audi F1 Project, stepped up to lead the team through its historic debut season.",
+      "usConnection": null
+    },
+    {
+      "id": "cadillac",
+      "name": "Cadillac Formula 1 Team",
+      "shortName": "Cadillac",
+      "country": "United States",
+      "yearsInF1": 1,
+      "championships": 0,
+      "color": "#0A0A0A",
+      "color2": "#C9A227",
+      "engine": "Ferrari 067/6 (customer)",
+      "chassis": "MAC-26",
+      "note": "2026 is Cadillac's debut season — the first new team on the grid since Haas in 2016.",
+      "principal": "Graeme Lowdon",
+      "hq": "Fishers, Indiana, United States (F1 operations: Silverstone, United Kingdom)",
+      "driverOrder": [
+        "PER",
+        "BOT"
+      ],
+      "newFor2026": true,
+      "storyline2026": "F1's newest team, backed by General Motors, fields two former Grand Prix winners in Pérez and Bottas for its debut season.",
+      "usConnection": "American-owned (General Motors/Cadillac); the first all-new US-backed constructor entry since Haas in 2016."
+    },
+    {
+      "id": "racingbulls",
+      "name": "Visa Cash App Racing Bulls F1 Team",
+      "shortName": "Racing Bulls",
+      "country": "Italy",
+      "yearsInF1": 20,
+      "championships": 0,
+      "color": "#0B4C9E",
+      "color2": "#FFFFFF",
+      "engine": "Red Bull Ford DM01 (customer)",
+      "chassis": "VCARB 03",
+      "note": "Lineage runs Toro Rosso (2006) -> AlphaTauri (2020) -> Racing Bulls (2024-).",
+      "principal": "Alan Permane",
+      "hq": "Faenza, Italy",
+      "driverOrder": [
+        "LAW",
+        "LIN"
+      ],
+      "newFor2026": false,
+      "storyline2026": "Fields the only rookie on the 2026 grid, 18-year-old Arvid Lindblad, who took over Isack Hadjar's seat after his promotion to the senior Red Bull team.",
+      "usConnection": null
+    }
+  ],
+  "drivers": [
+    {
+      "id": "GAS",
+      "name": "Pierre Gasly",
+      "team": "alpine",
+      "country": "France",
+      "dob": "1996-02-07",
+      "debut": 2017,
+      "championships": 0,
+      "helmet": "Blue & white",
+      "number": 10,
+      "abbr": "GAS",
+      "rookie2026": false,
+      "previousTeam": "Same team as 2025 (Alpine)",
+      "pronunciation": "pee-AIR gass-LEE",
+      "whyWatch": "Alpine's team leader and a Le Mans 24 Hours class winner outside F1."
+    },
+    {
+      "id": "COL",
+      "name": "Franco Colapinto",
+      "team": "alpine",
+      "country": "Argentina",
+      "dob": "2003-05-27",
+      "debut": 2024,
+      "championships": 0,
+      "helmet": "Light blue & white",
+      "number": 43,
+      "abbr": "COL",
+      "rookie2026": false,
+      "previousTeam": "Williams (2024, mid-season stand-in)",
+      "pronunciation": "FRAHN-koh coh-lah-PEEN-toh",
+      "whyWatch": "Enormously popular back home in Argentina, now in his first full-time season."
+    },
+    {
+      "id": "ALO",
+      "name": "Fernando Alonso",
+      "team": "astonmartin",
+      "country": "Spain",
+      "dob": "1981-07-29",
+      "debut": 2001,
+      "championships": 2,
+      "helmet": "Blue & yellow",
+      "number": 14,
+      "abbr": "ALO",
+      "rookie2026": false,
+      "previousTeam": "Same team as 2025 (Aston Martin)",
+      "pronunciation": "fer-NAN-doh ah-LOH-so",
+      "whyWatch": "Two-time World Champion and the grid's most experienced driver, still chasing a third title."
+    },
+    {
+      "id": "STR",
+      "name": "Lance Stroll",
+      "team": "astonmartin",
+      "country": "Canada",
+      "dob": "1998-10-29",
+      "debut": 2017,
+      "championships": 0,
+      "helmet": "Red & black",
+      "number": 18,
+      "abbr": "STR",
+      "rookie2026": false,
+      "previousTeam": "Same team as 2025 (Aston Martin)",
+      "pronunciation": "lants stroll",
+      "whyWatch": "Son of team owner Lawrence Stroll, in his 10th F1 season."
+    },
+    {
+      "id": "ALB",
+      "name": "Alexander Albon",
+      "team": "williams",
+      "country": "Thailand",
+      "dob": "1996-03-23",
+      "debut": 2019,
+      "championships": 0,
+      "helmet": "Navy with Thai pattern",
+      "number": 23,
+      "abbr": "ALB",
+      "rookie2026": false,
+      "previousTeam": "Same team as 2025 (Williams)",
+      "pronunciation": "AL-ex-AN-der AL-bon",
+      "whyWatch": "Has led Williams's revival under team principal James Vowles."
+    },
+    {
+      "id": "SAI",
+      "name": "Carlos Sainz Jr.",
+      "team": "williams",
+      "country": "Spain",
+      "dob": "1994-09-01",
+      "debut": 2015,
+      "championships": 0,
+      "helmet": "Red, yellow & navy",
+      "number": 55,
+      "abbr": "SAI",
+      "rookie2026": false,
+      "previousTeam": "Ferrari (2021-2024)",
+      "pronunciation": "CAR-los sighnz (Spanish: sah-EENTH)",
+      "whyWatch": "Grand Prix winner and son of a two-time World Rally Champion."
+    },
+    {
+      "id": "BOR",
+      "name": "Gabriel Bortoleto",
+      "team": "audi",
+      "country": "Brazil",
+      "dob": "2004-10-14",
+      "debut": 2025,
+      "championships": 0,
+      "helmet": "Yellow & green",
+      "number": 5,
+      "abbr": "BOR",
+      "rookie2026": false,
+      "previousTeam": "Sauber (2025 — same operation, now rebranded Audi)",
+      "pronunciation": "gah-bree-EL bor-toh-LEH-toh",
+      "whyWatch": "2024 Formula 2 champion, now in his second F1 season for Audi's debut works effort."
+    },
+    {
+      "id": "HUL",
+      "name": "Nico Hülkenberg",
+      "team": "audi",
+      "country": "Germany",
+      "dob": "1987-08-19",
+      "debut": 2010,
+      "championships": 0,
+      "helmet": "White, blue & red",
+      "number": 27,
+      "abbr": "HUL",
+      "rookie2026": false,
+      "previousTeam": "Haas (2023-2025)",
+      "pronunciation": "NEE-koh HOOL-ken-berg",
+      "whyWatch": "F1's longest-serving driver still without a podium finish."
+    },
+    {
+      "id": "PER",
+      "name": "Sergio Pérez",
+      "team": "cadillac",
+      "country": "Mexico",
+      "dob": "1990-01-26",
+      "debut": 2011,
+      "championships": 0,
+      "helmet": "Black, blue & red",
+      "number": 11,
+      "abbr": "PER",
+      "rookie2026": false,
+      "previousTeam": "Red Bull Racing (2021-2024); away from F1 in 2025",
+      "pronunciation": "SAIR-hee-oh PEH-rez",
+      "whyWatch": "Six-time Grand Prix winner, back on the grid after a year away with F1's newest team."
+    },
+    {
+      "id": "BOT",
+      "name": "Valtteri Bottas",
+      "team": "cadillac",
+      "country": "Finland",
+      "dob": "1989-08-28",
+      "debut": 2013,
+      "championships": 0,
+      "helmet": "Blue & white",
+      "number": 77,
+      "abbr": "BOT",
+      "rookie2026": false,
+      "previousTeam": "Kick Sauber (2022-2024); away from F1 in 2025",
+      "pronunciation": "VAL-teh-ree BOT-ahss",
+      "whyWatch": "Former Mercedes race winner and championship contender, now a Cadillac senior driver."
+    },
+    {
+      "id": "LEC",
+      "name": "Charles Leclerc",
+      "team": "ferrari",
+      "country": "Monaco",
+      "dob": "1997-10-16",
+      "debut": 2018,
+      "championships": 0,
+      "helmet": "Red, blue & white",
+      "number": 16,
+      "abbr": "LEC",
+      "rookie2026": false,
+      "previousTeam": "Same team as 2025 (Ferrari)",
+      "pronunciation": "sharl luh-CLAIR",
+      "whyWatch": "Monaco's own, racing for the team he grew up supporting."
+    },
+    {
+      "id": "HAM",
+      "name": "Lewis Hamilton",
+      "team": "ferrari",
+      "country": "United Kingdom",
+      "dob": "1985-01-07",
+      "debut": 2007,
+      "championships": 7,
+      "helmet": "Black with rainbow accents",
+      "number": 44,
+      "abbr": "HAM",
+      "rookie2026": false,
+      "previousTeam": "Mercedes (2013-2024)",
+      "pronunciation": "LOO-iss HAM-il-tun",
+      "whyWatch": "Seven-time World Champion, seeking his first Ferrari title in his second season with the team."
+    },
+    {
+      "id": "OCO",
+      "name": "Esteban Ocon",
+      "team": "haas",
+      "country": "France",
+      "dob": "1996-09-17",
+      "debut": 2016,
+      "championships": 0,
+      "helmet": "Black, blue & white",
+      "number": 31,
+      "abbr": "OCO",
+      "rookie2026": false,
+      "previousTeam": "Alpine (2020-2024)",
+      "pronunciation": "ess-teh-BAHN oh-KOHN",
+      "whyWatch": "2021 Hungarian Grand Prix winner, now Haas's senior driver."
+    },
+    {
+      "id": "BEA",
+      "name": "Oliver Bearman",
+      "team": "haas",
+      "country": "United Kingdom",
+      "dob": "2005-05-08",
+      "debut": 2024,
+      "championships": 0,
+      "helmet": "To confirm",
+      "number": 87,
+      "abbr": "BEA",
+      "rookie2026": false,
+      "previousTeam": "Same team as 2025 (Haas)",
+      "pronunciation": "OLL-ih-ver BEER-man",
+      "whyWatch": "Ferrari junior who impressed as a 2024 emergency stand-in before earning a full-time seat."
+    },
+    {
+      "id": "NOR",
+      "name": "Lando Norris",
+      "team": "mclaren",
+      "country": "United Kingdom",
+      "dob": "1999-11-13",
+      "debut": 2019,
+      "championships": 1,
+      "helmet": "Papaya, blue & red camo",
+      "number": 1,
+      "abbr": "NOR",
+      "rookie2026": false,
+      "previousTeam": "Same team as 2025 (McLaren)",
+      "pronunciation": "LAN-doh NOR-iss",
+      "whyWatch": "2025 World Champion, carrying the number 1 for the first time as reigning champion."
+    },
+    {
+      "id": "PIA",
+      "name": "Oscar Piastri",
+      "team": "mclaren",
+      "country": "Australia",
+      "dob": "2001-04-06",
+      "debut": 2023,
+      "championships": 0,
+      "helmet": "Navy & papaya",
+      "number": 81,
+      "abbr": "PIA",
+      "rookie2026": false,
+      "previousTeam": "Same team as 2025 (McLaren)",
+      "pronunciation": "OSS-kar pee-AH-stree",
+      "whyWatch": "Norris's closest championship rival in 2025, chasing his own first title."
+    },
+    {
+      "id": "ANT",
+      "name": "Kimi Antonelli",
+      "team": "mercedes",
+      "country": "Italy",
+      "dob": "2006-08-25",
+      "debut": 2025,
+      "championships": 0,
+      "helmet": "To confirm",
+      "number": 12,
+      "abbr": "ANT",
+      "rookie2026": false,
+      "previousTeam": "Same team as 2025 (Mercedes)",
+      "pronunciation": "KEE-mee an-toh-NELL-ee",
+      "whyWatch": "Leading the 2026 championship in only his second F1 season, aged 19."
+    },
+    {
+      "id": "RUS",
+      "name": "George Russell",
+      "team": "mercedes",
+      "country": "United Kingdom",
+      "dob": "1998-02-15",
+      "debut": 2019,
+      "championships": 0,
+      "helmet": "Blue & yellow",
+      "number": 63,
+      "abbr": "RUS",
+      "rookie2026": false,
+      "previousTeam": "Same team as 2025 (Mercedes)",
+      "pronunciation": "jorj RUSS-el",
+      "whyWatch": "Grand Prix winner and Mercedes' senior driver alongside his teenage teammate."
+    },
+    {
+      "id": "LAW",
+      "name": "Liam Lawson",
+      "team": "racingbulls",
+      "country": "New Zealand",
+      "dob": "2002-02-11",
+      "debut": 2023,
+      "championships": 0,
+      "helmet": "Black, white & silver fern",
+      "number": 30,
+      "abbr": "LAW",
+      "rookie2026": false,
+      "previousTeam": "Red Bull Racing (partial 2025 season)",
+      "pronunciation": "LEE-am LAW-son",
+      "whyWatch": "Returned to Racing Bulls after a brief, difficult stint at the senior Red Bull team."
+    },
+    {
+      "id": "LIN",
+      "name": "Arvid Lindblad",
+      "team": "racingbulls",
+      "country": "United Kingdom",
+      "dob": "2007-11-26",
+      "debut": 2026,
+      "championships": 0,
+      "helmet": "To confirm",
+      "number": 41,
+      "abbr": "LIN",
+      "rookie2026": true,
+      "previousTeam": "N/A — promoted from Formula 2",
+      "pronunciation": "AR-vid LIND-blad",
+      "whyWatch": "F1's only rookie in 2026 and its youngest driver; chose #41 as a nod to his initials."
+    },
+    {
+      "id": "HAD",
+      "name": "Isack Hadjar",
+      "team": "redbull",
+      "country": "France",
+      "dob": "2004-09-28",
+      "debut": 2025,
+      "championships": 0,
+      "helmet": "To confirm",
+      "number": 6,
+      "abbr": "HAD",
+      "rookie2026": false,
+      "previousTeam": "Racing Bulls (2025)",
+      "pronunciation": "EE-zak HAD-jar",
+      "whyWatch": "Promoted to the senior Red Bull team after an impressive rookie season."
+    },
+    {
+      "id": "VER",
+      "name": "Max Verstappen",
+      "team": "redbull",
+      "country": "Netherlands",
+      "dob": "1997-09-30",
+      "debut": 2015,
+      "championships": 4,
+      "helmet": "Blue, red, white & yellow",
+      "number": 3,
+      "abbr": "VER",
+      "rookie2026": false,
+      "previousTeam": "Same team as 2025 (Red Bull Racing)",
+      "pronunciation": "maks FUR-stah-pen",
+      "whyWatch": "Four-time World Champion, now racing under #3 after Norris inherited #1 as reigning champion."
+    }
+  ],
+  "tracks": [
+    {
+      "id": "albertpark",
+      "name": "Albert Park Circuit",
+      "country": "Australia",
+      "lengthKm": 5.278,
+      "corners": 14,
+      "chars": "Semi-street park circuit; fast, flowing layout with modest overtaking zones.",
+      "city": "Melbourne",
+      "timezone": "AEDT (UTC+11)",
+      "raceLaps": 58,
+      "raceDistanceKm": 306.124,
+      "firstGpYear": 1996,
+      "drsZones": 4,
+      "lapTimeRange": "~1:18-1:23",
+      "direction": "Clockwise",
+      "signatureFeatures": [
+        "Lakeside setting in Albert Park",
+        "Fast Turns 9-10 esses",
+        "Tight final chicane onto the pit straight"
+      ],
+      "whyInteresting": "A fast, flowing park circuit that rewards momentum and precision, traditionally F1's season opener."
+    },
+    {
+      "id": "shanghai",
+      "name": "Shanghai International Circuit",
+      "country": "China",
+      "lengthKm": 5.451,
+      "corners": 16,
+      "chars": "Long back straight (DRS zone); tricky decreasing-radius Turn 1-3 complex.",
+      "city": "Shanghai",
+      "timezone": "CST (UTC+8)",
+      "raceLaps": 56,
+      "raceDistanceKm": 305.066,
+      "firstGpYear": 2004,
+      "drsZones": 2,
+      "lapTimeRange": "~1:32-1:36",
+      "direction": "Clockwise",
+      "signatureFeatures": [
+        "Decreasing-radius Turn 1-3 'snail' complex",
+        "1.2 km back straight",
+        "Layout inspired by the Chinese character 'shang'"
+      ],
+      "whyInteresting": "Its huge back straight creates one of the calendar's best overtaking opportunities into Turn 14."
+    },
+    {
+      "id": "suzuka",
+      "name": "Suzuka Circuit",
+      "country": "Japan",
+      "lengthKm": 5.807,
+      "corners": 18,
+      "chars": "Iconic figure-eight layout; high-speed Esses, Spoon Curve and 130R.",
+      "city": "Suzuka, Mie Prefecture",
+      "timezone": "JST (UTC+9)",
+      "raceLaps": 53,
+      "raceDistanceKm": 307.471,
+      "firstGpYear": 1987,
+      "drsZones": 1,
+      "lapTimeRange": "~1:28-1:33",
+      "direction": "Clockwise",
+      "signatureFeatures": [
+        "The only genuine figure-eight track in F1",
+        "130R high-speed corner",
+        "The 'S' Curves esses"
+      ],
+      "whyInteresting": "Widely rated by drivers as F1's ultimate challenge, thanks to its genuine road-crossing figure-eight layout."
+    },
+    {
+      "id": "miami",
+      "name": "Miami International Autodrome",
+      "country": "United States",
+      "lengthKm": 5.412,
+      "corners": 19,
+      "chars": "Purpose-built circuit around Hard Rock Stadium; street-style low-speed sections mixed with long straights.",
+      "city": "Miami Gardens, Florida",
+      "timezone": "EDT (UTC-4)",
+      "raceLaps": 57,
+      "raceDistanceKm": 308.326,
+      "firstGpYear": 2022,
+      "drsZones": 3,
+      "lapTimeRange": "~1:27-1:32",
+      "direction": "Clockwise",
+      "signatureFeatures": [
+        "Built around Hard Rock Stadium",
+        "Marina section with an artificial water feature",
+        "Long back straight into Turn 17"
+      ],
+      "whyInteresting": "A purpose-built stadium circuit blending street-track technicality with stadium-scale spectacle."
+    },
+    {
+      "id": "gillesvilleneuve",
+      "name": "Circuit Gilles-Villeneuve",
+      "country": "Canada",
+      "lengthKm": 4.361,
+      "corners": 14,
+      "chars": "Stop-start rhythm; the \"Wall of Champions\" guards the final chicane exit.",
+      "city": "Montreal",
+      "timezone": "EDT (UTC-4)",
+      "raceLaps": 70,
+      "raceDistanceKm": 305.27,
+      "firstGpYear": 1978,
+      "drsZones": 2,
+      "lapTimeRange": "~1:12-1:15",
+      "direction": "Clockwise",
+      "signatureFeatures": [
+        "Wall of Champions at the final chicane",
+        "Built on the man-made Île Notre-Dame",
+        "Long pit straight favouring engine power"
+      ],
+      "whyInteresting": "A stop-start island circuit that has ended many a champion's race at its notorious final wall."
+    },
+    {
+      "id": "monaco",
+      "name": "Circuit de Monaco",
+      "country": "Monaco",
+      "lengthKm": 3.337,
+      "corners": 19,
+      "chars": "Tightest, slowest circuit on the calendar; narrow street layout, overtaking is rare.",
+      "city": "Monte Carlo",
+      "timezone": "CEST (UTC+2)",
+      "raceLaps": 78,
+      "raceDistanceKm": 260.286,
+      "firstGpYear": 1950,
+      "drsZones": 1,
+      "lapTimeRange": "~1:11-1:14",
+      "direction": "Clockwise",
+      "signatureFeatures": [
+        "Tunnel section beside the harbour",
+        "Casino Square and the tight Fairmont hairpin",
+        "Narrowest, slowest street circuit in F1"
+      ],
+      "whyInteresting": "The sport's most famous and unforgiving street circuit, where one mistake can end a race instantly."
+    },
+    {
+      "id": "barcelona",
+      "name": "Circuit de Barcelona-Catalunya",
+      "country": "Spain",
+      "lengthKm": 4.657,
+      "corners": 14,
+      "chars": "Mix of a fast final-sector-style corner and a technical, grippy infield section.",
+      "city": "Montmeló",
+      "timezone": "CEST (UTC+2)",
+      "raceLaps": 66,
+      "raceDistanceKm": 307.236,
+      "firstGpYear": 1991,
+      "drsZones": 2,
+      "lapTimeRange": "~1:15-1:19",
+      "direction": "Clockwise",
+      "signatureFeatures": [
+        "Historic fast Turn 3 right-hander",
+        "Technical, grip-heavy final sector",
+        "F1's long-time pre-season testing venue"
+      ],
+      "whyInteresting": "A well-rounded, traditional test of all-round car performance, long used as F1's benchmark testing track."
+    },
+    {
+      "id": "redbullring",
+      "name": "Red Bull Ring",
+      "country": "Austria",
+      "lengthKm": 4.318,
+      "corners": 10,
+      "chars": "Short lap time, big elevation changes, three long straights favour engine power.",
+      "city": "Spielberg, Styria",
+      "timezone": "CEST (UTC+2)",
+      "raceLaps": 71,
+      "raceDistanceKm": 306.452,
+      "firstGpYear": 1970,
+      "drsZones": 2,
+      "lapTimeRange": "~1:04-1:10",
+      "direction": "Clockwise",
+      "signatureFeatures": [
+        "Set in the Styrian mountains",
+        "Three short straights separated by tight corners",
+        "One of the shortest laps on the calendar"
+      ],
+      "whyInteresting": "A compact, scenic mountain circuit where its short lap produces frequent slipstreaming battles."
+    },
+    {
+      "id": "silverstone",
+      "name": "Silverstone Circuit",
+      "country": "United Kingdom",
+      "lengthKm": 5.891,
+      "corners": 18,
+      "chars": "High-speed corners (Copse, Maggotts/Becketts, Stowe); demanding on tyres and confidence.",
+      "city": "Silverstone, Northamptonshire",
+      "timezone": "BST (UTC+1)",
+      "raceLaps": 52,
+      "raceDistanceKm": 306.198,
+      "firstGpYear": 1950,
+      "drsZones": 2,
+      "lapTimeRange": "~1:27-1:31",
+      "direction": "Clockwise",
+      "signatureFeatures": [
+        "Maggotts/Becketts high-speed esses",
+        "Copse corner, taken flat in qualifying trim",
+        "Hosted the first-ever F1 World Championship race in 1950"
+      ],
+      "whyInteresting": "The birthplace of the F1 World Championship, famous for its stomach-churning high-speed corners."
+    },
+    {
+      "id": "spa",
+      "name": "Circuit de Spa-Francorchamps",
+      "country": "Belgium",
+      "lengthKm": 7.004,
+      "corners": 19,
+      "chars": "Longest track on the calendar; Eau Rouge/Raidillon, huge elevation change, unpredictable weather across the lap.",
+      "city": "Stavelot",
+      "timezone": "CEST (UTC+2)",
+      "raceLaps": 44,
+      "raceDistanceKm": 308.052,
+      "firstGpYear": 1950,
+      "drsZones": 2,
+      "lapTimeRange": "~1:44-1:50",
+      "direction": "Clockwise",
+      "signatureFeatures": [
+        "Eau Rouge/Raidillon uphill compression",
+        "Longest lap on the F1 calendar",
+        "Notoriously changeable Ardennes weather"
+      ],
+      "whyInteresting": "The longest and most physically dramatic lap in F1, where the weather can differ from one corner to the next."
+    },
+    {
+      "id": "hungaroring",
+      "name": "Hungaroring",
+      "country": "Hungary",
+      "lengthKm": 4.381,
+      "corners": 14,
+      "chars": "Tight and twisty with low average speed — sometimes called \"Monaco without the walls\".",
+      "city": "Mogyoród, near Budapest",
+      "timezone": "CEST (UTC+2)",
+      "raceLaps": 70,
+      "raceDistanceKm": 306.63,
+      "firstGpYear": 1986,
+      "drsZones": 1,
+      "lapTimeRange": "~1:16-1:20",
+      "direction": "Clockwise",
+      "signatureFeatures": [
+        "Tight, twisty 'Mickey Mouse'-style layout",
+        "Very little overtaking; track position is king",
+        "Natural amphitheatre banking for spectators"
+      ],
+      "whyInteresting": "A slow, technical circuit nicknamed \"Monaco without the walls\", where qualifying position often decides the race."
+    },
+    {
+      "id": "zandvoort",
+      "name": "Circuit Zandvoort",
+      "country": "Netherlands",
+      "lengthKm": 4.259,
+      "corners": 14,
+      "chars": "Narrow, dune-lined layout with banked final corner.",
+      "city": "Zandvoort",
+      "timezone": "CEST (UTC+2)",
+      "raceLaps": 72,
+      "raceDistanceKm": 306.587,
+      "firstGpYear": 1952,
+      "drsZones": 2,
+      "lapTimeRange": "~1:10-1:14",
+      "direction": "Clockwise",
+      "signatureFeatures": [
+        "Banked Arie Luyendyk Bocht final corner",
+        "Narrow, dune-lined seaside layout",
+        "Passionate orange-clad home crowd"
+      ],
+      "whyInteresting": "A revived seaside dunes classic with a steeply banked final corner rare anywhere else on the calendar."
+    },
+    {
+      "id": "monza",
+      "name": "Monza Circuit",
+      "country": "Italy",
+      "lengthKm": 5.793,
+      "corners": 11,
+      "chars": "\"Temple of Speed\": lowest-downforce setup on the calendar, long flat-out straights.",
+      "city": "Monza",
+      "timezone": "CEST (UTC+2)",
+      "raceLaps": 53,
+      "raceDistanceKm": 306.72,
+      "firstGpYear": 1950,
+      "drsZones": 2,
+      "lapTimeRange": "~1:19-1:22",
+      "direction": "Clockwise",
+      "signatureFeatures": [
+        "Parabolica final corner",
+        "Lowest-downforce setup of the season",
+        "Historic banked-oval remnants beside the modern track"
+      ],
+      "whyInteresting": "F1's \"Temple of Speed\" — the fastest, lowest-downforce track on the calendar."
+    },
+    {
+      "id": "madring",
+      "name": "Madring",
+      "country": "Spain",
+      "lengthKm": 5.474,
+      "corners": 20,
+      "chars": "New street-style circuit around Madrid's IFEMA exhibition centre, debuting in 2026 — exact homologated figures to confirm.",
+      "city": "Madrid",
+      "timezone": "CEST (UTC+2)",
+      "raceLaps": null,
+      "raceDistanceKm": null,
+      "firstGpYear": 2026,
+      "drsZones": null,
+      "lapTimeRange": "Not yet established (debut event)",
+      "direction": "To confirm",
+      "signatureFeatures": [
+        "Brand-new street-style circuit around the IFEMA exhibition centre",
+        "F1's return to Madrid for the first time in decades",
+        "Takes over the \"Spanish Grand Prix\" name from Barcelona"
+      ],
+      "whyInteresting": "A brand-new circuit debuting in 2026 that takes over the Spanish Grand Prix name from Barcelona-Catalunya."
+    },
+    {
+      "id": "baku",
+      "name": "Baku City Circuit",
+      "country": "Azerbaijan",
+      "lengthKm": 6.003,
+      "corners": 20,
+      "chars": "Longest straight on the calendar into a tight castle-section street layout.",
+      "city": "Baku",
+      "timezone": "AZT (UTC+4)",
+      "raceLaps": 51,
+      "raceDistanceKm": 306.049,
+      "firstGpYear": 2016,
+      "drsZones": 2,
+      "lapTimeRange": "~1:41-1:45",
+      "direction": "Counterclockwise",
+      "signatureFeatures": [
+        "Longest straight on the calendar (~2.2 km)",
+        "Ultra-tight castle section around Baku's old city walls",
+        "Street circuit hugging the Caspian Sea"
+      ],
+      "whyInteresting": "Combines Monaco-style tight streets with the longest straight in F1, producing extreme speed contrasts."
+    },
+    {
+      "id": "marinabay",
+      "name": "Marina Bay Street Circuit",
+      "country": "Singapore",
+      "lengthKm": 4.928,
+      "corners": 19,
+      "chars": "Night race under floodlights; high heat and humidity make it physically demanding.",
+      "city": "Singapore",
+      "timezone": "SGT (UTC+8)",
+      "raceLaps": 62,
+      "raceDistanceKm": 306.143,
+      "firstGpYear": 2008,
+      "drsZones": 3,
+      "lapTimeRange": "~1:30-1:35",
+      "direction": "Anticlockwise",
+      "signatureFeatures": [
+        "F1's first-ever night race (2008)",
+        "Extreme heat and humidity — one of the most physically demanding races",
+        "Runs past Marina Bay's waterfront skyline"
+      ],
+      "whyInteresting": "F1's original night race, run in brutal heat and humidity around a spectacular waterfront skyline."
+    },
+    {
+      "id": "cota",
+      "name": "Circuit of the Americas",
+      "country": "United States",
+      "lengthKm": 5.513,
+      "corners": 20,
+      "chars": "Steep elevation change into Turn 1; an esses section inspired by Silverstone.",
+      "city": "Austin, Texas",
+      "timezone": "CDT (UTC-5)",
+      "raceLaps": 56,
+      "raceDistanceKm": 308.405,
+      "firstGpYear": 2012,
+      "drsZones": 2,
+      "lapTimeRange": "~1:32-1:36",
+      "direction": "Counterclockwise",
+      "signatureFeatures": [
+        "Steep uphill blind entry into Turn 1",
+        "Esses inspired by Silverstone's Maggotts/Becketts",
+        "Sweeping, elevation-rich infield section"
+      ],
+      "whyInteresting": "A modern circuit purpose-built to blend the best corners of classic tracks from around the world."
+    },
+    {
+      "id": "mexicocity",
+      "name": "Autódromo Hermanos Rodríguez",
+      "country": "Mexico",
+      "lengthKm": 4.304,
+      "corners": 17,
+      "chars": "High altitude thins the air, affecting downforce and engine cooling; stadium section at Turns 12-13.",
+      "city": "Mexico City",
+      "timezone": "CST (UTC-6)",
+      "raceLaps": 71,
+      "raceDistanceKm": 305.354,
+      "firstGpYear": 1963,
+      "drsZones": 2,
+      "lapTimeRange": "~1:17-1:21",
+      "direction": "Counterclockwise",
+      "signatureFeatures": [
+        "Foro Sol stadium section through a baseball/multi-sport arena",
+        "Extreme altitude (over 2,200 m) reduces aerodynamic and engine performance",
+        "Long Peraltada-inspired final corner"
+      ],
+      "whyInteresting": "Run at extreme altitude, where thin air fundamentally changes how the cars behave."
+    },
+    {
+      "id": "interlagos",
+      "name": "Autódromo José Carlos Pace (Interlagos)",
+      "country": "Brazil",
+      "lengthKm": 4.309,
+      "corners": 15,
+      "chars": "Anticlockwise and undulating, with famously unpredictable weather.",
+      "city": "São Paulo",
+      "timezone": "BRT (UTC-3)",
+      "raceLaps": 71,
+      "raceDistanceKm": 305.879,
+      "firstGpYear": 1973,
+      "drsZones": 2,
+      "lapTimeRange": "~1:10-1:13",
+      "direction": "Anticlockwise",
+      "signatureFeatures": [
+        "Sweeping 'Senna S' at the start, named for the local legend",
+        "Anticlockwise, undulating layout",
+        "Famously unpredictable weather"
+      ],
+      "whyInteresting": "A short, undulating lap named for Ayrton Senna's home-city corners, notorious for chaotic wet races."
+    },
+    {
+      "id": "lasvegas",
+      "name": "Las Vegas Strip Circuit",
+      "country": "United States",
+      "lengthKm": 6.201,
+      "corners": 17,
+      "chars": "Long straights down the Strip; a night race with cold track temperatures.",
+      "city": "Las Vegas, Nevada",
+      "timezone": "PST (UTC-8)",
+      "raceLaps": 50,
+      "raceDistanceKm": 309.958,
+      "firstGpYear": 2023,
+      "drsZones": 2,
+      "lapTimeRange": "~1:34-1:38",
+      "direction": "Counterclockwise",
+      "signatureFeatures": [
+        "Runs down the Las Vegas Strip past its casinos",
+        "Cold overnight track temperatures despite the desert setting",
+        "One of the longest straights on the calendar"
+      ],
+      "whyInteresting": "A glittering Strip-side night race with some of the coldest track temperatures anywhere on the calendar."
+    },
+    {
+      "id": "lusail",
+      "name": "Lusail International Circuit",
+      "country": "Qatar",
+      "lengthKm": 5.419,
+      "corners": 16,
+      "chars": "High-speed, flowing layout raced at night.",
+      "city": "Lusail",
+      "timezone": "AST (UTC+3)",
+      "raceLaps": 57,
+      "raceDistanceKm": 308.611,
+      "firstGpYear": 2021,
+      "drsZones": 1,
+      "lapTimeRange": "~1:23-1:27",
+      "direction": "Counterclockwise",
+      "signatureFeatures": [
+        "High-speed, flowing corner sequences",
+        "Raced at night under floodlights",
+        "Originally built for MotoGP"
+      ],
+      "whyInteresting": "A fast, rhythmic circuit originally designed for motorcycle racing, raced under lights in the desert."
+    },
+    {
+      "id": "yasmarina",
+      "name": "Yas Marina Circuit",
+      "country": "United Arab Emirates",
+      "lengthKm": 5.281,
+      "corners": 16,
+      "chars": "Season-finale venue; race starts in daylight and finishes under lights.",
+      "city": "Abu Dhabi",
+      "timezone": "UAE Standard Time (UTC+4)",
+      "raceLaps": 58,
+      "raceDistanceKm": 306.183,
+      "firstGpYear": 2009,
+      "drsZones": 2,
+      "lapTimeRange": "~1:24-1:27",
+      "direction": "Anticlockwise",
+      "signatureFeatures": [
+        "Race starts in daylight and finishes under lights",
+        "Marina section beside superyachts",
+        "Traditional F1 season finale"
+      ],
+      "whyInteresting": "F1's traditional season finale, transitioning from daylight to dusk beside a glittering marina."
+    }
+  ],
+  "calendar": [
+    {
+      "round": 1,
+      "name": "Australian Grand Prix",
+      "country": "Australia",
+      "track": "albertpark",
+      "date": "2026-03-06/08",
+      "sprint": false,
+      "status": "done"
+    },
+    {
+      "round": 2,
+      "name": "Chinese Grand Prix",
+      "country": "China",
+      "track": "shanghai",
+      "date": "2026-03-13/15",
+      "sprint": true,
+      "status": "done"
+    },
+    {
+      "round": 3,
+      "name": "Japanese Grand Prix",
+      "country": "Japan",
+      "track": "suzuka",
+      "date": "2026-03-27/29",
+      "sprint": false,
+      "status": "done"
+    },
+    {
+      "round": 0,
+      "name": "Bahrain Grand Prix",
+      "country": "Bahrain",
+      "track": null,
+      "date": "2026-04-10/12",
+      "sprint": false,
+      "status": "cancelled"
+    },
+    {
+      "round": 0,
+      "name": "Saudi Arabian Grand Prix",
+      "country": "Saudi Arabia",
+      "track": null,
+      "date": "2026-04-17/19",
+      "sprint": false,
+      "status": "cancelled"
+    },
+    {
+      "round": 4,
+      "name": "Miami Grand Prix",
+      "country": "United States",
+      "track": "miami",
+      "date": "2026-05-01/03",
+      "sprint": true,
+      "status": "done"
+    },
+    {
+      "round": 5,
+      "name": "Canadian Grand Prix",
+      "country": "Canada",
+      "track": "gillesvilleneuve",
+      "date": "2026-05-22/24",
+      "sprint": true,
+      "status": "done"
+    },
+    {
+      "round": 6,
+      "name": "Monaco Grand Prix",
+      "country": "Monaco",
+      "track": "monaco",
+      "date": "2026-06-05/07",
+      "sprint": false,
+      "status": "done"
+    },
+    {
+      "round": 7,
+      "name": "Barcelona-Catalunya Grand Prix",
+      "country": "Spain",
+      "track": "barcelona",
+      "date": "2026-06-12/14",
+      "sprint": false,
+      "status": "done"
+    },
+    {
+      "round": 8,
+      "name": "Austrian Grand Prix",
+      "country": "Austria",
+      "track": "redbullring",
+      "date": "2026-06-26/28",
+      "sprint": false,
+      "status": "done"
+    },
+    {
+      "round": 9,
+      "name": "British Grand Prix",
+      "country": "Great Britain",
+      "track": "silverstone",
+      "date": "2026-07-03/05",
+      "sprint": true,
+      "status": "done"
+    },
+    {
+      "round": 10,
+      "name": "Belgian Grand Prix",
+      "country": "Belgium",
+      "track": "spa",
+      "date": "2026-07-17/19",
+      "sprint": false,
+      "status": "done"
+    },
+    {
+      "round": 11,
+      "name": "Hungarian Grand Prix",
+      "country": "Hungary",
+      "track": "hungaroring",
+      "date": "2026-07-24/26",
+      "sprint": false,
+      "status": "next"
+    },
+    {
+      "round": 12,
+      "name": "Dutch Grand Prix",
+      "country": "Netherlands",
+      "track": "zandvoort",
+      "date": "2026-08-21/23",
+      "sprint": true,
+      "status": "future"
+    },
+    {
+      "round": 13,
+      "name": "Italian Grand Prix",
+      "country": "Italy",
+      "track": "monza",
+      "date": "2026-09-04/06",
+      "sprint": false,
+      "status": "future"
+    },
+    {
+      "round": 14,
+      "name": "Spanish Grand Prix",
+      "country": "Spain",
+      "track": "madring",
+      "date": "2026-09-11/13",
+      "sprint": false,
+      "status": "future"
+    },
+    {
+      "round": 15,
+      "name": "Azerbaijan Grand Prix",
+      "country": "Azerbaijan",
+      "track": "baku",
+      "date": "2026-09-25/26",
+      "sprint": false,
+      "status": "future"
+    },
+    {
+      "round": 16,
+      "name": "Singapore Grand Prix",
+      "country": "Singapore",
+      "track": "marinabay",
+      "date": "2026-10-09/11",
+      "sprint": true,
+      "status": "future"
+    },
+    {
+      "round": 17,
+      "name": "United States Grand Prix",
+      "country": "United States",
+      "track": "cota",
+      "date": "2026-10-23/25",
+      "sprint": false,
+      "status": "future"
+    },
+    {
+      "round": 18,
+      "name": "Mexico City Grand Prix",
+      "country": "Mexico",
+      "track": "mexicocity",
+      "date": "2026-10-30/11-01",
+      "sprint": false,
+      "status": "future"
+    },
+    {
+      "round": 19,
+      "name": "São Paulo Grand Prix",
+      "country": "Brazil",
+      "track": "interlagos",
+      "date": "2026-11-06/08",
+      "sprint": false,
+      "status": "future"
+    },
+    {
+      "round": 20,
+      "name": "Las Vegas Grand Prix",
+      "country": "United States",
+      "track": "lasvegas",
+      "date": "2026-11-19/21",
+      "sprint": false,
+      "status": "future"
+    },
+    {
+      "round": 21,
+      "name": "Qatar Grand Prix",
+      "country": "Qatar",
+      "track": "lusail",
+      "date": "2026-11-27/29",
+      "sprint": false,
+      "status": "future"
+    },
+    {
+      "round": 22,
+      "name": "Abu Dhabi Grand Prix",
+      "country": "United Arab Emirates",
+      "track": "yasmarina",
+      "date": "2026-12-04/06",
+      "sprint": false,
+      "status": "future"
+    }
+  ],
+  "raceResults": {
+    "1": {
+      "meta": {
+        "poleDriver": "RUS",
+        "fastestLap": "VER",
+        "safetyCars": 2,
+        "weatherQuali": null,
+        "weatherRace": "Partly cloudy",
+        "note": "Both safety car periods were Virtual Safety Cars (Hadjar's smoking Red Bull on lap 11, then Bottas's retirement) rather than a full physical Safety Car."
+      },
+      "headline": "Russell leads a Mercedes 1-2 in a chaotic season opener",
+      "recap": "George Russell held off a fast-recovering Charles Leclerc and Lewis Hamilton to win the 2026 curtain-raiser, with teammate Kimi Antonelli completing a Mercedes 1-2. Two Virtual Safety Cars and a one-stop strategy gamble shaped a wild afternoon that also saw both McLarens fail to start.",
+      "keyMoments": [
+        {
+          "lap": 1,
+          "label": "Leclerc seizes the lead",
+          "detail": "Leclerc surged from P4 to P1 at the start, swapping places with Russell over the opening laps."
+        },
+        {
+          "lap": 11,
+          "label": "Hadjar's smoking Red Bull brings out the first VSC",
+          "detail": "Hadjar pulled off with smoke pouring from the car on his F1 race debut, prompting a round of pit stops."
+        },
+        {
+          "lap": 43,
+          "label": "Verstappen sets the fastest lap from P20",
+          "detail": "Having recovered from a qualifying crash, Verstappen salvaged 6th place and the fastest lap of the race."
+        }
+      ],
+      "notablePerformances": [
+        {
+          "id": "VER",
+          "note": "Recovered from a 20th-place qualifying crash to finish 6th and set the fastest lap."
+        },
+        {
+          "id": "HAD",
+          "note": "F1 race debut ended in retirement after smoke forced him off track."
+        }
+      ],
+      "sourceUrl": "https://www.formula1.com/en/latest/article/russell-wins-action-packed-australian-gp-from-antonelli-as-mercedes-secure-1.4WRxPAtF4dFtrKCsWIiQX2",
+      "results": [
+        {
+          "id": "RUS",
+          "grid": null,
+          "finish": 1,
+          "laps": 58,
+          "gap": "1:23:06.801",
+          "pts": 25
+        },
+        {
+          "id": "ANT",
+          "grid": null,
+          "finish": 2,
+          "laps": 58,
+          "gap": "+2.974s",
+          "pts": 18
+        },
+        {
+          "id": "LEC",
+          "grid": null,
+          "finish": 3,
+          "laps": 58,
+          "gap": "+15.519s",
+          "pts": 15
+        },
+        {
+          "id": "HAM",
+          "grid": null,
+          "finish": 4,
+          "laps": 58,
+          "gap": "+16.144s",
+          "pts": 12
+        },
+        {
+          "id": "NOR",
+          "grid": null,
+          "finish": 5,
+          "laps": 58,
+          "gap": "+51.741s",
+          "pts": 10
+        },
+        {
+          "id": "VER",
+          "grid": 20,
+          "finish": 6,
+          "laps": 58,
+          "gap": "+54.617s",
+          "pts": 8,
+          "note": "Recovered from 20th after a qualifying crash."
+        },
+        {
+          "id": "BEA",
+          "grid": null,
+          "finish": 7,
+          "laps": 57,
+          "gap": "+1 lap",
+          "pts": 6
+        },
+        {
+          "id": "LIN",
+          "grid": null,
+          "finish": 8,
+          "laps": 57,
+          "gap": "+1 lap",
+          "pts": 4
+        },
+        {
+          "id": "BOR",
+          "grid": null,
+          "finish": 9,
+          "laps": 57,
+          "gap": "+1 lap",
+          "pts": 2
+        },
+        {
+          "id": "GAS",
+          "grid": null,
+          "finish": 10,
+          "laps": 57,
+          "gap": "+1 lap",
+          "pts": 1
+        },
+        {
+          "id": "OCO",
+          "grid": null,
+          "finish": 11,
+          "laps": 57,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "ALB",
+          "grid": null,
+          "finish": 12,
+          "laps": 57,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "LAW",
+          "grid": null,
+          "finish": 13,
+          "laps": 57,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "COL",
+          "grid": null,
+          "finish": 14,
+          "laps": 56,
+          "gap": "+2 laps",
+          "pts": 0
+        },
+        {
+          "id": "SAI",
+          "grid": null,
+          "finish": 15,
+          "laps": 56,
+          "gap": "+2 laps",
+          "pts": 0
+        },
+        {
+          "id": "PER",
+          "grid": null,
+          "finish": 16,
+          "laps": 55,
+          "gap": "+3 laps",
+          "pts": 0
+        },
+        {
+          "id": "STR",
+          "grid": null,
+          "finish": "NC",
+          "laps": 43,
+          "gap": "+15 laps",
+          "pts": 0
+        },
+        {
+          "id": "ALO",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 21,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Retired (cause not confirmed)"
+        },
+        {
+          "id": "BOT",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 15,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Retired (cause not confirmed)"
+        },
+        {
+          "id": "HAD",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 10,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Smoke from the rear of the car (F1 race debut); triggered the first VSC"
+        },
+        {
+          "id": "PIA",
+          "grid": null,
+          "finish": "DNS",
+          "laps": 0,
+          "gap": "DNS",
+          "pts": 0,
+          "retirement": "Crashed driving to the grid before the race"
+        },
+        {
+          "id": "HUL",
+          "grid": null,
+          "finish": "DNS",
+          "laps": 0,
+          "gap": "DNS",
+          "pts": 0,
+          "retirement": "Technical issue, unable to start (Audi's race debut)"
+        }
+      ],
+      "sprint": null
+    },
+    "2": {
+      "meta": {
+        "poleDriver": "ANT",
+        "sprintPole": "RUS",
+        "fastestLap": "ANT",
+        "safetyCars": 1,
+        "weatherQuali": null,
+        "weatherRace": "Cloudy",
+        "weatherSprint": "Cool (~15°C), cloudy and dry, breezy (~19 km/h wind)",
+        "note": "One full Safety Car in the Grand Prix (lap 10, triggered by Stroll's retirement). The Sprint also had its own late Safety Car restart."
+      },
+      "headline": "Antonelli beats Russell in an all-Mercedes headline act at Shanghai",
+      "recap": "Kimi Antonelli converted pole into his first Grand Prix win, resisting an early challenge from Hamilton and controlling the gap to teammate Russell after the race's only Safety Car. Both McLarens and both Williams cars failed to start due to technical issues.",
+      "keyMoments": [
+        {
+          "lap": 1,
+          "label": "Hamilton leads the opening lap",
+          "detail": "Hamilton briefly led before Antonelli reclaimed the front."
+        },
+        {
+          "lap": 10,
+          "label": "Stroll's retirement brings out the Safety Car",
+          "detail": "Stroll's stopped Aston Martin triggered the race's only full Safety Car."
+        },
+        {
+          "lap": 47,
+          "label": "Verstappen retires from the podium fight",
+          "detail": "A suspected power unit failure ended Verstappen's race while running 6th."
+        }
+      ],
+      "notablePerformances": [
+        {
+          "id": "HAD",
+          "note": "Recovered from an opening-lap-adjacent setback to finish 8th and score points."
+        },
+        {
+          "id": "NOR",
+          "note": "Did not start due to an electrical issue, part of a disastrous weekend for McLaren."
+        }
+      ],
+      "sourceUrl": "https://www.formulaonehistory.com/2026-chinese-grand-prix/",
+      "results": [
+        {
+          "id": "ANT",
+          "grid": null,
+          "finish": 1,
+          "laps": 56,
+          "gap": "1:33:15.607",
+          "pts": 25
+        },
+        {
+          "id": "RUS",
+          "grid": null,
+          "finish": 2,
+          "laps": 56,
+          "gap": "+5.515s",
+          "pts": 18
+        },
+        {
+          "id": "HAM",
+          "grid": null,
+          "finish": 3,
+          "laps": 56,
+          "gap": "+25.267s",
+          "pts": 15
+        },
+        {
+          "id": "LEC",
+          "grid": null,
+          "finish": 4,
+          "laps": 56,
+          "gap": "+28.894s",
+          "pts": 12
+        },
+        {
+          "id": "BEA",
+          "grid": null,
+          "finish": 5,
+          "laps": 56,
+          "gap": "+57.268s",
+          "pts": 10
+        },
+        {
+          "id": "GAS",
+          "grid": null,
+          "finish": 6,
+          "laps": 56,
+          "gap": "+59.647s",
+          "pts": 8
+        },
+        {
+          "id": "LAW",
+          "grid": null,
+          "finish": 7,
+          "laps": 56,
+          "gap": "+80.588s",
+          "pts": 6
+        },
+        {
+          "id": "HAD",
+          "grid": null,
+          "finish": 8,
+          "laps": 56,
+          "gap": "+87.247s",
+          "pts": 4
+        },
+        {
+          "id": "SAI",
+          "grid": null,
+          "finish": 9,
+          "laps": 55,
+          "gap": "+1 lap",
+          "pts": 2
+        },
+        {
+          "id": "COL",
+          "grid": null,
+          "finish": 10,
+          "laps": 55,
+          "gap": "+1 lap",
+          "pts": 1
+        },
+        {
+          "id": "HUL",
+          "grid": null,
+          "finish": 11,
+          "laps": 55,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "LIN",
+          "grid": null,
+          "finish": 12,
+          "laps": 55,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "BOT",
+          "grid": null,
+          "finish": 13,
+          "laps": 55,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "OCO",
+          "grid": null,
+          "finish": 14,
+          "laps": 55,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "PER",
+          "grid": null,
+          "finish": 15,
+          "laps": 55,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "VER",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 45,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Suspected power unit failure while running 6th"
+        },
+        {
+          "id": "ALO",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 32,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Retired (cause not confirmed)"
+        },
+        {
+          "id": "STR",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 9,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Stopped on track; triggered the race's only Safety Car"
+        },
+        {
+          "id": "PIA",
+          "grid": null,
+          "finish": "DNS",
+          "laps": 0,
+          "gap": "DNS",
+          "pts": 0,
+          "retirement": "Car issue before the race"
+        },
+        {
+          "id": "NOR",
+          "grid": null,
+          "finish": "DNS",
+          "laps": 0,
+          "gap": "DNS",
+          "pts": 0,
+          "retirement": "Electrical issue, unable to start"
+        },
+        {
+          "id": "BOR",
+          "grid": null,
+          "finish": "DNS",
+          "laps": 0,
+          "gap": "DNS",
+          "pts": 0,
+          "retirement": "Car issue before the race"
+        },
+        {
+          "id": "ALB",
+          "grid": null,
+          "finish": "DNS",
+          "laps": 0,
+          "gap": "DNS",
+          "pts": 0,
+          "retirement": "Car issue before the race"
+        }
+      ],
+      "sprint": {
+        "note": "Full sprint classification wasn't captured — known so far: Russell took pole for the sprint; Antonelli finished 5th after an opening-lap collision penalty with Hadjar. Add the full table via the Update tab / F1.com Sprint result page.",
+        "results": []
+      }
+    },
+    "3": {
+      "meta": {
+        "poleDriver": "ANT",
+        "fastestLap": "ANT",
+        "safetyCars": 1,
+        "weatherQuali": null,
+        "weatherRace": "Cloudy, dry, cool (high-teens °C)",
+        "note": "Safety car deployed for Oliver Bearman's heavy crash."
+      },
+      "headline": "Antonelli completes a hat-trick of wins at Suzuka",
+      "recap": "Kimi Antonelli made it three wins from three races, converting pole to victory at Suzuka ahead of Oscar Piastri and Charles Leclerc. Oliver Bearman's heavy crash brought out the race's only Safety Car.",
+      "keyMoments": [
+        {
+          "lap": 20,
+          "label": "Bearman's heavy crash",
+          "detail": "Bearman's crash triggered the race's sole Safety Car period."
+        },
+        {
+          "lap": 49,
+          "label": "Antonelli sets the fastest lap",
+          "detail": "Antonelli set the fastest lap of the race en route to victory."
+        }
+      ],
+      "notablePerformances": [
+        {
+          "id": "PIA",
+          "note": "Recovered to finish 2nd after a difficult start to the season."
+        }
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/2026_Japanese_Grand_Prix",
+      "results": [
+        {
+          "id": "ANT",
+          "grid": null,
+          "finish": 1,
+          "laps": 53,
+          "gap": "1:28:03.403",
+          "pts": 25
+        },
+        {
+          "id": "PIA",
+          "grid": null,
+          "finish": 2,
+          "laps": 53,
+          "gap": "+13.722s",
+          "pts": 18
+        },
+        {
+          "id": "LEC",
+          "grid": null,
+          "finish": 3,
+          "laps": 53,
+          "gap": "+15.270s",
+          "pts": 15
+        },
+        {
+          "id": "RUS",
+          "grid": null,
+          "finish": 4,
+          "laps": 53,
+          "gap": "+15.754s",
+          "pts": 12
+        },
+        {
+          "id": "NOR",
+          "grid": null,
+          "finish": 5,
+          "laps": 53,
+          "gap": "+23.479s",
+          "pts": 10
+        },
+        {
+          "id": "HAM",
+          "grid": null,
+          "finish": 6,
+          "laps": 53,
+          "gap": "+25.037s",
+          "pts": 8
+        },
+        {
+          "id": "GAS",
+          "grid": null,
+          "finish": 7,
+          "laps": 53,
+          "gap": "+32.340s",
+          "pts": 6
+        },
+        {
+          "id": "VER",
+          "grid": null,
+          "finish": 8,
+          "laps": 53,
+          "gap": "+32.677s",
+          "pts": 4
+        },
+        {
+          "id": "LAW",
+          "grid": null,
+          "finish": 9,
+          "laps": 53,
+          "gap": "+50.180s",
+          "pts": 2
+        },
+        {
+          "id": "OCO",
+          "grid": null,
+          "finish": 10,
+          "laps": 53,
+          "gap": "+51.216s",
+          "pts": 1
+        },
+        {
+          "id": "HUL",
+          "grid": null,
+          "finish": 11,
+          "laps": 53,
+          "gap": "+52.280s",
+          "pts": 0
+        },
+        {
+          "id": "HAD",
+          "grid": null,
+          "finish": 12,
+          "laps": 53,
+          "gap": "+56.154s",
+          "pts": 0
+        },
+        {
+          "id": "BOR",
+          "grid": null,
+          "finish": 13,
+          "laps": 53,
+          "gap": "+59.078s",
+          "pts": 0
+        },
+        {
+          "id": "LIN",
+          "grid": null,
+          "finish": 14,
+          "laps": 53,
+          "gap": "+59.848s",
+          "pts": 0
+        },
+        {
+          "id": "SAI",
+          "grid": null,
+          "finish": 15,
+          "laps": 53,
+          "gap": "+65.008s",
+          "pts": 0
+        },
+        {
+          "id": "COL",
+          "grid": null,
+          "finish": 16,
+          "laps": 53,
+          "gap": "+65.773s",
+          "pts": 0
+        },
+        {
+          "id": "PER",
+          "grid": null,
+          "finish": 17,
+          "laps": 53,
+          "gap": "+92.453s",
+          "pts": 0
+        },
+        {
+          "id": "ALO",
+          "grid": null,
+          "finish": 18,
+          "laps": 52,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "BOT",
+          "grid": null,
+          "finish": 19,
+          "laps": 52,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "ALB",
+          "grid": null,
+          "finish": 20,
+          "laps": 51,
+          "gap": "+2 laps",
+          "pts": 0
+        },
+        {
+          "id": "STR",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 30,
+          "gap": "DNF",
+          "pts": 0
+        },
+        {
+          "id": "BEA",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 20,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Heavy crash — triggered the safety car"
+        }
+      ],
+      "sprint": null
+    },
+    "4": {
+      "meta": {
+        "poleDriver": "ANT",
+        "fastestLap": "NOR",
+        "safetyCars": 1,
+        "weatherQuali": null,
+        "weatherRace": "Cloudy; race start moved 3 hours earlier due to forecast storms, track dry at start after earlier morning rain",
+        "weatherSprint": null,
+        "note": "Safety car deployed in the opening laps after separate incidents for Hadjar (wall contact, Turn 14) and Gasly (flipped after contact with Lawson)."
+      },
+      "headline": "Antonelli holds off Norris for a third straight win",
+      "recap": "Kimi Antonelli survived a three-way scrap at the start and late pressure from Lando Norris to win a Safety-Car-interrupted Miami Grand Prix, extending his perfect start to the season. The race began three hours earlier than scheduled due to forecast storms.",
+      "keyMoments": [
+        {
+          "lap": 1,
+          "label": "Three-way lockup at Turn 1",
+          "detail": "Antonelli, Verstappen and Leclerc all locked up at the start; Verstappen then spun."
+        },
+        {
+          "lap": 2,
+          "label": "Hadjar and Gasly retire in separate incidents",
+          "detail": "Hadjar hit the wall at Turn 14 and Gasly flipped after contact with Lawson, bringing out the Safety Car."
+        },
+        {
+          "lap": 35,
+          "label": "Norris sets the fastest lap chasing Antonelli",
+          "detail": "Norris's fastest lap of the race came as he pushed hardest for the win."
+        }
+      ],
+      "notablePerformances": [
+        {
+          "id": "COL",
+          "note": "Finished 7th, one of his stronger results of the season."
+        },
+        {
+          "id": "GAS",
+          "note": "Retired after flipping his Alpine following contact with Lawson."
+        }
+      ],
+      "sourceUrl": "https://www.formula1.com/en/latest/article/antonelli-wins-thrilling-miami-grand-prix-from-norris-and-piastri.2bxaKuYKJjxlXx8KOJf7lc",
+      "results": [
+        {
+          "id": "ANT",
+          "grid": null,
+          "finish": 1,
+          "laps": 57,
+          "gap": "1:33:19.273",
+          "pts": 25
+        },
+        {
+          "id": "NOR",
+          "grid": null,
+          "finish": 2,
+          "laps": 57,
+          "gap": "+3.264s",
+          "pts": 18
+        },
+        {
+          "id": "PIA",
+          "grid": null,
+          "finish": 3,
+          "laps": 57,
+          "gap": "+27.092s",
+          "pts": 15
+        },
+        {
+          "id": "RUS",
+          "grid": null,
+          "finish": 4,
+          "laps": 57,
+          "gap": "+43.051s",
+          "pts": 12
+        },
+        {
+          "id": "VER",
+          "grid": null,
+          "finish": 5,
+          "laps": 57,
+          "gap": "+48.949s",
+          "pts": 10
+        },
+        {
+          "id": "HAM",
+          "grid": null,
+          "finish": 6,
+          "laps": 57,
+          "gap": "+53.753s",
+          "pts": 8
+        },
+        {
+          "id": "COL",
+          "grid": null,
+          "finish": 7,
+          "laps": 57,
+          "gap": "+61.871s",
+          "pts": 6
+        },
+        {
+          "id": "LEC",
+          "grid": null,
+          "finish": 8,
+          "laps": 57,
+          "gap": "+64.245s",
+          "pts": 4,
+          "onTrackPenalty": "20s — leaving the track repeatedly without justifiable reason"
+        },
+        {
+          "id": "SAI",
+          "grid": null,
+          "finish": 9,
+          "laps": 57,
+          "gap": "+82.072s",
+          "pts": 2
+        },
+        {
+          "id": "ALB",
+          "grid": null,
+          "finish": 10,
+          "laps": 57,
+          "gap": "+90.972s",
+          "pts": 1
+        },
+        {
+          "id": "BEA",
+          "grid": null,
+          "finish": 11,
+          "laps": 56,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "BOR",
+          "grid": null,
+          "finish": 12,
+          "laps": 56,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "OCO",
+          "grid": null,
+          "finish": 13,
+          "laps": 56,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "LIN",
+          "grid": null,
+          "finish": 14,
+          "laps": 56,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "ALO",
+          "grid": null,
+          "finish": 15,
+          "laps": 56,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "PER",
+          "grid": null,
+          "finish": 16,
+          "laps": 56,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "STR",
+          "grid": null,
+          "finish": 17,
+          "laps": 56,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "BOT",
+          "grid": null,
+          "finish": 18,
+          "laps": 55,
+          "gap": "+2 laps",
+          "pts": 0
+        },
+        {
+          "id": "HUL",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 7,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Retired (cause not confirmed)"
+        },
+        {
+          "id": "LAW",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 6,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Involved in first-lap incident with Gasly"
+        },
+        {
+          "id": "GAS",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 4,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Car flipped after contact with Lawson"
+        },
+        {
+          "id": "HAD",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 4,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Hit the wall at Turn 14, suspension damage",
+          "onTrackPenalty": "5s — crossing the white line at pit exit"
+        }
+      ],
+      "sprint": {
+        "note": "Sprint held (2nd of the season) — full classification not captured. Add via Update tab / F1.com Sprint result page.",
+        "results": []
+      }
+    },
+    "5": {
+      "meta": {
+        "poleDriver": "RUS",
+        "fastestLap": "ANT",
+        "safetyCars": 2,
+        "weatherQuali": null,
+        "weatherRace": "Cloudy; damp at the start (drivers started on intermediate tyres)",
+        "weatherSprint": null,
+        "note": "One Virtual Safety Car (mid-race, for Perez's suspension failure/debris) and one full Safety Car (late race, for the Norris/Piastri collision) which ran to the finish."
+      },
+      "headline": "Antonelli wins an attrition-heavy Canadian GP",
+      "recap": "Kimi Antonelli extended his championship lead with victory at Montreal ahead of Lewis Hamilton and Max Verstappen, in a race that claimed 18 retirements. A late Safety Car for the Norris/Piastri collision neutralized the finish after an earlier VSC for Perez's suspension failure.",
+      "keyMoments": [
+        {
+          "lap": 1,
+          "label": "Norris leads off the start",
+          "detail": "A lead change at the start saw Norris briefly ahead before losing positions."
+        },
+        {
+          "lap": 39,
+          "label": "Perez's suspension fails",
+          "detail": "Perez's suspension failure on the back straight triggered a Virtual Safety Car."
+        },
+        {
+          "lap": 40,
+          "label": "Norris and Piastri collide fighting for 4th",
+          "detail": "Norris hit the back of Piastri, ending Norris's race and triggering the late Safety Car."
+        }
+      ],
+      "notablePerformances": [
+        {
+          "id": "STR",
+          "note": "Biggest mover of the race, gaining 7 positions from P22 to finish 15th."
+        }
+      ],
+      "sourceUrl": "https://www.si.com/onsi/f1/news/f1-results-and-report-from-the-2026-canadian-grand-prix",
+      "results": [
+        {
+          "id": "ANT",
+          "grid": null,
+          "finish": 1,
+          "laps": 68,
+          "gap": "1:28:15.758",
+          "pts": 25
+        },
+        {
+          "id": "HAM",
+          "grid": null,
+          "finish": 2,
+          "laps": 68,
+          "gap": "+10.768s",
+          "pts": 18
+        },
+        {
+          "id": "VER",
+          "grid": null,
+          "finish": 3,
+          "laps": 68,
+          "gap": "+11.276s",
+          "pts": 15
+        },
+        {
+          "id": "LEC",
+          "grid": null,
+          "finish": 4,
+          "laps": 68,
+          "gap": "+44.151s",
+          "pts": 12
+        },
+        {
+          "id": "HAD",
+          "grid": null,
+          "finish": 5,
+          "laps": 67,
+          "gap": "+1 lap",
+          "pts": 10
+        },
+        {
+          "id": "COL",
+          "grid": null,
+          "finish": 6,
+          "laps": 67,
+          "gap": "+1 lap",
+          "pts": 8
+        },
+        {
+          "id": "LAW",
+          "grid": null,
+          "finish": 7,
+          "laps": 67,
+          "gap": "+1 lap",
+          "pts": 6
+        },
+        {
+          "id": "GAS",
+          "grid": null,
+          "finish": 8,
+          "laps": 67,
+          "gap": "+1 lap",
+          "pts": 4
+        },
+        {
+          "id": "SAI",
+          "grid": null,
+          "finish": 9,
+          "laps": 67,
+          "gap": "+1 lap",
+          "pts": 2
+        },
+        {
+          "id": "BEA",
+          "grid": null,
+          "finish": 10,
+          "laps": 67,
+          "gap": "+1 lap",
+          "pts": 1
+        },
+        {
+          "id": "PIA",
+          "grid": null,
+          "finish": 11,
+          "laps": 66,
+          "gap": "+2 laps",
+          "pts": 0
+        },
+        {
+          "id": "HUL",
+          "grid": null,
+          "finish": 12,
+          "laps": 66,
+          "gap": "+2 laps",
+          "pts": 0
+        },
+        {
+          "id": "BOR",
+          "grid": null,
+          "finish": 13,
+          "laps": 66,
+          "gap": "+2 laps",
+          "pts": 0,
+          "onTrackPenalty": "5s — Virtual Safety Car infringement"
+        },
+        {
+          "id": "OCO",
+          "grid": null,
+          "finish": 14,
+          "laps": 66,
+          "gap": "+2 laps",
+          "pts": 0
+        },
+        {
+          "id": "STR",
+          "grid": null,
+          "finish": 15,
+          "laps": 64,
+          "gap": "+4 laps",
+          "pts": 0
+        },
+        {
+          "id": "BOT",
+          "grid": null,
+          "finish": 16,
+          "laps": 64,
+          "gap": "+4 laps",
+          "pts": 0
+        },
+        {
+          "id": "PER",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 39,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Suspension failure"
+        },
+        {
+          "id": "NOR",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 38,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Collided with Piastri while fighting for 4th place"
+        },
+        {
+          "id": "RUS",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 29,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Retired (cause not confirmed)"
+        },
+        {
+          "id": "ALO",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 23,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Retired (cause not confirmed)"
+        },
+        {
+          "id": "ALB",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 11,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Retired (cause not confirmed)"
+        },
+        {
+          "id": "LIN",
+          "grid": null,
+          "finish": "DNS",
+          "laps": 0,
+          "gap": "DNS",
+          "pts": 0,
+          "retirement": "Car not ready in time; formation lap issue"
+        }
+      ],
+      "sprint": {
+        "note": "Sprint held (3rd of the season) — full classification not captured. Add via Update tab / F1.com Sprint result page.",
+        "results": []
+      }
+    },
+    "6": {
+      "meta": {
+        "poleDriver": "ANT",
+        "fastestLap": "ANT",
+        "safetyCars": 3,
+        "weatherQuali": null,
+        "weatherRace": "Sunny, dry, ~23°C",
+        "note": "A dramatic weekend: Stroll's crash (lap 60) brought out the first Safety Car; Leclerc crashed at the same corner on the restart, triggering a second Safety Car that became a red flag for track repairs (resurfacing work had broken up at Turn 19); the race then resumed with a Safety Car-led restart lap before a standing start."
+      },
+      "headline": "Antonelli wins a red-flag-interrupted Monaco classic",
+      "recap": "Kimi Antonelli led every lap from pole to claim a fifth straight victory, surviving two Safety Car periods, a red flag for track damage, and a standing restart. Hamilton held on for 2nd as George Russell's afternoon collapsed through penalties.",
+      "keyMoments": [
+        {
+          "lap": 60,
+          "label": "Stroll crashes, first Safety Car",
+          "detail": "Stroll's crash at Anthony Noghes brought out the first Safety Car."
+        },
+        {
+          "lap": 66,
+          "label": "Leclerc crashes at the same corner, red flag",
+          "detail": "Leclerc's near-identical accident on the restart caused a second Safety Car that became a red flag for track repairs."
+        },
+        {
+          "lap": 67,
+          "label": "Standing restart",
+          "detail": "The race resumed with laps behind the Safety Car followed by a standing start."
+        }
+      ],
+      "notablePerformances": [
+        {
+          "id": "RUS",
+          "note": "Race undone by a drive-through penalty for incorrectly serving an earlier time penalty."
+        },
+        {
+          "id": "HAD",
+          "note": "Finished on the podium in 3rd for Red Bull."
+        }
+      ],
+      "sourceUrl": "https://www.f1-fansite.com/f1-result/race-report-results-2026-monaco-formula-1-grand-prix/",
+      "results": [
+        {
+          "id": "ANT",
+          "grid": null,
+          "finish": 1,
+          "laps": 78,
+          "gap": "2:23:31.243",
+          "pts": 25
+        },
+        {
+          "id": "HAM",
+          "grid": null,
+          "finish": 2,
+          "laps": 78,
+          "gap": "+6.271s",
+          "pts": 18
+        },
+        {
+          "id": "HAD",
+          "grid": null,
+          "finish": 3,
+          "laps": 78,
+          "gap": "+23.394s",
+          "pts": 15
+        },
+        {
+          "id": "PIA",
+          "grid": null,
+          "finish": 4,
+          "laps": 78,
+          "gap": "+24.261s",
+          "pts": 12
+        },
+        {
+          "id": "LAW",
+          "grid": null,
+          "finish": 5,
+          "laps": 78,
+          "gap": "+26.553s",
+          "pts": 10
+        },
+        {
+          "id": "LIN",
+          "grid": null,
+          "finish": 6,
+          "laps": 78,
+          "gap": "+29.010s",
+          "pts": 8
+        },
+        {
+          "id": "GAS",
+          "grid": null,
+          "finish": 7,
+          "laps": 78,
+          "gap": "+30.369s",
+          "pts": 6,
+          "onTrackPenalty": "Two separate 5s penalties — speeding in the pit lane"
+        },
+        {
+          "id": "ALB",
+          "grid": null,
+          "finish": 8,
+          "laps": 78,
+          "gap": "+33.413s",
+          "pts": 4
+        },
+        {
+          "id": "OCO",
+          "grid": null,
+          "finish": 9,
+          "laps": 78,
+          "gap": "+37.140s",
+          "pts": 2
+        },
+        {
+          "id": "ALO",
+          "grid": null,
+          "finish": 10,
+          "laps": 78,
+          "gap": "+41.899s",
+          "pts": 1
+        },
+        {
+          "id": "BOR",
+          "grid": null,
+          "finish": 11,
+          "laps": 78,
+          "gap": "+42.748s",
+          "pts": 0
+        },
+        {
+          "id": "RUS",
+          "grid": null,
+          "finish": 12,
+          "laps": 78,
+          "gap": "+43.353s",
+          "pts": 0,
+          "note": "Drive-through penalty for failing to serve an earlier time penalty correctly."
+        },
+        {
+          "id": "HUL",
+          "grid": null,
+          "finish": 13,
+          "laps": 78,
+          "gap": "+44.102s",
+          "pts": 0,
+          "onTrackPenalty": "10s — causing a collision"
+        },
+        {
+          "id": "COL",
+          "grid": null,
+          "finish": 14,
+          "laps": 78,
+          "gap": "+48.964s",
+          "pts": 0,
+          "onTrackPenalty": "5s — speeding in the pit lane"
+        },
+        {
+          "id": "PER",
+          "grid": null,
+          "finish": 15,
+          "laps": 78,
+          "gap": "+49.153s",
+          "pts": 0,
+          "onTrackPenalty": "10s — false start"
+        },
+        {
+          "id": "SAI",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 70,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Eliminated after contact with Hulkenberg at the restart"
+        },
+        {
+          "id": "LEC",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 64,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Crashed at Anthony Noghes on the restart, triggering the second Safety Car/red flag"
+        },
+        {
+          "id": "STR",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 56,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Crashed at Anthony Noghes, triggering the first Safety Car",
+          "onTrackPenalty": "5s — exceeding track limits"
+        },
+        {
+          "id": "NOR",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 43,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Power unit problem, in McLaren's 1000th Grand Prix"
+        },
+        {
+          "id": "BEA",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 27,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Retired after early damage"
+        },
+        {
+          "id": "BOT",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 15,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Brake issues"
+        },
+        {
+          "id": "VER",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 0,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Poor start followed by power unit trouble"
+        }
+      ],
+      "sprint": null
+    },
+    "7": {
+      "meta": {
+        "poleDriver": null,
+        "fastestLap": null,
+        "safetyCars": 1,
+        "weatherQuali": null,
+        "weatherRace": "Dry (no rain reported; pre-weekend forecast gave only a 7% wet-session probability)",
+        "note": "One Virtual Safety Car period (~lap 42), which Ferrari used to give Hamilton a 'free' final pit stop en route to his win. Fastest lap for this round could not be confirmed from available sources."
+      },
+      "headline": "Hamilton ends Mercedes' streak with a maiden Ferrari win",
+      "recap": "Lewis Hamilton claimed his first victory for Ferrari, using a free pit stop under a Virtual Safety Car to beat George Russell and end Mercedes' run of five straight wins. Kimi Antonelli's championship lead was cut after he failed to finish.",
+      "keyMoments": [
+        {
+          "lap": 42,
+          "label": "Hamilton's free stop under VSC",
+          "detail": "A Virtual Safety Car let Ferrari complete Hamilton's final stop without losing track position."
+        },
+        {
+          "lap": 61,
+          "label": "Antonelli retires",
+          "detail": "Antonelli's shock retirement after 61 laps ended his run of five consecutive wins."
+        }
+      ],
+      "notablePerformances": [
+        {
+          "id": "NOR",
+          "note": "Completed the first all-British F1 podium since 1968 alongside Hamilton and Russell."
+        }
+      ],
+      "sourceUrl": "https://www.formula1.com/en/latest/article/hamilton-claims-stellar-maiden-grand-prix-victory-for-ferrari-in-barcelona-as-antonelli-suffers-shock-retirement.4yCXiPLHUdcnl2BwNpqUIa",
+      "results": [
+        {
+          "id": "HAM",
+          "grid": null,
+          "finish": 1,
+          "laps": 66,
+          "gap": "1:32:28.105",
+          "pts": 25
+        },
+        {
+          "id": "RUS",
+          "grid": null,
+          "finish": 2,
+          "laps": 66,
+          "gap": "+19.561s",
+          "pts": 18
+        },
+        {
+          "id": "NOR",
+          "grid": null,
+          "finish": 3,
+          "laps": 66,
+          "gap": "+23.719s",
+          "pts": 15
+        },
+        {
+          "id": "VER",
+          "grid": null,
+          "finish": 4,
+          "laps": 66,
+          "gap": "+40.497s",
+          "pts": 12
+        },
+        {
+          "id": "PIA",
+          "grid": null,
+          "finish": 5,
+          "laps": 66,
+          "gap": "+58.661s",
+          "pts": 10
+        },
+        {
+          "id": "HAD",
+          "grid": null,
+          "finish": 6,
+          "laps": 65,
+          "gap": "+1 lap",
+          "pts": 8
+        },
+        {
+          "id": "GAS",
+          "grid": null,
+          "finish": 7,
+          "laps": 65,
+          "gap": "+1 lap",
+          "pts": 6
+        },
+        {
+          "id": "LAW",
+          "grid": null,
+          "finish": 8,
+          "laps": 65,
+          "gap": "+1 lap",
+          "pts": 4
+        },
+        {
+          "id": "LIN",
+          "grid": null,
+          "finish": 9,
+          "laps": 65,
+          "gap": "+1 lap",
+          "pts": 2
+        },
+        {
+          "id": "COL",
+          "grid": null,
+          "finish": 10,
+          "laps": 65,
+          "gap": "+1 lap",
+          "pts": 1,
+          "onTrackPenalty": "10s — failing to slow for yellow flags"
+        },
+        {
+          "id": "BOR",
+          "grid": null,
+          "finish": 11,
+          "laps": 64,
+          "gap": "+2 laps",
+          "pts": 0
+        },
+        {
+          "id": "SAI",
+          "grid": null,
+          "finish": 12,
+          "laps": 64,
+          "gap": "+2 laps",
+          "pts": 0
+        },
+        {
+          "id": "OCO",
+          "grid": null,
+          "finish": 13,
+          "laps": 64,
+          "gap": "+2 laps",
+          "pts": 0
+        },
+        {
+          "id": "PER",
+          "grid": null,
+          "finish": 14,
+          "laps": 63,
+          "gap": "+3 laps",
+          "pts": 0
+        },
+        {
+          "id": "LEC",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 62,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Retired (cause not confirmed)"
+        },
+        {
+          "id": "ANT",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 61,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Retired (cause not confirmed) — ended his run of 5 straight wins",
+          "onTrackPenalty": "5s — leaving the track without justifiable reason, multiple times"
+        },
+        {
+          "id": "BEA",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 60,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Retired (cause not confirmed)"
+        },
+        {
+          "id": "ALB",
+          "grid": null,
+          "finish": "NC",
+          "laps": 55,
+          "gap": "+11 laps",
+          "pts": 0
+        },
+        {
+          "id": "ALO",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 37,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Retired (cause not confirmed)"
+        },
+        {
+          "id": "HUL",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 29,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "F1.com described this as an unusual retirement cause without further detail available"
+        },
+        {
+          "id": "BOT",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 15,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Retired (cause not confirmed)"
+        },
+        {
+          "id": "STR",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 5,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Retired (cause not confirmed)"
+        }
+      ],
+      "sprint": null
+    },
+    "8": {
+      "meta": {
+        "poleDriver": "RUS",
+        "fastestLap": "ANT",
+        "safetyCars": 1,
+        "weatherQuali": "Hot",
+        "weatherRace": "Hot and dry (Styrian heat visibly degraded tyres late in the race)",
+        "note": "One Virtual Safety Car mid-race (cost Antonelli track position with an awkwardly timed stop). A late single-yellow-flag incident (Verstappen's crash at Turn 9, final laps) did not bring out a full Safety Car."
+      },
+      "headline": "Russell wins from pole as Antonelli fights back for the fastest lap",
+      "recap": "George Russell controlled the race from pole to beat Max Verstappen, whose hard tyres faded late in the Styrian heat. Kimi Antonelli recovered from an early VSC pit-stop setback to take 3rd and the fastest lap of the race.",
+      "keyMoments": [
+        {
+          "lap": null,
+          "label": "Antonelli's costly VSC stop",
+          "detail": "A badly timed pit stop around a Virtual Safety Car cost Antonelli track position early on."
+        },
+        {
+          "lap": 59,
+          "label": "Antonelli sets the fastest lap",
+          "detail": "Chasing Verstappen late, Antonelli set the fastest lap of the race."
+        },
+        {
+          "lap": 71,
+          "label": "Verstappen survives a late scare",
+          "detail": "Antonelli's late charge nearly took 2nd place, but Verstappen crossed the line three tenths clear."
+        }
+      ],
+      "notablePerformances": [
+        {
+          "id": "ANT",
+          "note": "Limited championship damage on a rare off-day by setting the fastest lap for consolation."
+        }
+      ],
+      "sourceUrl": "https://www.total-motorsport.com/austrian-gp-fastest-lap-2026/",
+      "results": [
+        {
+          "id": "RUS",
+          "grid": null,
+          "finish": 1,
+          "laps": 71,
+          "gap": "1:26:37.979",
+          "pts": 25
+        },
+        {
+          "id": "VER",
+          "grid": null,
+          "finish": 2,
+          "laps": 71,
+          "gap": "+1.611s",
+          "pts": 18
+        },
+        {
+          "id": "ANT",
+          "grid": null,
+          "finish": 3,
+          "laps": 71,
+          "gap": "+1.986s",
+          "pts": 15
+        },
+        {
+          "id": "PIA",
+          "grid": null,
+          "finish": 4,
+          "laps": 71,
+          "gap": "+21.809s",
+          "pts": 12
+        },
+        {
+          "id": "HAM",
+          "grid": null,
+          "finish": 5,
+          "laps": 71,
+          "gap": "+26.393s",
+          "pts": 10
+        },
+        {
+          "id": "HAD",
+          "grid": null,
+          "finish": 6,
+          "laps": 71,
+          "gap": "+29.399s",
+          "pts": 8
+        },
+        {
+          "id": "NOR",
+          "grid": null,
+          "finish": 7,
+          "laps": 71,
+          "gap": "+31.505s",
+          "pts": 6
+        },
+        {
+          "id": "LEC",
+          "grid": null,
+          "finish": 8,
+          "laps": 71,
+          "gap": "+45.659s",
+          "pts": 4
+        },
+        {
+          "id": "LAW",
+          "grid": null,
+          "finish": 9,
+          "laps": 70,
+          "gap": "+1 lap",
+          "pts": 2
+        },
+        {
+          "id": "LIN",
+          "grid": null,
+          "finish": 10,
+          "laps": 70,
+          "gap": "+1 lap",
+          "pts": 1
+        },
+        {
+          "id": "BOR",
+          "grid": null,
+          "finish": 11,
+          "laps": 70,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "HUL",
+          "grid": null,
+          "finish": 12,
+          "laps": 70,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "GAS",
+          "grid": null,
+          "finish": 13,
+          "laps": 70,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "BEA",
+          "grid": null,
+          "finish": 14,
+          "laps": 70,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "COL",
+          "grid": null,
+          "finish": 15,
+          "laps": 70,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "OCO",
+          "grid": null,
+          "finish": 16,
+          "laps": 69,
+          "gap": "+2 laps",
+          "pts": 0
+        },
+        {
+          "id": "ALB",
+          "grid": null,
+          "finish": 17,
+          "laps": 69,
+          "gap": "+2 laps",
+          "pts": 0
+        },
+        {
+          "id": "ALO",
+          "grid": null,
+          "finish": 18,
+          "laps": 68,
+          "gap": "+3 laps",
+          "pts": 0
+        },
+        {
+          "id": "STR",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 45,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Retired (cause not confirmed)"
+        },
+        {
+          "id": "SAI",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 23,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Retired (cause not confirmed)"
+        },
+        {
+          "id": "PER",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 4,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Retired (cause not confirmed)"
+        },
+        {
+          "id": "BOT",
+          "grid": null,
+          "finish": "DNF",
+          "laps": 2,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Retired (cause not confirmed)"
+        }
+      ],
+      "sprint": null
+    },
+    "9": {
+      "meta": {
+        "poleDriver": "ANT",
+        "fastestLap": null,
+        "safetyCars": 1,
+        "weatherQuali": null,
+        "weatherRace": "Dry, fine conditions",
+        "weatherSprint": null,
+        "note": "Safety car came out on lap 48/52 after Verstappen's late spin and ran to the chequered flag, so Leclerc won under Safety Car conditions. Fastest lap for this round could not be confirmed from available sources."
+      },
+      "headline": "Leclerc wins under Safety Car after a late Verstappen spin",
+      "recap": "Charles Leclerc took his first win since October 2024 after Max Verstappen spun out with four laps to go, bringing out a Safety Car that ran to the flag. George Russell recovered from a lap-35 puncture-forced pit stop to finish 2nd, gaining 18 points on championship leader Antonelli.",
+      "keyMoments": [
+        {
+          "lap": 35,
+          "label": "Russell's pit stop for a slow puncture",
+          "detail": "A slow tyre puncture forced Russell into an unplanned stop."
+        },
+        {
+          "lap": 48,
+          "label": "Verstappen spins out",
+          "detail": "Verstappen, running 3rd, spun and beached his car in the gravel, ending his race and bringing out the Safety Car."
+        },
+        {
+          "lap": 52,
+          "label": "Race finishes under Safety Car",
+          "detail": "The Safety Car ran to the chequered flag, handing Leclerc a Safety-Car-conditions win."
+        }
+      ],
+      "notablePerformances": [
+        {
+          "id": "ANT",
+          "note": "Took the home Sprint win but struggled in the Grand Prix, finishing 15th after a track-limits penalty."
+        },
+        {
+          "id": "RUS",
+          "note": "Gained 18 points on the championship leader with a recovery drive to 2nd."
+        }
+      ],
+      "sourceUrl": "https://sports.yahoo.com/f1/breaking-news/live/british-grand-prix-results-charles-leclerc-wins-under-safety-car-after-late-max-verstappen-spin-123000818.html",
+      "results": [
+        {
+          "id": "LEC",
+          "grid": 2,
+          "finish": 1,
+          "laps": 52,
+          "gap": "1:27:11.335",
+          "pts": 25
+        },
+        {
+          "id": "RUS",
+          "grid": 4,
+          "finish": 2,
+          "laps": 52,
+          "gap": "+0.427s",
+          "pts": 18,
+          "note": "Recovered from an unplanned lap-35 pit stop for a slow puncture."
+        },
+        {
+          "id": "HAM",
+          "grid": 3,
+          "finish": 3,
+          "laps": 52,
+          "gap": "+0.772s",
+          "pts": 15
+        },
+        {
+          "id": "NOR",
+          "grid": 6,
+          "finish": 4,
+          "laps": 52,
+          "gap": "+1.149s",
+          "pts": 12
+        },
+        {
+          "id": "HAD",
+          "grid": 5,
+          "finish": 5,
+          "laps": 52,
+          "gap": "+1.598s",
+          "pts": 10
+        },
+        {
+          "id": "LAW",
+          "grid": 10,
+          "finish": 6,
+          "laps": 52,
+          "gap": "+2.023s",
+          "pts": 8
+        },
+        {
+          "id": "LIN",
+          "grid": 9,
+          "finish": 7,
+          "laps": 52,
+          "gap": "+2.214s",
+          "pts": 6
+        },
+        {
+          "id": "BOR",
+          "grid": 11,
+          "finish": 8,
+          "laps": 52,
+          "gap": "+2.413s",
+          "pts": 4
+        },
+        {
+          "id": "COL",
+          "grid": 19,
+          "finish": 9,
+          "laps": 52,
+          "gap": "+3.229s",
+          "pts": 2
+        },
+        {
+          "id": "GAS",
+          "grid": 15,
+          "finish": 10,
+          "laps": 52,
+          "gap": "+3.445s",
+          "pts": 1
+        },
+        {
+          "id": "PIA",
+          "grid": 8,
+          "finish": 11,
+          "laps": 52,
+          "gap": "+4.014s",
+          "pts": 0
+        },
+        {
+          "id": "BEA",
+          "grid": 13,
+          "finish": 12,
+          "laps": 52,
+          "gap": "+5.245s",
+          "pts": 0
+        },
+        {
+          "id": "OCO",
+          "grid": 17,
+          "finish": 13,
+          "laps": 52,
+          "gap": "+5.512s",
+          "pts": 0
+        },
+        {
+          "id": "PER",
+          "grid": 20,
+          "finish": 14,
+          "laps": 52,
+          "gap": "+7.403s",
+          "pts": 0
+        },
+        {
+          "id": "ANT",
+          "grid": 1,
+          "finish": 15,
+          "laps": 52,
+          "gap": "+8.005s",
+          "pts": 0,
+          "onTrackPenalty": "5s — exceeding track limits"
+        },
+        {
+          "id": "BOT",
+          "grid": 18,
+          "finish": 16,
+          "laps": 52,
+          "gap": "+8.162s",
+          "pts": 0
+        },
+        {
+          "id": "SAI",
+          "grid": 14,
+          "finish": 17,
+          "laps": 51,
+          "gap": "+1 lap",
+          "pts": 0,
+          "onTrackPenalty": "1 lap added — overtaking the Safety Car"
+        },
+        {
+          "id": "ALO",
+          "grid": 21,
+          "finish": 18,
+          "laps": 51,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "STR",
+          "grid": 22,
+          "finish": 19,
+          "laps": 51,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "VER",
+          "grid": 7,
+          "finish": "DNF",
+          "laps": 46,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Spun and beached in the gravel while running 3rd, lap 48; brought out the race-ending Safety Car"
+        },
+        {
+          "id": "ALB",
+          "grid": 16,
+          "finish": "DNF",
+          "laps": 43,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Retired (cause not confirmed)"
+        },
+        {
+          "id": "HUL",
+          "grid": 12,
+          "finish": "DNF",
+          "laps": 36,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Retired (cause not confirmed)"
+        }
+      ],
+      "sprint": {
+        "note": "Full sprint classification confirmed from F1.com.",
+        "results": [
+          {
+            "id": "ANT",
+            "grid": null,
+            "finish": 1,
+            "pts": 8
+          },
+          {
+            "id": "HAM",
+            "grid": null,
+            "finish": 2,
+            "pts": 7
+          },
+          {
+            "id": "NOR",
+            "grid": null,
+            "finish": 3,
+            "pts": 6
+          },
+          {
+            "id": "RUS",
+            "grid": null,
+            "finish": 4,
+            "pts": 5
+          },
+          {
+            "id": "LEC",
+            "grid": null,
+            "finish": 5,
+            "pts": 4
+          },
+          {
+            "id": "VER",
+            "grid": null,
+            "finish": 6,
+            "pts": 3
+          },
+          {
+            "id": "PIA",
+            "grid": null,
+            "finish": 7,
+            "pts": 2
+          },
+          {
+            "id": "LAW",
+            "grid": null,
+            "finish": 8,
+            "pts": 1
+          },
+          {
+            "id": "HAD",
+            "grid": null,
+            "finish": 9,
+            "pts": 0
+          },
+          {
+            "id": "LIN",
+            "grid": null,
+            "finish": 10,
+            "pts": 0
+          },
+          {
+            "id": "GAS",
+            "grid": null,
+            "finish": 11,
+            "pts": 0
+          },
+          {
+            "id": "COL",
+            "grid": null,
+            "finish": 12,
+            "pts": 0
+          },
+          {
+            "id": "BOR",
+            "grid": null,
+            "finish": 13,
+            "pts": 0
+          },
+          {
+            "id": "BEA",
+            "grid": null,
+            "finish": 14,
+            "pts": 0
+          },
+          {
+            "id": "HUL",
+            "grid": null,
+            "finish": 15,
+            "pts": 0,
+            "onTrackPenalty": "5s — leaving the track and gaining an advantage"
+          },
+          {
+            "id": "OCO",
+            "grid": null,
+            "finish": 16,
+            "pts": 0
+          },
+          {
+            "id": "SAI",
+            "grid": null,
+            "finish": 17,
+            "pts": 0
+          },
+          {
+            "id": "ALB",
+            "grid": null,
+            "finish": 18,
+            "pts": 0
+          },
+          {
+            "id": "BOT",
+            "grid": null,
+            "finish": 19,
+            "pts": 0
+          },
+          {
+            "id": "ALO",
+            "grid": null,
+            "finish": 20,
+            "pts": 0
+          },
+          {
+            "id": "STR",
+            "grid": null,
+            "finish": 21,
+            "pts": 0
+          },
+          {
+            "id": "PER",
+            "grid": null,
+            "finish": 22,
+            "pts": 0,
+            "onTrackPenalty": "10s — causing a collision"
+          }
+        ]
+      }
+    },
+    "10": {
+      "meta": {
+        "poleDriver": "ANT",
+        "fastestLap": null,
+        "safetyCars": 1,
+        "weatherQuali": null,
+        "weatherRace": null,
+        "note": "Virtual Safety Car deployed around lap 20 (Hamilton served his penalty and pitted under it). Ferrari were separately fined €30,000 (€10,000 suspended) after a mechanic was struck during that pit stop — a team fine, not an added time penalty on Hamilton's result. Grid reflects five late power-unit-element penalties applied after qualifying. Fastest lap and session weather could not be confirmed from available sources."
+      },
+      "headline": "Antonelli wins at Spa as Russell crashes out on lap one",
+      "recap": "Kimi Antonelli claimed his sixth win of the season at Spa-Francorchamps, ahead of Charles Leclerc and Max Verstappen, after teammate George Russell crashed out on the opening lap following contact with Lewis Hamilton. Hamilton was handed a 5-second penalty for the incident but still finished 4th.",
+      "keyMoments": [
+        {
+          "lap": 1,
+          "label": "Russell crashes after Hamilton contact",
+          "detail": "Contact with Hamilton at Turn 5 (Les Combes) sent Russell into the barriers on the opening lap."
+        },
+        {
+          "lap": 20,
+          "label": "Hamilton pits under Virtual Safety Car",
+          "detail": "Ferrari used a VSC period to serve Hamilton's penalty and complete a pit stop simultaneously."
+        }
+      ],
+      "notablePerformances": [
+        {
+          "id": "HAM",
+          "note": "Recovered from a 5-second penalty for the Russell collision to finish 4th."
+        },
+        {
+          "id": "RUS",
+          "note": "Out on lap 1 — his championship gap to Antonelli grew to roughly 50 points."
+        }
+      ],
+      "sourceUrl": "https://www.formula1.com/en/latest/article/antonelli-charges-to-pole-position-in-exhilarating-belgian-gp-qualifying.zpGgC6xi6e3QnZEOmi6qS",
+      "results": [
+        {
+          "id": "ANT",
+          "grid": 1,
+          "finish": 1,
+          "laps": 44,
+          "gap": "1:24:42.479",
+          "pts": 25
+        },
+        {
+          "id": "LEC",
+          "grid": 4,
+          "finish": 2,
+          "laps": 44,
+          "gap": "+1.9s",
+          "pts": 18
+        },
+        {
+          "id": "VER",
+          "grid": 2,
+          "finish": 3,
+          "laps": 44,
+          "gap": "+11.5s",
+          "pts": 15
+        },
+        {
+          "id": "HAM",
+          "grid": 5,
+          "finish": 4,
+          "laps": 44,
+          "gap": "+17.2s",
+          "pts": 12,
+          "onTrackPenalty": "5s — causing a collision with Russell at Turn 5 (Les Combes), opening lap"
+        },
+        {
+          "id": "PIA",
+          "grid": 6,
+          "finish": 5,
+          "laps": 44,
+          "gap": "+18.9s",
+          "pts": 10
+        },
+        {
+          "id": "HAD",
+          "grid": 21,
+          "finish": 6,
+          "laps": 44,
+          "gap": "+23.3s",
+          "pts": 8,
+          "hardwarePenalty": "30-place grid penalty — additional ICE, exhaust system and turbocharger"
+        },
+        {
+          "id": "NOR",
+          "grid": 13,
+          "finish": 7,
+          "laps": 44,
+          "gap": "+24.0s",
+          "pts": 6,
+          "hardwarePenalty": "10-place grid penalty — additional control electronics unit"
+        },
+        {
+          "id": "BOR",
+          "grid": 8,
+          "finish": 8,
+          "laps": 44,
+          "gap": "+49.1s",
+          "pts": 4
+        },
+        {
+          "id": "LIN",
+          "grid": 7,
+          "finish": 9,
+          "laps": 44,
+          "gap": "+50.4s",
+          "pts": 2
+        },
+        {
+          "id": "COL",
+          "grid": 11,
+          "finish": 10,
+          "laps": 44,
+          "gap": "+76.0s",
+          "pts": 1
+        },
+        {
+          "id": "GAS",
+          "grid": 10,
+          "finish": 11,
+          "laps": 44,
+          "gap": "+76.9s",
+          "pts": 0
+        },
+        {
+          "id": "LAW",
+          "grid": 9,
+          "finish": 12,
+          "laps": 44,
+          "gap": "+77.5s",
+          "pts": 0
+        },
+        {
+          "id": "HUL",
+          "grid": 12,
+          "finish": 13,
+          "laps": 44,
+          "gap": "+78.3s",
+          "pts": 0
+        },
+        {
+          "id": "BEA",
+          "grid": 14,
+          "finish": 14,
+          "laps": 44,
+          "gap": "+94.4s",
+          "pts": 0
+        },
+        {
+          "id": "ALB",
+          "grid": 15,
+          "finish": 15,
+          "laps": 44,
+          "gap": "+102.6s",
+          "pts": 0
+        },
+        {
+          "id": "SAI",
+          "grid": 19,
+          "finish": 16,
+          "laps": 44,
+          "gap": "+103.6s",
+          "pts": 0,
+          "hardwarePenalty": "10-place grid penalty — battery pack replacement"
+        },
+        {
+          "id": "OCO",
+          "grid": 16,
+          "finish": 17,
+          "laps": 44,
+          "gap": "+108.9s",
+          "pts": 0
+        },
+        {
+          "id": "BOT",
+          "grid": 17,
+          "finish": 18,
+          "laps": 43,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "ALO",
+          "grid": 22,
+          "finish": "DNF",
+          "laps": 42,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Retired — classified 2 laps behind the winner",
+          "hardwarePenalty": "20-place grid penalty — additional power unit elements"
+        },
+        {
+          "id": "STR",
+          "grid": 20,
+          "finish": "DNF",
+          "laps": 25,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Retired — classified 19 laps behind the winner",
+          "hardwarePenalty": "10-place grid penalty — additional MGU-K"
+        },
+        {
+          "id": "PER",
+          "grid": 18,
+          "finish": "DNF",
+          "laps": 13,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Retired — classified 31 laps behind the winner"
+        },
+        {
+          "id": "RUS",
+          "grid": 3,
+          "finish": "DNF",
+          "laps": 0,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Crashed at Turn 5 (Les Combes) on the opening lap after contact with Hamilton"
+        }
+      ],
+      "sprint": null
+    }
+  },
+  "trackOutlinePaths": {
+    "albertpark": "M 91.8 82.9 L 79.4 70.3 L 79.2 69.5 L 80.0 68.0 L 80.4 65.9 L 80.2 63.5 L 79.9 62.7 L 78.8 61.1 L 73.9 56.4 L 70.2 52.5 L 67.5 49.0 L 64.7 45.0 L 61.9 40.2 L 60.8 37.8 L 61.1 36.9 L 61.7 36.6 L 67.3 35.5 L 68.2 34.9 L 68.5 33.3 L 68.1 23.5 L 69.0 22.4 L 75.1 17.9 L 76.3 17.2 L 84.1 14.2 L 87.4 12.1 L 88.1 12.0 L 88.6 12.0 L 89.1 12.3 L 89.7 13.0 L 91.5 14.4 L 92.9 14.9 L 97.5 15.4 L 100.3 16.6 L 102.7 18.5 L 103.6 19.8 L 104.5 21.3 L 105.1 22.9 L 106.9 32.4 L 106.7 34.4 L 106.0 36.4 L 103.8 39.3 L 103.1 40.9 L 101.3 49.7 L 101.2 51.8 L 101.3 54.8 L 101.9 58.0 L 102.4 59.6 L 103.7 62.3 L 105.6 65.2 L 107.1 66.8 L 112.8 71.8 L 115.2 72.8 L 120.5 72.8 L 122.1 73.4 L 131.1 80.9 L 132.8 83.0 L 133.7 84.3 L 134.5 86.2 L 137.5 96.1 L 139.2 102.9 L 139.2 103.3 L 138.8 103.4 L 127.9 107.8 L 126.9 108.0 L 126.1 107.9 L 125.3 107.6 L 124.0 106.6 L 120.6 100.4 L 118.3 96.9 L 117.6 96.8 L 117.3 96.9 L 114.0 100.6 L 113.1 101.3 L 111.9 101.7 L 110.1 101.3 L 109.2 100.7 L 91.8 82.9 Z",
+    "shanghai": "M 74.3 98.0 L 66.1 100.0 L 62.7 100.2 L 60.0 99.2 L 58.6 98.3 L 56.7 96.2 L 55.6 93.7 L 55.6 90.8 L 56.2 88.5 L 56.8 87.5 L 57.7 86.7 L 59.7 85.8 L 61.6 85.8 L 63.0 86.4 L 63.6 87.0 L 64.1 87.7 L 64.1 88.7 L 63.0 93.1 L 63.4 94.0 L 64.2 94.9 L 65.7 95.5 L 67.3 95.2 L 68.2 94.6 L 69.2 92.7 L 70.0 90.1 L 70.1 88.5 L 69.9 87.1 L 68.5 84.7 L 66.9 82.7 L 62.4 77.9 L 59.0 73.5 L 52.7 66.4 L 51.6 64.6 L 51.1 63.2 L 46.3 49.4 L 45.3 46.2 L 45.3 45.4 L 45.7 44.8 L 46.6 44.4 L 48.2 44.7 L 51.1 46.9 L 54.4 50.3 L 56.1 52.8 L 64.1 66.7 L 66.8 69.5 L 70.2 71.1 L 72.0 71.5 L 74.1 71.5 L 76.0 71.1 L 77.8 70.4 L 79.6 69.3 L 81.3 67.9 L 82.7 66.3 L 86.4 58.4 L 87.4 56.9 L 88.4 55.9 L 91.5 54.4 L 93.2 54.3 L 94.7 54.4 L 96.1 54.9 L 97.3 55.7 L 98.9 57.3 L 102.6 64.5 L 103.5 65.5 L 104.6 65.8 L 106.7 65.2 L 110.4 60.3 L 110.9 59.3 L 110.9 58.4 L 110.6 57.5 L 101.5 42.1 L 89.6 22.6 L 88.7 22.3 L 87.9 22.5 L 85.2 25.4 L 84.3 26.0 L 83.3 26.3 L 82.2 26.1 L 81.1 25.2 L 79.8 23.7 L 78.7 21.5 L 78.5 19.9 L 78.9 17.0 L 79.3 15.7 L 80.5 14.1 L 81.7 13.2 L 83.3 12.5 L 86.4 12.0 L 88.0 12.1 L 90.2 12.6 L 93.0 14.0 L 95.0 15.9 L 96.8 18.4 L 139.4 83.4 L 154.3 105.4 L 154.7 106.4 L 154.7 107.3 L 154.0 108.0 L 153.0 107.9 L 150.8 106.9 L 148.2 105.0 L 133.4 84.8 L 132.8 84.5 L 131.6 84.4 L 74.3 98.0 Z",
+    "suzuka": "M 162.3 63.2 L 187.0 93.5 L 188.0 96.8 L 188.0 98.3 L 186.3 104.0 L 185.6 105.2 L 183.7 106.6 L 180.8 107.0 L 179.2 106.4 L 177.8 105.3 L 168.8 91.6 L 167.4 90.4 L 164.3 89.7 L 160.5 89.6 L 158.5 89.1 L 157.1 88.1 L 156.1 86.8 L 155.6 85.6 L 153.9 79.0 L 153.1 77.3 L 152.0 75.8 L 148.9 74.0 L 140.6 73.2 L 137.7 71.4 L 135.9 68.2 L 135.7 65.2 L 138.1 58.0 L 138.5 55.1 L 137.7 52.5 L 136.9 51.2 L 133.2 48.9 L 128.7 46.9 L 124.9 46.0 L 120.4 46.1 L 118.8 46.5 L 113.2 49.2 L 110.6 51.3 L 100.0 63.9 L 85.8 65.2 L 85.0 64.7 L 84.7 63.7 L 82.7 55.4 L 79.8 38.6 L 80.0 34.5 L 83.4 26.5 L 82.9 25.3 L 82.2 24.8 L 80.8 24.7 L 80.0 25.2 L 72.7 37.0 L 71.4 38.4 L 68.5 40.8 L 64.5 42.4 L 61.0 43.0 L 55.1 42.9 L 48.8 41.3 L 42.8 38.9 L 38.9 36.2 L 36.9 34.4 L 34.9 32.2 L 32.3 28.0 L 27.7 16.5 L 26.8 15.1 L 25.7 14.0 L 22.5 13.0 L 16.6 13.8 L 14.8 14.5 L 13.3 15.7 L 12.4 17.2 L 12.0 18.6 L 12.1 20.4 L 13.1 23.1 L 14.1 24.2 L 21.2 30.4 L 31.6 37.5 L 39.3 41.3 L 43.1 42.7 L 55.9 47.5 L 86.6 58.0 L 88.3 58.0 L 91.7 57.3 L 94.8 56.1 L 100.0 53.2 L 102.4 51.3 L 113.2 41.2 L 118.1 37.7 L 119.1 37.9 L 121.5 40.0 L 122.4 40.2 L 124.1 39.5 L 127.3 36.9 L 129.2 36.1 L 133.6 36.0 L 135.9 36.5 L 140.1 38.3 L 142.5 39.9 L 144.7 42.0 L 162.3 63.2 Z",
+    "miami": "M 98.9 44.5 L 122.9 59.6 L 123.3 60.7 L 122.4 63.1 L 117.3 66.9 L 115.7 68.6 L 115.2 71.7 L 115.7 75.0 L 115.2 79.0 L 114.0 81.6 L 109.3 85.3 L 104.0 87.2 L 100.6 87.9 L 95.6 88.0 L 91.6 87.3 L 86.9 85.2 L 59.9 69.0 L 56.2 68.6 L 54.2 68.8 L 51.7 69.6 L 49.6 70.8 L 45.1 74.1 L 42.1 74.6 L 39.4 74.4 L 36.6 73.0 L 31.4 68.1 L 28.6 66.7 L 25.8 66.2 L 22.3 66.8 L 19.2 67.7 L 16.5 69.0 L 14.6 70.8 L 12.7 73.7 L 12.0 76.8 L 12.1 79.4 L 12.7 81.2 L 13.6 82.4 L 15.5 83.4 L 17.9 83.4 L 20.8 82.8 L 24.0 82.8 L 42.8 86.7 L 74.6 85.5 L 98.8 93.7 L 106.2 94.9 L 113.6 95.0 L 121.4 93.7 L 154.2 81.7 L 158.8 79.7 L 170.4 73.5 L 176.6 69.5 L 177.9 67.8 L 177.5 66.4 L 176.3 65.3 L 171.5 62.1 L 170.4 59.9 L 170.1 57.6 L 170.8 54.8 L 172.3 53.3 L 174.1 52.5 L 179.5 52.9 L 182.2 52.5 L 185.2 50.0 L 188.0 45.0 L 187.8 43.9 L 185.2 42.4 L 185.2 40.5 L 187.4 33.4 L 187.2 32.1 L 186.2 31.3 L 180.6 30.8 L 99.7 27.9 L 35.2 25.0 L 33.3 25.5 L 32.9 27.0 L 33.6 28.8 L 39.3 33.5 L 43.0 35.5 L 46.1 36.2 L 48.8 36.0 L 52.1 34.8 L 59.7 31.2 L 64.0 30.1 L 69.3 29.6 L 74.5 30.4 L 79.4 32.4 L 98.9 44.5 Z",
+    "gillesvilleneuve": "M 110.5 81.5 L 113.1 94.0 L 113.1 96.5 L 112.4 103.1 L 112.5 103.9 L 113.1 104.4 L 115.0 105.3 L 115.4 105.6 L 115.6 106.1 L 115.2 107.3 L 114.0 108.0 L 113.2 108.0 L 109.9 107.1 L 108.3 106.6 L 105.4 104.8 L 100.1 100.2 L 99.7 99.1 L 100.1 97.0 L 99.8 96.0 L 96.1 91.4 L 93.4 89.3 L 92.5 88.2 L 92.1 87.0 L 91.6 84.8 L 91.7 77.1 L 91.4 76.6 L 90.9 76.2 L 90.1 76.0 L 88.4 76.4 L 87.7 76.2 L 87.0 75.7 L 86.1 74.7 L 85.5 73.2 L 84.9 70.5 L 84.4 63.7 L 84.7 55.7 L 85.3 52.0 L 87.2 44.2 L 87.5 43.5 L 88.0 43.2 L 89.2 43.1 L 90.3 42.6 L 91.3 41.2 L 91.7 40.3 L 93.6 32.5 L 94.4 28.3 L 94.8 22.2 L 94.6 20.2 L 93.2 13.3 L 93.2 12.5 L 93.5 12.1 L 94.2 12.0 L 94.8 12.4 L 95.4 17.4 L 97.6 22.2 L 102.7 35.5 L 109.7 69.1 L 109.7 69.5 L 109.4 69.9 L 108.5 70.4 L 108.4 71.3 L 110.5 81.5 Z",
+    "monaco": "M 111.1 30.8 L 111.0 29.8 L 111.2 28.9 L 112.3 26.8 L 123.1 12.3 L 124.0 12.0 L 125.0 12.3 L 125.8 12.9 L 126.3 13.9 L 126.6 16.6 L 128.5 19.5 L 129.4 21.4 L 129.7 21.9 L 130.2 22.0 L 130.8 21.8 L 131.3 21.4 L 131.4 20.7 L 131.1 20.1 L 130.3 19.6 L 128.1 16.8 L 127.8 16.1 L 127.8 15.4 L 128.2 14.4 L 129.2 13.9 L 133.9 12.4 L 135.3 12.3 L 136.0 12.6 L 136.3 13.7 L 136.0 20.3 L 135.0 27.0 L 133.9 31.3 L 132.8 34.3 L 130.8 37.8 L 128.5 40.8 L 125.2 44.4 L 120.4 47.3 L 112.1 51.3 L 108.4 52.6 L 103.0 53.8 L 97.6 54.7 L 97.3 55.3 L 96.9 56.8 L 96.2 57.1 L 95.0 57.3 L 93.8 56.6 L 93.1 56.5 L 72.0 59.6 L 71.4 60.2 L 70.4 62.0 L 69.0 65.6 L 68.7 66.9 L 68.4 69.1 L 68.5 73.8 L 68.7 74.5 L 69.3 75.1 L 71.3 76.8 L 71.7 77.6 L 73.2 86.8 L 73.7 88.7 L 73.7 89.3 L 73.3 89.8 L 71.7 90.7 L 71.6 91.2 L 71.7 92.4 L 73.4 97.0 L 74.3 98.6 L 75.7 100.6 L 77.5 102.4 L 81.0 104.2 L 81.4 104.6 L 81.8 105.9 L 81.6 106.6 L 80.9 107.0 L 76.3 108.0 L 74.3 107.9 L 73.3 107.0 L 73.3 106.1 L 72.8 104.5 L 71.2 102.5 L 69.0 99.0 L 68.0 96.2 L 65.2 86.0 L 64.2 79.4 L 63.7 74.3 L 63.7 71.0 L 64.2 65.8 L 65.6 60.5 L 65.5 58.3 L 65.8 57.8 L 66.5 57.5 L 68.2 57.1 L 71.7 56.7 L 77.1 55.9 L 87.2 53.0 L 92.8 52.3 L 94.5 51.7 L 101.9 48.3 L 105.1 47.6 L 110.5 46.8 L 112.0 46.3 L 113.7 45.1 L 115.3 43.5 L 116.2 42.2 L 116.5 40.7 L 116.5 39.3 L 116.2 37.8 L 114.9 34.8 L 111.6 31.9 L 111.1 30.8 Z",
+    "barcelona": "M 122.6 54.9 L 92.8 102.4 L 91.5 103.7 L 91.0 103.9 L 89.2 104.0 L 88.6 103.8 L 85.2 101.8 L 83.0 101.6 L 81.7 101.9 L 80.9 102.4 L 75.0 106.7 L 72.2 107.8 L 71.2 108.0 L 68.1 107.8 L 67.0 107.4 L 65.7 106.8 L 63.8 105.2 L 62.3 103.3 L 61.6 101.8 L 61.1 100.1 L 60.8 97.5 L 60.8 96.0 L 61.7 91.8 L 63.1 88.2 L 74.1 70.8 L 74.7 70.2 L 75.5 69.7 L 77.1 69.3 L 78.9 69.7 L 79.9 70.2 L 81.6 71.8 L 82.4 73.5 L 82.7 74.7 L 82.8 76.6 L 82.5 79.1 L 80.9 82.3 L 73.5 93.8 L 73.3 95.3 L 73.5 96.1 L 74.2 97.1 L 74.8 97.5 L 76.1 97.9 L 77.0 97.7 L 88.5 92.5 L 90.1 91.6 L 93.1 88.9 L 94.2 87.6 L 98.6 80.7 L 99.1 79.7 L 99.3 79.0 L 99.1 77.8 L 98.6 76.8 L 97.7 76.0 L 95.7 74.8 L 94.6 73.9 L 93.0 71.8 L 87.1 57.7 L 86.9 56.4 L 87.0 54.1 L 87.2 53.1 L 88.3 51.2 L 90.3 49.3 L 125.6 31.2 L 126.9 30.5 L 127.5 29.8 L 127.8 29.2 L 127.9 28.4 L 127.2 26.8 L 125.8 25.5 L 124.4 24.9 L 122.3 24.5 L 120.2 24.6 L 119.1 24.8 L 116.4 26.2 L 113.4 28.6 L 112.4 29.1 L 110.8 29.2 L 109.8 29.0 L 108.7 28.4 L 107.8 27.7 L 106.8 25.8 L 106.6 24.2 L 106.9 22.7 L 107.4 21.7 L 108.3 20.8 L 117.6 13.2 L 119.6 12.2 L 122.2 12.0 L 124.4 12.7 L 135.9 20.1 L 137.5 21.4 L 138.6 23.1 L 139.2 25.4 L 139.2 27.0 L 139.0 28.5 L 137.8 30.8 L 122.6 54.9 Z",
+    "redbullring": "M 125.4 98.0 L 88.9 107.9 L 87.1 108.0 L 85.9 106.9 L 83.9 103.0 L 70.6 84.6 L 65.2 75.9 L 60.2 67.4 L 49.9 45.0 L 46.5 39.5 L 41.2 33.0 L 24.4 16.1 L 23.9 15.1 L 23.9 13.9 L 24.9 13.3 L 27.0 13.0 L 33.6 12.2 L 47.1 12.0 L 53.6 12.6 L 61.2 13.9 L 84.3 18.3 L 94.8 19.7 L 117.6 20.7 L 119.4 21.3 L 120.6 22.6 L 121.0 24.0 L 120.9 25.5 L 120.3 26.8 L 116.2 32.3 L 112.9 35.2 L 109.3 37.2 L 104.9 38.6 L 100.1 39.4 L 95.1 39.1 L 75.7 36.0 L 73.1 36.3 L 70.9 37.0 L 69.1 38.3 L 67.5 40.0 L 66.4 42.1 L 65.9 44.3 L 65.8 46.4 L 66.1 48.6 L 66.7 50.2 L 76.1 66.7 L 77.7 68.4 L 80.2 70.0 L 83.1 70.6 L 85.8 70.4 L 88.8 69.2 L 90.6 67.7 L 96.0 61.3 L 98.2 59.7 L 100.8 58.2 L 104.5 56.9 L 108.3 56.0 L 161.6 54.8 L 164.0 54.9 L 166.4 55.7 L 168.4 57.2 L 169.9 59.2 L 171.1 61.8 L 175.9 77.7 L 176.1 79.2 L 175.3 81.1 L 171.0 84.0 L 164.3 87.1 L 160.0 88.6 L 125.4 98.0 Z",
+    "silverstone": "M 105.5 12.9 L 115.9 12.0 L 117.8 12.1 L 119.2 12.6 L 120.1 13.2 L 121.2 14.5 L 121.9 16.0 L 124.1 24.0 L 124.6 27.4 L 125.3 40.9 L 127.8 46.1 L 127.5 48.2 L 125.7 52.9 L 125.6 54.7 L 125.9 56.1 L 128.3 59.7 L 128.7 60.8 L 128.7 62.1 L 128.4 63.3 L 127.4 64.6 L 122.7 67.5 L 121.7 68.5 L 105.5 98.2 L 101.3 104.7 L 100.2 106.3 L 99.2 107.1 L 98.1 107.7 L 96.9 108.0 L 95.9 107.9 L 93.7 107.2 L 92.8 106.5 L 92.1 105.4 L 89.4 100.3 L 87.2 97.3 L 84.3 94.3 L 80.2 89.4 L 79.2 89.1 L 78.6 89.4 L 76.9 90.9 L 76.3 91.1 L 75.2 90.9 L 74.5 90.2 L 72.9 88.2 L 72.2 86.9 L 71.3 83.4 L 71.4 82.8 L 72.5 80.9 L 87.8 61.0 L 88.4 60.3 L 89.4 59.6 L 91.7 59.3 L 99.5 60.2 L 102.3 59.6 L 103.6 59.0 L 111.5 52.6 L 112.7 52.0 L 113.3 51.9 L 113.8 52.1 L 114.6 53.0 L 115.9 57.7 L 116.3 58.4 L 116.9 58.8 L 117.6 58.8 L 118.3 58.5 L 118.7 57.9 L 120.4 53.1 L 120.7 50.5 L 120.6 49.2 L 120.3 48.6 L 93.8 24.2 L 92.1 23.2 L 90.9 23.1 L 89.7 23.2 L 88.4 23.8 L 87.9 24.4 L 87.6 25.2 L 87.1 29.5 L 86.8 30.4 L 86.2 31.1 L 85.2 31.5 L 84.2 31.7 L 83.0 31.4 L 82.2 30.8 L 81.3 29.4 L 81.4 27.7 L 85.4 19.7 L 87.5 17.4 L 90.2 15.2 L 93.1 14.1 L 105.5 12.9 Z",
+    "spa": "M 88.3 22.2 L 83.0 13.0 L 82.9 12.5 L 83.1 12.2 L 83.6 12.0 L 90.1 15.1 L 92.2 16.3 L 96.2 19.4 L 105.7 30.7 L 106.3 31.2 L 109.0 33.0 L 109.8 33.7 L 110.8 35.7 L 111.7 40.0 L 118.7 51.2 L 119.8 53.9 L 128.4 83.7 L 129.6 88.4 L 129.5 89.1 L 129.1 89.7 L 127.4 91.0 L 126.9 92.2 L 127.9 97.3 L 127.7 98.7 L 127.2 99.5 L 115.4 107.7 L 114.7 108.0 L 113.3 107.8 L 112.7 107.4 L 112.1 106.1 L 112.0 105.4 L 112.2 104.8 L 112.6 104.1 L 113.2 103.7 L 118.1 100.7 L 118.9 99.6 L 118.9 98.2 L 116.9 92.2 L 116.3 89.8 L 114.0 77.4 L 113.7 76.6 L 112.5 75.3 L 110.9 74.4 L 107.0 74.1 L 105.9 74.2 L 103.9 74.9 L 103.0 75.5 L 102.1 76.4 L 100.8 78.6 L 95.5 91.6 L 95.0 92.6 L 94.4 93.2 L 93.5 93.7 L 91.9 94.0 L 91.1 93.8 L 88.5 92.4 L 87.6 92.3 L 85.9 92.7 L 85.2 93.2 L 84.2 94.5 L 79.7 101.6 L 79.2 102.0 L 78.0 102.4 L 77.3 102.4 L 76.6 102.1 L 71.8 98.5 L 70.6 96.5 L 70.4 94.9 L 70.5 93.9 L 71.8 90.3 L 74.1 86.8 L 78.7 81.9 L 80.5 80.6 L 89.5 75.8 L 90.5 75.1 L 92.5 73.4 L 94.1 71.4 L 95.1 69.5 L 98.2 62.7 L 98.4 60.5 L 98.2 59.4 L 94.4 49.4 L 93.7 46.2 L 93.3 43.3 L 93.0 36.5 L 93.6 36.1 L 95.5 36.1 L 95.8 35.4 L 88.3 22.2 Z",
+    "hungaroring": "M 78.8 84.3 L 58.3 68.0 L 57.6 66.6 L 57.7 65.8 L 58.4 64.8 L 59.9 64.4 L 64.8 64.4 L 67.3 64.9 L 69.5 65.5 L 71.8 66.4 L 74.9 68.3 L 87.8 78.6 L 88.7 79.1 L 90.6 79.3 L 92.1 78.7 L 92.8 78.2 L 93.6 77.1 L 93.9 76.4 L 94.0 74.7 L 93.5 73.2 L 89.8 66.9 L 89.4 65.7 L 89.3 64.8 L 89.6 64.0 L 90.2 62.1 L 101.5 39.3 L 102.8 37.0 L 106.2 32.8 L 106.9 31.5 L 107.0 30.8 L 103.4 17.6 L 103.4 16.6 L 103.7 14.8 L 104.1 13.9 L 104.8 13.2 L 106.5 12.1 L 108.5 12.0 L 110.8 12.8 L 115.8 16.3 L 124.1 25.2 L 124.4 26.0 L 124.5 27.1 L 123.1 28.6 L 122.9 29.0 L 123.0 29.7 L 125.6 39.8 L 126.5 41.6 L 127.4 42.4 L 128.1 42.6 L 134.4 43.6 L 135.4 44.1 L 136.6 45.0 L 137.1 45.8 L 137.5 47.3 L 137.5 48.2 L 136.1 58.1 L 136.1 60.7 L 136.8 62.7 L 141.8 70.7 L 142.3 71.9 L 142.4 72.7 L 142.2 75.2 L 141.2 76.7 L 125.0 95.2 L 122.4 98.1 L 121.8 98.4 L 120.6 98.4 L 120.1 98.2 L 114.5 91.8 L 109.6 87.7 L 108.2 87.1 L 107.4 86.9 L 106.6 87.0 L 105.7 87.5 L 105.1 88.1 L 104.4 89.5 L 104.4 91.1 L 104.8 91.9 L 105.2 92.6 L 114.5 100.2 L 115.3 101.9 L 115.4 103.1 L 115.3 104.1 L 114.5 105.9 L 113.9 106.7 L 111.6 107.8 L 110.4 108.0 L 109.1 107.8 L 107.9 107.4 L 106.9 106.6 L 78.8 84.3 Z",
+    "zandvoort": "M 57.4 55.9 L 74.8 14.1 L 75.9 12.9 L 77.4 12.2 L 79.0 12.0 L 80.5 12.3 L 81.9 13.3 L 82.9 14.5 L 83.4 16.0 L 83.4 17.6 L 78.0 30.6 L 76.7 35.2 L 76.2 39.9 L 76.5 44.3 L 76.1 46.1 L 75.1 47.4 L 73.1 48.9 L 65.2 52.1 L 63.7 53.2 L 63.2 54.9 L 63.2 56.4 L 63.8 57.9 L 64.9 59.0 L 66.3 59.6 L 68.5 59.6 L 79.2 56.1 L 84.2 55.2 L 88.5 55.1 L 92.3 55.3 L 95.9 56.0 L 98.4 56.7 L 102.6 57.6 L 106.5 58.0 L 112.5 56.5 L 116.5 54.5 L 121.2 51.5 L 124.3 50.0 L 127.1 49.2 L 130.8 48.8 L 133.8 48.8 L 145.9 49.6 L 148.8 50.2 L 151.4 51.5 L 153.2 53.1 L 155.6 56.7 L 156.2 59.0 L 156.4 61.3 L 156.2 63.6 L 155.5 66.0 L 154.0 68.5 L 148.4 76.2 L 146.3 79.6 L 141.7 89.7 L 139.4 90.5 L 136.7 90.8 L 134.0 90.7 L 130.9 90.1 L 127.6 89.0 L 124.2 87.4 L 120.7 84.9 L 118.6 82.5 L 118.2 81.1 L 118.5 79.6 L 119.9 77.7 L 121.8 76.5 L 124.5 75.4 L 129.3 74.7 L 133.9 73.5 L 138.0 71.9 L 140.3 70.3 L 141.2 68.4 L 141.3 66.2 L 140.6 64.1 L 138.7 62.2 L 136.9 61.6 L 127.9 60.5 L 118.9 60.5 L 109.2 61.7 L 101.1 63.7 L 96.1 65.3 L 90.5 67.4 L 85.2 69.6 L 80.8 72.2 L 79.3 72.9 L 78.1 72.7 L 77.1 71.2 L 75.9 69.1 L 74.4 68.1 L 72.4 68.0 L 70.4 68.9 L 69.4 70.3 L 68.9 71.9 L 73.7 100.4 L 73.8 102.1 L 73.4 103.8 L 71.8 106.2 L 70.0 107.5 L 68.0 107.9 L 57.9 108.0 L 55.4 107.6 L 52.9 106.8 L 50.7 105.8 L 47.9 103.6 L 46.1 101.1 L 44.8 99.0 L 43.9 96.2 L 43.6 93.7 L 43.9 89.6 L 44.7 86.8 L 57.4 55.9 Z",
+    "monza": "M 74.0 73.0 L 76.3 46.0 L 76.6 45.5 L 77.9 45.5 L 78.3 44.9 L 77.0 39.2 L 76.9 38.1 L 77.4 31.3 L 77.8 29.5 L 78.5 27.6 L 79.0 26.6 L 80.4 24.6 L 81.4 23.6 L 83.6 21.8 L 86.2 20.4 L 89.2 19.5 L 90.9 19.2 L 99.7 18.4 L 108.8 17.9 L 109.3 17.5 L 109.5 16.5 L 109.9 16.0 L 112.6 15.4 L 122.4 12.2 L 123.1 12.0 L 124.4 12.1 L 125.7 12.8 L 126.5 13.8 L 126.8 15.0 L 127.8 25.3 L 127.5 26.5 L 114.6 33.8 L 111.9 35.5 L 105.3 41.1 L 90.8 53.9 L 90.0 54.9 L 90.2 58.0 L 90.0 58.9 L 89.3 60.2 L 87.3 62.0 L 87.0 63.2 L 82.5 105.2 L 82.1 106.3 L 81.7 106.8 L 80.6 107.6 L 79.1 108.0 L 77.8 107.8 L 76.3 107.2 L 75.2 106.4 L 74.0 104.9 L 73.2 103.3 L 72.6 101.3 L 72.3 99.1 L 72.2 89.7 L 74.0 73.0 Z",
+    "madring": "M 107.9 102.7 L 98.1 104.5 L 97.5 104.8 L 97.4 107.1 L 97.1 107.4 L 93.6 108.0 L 92.0 107.9 L 90.0 107.1 L 88.6 105.7 L 76.9 87.2 L 74.9 82.9 L 73.7 78.7 L 73.3 75.2 L 73.5 72.6 L 73.8 69.8 L 74.8 67.2 L 76.2 65.0 L 76.2 64.6 L 75.1 63.8 L 75.2 63.2 L 75.8 62.0 L 75.7 60.7 L 75.0 58.4 L 74.4 56.7 L 72.9 54.4 L 71.5 49.2 L 70.9 47.7 L 70.2 46.9 L 70.2 46.4 L 71.8 45.1 L 72.4 44.2 L 72.4 43.3 L 72.0 42.2 L 70.4 39.2 L 70.2 32.7 L 70.4 30.5 L 71.0 29.6 L 74.0 27.2 L 74.7 26.0 L 74.4 23.6 L 72.5 18.9 L 72.3 17.3 L 72.4 15.7 L 73.1 14.3 L 74.1 13.0 L 75.7 12.3 L 77.4 12.0 L 79.2 12.1 L 81.0 13.0 L 82.7 14.5 L 83.8 16.3 L 84.1 18.3 L 83.9 20.2 L 83.2 22.1 L 81.6 24.9 L 76.2 31.6 L 73.6 35.7 L 73.3 36.4 L 73.5 37.4 L 74.7 38.5 L 78.5 41.2 L 80.1 42.6 L 80.7 43.7 L 81.1 44.9 L 81.1 50.7 L 81.3 51.8 L 82.8 54.5 L 83.8 55.6 L 85.1 56.4 L 86.7 56.9 L 93.8 56.9 L 97.0 55.5 L 97.5 56.0 L 99.5 58.9 L 103.0 65.2 L 104.1 65.9 L 105.2 66.1 L 109.5 65.5 L 111.5 65.6 L 113.5 66.3 L 114.9 67.6 L 115.6 68.9 L 118.1 83.6 L 118.4 84.3 L 119.3 84.4 L 120.5 83.5 L 121.2 83.3 L 126.3 82.7 L 126.7 83.2 L 128.7 90.8 L 129.7 96.5 L 129.8 98.0 L 129.0 98.9 L 107.9 102.7 Z",
+    "baku": "M 155.2 36.6 L 164.8 32.5 L 165.3 32.1 L 165.7 30.9 L 163.6 25.0 L 160.3 18.6 L 157.5 12.4 L 156.5 12.0 L 136.1 20.0 L 107.5 33.0 L 106.6 33.9 L 106.6 35.1 L 110.9 46.4 L 111.0 47.2 L 110.3 48.0 L 102.8 51.6 L 98.5 53.9 L 92.8 57.6 L 92.4 58.1 L 93.5 60.8 L 93.5 61.4 L 90.8 63.8 L 74.6 76.6 L 73.7 76.5 L 72.9 75.7 L 69.4 65.5 L 69.0 65.1 L 67.6 65.0 L 66.3 64.2 L 65.5 64.0 L 64.0 64.1 L 63.1 63.8 L 62.0 60.7 L 61.1 59.9 L 60.3 59.9 L 54.8 61.8 L 46.0 66.1 L 40.2 69.6 L 39.1 70.5 L 37.4 73.4 L 34.3 84.4 L 35.3 97.8 L 35.5 98.6 L 36.2 99.5 L 48.1 105.7 L 53.3 107.8 L 54.3 108.0 L 55.5 107.8 L 56.9 106.6 L 61.3 98.5 L 62.3 97.2 L 72.5 87.9 L 73.3 86.7 L 73.7 85.6 L 74.6 79.5 L 75.0 78.3 L 75.8 77.1 L 91.4 64.9 L 93.4 63.6 L 97.7 61.4 L 130.5 47.0 L 155.2 36.6 Z",
+    "marinabay": "M 170.8 48.5 L 174.1 74.0 L 173.8 75.4 L 173.0 76.7 L 168.7 83.2 L 168.0 83.5 L 155.9 83.0 L 141.6 81.5 L 139.8 81.0 L 138.7 80.3 L 137.8 79.3 L 137.0 77.4 L 137.0 74.3 L 136.6 73.7 L 92.4 71.3 L 88.8 70.9 L 86.3 70.2 L 83.7 68.9 L 68.0 55.3 L 66.9 55.1 L 65.6 55.3 L 63.9 56.7 L 62.0 62.4 L 53.3 106.3 L 52.7 107.3 L 51.9 107.8 L 50.0 108.0 L 49.6 107.8 L 48.4 106.3 L 47.1 104.6 L 46.2 102.6 L 40.7 98.0 L 37.0 94.5 L 36.2 93.3 L 35.3 90.3 L 35.6 87.8 L 36.3 86.6 L 35.9 85.8 L 32.7 84.7 L 30.9 83.5 L 26.9 80.4 L 26.3 79.1 L 25.9 75.8 L 45.4 40.9 L 47.6 39.0 L 49.6 38.5 L 53.8 41.3 L 63.3 51.3 L 64.2 51.7 L 64.9 51.5 L 69.3 42.9 L 74.3 34.4 L 75.2 33.1 L 76.1 32.7 L 105.4 49.5 L 109.7 51.1 L 112.8 51.7 L 150.4 53.9 L 151.9 53.6 L 153.8 52.7 L 155.4 51.6 L 156.4 49.8 L 156.6 48.1 L 156.3 43.9 L 155.3 38.3 L 150.5 25.7 L 150.2 23.7 L 150.7 15.6 L 151.7 13.4 L 153.0 12.1 L 154.1 12.0 L 155.1 12.3 L 157.4 15.1 L 158.4 16.0 L 160.8 17.2 L 162.8 17.7 L 165.3 17.5 L 166.6 18.0 L 167.3 18.9 L 167.7 20.4 L 168.7 32.8 L 170.8 48.5 Z",
+    "cota": "M 49.9 90.4 L 65.0 102.4 L 72.4 107.3 L 74.1 108.0 L 74.6 107.9 L 75.4 107.1 L 75.5 106.2 L 70.5 91.0 L 70.5 88.5 L 71.2 85.7 L 73.8 81.9 L 89.1 72.3 L 91.1 69.8 L 92.9 65.2 L 94.3 63.3 L 100.8 59.9 L 101.9 58.2 L 102.6 53.8 L 103.3 51.4 L 104.5 49.5 L 106.3 47.7 L 110.4 45.4 L 113.5 45.1 L 124.4 49.8 L 125.3 49.8 L 127.7 48.4 L 129.7 46.8 L 133.7 42.0 L 134.7 41.3 L 136.7 40.6 L 137.9 40.6 L 140.3 41.6 L 142.4 44.5 L 143.8 45.4 L 161.1 41.7 L 162.2 40.9 L 182.5 16.1 L 183.7 13.8 L 183.7 12.7 L 182.8 12.1 L 181.7 12.0 L 164.3 17.5 L 152.6 20.8 L 139.8 23.9 L 124.4 27.0 L 106.0 29.9 L 76.9 33.3 L 76.5 33.5 L 76.4 34.4 L 84.5 45.0 L 87.1 49.2 L 87.1 50.8 L 86.7 51.4 L 85.5 52.0 L 79.5 51.8 L 78.2 50.7 L 76.4 46.3 L 75.8 45.3 L 72.1 41.7 L 67.8 41.0 L 66.8 41.3 L 66.3 42.3 L 66.5 43.0 L 75.0 58.0 L 75.2 60.5 L 74.0 64.4 L 72.5 67.3 L 71.4 68.1 L 65.3 70.9 L 63.3 71.2 L 59.7 70.8 L 56.2 69.6 L 53.5 67.8 L 47.1 58.6 L 42.7 53.0 L 42.1 52.4 L 40.5 51.9 L 36.3 53.1 L 17.9 61.2 L 16.9 61.9 L 16.3 63.3 L 17.4 64.8 L 49.9 90.4 Z",
+    "mexicocity": "M 57.8 13.9 L 101.5 19.9 L 112.8 20.9 L 132.2 23.5 L 156.6 27.2 L 161.7 28.2 L 163.0 28.9 L 163.3 30.1 L 162.4 36.2 L 162.5 36.7 L 162.8 37.2 L 166.1 39.0 L 166.5 39.6 L 166.0 43.9 L 165.2 47.3 L 162.5 53.6 L 151.3 72.6 L 137.0 95.1 L 137.0 96.7 L 137.4 97.3 L 141.8 100.1 L 141.9 100.8 L 141.6 101.3 L 133.4 107.6 L 132.0 108.0 L 130.1 106.9 L 129.9 105.2 L 133.3 77.6 L 132.4 76.2 L 127.6 73.2 L 125.3 71.0 L 123.5 66.9 L 122.6 65.5 L 121.6 64.5 L 118.9 63.1 L 106.5 61.2 L 105.1 60.7 L 103.9 59.5 L 101.9 53.9 L 100.6 52.0 L 89.5 45.9 L 86.8 44.8 L 83.0 43.8 L 51.7 39.2 L 51.1 38.1 L 49.9 24.0 L 49.2 22.9 L 48.6 22.6 L 47.8 22.7 L 46.9 23.5 L 45.8 25.1 L 44.4 25.9 L 43.6 25.9 L 40.4 24.6 L 35.2 24.0 L 33.9 23.4 L 33.5 22.1 L 33.8 20.6 L 34.6 18.6 L 35.6 17.0 L 37.0 15.0 L 38.7 13.6 L 40.8 12.6 L 42.7 12.1 L 44.6 12.0 L 57.8 13.9 Z",
+    "interlagos": "M 75.6 80.9 L 81.5 103.9 L 82.1 105.2 L 83.4 107.1 L 84.0 107.6 L 85.0 108.0 L 86.9 107.8 L 87.5 107.5 L 91.4 103.7 L 92.3 103.4 L 93.1 103.3 L 94.4 103.7 L 97.0 105.3 L 99.0 106.2 L 100.6 106.6 L 103.3 106.8 L 106.6 106.3 L 108.4 105.6 L 110.1 104.7 L 111.7 103.4 L 113.1 102.0 L 114.9 99.1 L 115.5 97.5 L 118.1 89.1 L 123.3 68.4 L 130.1 42.4 L 130.3 41.3 L 130.2 40.2 L 129.4 38.6 L 128.4 37.9 L 127.2 37.4 L 120.3 36.1 L 118.3 35.8 L 115.5 36.1 L 114.0 36.6 L 111.6 38.0 L 110.3 39.0 L 107.6 42.4 L 91.1 65.0 L 90.3 65.9 L 89.4 66.4 L 88.1 66.9 L 86.7 67.1 L 83.1 66.8 L 81.0 66.0 L 79.3 65.0 L 78.4 64.3 L 77.3 62.4 L 76.9 60.9 L 75.9 56.8 L 75.3 53.1 L 75.3 50.0 L 75.6 48.9 L 76.6 48.1 L 77.8 47.8 L 78.6 48.0 L 79.3 48.3 L 82.3 50.4 L 84.3 50.9 L 85.9 50.4 L 87.1 49.5 L 87.7 48.5 L 88.1 47.5 L 88.0 45.5 L 86.7 43.4 L 83.0 39.8 L 81.6 38.1 L 80.5 36.6 L 79.8 34.6 L 78.8 29.2 L 78.9 28.1 L 79.7 26.8 L 80.8 26.5 L 82.2 26.9 L 88.7 34.2 L 90.3 35.4 L 92.2 36.2 L 94.3 36.4 L 97.2 36.2 L 98.5 35.8 L 99.9 34.9 L 101.4 33.8 L 102.2 32.7 L 105.4 27.8 L 110.9 18.8 L 111.1 17.6 L 110.6 16.3 L 109.9 15.7 L 108.4 14.9 L 101.7 12.4 L 99.7 12.0 L 95.5 12.6 L 91.2 13.5 L 85.5 15.8 L 82.1 17.6 L 80.8 18.5 L 78.5 20.6 L 76.7 23.0 L 75.3 26.5 L 73.3 34.6 L 72.6 38.9 L 69.9 49.3 L 69.7 53.4 L 70.1 58.3 L 75.6 80.9 Z",
+    "lasvegas": "M 124.0 97.2 L 127.2 93.6 L 127.6 92.9 L 127.8 92.0 L 127.4 91.3 L 126.9 90.8 L 124.9 90.3 L 123.1 90.6 L 121.1 91.8 L 119.4 93.5 L 118.7 94.0 L 117.2 94.3 L 116.4 94.3 L 114.9 93.8 L 113.4 92.7 L 112.1 91.0 L 111.6 89.6 L 111.3 47.5 L 111.5 46.8 L 112.0 46.5 L 123.3 46.6 L 124.7 46.3 L 126.8 44.4 L 127.5 43.4 L 128.4 41.4 L 128.8 38.8 L 128.7 37.9 L 128.3 37.6 L 127.0 37.5 L 126.6 37.2 L 126.2 36.6 L 126.0 35.7 L 126.1 35.1 L 128.0 31.4 L 127.9 30.4 L 126.9 29.7 L 125.0 29.5 L 111.3 29.2 L 106.2 28.5 L 104.5 27.6 L 102.6 25.7 L 101.0 22.5 L 98.6 16.8 L 97.0 15.2 L 95.4 14.0 L 93.7 13.4 L 91.2 12.6 L 88.2 12.0 L 87.8 12.1 L 87.4 12.4 L 86.8 14.1 L 81.9 23.6 L 78.2 30.1 L 76.4 34.2 L 73.7 43.4 L 73.1 45.9 L 72.3 52.2 L 72.1 57.0 L 72.1 71.2 L 71.6 87.2 L 71.2 104.5 L 71.5 104.9 L 71.9 105.0 L 72.8 105.0 L 73.4 105.2 L 75.0 106.7 L 76.3 107.5 L 78.0 107.8 L 85.7 108.0 L 107.9 107.9 L 114.6 106.8 L 116.2 105.9 L 124.0 97.2 Z",
+    "lusail": "M 73.6 70.1 L 59.6 44.5 L 59.3 43.2 L 59.5 41.8 L 60.0 40.7 L 60.8 39.9 L 62.0 39.2 L 63.4 39.0 L 64.7 39.3 L 74.8 45.3 L 75.7 45.6 L 77.0 45.7 L 78.4 45.2 L 79.6 44.1 L 80.3 42.9 L 80.5 41.7 L 80.2 33.0 L 80.4 31.8 L 81.2 29.8 L 96.2 13.1 L 97.0 12.4 L 99.4 12.0 L 100.6 12.3 L 101.5 12.9 L 105.8 16.9 L 106.3 17.8 L 106.5 19.0 L 106.4 20.0 L 106.1 21.0 L 105.5 21.9 L 96.2 32.1 L 95.8 32.9 L 95.8 33.7 L 96.0 34.4 L 96.5 34.9 L 97.1 35.3 L 98.1 35.5 L 98.7 35.3 L 115.8 28.4 L 116.9 28.3 L 118.2 28.5 L 119.3 29.0 L 120.1 29.8 L 120.7 30.9 L 120.9 32.0 L 120.9 33.0 L 120.5 33.9 L 119.9 34.9 L 118.1 36.5 L 116.7 38.1 L 114.5 41.5 L 113.3 44.9 L 112.8 47.3 L 112.4 48.4 L 111.7 49.2 L 109.9 50.2 L 100.7 52.5 L 99.3 53.5 L 98.8 55.3 L 98.9 56.6 L 99.9 58.0 L 101.7 59.7 L 104.3 61.7 L 107.1 63.3 L 109.9 64.3 L 112.7 64.9 L 115.5 65.1 L 132.3 63.3 L 133.6 63.6 L 135.0 64.3 L 136.1 65.1 L 137.2 66.6 L 140.4 72.5 L 140.7 73.6 L 140.7 74.5 L 140.5 75.5 L 139.8 76.7 L 134.9 84.7 L 134.3 85.3 L 133.3 85.8 L 132.4 86.1 L 131.1 86.0 L 115.2 82.8 L 114.1 82.8 L 112.9 83.1 L 112.0 83.8 L 111.3 84.6 L 100.3 106.1 L 99.4 107.1 L 98.4 107.8 L 96.9 108.0 L 95.8 107.9 L 94.7 107.4 L 93.6 106.5 L 73.6 70.1 Z",
+    "yasmarina": "M 99.4 65.8 L 112.8 64.0 L 113.5 63.7 L 114.0 63.2 L 114.4 62.4 L 114.4 61.7 L 112.1 51.8 L 111.2 50.1 L 109.7 49.0 L 105.9 47.8 L 103.7 46.6 L 101.8 44.4 L 101.2 43.0 L 101.0 40.8 L 102.6 34.4 L 102.9 29.9 L 100.9 13.8 L 100.3 12.8 L 99.7 12.2 L 98.8 12.0 L 97.8 12.3 L 97.0 13.5 L 96.2 16.0 L 95.4 19.6 L 83.6 54.8 L 80.0 66.6 L 77.5 74.1 L 77.5 74.9 L 77.8 75.2 L 78.3 75.2 L 80.9 75.0 L 81.3 75.4 L 82.8 80.9 L 83.5 82.8 L 84.2 84.2 L 85.7 86.3 L 87.4 88.3 L 89.6 90.2 L 102.3 100.2 L 106.4 102.7 L 118.0 108.0 L 120.1 107.8 L 121.0 107.2 L 121.9 106.3 L 122.5 104.2 L 122.4 103.2 L 121.9 101.6 L 121.4 101.0 L 120.0 99.8 L 119.2 99.5 L 118.0 99.3 L 106.7 98.3 L 101.1 94.8 L 100.2 94.0 L 99.8 93.1 L 98.6 87.5 L 98.7 87.0 L 99.4 86.6 L 103.7 86.0 L 104.8 85.2 L 105.2 84.6 L 105.2 83.8 L 105.3 79.9 L 104.6 78.9 L 103.2 78.5 L 101.6 78.4 L 91.0 79.9 L 90.0 79.8 L 88.4 79.4 L 87.5 78.6 L 83.5 71.5 L 83.3 69.2 L 83.4 68.6 L 83.7 68.2 L 85.1 67.8 L 99.4 65.8 Z"
+  }
+}
