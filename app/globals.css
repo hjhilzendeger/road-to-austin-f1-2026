@@ -200,6 +200,7 @@ select { min-height: 46px; background: var(--paper); color: var(--ink); border: 
 footer { border-top: 1px solid var(--line); min-height: 150px; padding: 35px clamp(22px, 7vw, 110px); display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 10px; }
 footer > div { display: flex; align-items: center; gap: 14px; }
 footer p { max-width: 440px; }
+footer a { color: var(--blue); font-weight: 800; text-transform: uppercase; text-decoration-thickness: 1px; text-underline-offset: 3px; white-space: nowrap; }
 .loading { min-height: 100vh; display: grid; place-items: center; font: 900 40px var(--font-display); text-transform: uppercase; }
 
 @media (max-width: 1050px) {
