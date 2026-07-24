@@ -185,7 +185,7 @@ story = [
         "A presenter script for walking through the F1 2026 family companion in the same order a first-time fan experiences it.",
         subtitle,
     ),
-    Paragraph("Target time: about 4 minutes &nbsp;&nbsp; | &nbsp;&nbsp; Audience: course instructor", time_style),
+    Paragraph("Target time: about 4 minutes &nbsp;&nbsp; | &nbsp;&nbsp; Audience: family", time_style),
     Paragraph(
         "<b>Before you begin</b><br/>Open the public site on the homepage. Keep this guide on a second screen or print it. Read the regular text aloud; the blue boxes are action cues and are not spoken.",
         note,
