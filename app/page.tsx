@@ -53,9 +53,9 @@ function completedRounds(data: F1Data) {
   return Object.keys(data.raceResults).map(Number).sort((a, b) => a - b);
 }
 
-function driverStandings(data: F1Data): Standing[] {
+function driverStandings(data: F1Data, throughRound?: number): Standing[] {
   const table = new Map<string, Standing>(data.drivers.map((d) => [d.id, { id: d.id, points: 0, wins: 0, lastFive: [] }]));
-  for (const round of completedRounds(data)) {
+  for (const round of completedRounds(data).filter((r) => throughRound === undefined || r <= throughRound)) {
     const race = data.raceResults[String(round)];
     for (const result of race.results || []) {
       const row = table.get(result.id);
@@ -78,6 +78,26 @@ function teamStandings(data: F1Data, drivers: Standing[]) {
     const ids = data.drivers.filter((d) => d.team === team.id).map((d) => d.id);
     return { ...team, points: drivers.filter((d) => ids.includes(d.id)).reduce((sum, d) => sum + d.points, 0) };
   }).sort((a, b) => b.points - a.points);
+}
+
+function teamRoundScores(data: F1Data, round: number) {
+  const race = data.raceResults[String(round)];
+  const scores = new Map(data.teams.map((team) => [team.id, 0]));
+  for (const result of [...(race?.results || []), ...(race?.sprint?.results || [])]) {
+    const team = data.drivers.find((driver) => driver.id === result.id)?.team;
+    if (team) scores.set(team, (scores.get(team) || 0) + (Number(result.pts) || 0));
+  }
+  return scores;
+}
+
+function teamRecentScores(data: F1Data, teamId: string) {
+  const driverIds = data.drivers.filter((driver) => driver.team === teamId).map((driver) => driver.id);
+  return completedRounds(data).slice(-5).map((round) => {
+    const race = data.raceResults[String(round)];
+    return [...(race.results || []), ...(race.sprint?.results || [])]
+      .filter((result) => driverIds.includes(result.id))
+      .reduce((sum, result) => sum + (Number(result.pts) || 0), 0);
+  });
 }
 
 function closePairs<T extends { points: number }>(rows: T[], limit = 4) {
@@ -108,6 +128,7 @@ export default function Home() {
   const [active, setActive] = useState("road");
   const [selectedRound, setSelectedRound] = useState<number | null>(null);
   const [showAllDrivers, setShowAllDrivers] = useState(false);
+  const [gridView, setGridView] = useState<"drivers" | "teams">("drivers");
   const [dropState, setDropState] = useState("");
   const [picks, setPicks] = useState<Picks>({ winner: "", surprise: "", team: "" });
   const [now, setNow] = useState(0);
@@ -144,8 +165,13 @@ export default function Home() {
   const teams = useMemo(() => data ? teamStandings(data, standings) : [], [data, standings]);
   const rounds = useMemo(() => data ? completedRounds(data) : [], [data]);
   const latestRound = rounds.at(-1) || 0;
-  const race = data && latestRound ? data.raceResults[String(selectedRound || latestRound)] : null;
-  const raceCalendar = data?.calendar.find((r) => r.round === (selectedRound || latestRound));
+  const displayRound = selectedRound || latestRound;
+  const race = data && latestRound ? data.raceResults[String(displayRound)] : null;
+  const raceCalendar = data?.calendar.find((r) => r.round === displayRound);
+  const raceTeamTable = useMemo(() => data ? teamStandings(data, driverStandings(data, displayRound)) : [], [data, displayRound]);
+  const previousTeamTable = useMemo(() => data && displayRound > 1 ? teamStandings(data, driverStandings(data, displayRound - 1)) : [], [data, displayRound]);
+  const weekendTeamScores = useMemo(() => data ? teamRoundScores(data, displayRound) : new Map<string, number>(), [data, displayRound]);
+  const weekendTeamRanking = useMemo(() => [...raceTeamTable].sort((a, b) => (weekendTeamScores.get(b.id) || 0) - (weekendTeamScores.get(a.id) || 0)), [raceTeamTable, weekendTeamScores]);
   const austin = data?.calendar.find((r) => r.round === AUSTIN_ROUND);
   const cota = data?.tracks.find((t) => t.id === austin?.track);
   const days = now ? Math.max(0, Math.ceil((AUSTIN_DATE.getTime() - now) / 86400000)) : "—";
@@ -317,6 +343,41 @@ export default function Home() {
                 </div>
               </section>
 
+              <section className="team-story">
+                <div className="section-heading compact"><div><p className="eyebrow">The other championship</p><h2>Two cars. One team score.</h2><p>Every driver result also builds the Constructors’ Championship—the contest for the best complete team and car.</p></div></div>
+                <div className="team-weekend-grid">
+                  <article className="team-weekend-winner" style={{ "--team": weekendTeamRanking[0]?.color } as React.CSSProperties}>
+                    <p>Top-scoring team · Round {displayRound}</p>
+                    <h3>{weekendTeamRanking[0]?.shortName}</h3>
+                    <strong>{weekendTeamScores.get(weekendTeamRanking[0]?.id) || 0}<span>points together</span></strong>
+                    <div>
+                      {data.drivers.filter((driver) => driver.team === weekendTeamRanking[0]?.id).map((driver) => {
+                        const scored = [...(race.results || []), ...(race.sprint?.results || [])].filter((result) => result.id === driver.id).reduce((sum, result) => sum + Number(result.pts || 0), 0);
+                        return <span key={driver.id}><b>{driver.id}</b>{scored} pts</span>;
+                      })}
+                    </div>
+                  </article>
+                  <article className="constructor-table">
+                    <div className="card-head"><div><p className="eyebrow">After this weekend</p><h3>Team championship</h3></div><span className="number-badge">11</span></div>
+                    {raceTeamTable.slice(0, 6).map((team, index) => {
+                      const previousIndex = previousTeamTable.findIndex((row) => row.id === team.id);
+                      const change = previousIndex < 0 ? 0 : previousIndex - index;
+                      return <div className="constructor-row" key={team.id}>
+                        <span>{index + 1}</span><i style={{ background: team.color }}></i><b>{team.shortName}</b>
+                        <small>{weekendTeamScores.get(team.id) || 0} this round</small>
+                        <em>{change > 0 ? `↑${change}` : change < 0 ? `↓${Math.abs(change)}` : "—"}</em><strong>{team.points}</strong>
+                      </div>;
+                    })}
+                  </article>
+                  <article className="team-competition-note">
+                    <p className="eyebrow">Why teams are different</p>
+                    <h3>The car is part of the contest</h3>
+                    <p>Teams choose their chassis concept, aerodynamics, suspension and how to package the power unit. Some build their own engine as a <b>works team</b>; others buy a <b>customer engine</b> and integrate it into a different car.</p>
+                    <p>Both drivers share engineering data and help develop the same car—but each is also the clearest benchmark for the other. That creates cooperation and rivalry at the same time.</p>
+                  </article>
+                </div>
+              </section>
+
               <section className="update-zone" onDragOver={(e) => e.preventDefault()} onDrop={(e) => { e.preventDefault(); loadFile(e.dataTransfer.files[0]); }}>
                 <div><span className="update-icon">↻</span><div><h3>Next race, drop in the new story</h3><p>Drag your updated F1 JSON here. Standings, recaps and battles refresh immediately.</p></div></div>
                 <button className="secondary" onClick={() => fileRef.current?.click()}>Choose JSON file</button>
@@ -329,6 +390,11 @@ export default function Home() {
           {active === "learn" && (
             <>
               <div className="section-heading"><div><p className="eyebrow">F1 in 90 seconds</p><h2>Enough to enjoy the whole weekend</h2><p>You don’t need to memorize a rulebook. Start with the rhythm.</p></div></div>
+              <section className="team-primer">
+                <div><span>01</span><h3>Two championships</h3><p>Drivers chase an individual title. Teams add both drivers’ points together to chase the Constructors’ title.</p></div>
+                <div><span>02</span><h3>Build, don’t just race</h3><p>Each team designs its car around technical choices. The engine may be built in-house or supplied by another manufacturer.</p></div>
+                <div><span>03</span><h3>Partner and benchmark</h3><p>Teammates share data and setup work, then compete in equal machinery. Their comparison exposes performance.</p></div>
+              </section>
               <div className="weekend-flow">
                 {[
                   ["01", "Practice", "Learn the track", "Drivers test setups and tires. The lap times can mislead because teams run different fuel loads."],
@@ -352,8 +418,13 @@ export default function Home() {
 
           {active === "grid" && (
             <>
-              <div className="section-heading"><div><p className="eyebrow">Meet the 2026 grid</p><h2>Follow the competition, neutrally</h2><p>Ordered by confirmed points. Team color is the quickest way to recognize each car.</p></div></div>
-              <div className="driver-grid">
+              <div className="section-heading grid-heading"><div><p className="eyebrow">Meet the 2026 grid</p><h2>{gridView === "drivers" ? "The people in the cars" : "The teams behind both cars"}</h2><p>{gridView === "drivers" ? "Drivers compete across the grid and against the teammate with the same machinery." : "Team performance combines car design, engine partnership, operations and the points scored by both drivers."}</p></div>
+                <div className="view-toggle" role="group" aria-label="Choose grid view">
+                  <button className={gridView === "drivers" ? "on" : ""} onClick={() => setGridView("drivers")} aria-pressed={gridView === "drivers"}>Drivers</button>
+                  <button className={gridView === "teams" ? "on" : ""} onClick={() => setGridView("teams")} aria-pressed={gridView === "teams"}>Teams</button>
+                </div>
+              </div>
+              {gridView === "drivers" ? <><div className="driver-grid">
                 {visibleDrivers.map((row, index) => {
                   const driver = data.drivers.find((d) => d.id === row.id)!;
                   const team = teamForDriver(data, row.id)!;
@@ -370,7 +441,23 @@ export default function Home() {
                   </article>;
                 })}
               </div>
-              <button className="secondary show-more" onClick={() => setShowAllDrivers(!showAllDrivers)}>{showAllDrivers ? "Show championship leaders" : "Show all 22 drivers"}</button>
+              <button className="secondary show-more" onClick={() => setShowAllDrivers(!showAllDrivers)}>{showAllDrivers ? "Show championship leaders" : "Show all 22 drivers"}</button></> :
+              <div className="team-grid">
+                {teams.map((team, index) => {
+                  const teamDrivers = data.drivers.filter((driver) => driver.team === team.id);
+                  const driverRows = teamDrivers.map((driver) => standings.find((row) => row.id === driver.id) || { id: driver.id, points: 0, wins: 0, lastFive: [] });
+                  const maxContribution = Math.max(1, ...driverRows.map((row) => row.points));
+                  const recentScores = teamRecentScores(data, team.id);
+                  return <article className="team-card" key={team.id} style={{ "--team": team.color, "--team2": team.color2 } as React.CSSProperties}>
+                    <div className="team-card-top"><span>P{index + 1}</span><p>{team.country}</p><strong>{team.points}</strong><small>team points</small></div>
+                    <h3>{team.shortName}</h3>
+                    <div className="engine-choice"><span>{team.engine.includes("(works") ? "Works power unit" : "Customer power unit"}</span><b>{team.engine}</b><p>{team.engine.includes("(works") ? "Designed by or exclusively partnered with this team." : "Supplied by another manufacturer, then packaged into this team’s own car."}</p></div>
+                    <div className="teammate-duel"><p>Teammate scorecard</p>{driverRows.map((row) => <div key={row.id}><b>{row.id}</b><span><i style={{ width: `${Math.max(4, row.points / maxContribution * 100)}%` }}></i></span><strong>{row.points}</strong></div>)}</div>
+                    <div className="team-form"><span>Last five team scores</span><div>{recentScores.map((score, i) => <i key={i} style={{ height: `${Math.max(10, Math.min(100, score * 2.2))}%` }} title={`${score} points`}></i>)}</div></div>
+                    <p className="team-note">{team.note}</p>
+                  </article>;
+                })}
+              </div>}
             </>
           )}
 
