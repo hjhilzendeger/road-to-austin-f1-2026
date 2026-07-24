@@ -514,7 +514,7 @@ export default function Home() {
 
       <footer>
         <div><span className="mark">17</span><p>Built for a family learning F1 together on the road to Austin.</p></div>
-        <p>Season data updated {data.meta.exportedAt ? new Date(data.meta.exportedAt).toLocaleDateString() : "from the supplied file"}. Missing facts stay missing—never guessed. <a href="/road-to-austin-presenter-guide.pdf" target="_blank" rel="noreferrer">Presenter guide ↗</a></p>
+        <p>Season data updated {data.meta.exportedAt ? new Date(data.meta.exportedAt).toLocaleDateString() : "from the supplied file"}. Missing facts stay missing—never guessed. <a href="/road-to-austin-presenter-guide.pdf" target="_blank" rel="noreferrer">Presenter guide ↗</a> <a href="/road-to-austin-source.zip" download>Source ZIP ↓</a></p>
       </footer>
     </div>
   );
