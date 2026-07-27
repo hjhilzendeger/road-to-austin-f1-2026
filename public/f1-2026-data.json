@@ -2,7 +2,7 @@
   "meta": {
     "title": "F1 2026 Season Tracker — underlying dataset",
     "generatedFrom": "f1-2026-season-tracker.html",
-    "exportedAt": "2026-07-24T16:23:12.561Z",
+    "exportedAt": "2026-07-27T15:27:36.117Z",
     "sources": {
       "calendarEntryListAndSeasonNarrative": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship",
       "raceClassificationsAndPoints": "https://www.formula1.com/en/results/2026/races",
@@ -1240,7 +1240,7 @@
       "track": "hungaroring",
       "date": "2026-07-24/26",
       "sprint": false,
-      "status": "next"
+      "status": "done"
     },
     {
       "round": 12,
@@ -1249,7 +1249,7 @@
       "track": "zandvoort",
       "date": "2026-08-21/23",
       "sprint": true,
-      "status": "future"
+      "status": "next"
     },
     {
       "round": 13,
@@ -1795,8 +1795,64 @@
         }
       ],
       "sprint": {
-        "note": "Full sprint classification wasn't captured — known so far: Russell took pole for the sprint; Antonelli finished 5th after an opening-lap collision penalty with Hadjar. Add the full table via the Update tab / F1.com Sprint result page.",
-        "results": []
+        "note": "Points-scoring top 8 confirmed from multiple sources; order beyond 9th (Verstappen, who narrowly missed points) not reliably sourced. Antonelli served a 10s penalty during the safety car period.",
+        "results": [
+          {
+            "id": "RUS",
+            "grid": null,
+            "finish": 1,
+            "pts": 8
+          },
+          {
+            "id": "LEC",
+            "grid": null,
+            "finish": 2,
+            "pts": 7
+          },
+          {
+            "id": "HAM",
+            "grid": null,
+            "finish": 3,
+            "pts": 6
+          },
+          {
+            "id": "NOR",
+            "grid": null,
+            "finish": 4,
+            "pts": 5
+          },
+          {
+            "id": "ANT",
+            "grid": null,
+            "finish": 5,
+            "pts": 4,
+            "onTrackPenalty": "10s — served during the safety car period"
+          },
+          {
+            "id": "PIA",
+            "grid": null,
+            "finish": 6,
+            "pts": 3
+          },
+          {
+            "id": "LAW",
+            "grid": null,
+            "finish": 7,
+            "pts": 2
+          },
+          {
+            "id": "BEA",
+            "grid": null,
+            "finish": 8,
+            "pts": 1
+          },
+          {
+            "id": "VER",
+            "grid": null,
+            "finish": 9,
+            "pts": 0
+          }
+        ]
       }
     },
     "3": {
@@ -2236,8 +2292,58 @@
         }
       ],
       "sprint": {
-        "note": "Sprint held (2nd of the season) — full classification not captured. Add via Update tab / F1.com Sprint result page.",
-        "results": []
+        "note": "Points-scoring top 8 confirmed from multiple sources. Antonelli finished 4th on the road but was penalized to 6th for exceeding track limits (already reflected below). Hulkenberg and Lindblad were non-starters (engine failure / parc ferme breach).",
+        "results": [
+          {
+            "id": "NOR",
+            "grid": null,
+            "finish": 1,
+            "pts": 8
+          },
+          {
+            "id": "PIA",
+            "grid": null,
+            "finish": 2,
+            "pts": 7
+          },
+          {
+            "id": "LEC",
+            "grid": null,
+            "finish": 3,
+            "pts": 6
+          },
+          {
+            "id": "RUS",
+            "grid": null,
+            "finish": 4,
+            "pts": 5
+          },
+          {
+            "id": "VER",
+            "grid": null,
+            "finish": 5,
+            "pts": 4
+          },
+          {
+            "id": "ANT",
+            "grid": null,
+            "finish": 6,
+            "pts": 3,
+            "onTrackPenalty": "5s — exceeding track limits (finished 4th on the road)"
+          },
+          {
+            "id": "HAM",
+            "grid": null,
+            "finish": 7,
+            "pts": 2
+          },
+          {
+            "id": "GAS",
+            "grid": null,
+            "finish": 8,
+            "pts": 1
+          }
+        ]
       }
     },
     "5": {
@@ -2463,8 +2569,57 @@
         }
       ],
       "sprint": {
-        "note": "Sprint held (3rd of the season) — full classification not captured. Add via Update tab / F1.com Sprint result page.",
-        "results": []
+        "note": "Points-scoring top 8 confirmed from multiple sources. Antonelli and Russell made contact fighting for the lead; Hadjar dropped out of contention with an engine problem and did not score.",
+        "results": [
+          {
+            "id": "RUS",
+            "grid": null,
+            "finish": 1,
+            "pts": 8
+          },
+          {
+            "id": "NOR",
+            "grid": null,
+            "finish": 2,
+            "pts": 7
+          },
+          {
+            "id": "ANT",
+            "grid": null,
+            "finish": 3,
+            "pts": 6
+          },
+          {
+            "id": "PIA",
+            "grid": null,
+            "finish": 4,
+            "pts": 5
+          },
+          {
+            "id": "LEC",
+            "grid": null,
+            "finish": 5,
+            "pts": 4
+          },
+          {
+            "id": "HAM",
+            "grid": null,
+            "finish": 6,
+            "pts": 3
+          },
+          {
+            "id": "VER",
+            "grid": null,
+            "finish": 7,
+            "pts": 2
+          },
+          {
+            "id": "LIN",
+            "grid": null,
+            "finish": 8,
+            "pts": 1
+          }
+        ]
       }
     },
     "6": {
@@ -3722,6 +3877,231 @@
           "gap": "DNF",
           "pts": 0,
           "retirement": "Crashed at Turn 5 (Les Combes) on the opening lap after contact with Hamilton"
+        }
+      ],
+      "sprint": null
+    },
+    "11": {
+      "meta": {
+        "poleDriver": "NOR",
+        "fastestLap": null,
+        "safetyCars": null,
+        "weatherQuali": null,
+        "weatherRace": null,
+        "note": "Norris ended Mercedes' run of ten consecutive poles. Hamilton (qualified 2nd, impeding Piastri) and Antonelli (qualified 4th, failing to slow under yellow flags) each took a 3-place grid penalty, promoting Leclerc to the front row and Piastri/Verstappen to row two. Grid confirmed for P1-P8 only; positions 9-22 not reliably sourced. Fastest lap and safety-car count could not be confirmed from available sources. Drivers raised concerns about the track surface after resurfacing work."
+      },
+      "headline": "Norris ends Mercedes' pole streak and wins a chaotic Hungarian GP",
+      "recap": "Lando Norris converted his first pole of the season into his maiden 2026 win, inheriting the lead when teammate Oscar Piastri retired with a gearbox failure after contact with backmarker Carlos Sainz. Max Verstappen and championship leader Kimi Antonelli completed the podium as Lewis Hamilton took his fourth penalty in three race weekends.",
+      "keyMoments": [
+        {
+          "lap": 1,
+          "label": "Piastri passes Norris at Turn 2",
+          "detail": "Piastri jumped polesitter Norris at the start and led the opening phase of the race."
+        },
+        {
+          "lap": null,
+          "label": "Piastri retires after Sainz contact",
+          "detail": "Piastri made contact with backmarker Sainz in traffic; a gearbox failure ended his race soon after."
+        },
+        {
+          "lap": null,
+          "label": "Hamilton's fourth penalty in three races",
+          "detail": "A 5-second penalty for pit lane speeding dropped Hamilton from 4th on the road to 5th at the flag."
+        }
+      ],
+      "notablePerformances": [
+        {
+          "id": "HUL",
+          "note": "Scored his first points of the season with 9th place."
+        },
+        {
+          "id": "RUS",
+          "note": "Recovered from as low as 21st place after early trouble to finish 7th."
+        }
+      ],
+      "sourceUrl": "https://www.formula1.com/en/latest/article/norris-beats-verstappen-and-antonelli-to-victory-in-dramatic-hungarian-gp.5JQmohRAKABD2asRsMWogj",
+      "results": [
+        {
+          "id": "NOR",
+          "grid": 1,
+          "finish": 1,
+          "laps": 70,
+          "gap": "70 Laps",
+          "pts": 25
+        },
+        {
+          "id": "VER",
+          "grid": 4,
+          "finish": 2,
+          "laps": 70,
+          "gap": "+15.0s",
+          "pts": 18
+        },
+        {
+          "id": "ANT",
+          "grid": 7,
+          "finish": 3,
+          "laps": 70,
+          "gap": "+18.7s",
+          "pts": 15
+        },
+        {
+          "id": "LEC",
+          "grid": 2,
+          "finish": 4,
+          "laps": 70,
+          "gap": "+23.8s",
+          "pts": 12
+        },
+        {
+          "id": "HAM",
+          "grid": 5,
+          "finish": 5,
+          "laps": 70,
+          "gap": "+24.5s",
+          "pts": 10,
+          "onTrackPenalty": "5s — speeding in the pit lane (finished 4th on the road)"
+        },
+        {
+          "id": "HAD",
+          "grid": null,
+          "finish": 6,
+          "laps": 70,
+          "gap": "+55.4s",
+          "pts": 8
+        },
+        {
+          "id": "RUS",
+          "grid": 8,
+          "finish": 7,
+          "laps": 70,
+          "gap": "+57.5s",
+          "pts": 6,
+          "note": "Recovered from as low as 21st place."
+        },
+        {
+          "id": "LAW",
+          "grid": null,
+          "finish": 8,
+          "laps": 69,
+          "gap": "+1 lap",
+          "pts": 4
+        },
+        {
+          "id": "HUL",
+          "grid": null,
+          "finish": 9,
+          "laps": 69,
+          "gap": "+1 lap",
+          "pts": 2,
+          "note": "First points of the season for Hulkenberg and Audi's works return."
+        },
+        {
+          "id": "LIN",
+          "grid": null,
+          "finish": 10,
+          "laps": 69,
+          "gap": "+1 lap",
+          "pts": 1
+        },
+        {
+          "id": "BOR",
+          "grid": null,
+          "finish": 11,
+          "laps": 69,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "GAS",
+          "grid": null,
+          "finish": 12,
+          "laps": 69,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "STR",
+          "grid": null,
+          "finish": 13,
+          "laps": 69,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "ALO",
+          "grid": null,
+          "finish": 14,
+          "laps": 69,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "COL",
+          "grid": null,
+          "finish": 15,
+          "laps": 68,
+          "gap": "+2 laps",
+          "pts": 0
+        },
+        {
+          "id": "OCO",
+          "grid": null,
+          "finish": 16,
+          "laps": 68,
+          "gap": "+2 laps",
+          "pts": 0
+        },
+        {
+          "id": "ALB",
+          "grid": null,
+          "finish": 17,
+          "laps": 68,
+          "gap": "+2 laps",
+          "pts": 0
+        },
+        {
+          "id": "SAI",
+          "grid": null,
+          "finish": 18,
+          "laps": 68,
+          "gap": "+2 laps",
+          "pts": 0
+        },
+        {
+          "id": "BEA",
+          "grid": null,
+          "finish": 19,
+          "laps": 68,
+          "gap": "+2 laps",
+          "pts": 0
+        },
+        {
+          "id": "PIA",
+          "grid": 3,
+          "finish": "DNF",
+          "laps": null,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Gearbox failure after contact with Sainz while lapping him"
+        },
+        {
+          "id": "PER",
+          "grid": null,
+          "finish": "DNF",
+          "laps": null,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Retired (cause not confirmed)"
+        },
+        {
+          "id": "BOT",
+          "grid": null,
+          "finish": "DNF",
+          "laps": null,
+          "gap": "DNF",
+          "pts": 0,
+          "retirement": "Retired (cause not confirmed)"
         }
       ],
       "sprint": null

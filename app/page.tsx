@@ -27,7 +27,7 @@ type Picks = { winner: string; surprise: string; team: string };
 
 const AUSTIN_ROUND = 17;
 const AUSTIN_DATE = new Date("2026-10-25T20:00:00Z");
-const DATA_KEY = "f1-austin-data-v1";
+const DATA_KEY = "f1-austin-data-v2";
 const PICKS_KEY = "f1-austin-picks-v1";
 const THEME_KEY = "f1-austin-theme";
 
@@ -100,9 +100,18 @@ function teamRecentScores(data: F1Data, teamId: string) {
   });
 }
 
-function closePairs<T extends { points: number }>(rows: T[], limit = 4) {
-  return rows.slice(0, -1).map((row, i) => ({ a: row, b: rows[i + 1], gap: row.points - rows[i + 1].points }))
-    .sort((a, b) => a.gap - b.gap).slice(0, limit);
+function closePairs<T extends { points: number }>(rows: T[], limit = 4, topLimit = rows.length) {
+  const scoringRows = rows.filter((row) => row.points > 0).slice(0, topLimit);
+  return scoringRows.slice(0, -1)
+    .map((row, i) => ({
+      a: row,
+      b: scoringRows[i + 1],
+      gap: row.points - scoringRows[i + 1].points,
+      rank: i + 1,
+    }))
+    .sort((a, b) => (a.gap + a.rank * .75) - (b.gap + b.rank * .75) || a.rank - b.rank)
+    .slice(0, limit)
+    .sort((a, b) => a.rank - b.rank);
 }
 
 function parseMoment(moment: NonNullable<F1Data["raceResults"][string]["keyMoments"]>[number]) {
@@ -176,6 +185,7 @@ export default function Home() {
   const cota = data?.tracks.find((t) => t.id === austin?.track);
   const days = now ? Math.max(0, Math.ceil((AUSTIN_DATE.getTime() - now) / 86400000)) : "—";
   const roundsToAustin = data ? data.calendar.filter((r) => r.round > latestRound && r.round < AUSTIN_ROUND && r.status !== "cancelled").length : 0;
+  const nextRace = data?.calendar.find((r) => r.status === "next") || data?.calendar.find((r) => r.round > latestRound && r.status === "future");
 
   function savePicks(next: Partial<Picks>) {
     setPicks((current) => ({ ...current, ...next }));
@@ -201,8 +211,8 @@ export default function Home() {
 
   if (!data) return <main className="loading">Preparing the grid…</main>;
 
-  const driverBattles = closePairs(standings);
-  const teamBattles = closePairs(teams);
+  const driverBattles = closePairs(standings, 4, 10);
+  const teamBattles = closePairs(teams, 4, 8);
   const visibleDrivers = showAllDrivers ? standings : standings.slice(0, 8);
 
   return (
@@ -215,6 +225,8 @@ export default function Home() {
         <nav aria-label="Main sections">
           {[
             ["road", "Road to Austin"],
+            ["calendar", "2026 calendar"],
+            ["standings", "Standings"],
             ["learn", "F1 in 90 sec"],
             ["grid", "Meet the grid"],
             ["austin", "Austin guide"],
@@ -227,7 +239,7 @@ export default function Home() {
       </header>
 
       <main id="top">
-        <section className="hero" aria-labelledby="hero-title">
+        {active === "road" && <section className="hero" aria-labelledby="hero-title">
           <div className="hero-copy">
             <p className="eyebrow"><span>Round 17</span> Circuit of the Americas · Oct 23–25</p>
             <h1 id="hero-title">Every race brings<br />Austin <em>closer.</em></h1>
@@ -251,7 +263,7 @@ export default function Home() {
               <span><b>{cota?.lengthKm || 5.513} km</b> a lap</span>
             </div>
           </div>
-        </section>
+        </section>}
 
         <section className="ticker" aria-label="Season snapshot">
           <span className="live-dot" aria-hidden="true"></span>
@@ -387,6 +399,58 @@ export default function Home() {
             </>
           )}
 
+          {active === "calendar" && (
+            <>
+              <div className="section-heading">
+                <div><p className="eyebrow">The road through 2026</p><h2>Race calendar</h2><p>Completed weekends are checked off. The next stop is highlighted so the family always knows what is coming.</p></div>
+                {nextRace && <div className="next-race-callout"><span>Next race · Round {nextRace.round}</span><strong>{nextRace.name}</strong><small>{nextRace.date}</small></div>}
+              </div>
+              <div className="calendar-grid" aria-label="2026 Formula 1 race calendar">
+                {data.calendar.map((event, index) => {
+                  const track = data.tracks.find((item) => item.id === event.track);
+                  const state = event.status === "done" ? "completed" : event.status === "next" ? "next" : event.status === "cancelled" ? "cancelled" : "future";
+                  return <article className={`calendar-card ${state} ${event.round === AUSTIN_ROUND ? "austin-stop" : ""}`} key={`${event.name}-${index}`}>
+                    <div className="calendar-status">
+                      <span>{event.round ? `R${event.round}` : "—"}</span>
+                      <b>{state === "completed" ? "✓ Completed" : state === "next" ? "Next race" : state === "cancelled" ? "Cancelled" : event.round === AUSTIN_ROUND ? "Austin" : "Upcoming"}</b>
+                    </div>
+                    <p>{event.country}</p>
+                    <h3>{event.name}</h3>
+                    <div className="calendar-meta"><span>{event.date}</span><span>{track?.name || "No circuit"}</span>{event.sprint && <em>Sprint weekend</em>}</div>
+                    {state === "completed" && <button className="calendar-link" onClick={() => { setSelectedRound(event.round); setActive("road"); document.getElementById("content")?.scrollIntoView(); }}>View race story</button>}
+                  </article>;
+                })}
+              </div>
+            </>
+          )}
+
+          {active === "standings" && (
+            <>
+              <div className="section-heading"><div><p className="eyebrow">After round {latestRound}</p><h2>Championship standings</h2><p>Drivers race for individual honors. Teams combine both cars to fight for the Constructors’ Championship.</p></div></div>
+              <div className="standings-grid">
+                <section className="standings-table" aria-labelledby="driver-standings-title">
+                  <div className="standings-head"><div><p className="eyebrow">World Championship</p><h3 id="driver-standings-title">Drivers</h3></div><span>{standings.length}</span></div>
+                  {standings.map((row, index) => {
+                    const team = teamForDriver(data, row.id);
+                    return <div className="standing-row" key={row.id}>
+                      <span>{index + 1}</span><i style={{ background: team?.color }}></i>
+                      <div><b>{driverName(data, row.id)}</b><small>{team?.shortName}</small></div>
+                      <em>{row.wins} win{row.wins === 1 ? "" : "s"}</em><strong>{row.points}<small>pts</small></strong>
+                    </div>;
+                  })}
+                </section>
+                <section className="standings-table" aria-labelledby="team-standings-title">
+                  <div className="standings-head"><div><p className="eyebrow">Constructors’ Championship</p><h3 id="team-standings-title">Teams</h3></div><span>{teams.length}</span></div>
+                  {teams.map((team, index) => <div className="standing-row team-standing-row" key={team.id}>
+                    <span>{index + 1}</span><i style={{ background: team.color }}></i>
+                    <div><b>{team.shortName}</b><small>{team.engine}</small></div>
+                    <strong>{team.points}<small>pts</small></strong>
+                  </div>)}
+                </section>
+              </div>
+            </>
+          )}
+
           {active === "learn" && (
             <>
               <div className="section-heading"><div><p className="eyebrow">F1 in 90 seconds</p><h2>Enough to enjoy the whole weekend</h2><p>You don’t need to memorize a rulebook. Start with the rhythm.</p></div></div>
@@ -465,9 +529,9 @@ export default function Home() {
             <>
               <div className="section-heading"><div><p className="eyebrow">Your October weekend</p><h2>Austin, decoded</h2><p>A practical preview built from the confirmed 2026 calendar and circuit data.</p></div></div>
               <div className="austin-grid">
-                <article className="austin-track">
+                <article className="austin-track austin-facts">
                   <div><span>UNITED STATES GRAND PRIX</span><h3>{cota?.name}</h3><p>{cota?.chars}</p></div>
-                  <svg viewBox="0 0 200 120" role="img" aria-label="Circuit of the Americas track outline"><path d={data.trackOutlinePaths[cota?.id || "cota"]} /></svg>
+                  <div className="austin-fact-copy"><strong>Round 17</strong><p>The family’s destination race arrives after six more championship weekends. Follow the evolving driver and team battles, then bring those stories with you to Austin.</p></div>
                   <div className="track-numbers"><span><b>{cota?.lengthKm}</b> km</span><span><b>{cota?.corners}</b> corners</span><span><b>Oct 23–25</b> 2026</span></div>
                 </article>
                 <article className="look-for">
