@@ -5,9 +5,9 @@ import { useEffect, useMemo, useRef, useState } from "react";
 type F1Data = {
   meta: { exportedAt?: string };
   pointsSystem: { racePoints: Record<string, number>; sprintPoints: Record<string, number> };
-  teams: Array<{ id: string; name: string; shortName: string; color: string; color2: string; country: string; championships: number; engine: string; note: string }>;
-  drivers: Array<{ id: string; name: string; team: string; country: string; championships: number; debut: number; helmet: string }>;
-  tracks: Array<{ id: string; name: string; country: string; lengthKm: number; corners: number; chars: string }>;
+  teams: Array<{ id: string; name: string; shortName: string; color: string; color2: string; country: string; championships: number; engine: string; note: string; storyline2026?: string; chassis?: string }>;
+  drivers: Array<{ id: string; name: string; team: string; country: string; championships: number; debut: number; helmet: string; whyWatch?: string }>;
+  tracks: Array<{ id: string; name: string; country: string; lengthKm: number; corners: number; chars: string; raceLaps?: number; drsZones?: number; direction?: string; signatureFeatures?: string[]; whyInteresting?: string }>;
   calendar: Array<{ round: number; name: string; country: string; track: string; date: string; sprint: boolean; status: string }>;
   raceResults: Record<string, {
     headline?: string;
@@ -24,11 +24,13 @@ type F1Data = {
 
 type Standing = { id: string; points: number; wins: number; lastFive: number[] };
 type Picks = { winner: string; surprise: string; team: string };
+type WeekendPick = { winner?: string; team?: string; impressed?: string };
 
 const AUSTIN_ROUND = 17;
 const AUSTIN_DATE = new Date("2026-10-25T20:00:00Z");
 const DATA_KEY = "f1-austin-data-v2";
 const PICKS_KEY = "f1-austin-picks-v1";
+const WEEKEND_PICKS_KEY = "f1-austin-weekend-picks-v1";
 const THEME_KEY = "f1-austin-theme";
 
 const glossary = [
@@ -38,7 +40,25 @@ const glossary = [
   ["Undercut", "Pitting before a rival to use fresh tires and gain time while they stay out."],
   ["Safety car", "A neutralized race period used when the track is unsafe. It closes the gaps between cars."],
   ["DNF", "Did not finish. The driver started the race but retired before the end."],
+  ["Pole position", "First place on the starting grid, earned by setting the fastest qualifying time."],
+  ["Backmarker", "A car running near the back that the leaders are catching to put a lap behind."],
+  ["Pit lane", "The controlled lane beside the track where teams change tires, repair cars and serve some penalties."],
+  ["Gearbox", "The transmission that transfers engine power to the wheels through a sequence of gears."],
+  ["Penalty", "A sporting punishment that can add time, move a driver down the grid or require an in-race action."],
+  ["Virtual Safety Car", "Drivers slow to a controlled pace without lining up behind a physical safety car. Often shortened to VSC."],
 ];
+
+function formatWeekendDate(value: string) {
+  const match = value.match(/^(\d{4})-(\d{2})-(\d{2})\/(?:(\d{2})-)?(\d{2})$/);
+  if (!match) return value;
+  const [, year, startMonth, startDay, endMonthRaw, endDay] = match;
+  const endMonth = endMonthRaw || startMonth;
+  const start = new Date(`${year}-${startMonth}-${startDay}T12:00:00Z`);
+  const end = new Date(`${year}-${endMonth}-${endDay}T12:00:00Z`);
+  const startLabel = start.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" });
+  const endLabel = end.toLocaleDateString("en-US", { month: startMonth === endMonth ? undefined : "short", day: "numeric", timeZone: "UTC" });
+  return `${startLabel}–${endLabel}`;
+}
 
 function driverName(data: F1Data, id?: string) {
   return data.drivers.find((d) => d.id === id)?.name || id || "Not available";
@@ -133,13 +153,17 @@ function ThemeButton({ theme, setTheme }: { theme: string; setTheme: (value: str
 
 export default function Home() {
   const [data, setData] = useState<F1Data | null>(null);
+  const [hydrated, setHydrated] = useState(false);
   const [theme, setTheme] = useState("dark");
   const [active, setActive] = useState("road");
   const [selectedRound, setSelectedRound] = useState<number | null>(null);
   const [showAllDrivers, setShowAllDrivers] = useState(false);
   const [gridView, setGridView] = useState<"drivers" | "teams">("drivers");
+  const [showFullDriverStandings, setShowFullDriverStandings] = useState(false);
+  const [showFullTeamStandings, setShowFullTeamStandings] = useState(false);
   const [dropState, setDropState] = useState("");
   const [picks, setPicks] = useState<Picks>({ winner: "", surprise: "", team: "" });
+  const [weekendPicks, setWeekendPicks] = useState<Record<string, WeekendPick>>({});
   const [now, setNow] = useState(0);
   const fileRef = useRef<HTMLInputElement>(null);
 
@@ -151,10 +175,13 @@ export default function Home() {
       setTheme(initialTheme);
       const storedPicks = localStorage.getItem(PICKS_KEY);
       if (storedPicks) setPicks(JSON.parse(storedPicks));
+      const storedWeekendPicks = localStorage.getItem(WEEKEND_PICKS_KEY);
+      if (storedWeekendPicks) setWeekendPicks(JSON.parse(storedWeekendPicks));
       const storedData = localStorage.getItem(DATA_KEY);
       if (storedData) {
-        try { setData(JSON.parse(storedData)); return; } catch { localStorage.removeItem(DATA_KEY); }
+        try { setData(JSON.parse(storedData)); setHydrated(true); return; } catch { localStorage.removeItem(DATA_KEY); }
       }
+      setHydrated(true);
       fetch("/f1-2026-data.json").then((r) => r.json()).then(setData);
     };
     const frame = requestAnimationFrame(initialize);
@@ -162,13 +189,20 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    if (!hydrated) return;
     document.documentElement.dataset.theme = theme;
     localStorage.setItem(THEME_KEY, theme);
-  }, [theme]);
+  }, [theme, hydrated]);
 
   useEffect(() => {
+    if (!hydrated) return;
     localStorage.setItem(PICKS_KEY, JSON.stringify(picks));
-  }, [picks]);
+  }, [picks, hydrated]);
+
+  useEffect(() => {
+    if (!hydrated) return;
+    localStorage.setItem(WEEKEND_PICKS_KEY, JSON.stringify(weekendPicks));
+  }, [weekendPicks, hydrated]);
 
   const standings = useMemo(() => data ? driverStandings(data) : [], [data]);
   const teams = useMemo(() => data ? teamStandings(data, standings) : [], [data, standings]);
@@ -186,9 +220,26 @@ export default function Home() {
   const days = now ? Math.max(0, Math.ceil((AUSTIN_DATE.getTime() - now) / 86400000)) : "—";
   const roundsToAustin = data ? data.calendar.filter((r) => r.round > latestRound && r.round < AUSTIN_ROUND && r.status !== "cancelled").length : 0;
   const nextRace = data?.calendar.find((r) => r.status === "next") || data?.calendar.find((r) => r.round > latestRound && r.status === "future");
+  const nextTrack = data?.tracks.find((track) => track.id === nextRace?.track);
+  const latestDriverScores = useMemo(() => {
+    const scores = new Map<string, number>();
+    if (!data || !latestRound) return scores;
+    const latest = data.raceResults[String(latestRound)];
+    for (const result of [...(latest?.results || []), ...(latest?.sprint?.results || [])]) {
+      scores.set(result.id, (scores.get(result.id) || 0) + Number(result.pts || 0));
+    }
+    return scores;
+  }, [data, latestRound]);
+  const latestTeamScores = useMemo(() => data ? teamRoundScores(data, latestRound) : new Map<string, number>(), [data, latestRound]);
+  const previousDriverTable = useMemo(() => data && latestRound > 1 ? driverStandings(data, latestRound - 1) : [], [data, latestRound]);
+  const previousTeamStandings = useMemo(() => data && latestRound > 1 ? teamStandings(data, driverStandings(data, latestRound - 1)) : [], [data, latestRound]);
 
   function savePicks(next: Partial<Picks>) {
     setPicks((current) => ({ ...current, ...next }));
+  }
+
+  function saveWeekendPick(round: number, next: WeekendPick) {
+    setWeekendPicks((current) => ({ ...current, [String(round)]: { ...current[String(round)], ...next } }));
   }
 
   function loadFile(file?: File) {
@@ -214,6 +265,10 @@ export default function Home() {
   const driverBattles = closePairs(standings, 4, 10);
   const teamBattles = closePairs(teams, 4, 8);
   const visibleDrivers = showAllDrivers ? standings : standings.slice(0, 8);
+  const visibleDriverStandings = showFullDriverStandings ? standings : standings.slice(0, 10);
+  const visibleTeamStandings = showFullTeamStandings ? teams : teams.slice(0, 8);
+  const currentWeekendPick = weekendPicks[String(displayRound)] || {};
+  const nextWeekendPick = nextRace ? weekendPicks[String(nextRace.round)] || {} : {};
 
   return (
     <div className="site-shell">
@@ -225,11 +280,11 @@ export default function Home() {
         <nav aria-label="Main sections">
           {[
             ["road", "Road to Austin"],
-            ["calendar", "2026 calendar"],
+            ["calendar", "Calendar"],
             ["standings", "Standings"],
-            ["learn", "F1 in 90 sec"],
-            ["grid", "Meet the grid"],
-            ["austin", "Austin guide"],
+            ["learn", "Learn F1"],
+            ["grid", "Drivers & teams"],
+            ["austin", "Austin"],
             ["race", "Race day"],
           ].map(([id, label]) => (
             <button key={id} className={active === id ? "active" : ""} onClick={() => { setActive(id); document.getElementById("content")?.scrollIntoView(); }}>{label}</button>
@@ -276,8 +331,14 @@ export default function Home() {
         <section id="content" className="content">
           {active === "road" && race && (
             <>
+              <section className="start-here" aria-labelledby="start-here-title">
+                <div><p className="eyebrow">New to Formula 1?</p><h2 id="start-here-title">Start here</h2><p>Three short stops are enough to join the family conversation.</p></div>
+                <button onClick={() => setActive("learn")}><span>01</span><b>Learn the basics</b><small>Practice, qualifying and race day</small></button>
+                <button onClick={() => setActive("grid")}><span>02</span><b>Meet the contenders</b><small>Drivers, teams and teammates</small></button>
+                <button onClick={() => document.getElementById("latest-story")?.scrollIntoView()}><span>03</span><b>Read the latest story</b><small>What happened and why it matters</small></button>
+              </section>
               <div className="section-heading">
-                <div><p className="eyebrow">The family check-in</p><h2>What just happened?</h2></div>
+                <div id="latest-story"><p className="eyebrow">The family check-in</p><h2>What just happened?</h2></div>
                 <label className="round-picker">Race
                   <select value={selectedRound || latestRound} onChange={(e) => setSelectedRound(Number(e.target.value))}>
                     {rounds.map((r) => <option key={r} value={r}>R{r} · {data.calendar.find((c) => c.round === r)?.name}</option>)}
@@ -313,6 +374,14 @@ export default function Home() {
                 </div>
               </article>
 
+              <details className="race-terms">
+                <summary><span>New fan helper</span><b>Decode words from this race story</b><em>+</em></summary>
+                <div>
+                  {[glossary[4], ...glossary.slice(6)].map(([term, definition]) =>
+                    <article key={term}><h4>{term}</h4><p>{definition}</p></article>)}
+                </div>
+              </details>
+
               <div className="split-grid">
                 <article className="panel-card">
                   <div className="card-head"><div><p className="eyebrow">Replay in three beats</p><h3>Moments that shaped the race</h3></div><span className="number-badge">03</span></div>
@@ -335,20 +404,41 @@ export default function Home() {
                 </article>
               </div>
 
+              <details className="classification">
+                <summary><div><p className="eyebrow">Go deeper</p><h3>Full race classification</h3><span>Starting position, finishing position and places gained when the grid is available.</span></div><b>View all {race.results.length}</b></summary>
+                <div className="classification-table">
+                  <div className="classification-head"><span>Finish</span><span>Driver</span><span>Team</span><span>Grid</span><span>Change</span><span>Gap</span><span>Pts</span></div>
+                  {race.results.map((result) => {
+                    const finish = typeof result.finish === "number" ? result.finish : null;
+                    const movement = typeof result.grid === "number" && finish ? result.grid - finish : null;
+                    const team = teamForDriver(data, result.id);
+                    return <div className="classification-row" key={result.id}>
+                      <strong>{finish ? `P${finish}` : result.finish}</strong>
+                      <div><i style={{ background: team?.color }}></i><b>{driverName(data, result.id)}</b><small>{result.id}</small></div>
+                      <span>{team?.shortName}</span>
+                      <span>{typeof result.grid === "number" ? `P${result.grid}` : "—"}</span>
+                      <em className={movement && movement > 0 ? "gain" : movement && movement < 0 ? "loss" : ""}>{movement === null ? "—" : movement > 0 ? `↑ ${movement}` : movement < 0 ? `↓ ${Math.abs(movement)}` : "—"}</em>
+                      <span>{result.gap || result.retirement || "—"}</span>
+                      <b>{result.pts}</b>
+                    </div>;
+                  })}
+                </div>
+              </details>
+
               <section className="battle-section">
                 <div className="section-heading compact"><div><p className="eyebrow">Neutral watchlist</p><h2>The closest fights</h2><p>Small gaps mean one strong finish can change the order.</p></div></div>
                 <div className="battle-columns">
                   <div className="battle-group"><h3>Drivers</h3>{driverBattles.map(({ a, b, gap }) =>
                     <div className="battle-row" key={`${a.id}-${b.id}`}>
-                      <div><span style={{ background: teamForDriver(data, a.id)?.color }}></span><b>{a.id}</b><strong>{a.points}</strong></div>
-                      <div className="gap-pill">{gap} pt{gap === 1 ? "" : "s"} apart</div>
-                      <div><span style={{ background: teamForDriver(data, b.id)?.color }}></span><b>{b.id}</b><strong>{b.points}</strong></div>
+                      <div><span style={{ background: teamForDriver(data, a.id)?.color }}></span><b>{driverName(data, a.id)} <small>{a.id}</small></b><strong>{a.points}</strong></div>
+                      <div className="battle-context"><div className="gap-pill">{gap} pt{gap === 1 ? "" : "s"} apart</div><small>One strong weekend can reverse this order. Recent form: {a.lastFive.reduce((sum, n) => sum + n, 0)}–{b.lastFive.reduce((sum, n) => sum + n, 0)} pts.</small></div>
+                      <div><span style={{ background: teamForDriver(data, b.id)?.color }}></span><b>{driverName(data, b.id)} <small>{b.id}</small></b><strong>{b.points}</strong></div>
                     </div>)}
                   </div>
                   <div className="battle-group"><h3>Teams</h3>{teamBattles.map(({ a, b, gap }) =>
                     <div className="battle-row" key={`${a.id}-${b.id}`}>
                       <div><span style={{ background: a.color }}></span><b>{a.shortName}</b><strong>{a.points}</strong></div>
-                      <div className="gap-pill">{gap} pt{gap === 1 ? "" : "s"} apart</div>
+                      <div className="battle-context"><div className="gap-pill">{gap} pt{gap === 1 ? "" : "s"} apart</div><small>Both cars score, so strategy and reliability can swing this contest quickly.</small></div>
                       <div><span style={{ background: b.color }}></span><b>{b.shortName}</b><strong>{b.points}</strong></div>
                     </div>)}
                   </div>
@@ -390,6 +480,17 @@ export default function Home() {
                 </div>
               </section>
 
+              <section className="family-weekend-card">
+                <div><p className="eyebrow">Make every race social</p><h2>Your Round {displayRound} family check-in</h2><p>Choose who impressed you, then use the question to start a conversation. Your answer stays on this device.</p></div>
+                <label>Who impressed your family?
+                  <select value={currentWeekendPick.impressed || ""} onChange={(e) => saveWeekendPick(displayRound, { impressed: e.target.value })}>
+                    <option value="">Choose together</option>
+                    {standings.map((driver) => <option key={driver.id} value={driver.id}>{driverName(data, driver.id)}</option>)}
+                  </select>
+                </label>
+                <div className="talking-point"><span>Talk about it</span><b>{displayRound % 3 === 1 ? "Was this result driven more by the driver, the car or the team’s decisions?" : displayRound % 3 === 2 ? "Which teammate pairing would you most want to watch at the next race—and why?" : "What single moment changed this race, and what might have happened without it?"}</b></div>
+              </section>
+
               <section className="update-zone" onDragOver={(e) => e.preventDefault()} onDrop={(e) => { e.preventDefault(); loadFile(e.dataTransfer.files[0]); }}>
                 <div><span className="update-icon">↻</span><div><h3>Next race, drop in the new story</h3><p>Drag your updated F1 JSON here. Standings, recaps and battles refresh immediately.</p></div></div>
                 <button className="secondary" onClick={() => fileRef.current?.click()}>Choose JSON file</button>
@@ -403,8 +504,26 @@ export default function Home() {
             <>
               <div className="section-heading">
                 <div><p className="eyebrow">The road through 2026</p><h2>Race calendar</h2><p>Completed weekends are checked off. The next stop is highlighted so the family always knows what is coming.</p></div>
-                {nextRace && <div className="next-race-callout"><span>Next race · Round {nextRace.round}</span><strong>{nextRace.name}</strong><small>{nextRace.date}</small></div>}
+                {nextRace && <div className="next-race-callout"><span>Next race · Round {nextRace.round}</span><strong>{nextRace.name}</strong><small>{formatWeekendDate(nextRace.date)}</small></div>}
               </div>
+              {nextRace && <section className="next-race-preview">
+                <div className="next-preview-main">
+                  <p className="eyebrow">Why the next stop matters</p><h3>{nextTrack?.name}</h3>
+                  <p>{nextTrack?.whyInteresting || nextTrack?.chars}</p>
+                  <div className="next-track-facts"><span><b>{nextTrack?.corners || "—"}</b> corners</span><span><b>{nextTrack?.raceLaps || "—"}</b> race laps</span><span><b>{nextTrack?.drsZones ?? "—"}</b> DRS zones</span></div>
+                  {!!nextTrack?.signatureFeatures?.length && <ul>{nextTrack.signatureFeatures.slice(0, 3).map((feature) => <li key={feature}>{feature}</li>)}</ul>}
+                </div>
+                <div className="next-preview-watch">
+                  <p className="eyebrow">Championship lens</p><h3>What to watch</h3>
+                  <p><b>Driver fight:</b> {driverName(data, driverBattles[0]?.a.id)} and {driverName(data, driverBattles[0]?.b.id)} are separated by {driverBattles[0]?.gap} points.</p>
+                  <p><b>Team benchmark:</b> {teams[0]?.shortName} leads, while {teamBattles[0]?.a.shortName} and {teamBattles[0]?.b.shortName} form a close points battle.</p>
+                  <p><b>Technical question:</b> Which team can best balance {nextTrack?.chars?.toLowerCase() || "the circuit’s competing demands"}?</p>
+                  <div className="next-picks">
+                    <label>Your predicted winner<select value={nextWeekendPick.winner || ""} onChange={(e) => saveWeekendPick(nextRace.round, { winner: e.target.value })}><option value="">Choose together</option>{standings.map((driver) => <option key={driver.id} value={driver.id}>{driverName(data, driver.id)}</option>)}</select></label>
+                    <label>Your predicted top team<select value={nextWeekendPick.team || ""} onChange={(e) => saveWeekendPick(nextRace.round, { team: e.target.value })}><option value="">Choose together</option>{teams.map((team) => <option key={team.id} value={team.id}>{team.shortName}</option>)}</select></label>
+                  </div>
+                </div>
+              </section>}
               <div className="calendar-grid" aria-label="2026 Formula 1 race calendar">
                 {data.calendar.map((event, index) => {
                   const track = data.tracks.find((item) => item.id === event.track);
@@ -416,7 +535,7 @@ export default function Home() {
                     </div>
                     <p>{event.country}</p>
                     <h3>{event.name}</h3>
-                    <div className="calendar-meta"><span>{event.date}</span><span>{track?.name || "No circuit"}</span>{event.sprint && <em>Sprint weekend</em>}</div>
+                    <div className="calendar-meta"><span>{formatWeekendDate(event.date)}</span><span>{track?.name || "No circuit"}</span>{event.sprint && <em>Sprint weekend</em>}</div>
                     {state === "completed" && <button className="calendar-link" onClick={() => { setSelectedRound(event.round); setActive("road"); document.getElementById("content")?.scrollIntoView(); }}>View race story</button>}
                   </article>;
                 })}
@@ -430,22 +549,36 @@ export default function Home() {
               <div className="standings-grid">
                 <section className="standings-table" aria-labelledby="driver-standings-title">
                   <div className="standings-head"><div><p className="eyebrow">World Championship</p><h3 id="driver-standings-title">Drivers</h3></div><span>{standings.length}</span></div>
-                  {standings.map((row, index) => {
+                  {visibleDriverStandings.map((row, index) => {
                     const team = teamForDriver(data, row.id);
+                    const previousIndex = previousDriverTable.findIndex((driver) => driver.id === row.id);
+                    const change = previousIndex < 0 ? 0 : previousIndex - index;
                     return <div className="standing-row" key={row.id}>
                       <span>{index + 1}</span><i style={{ background: team?.color }}></i>
-                      <div><b>{driverName(data, row.id)}</b><small>{team?.shortName}</small></div>
-                      <em>{row.wins} win{row.wins === 1 ? "" : "s"}</em><strong>{row.points}<small>pts</small></strong>
+                      <div><b>{driverName(data, row.id)}</b><small>{team?.shortName} · {row.wins} win{row.wins === 1 ? "" : "s"}</small></div>
+                      <em className="standing-change">{change > 0 ? `↑${change}` : change < 0 ? `↓${Math.abs(change)}` : "—"}</em>
+                      <em>+{latestDriverScores.get(row.id) || 0} latest</em>
+                      <span className="leader-gap">{index === 0 ? "Leader" : `−${standings[0].points - row.points}`}</span>
+                      <strong>{row.points}<small>pts</small></strong>
                     </div>;
                   })}
+                  <button className="standings-toggle" onClick={() => setShowFullDriverStandings(!showFullDriverStandings)}>{showFullDriverStandings ? "Show top 10" : "Show all 22 drivers"}</button>
                 </section>
                 <section className="standings-table" aria-labelledby="team-standings-title">
                   <div className="standings-head"><div><p className="eyebrow">Constructors’ Championship</p><h3 id="team-standings-title">Teams</h3></div><span>{teams.length}</span></div>
-                  {teams.map((team, index) => <div className="standing-row team-standing-row" key={team.id}>
-                    <span>{index + 1}</span><i style={{ background: team.color }}></i>
-                    <div><b>{team.shortName}</b><small>{team.engine}</small></div>
-                    <strong>{team.points}<small>pts</small></strong>
-                  </div>)}
+                  {visibleTeamStandings.map((team, index) => {
+                    const previousIndex = previousTeamStandings.findIndex((row) => row.id === team.id);
+                    const change = previousIndex < 0 ? 0 : previousIndex - index;
+                    return <div className="standing-row team-standing-row" key={team.id}>
+                      <span>{index + 1}</span><i style={{ background: team.color }}></i>
+                      <div><b>{team.shortName}</b><small>{team.engine}</small></div>
+                      <em className="standing-change">{change > 0 ? `↑${change}` : change < 0 ? `↓${Math.abs(change)}` : "—"}</em>
+                      <em>+{latestTeamScores.get(team.id) || 0} latest</em>
+                      <span className="leader-gap">{index === 0 ? "Leader" : `−${teams[0].points - team.points}`}</span>
+                      <strong>{team.points}<small>pts</small></strong>
+                    </div>;
+                  })}
+                  <button className="standings-toggle" onClick={() => setShowFullTeamStandings(!showFullTeamStandings)}>{showFullTeamStandings ? "Show top 8" : "Show all 11 teams"}</button>
                 </section>
               </div>
             </>
