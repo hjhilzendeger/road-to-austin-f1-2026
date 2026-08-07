@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Barlow_Condensed, Inter } from "next/font/google";
+import { Archivo, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 
-const display = Barlow_Condensed({ variable: "--font-display", subsets: ["latin"], weight: ["500", "600", "700", "800", "900"] });
-const body = Inter({ variable: "--font-body", subsets: ["latin"] });
+const display = Archivo({ variable: "--font-display", subsets: ["latin"], weight: ["500", "600", "700", "800"] });
+const body = Source_Sans_3({ variable: "--font-body", subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export const metadata: Metadata = {
   title: "Road to Austin | F1 2026 Family Companion",
