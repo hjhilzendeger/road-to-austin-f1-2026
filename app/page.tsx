@@ -7,7 +7,7 @@ type F1Data = {
   pointsSystem: { racePoints: Record<string, number>; sprintPoints: Record<string, number> };
   teams: Array<{ id: string; name: string; shortName: string; color: string; color2: string; country: string; championships: number; engine: string; note: string; storyline2026?: string; chassis?: string }>;
   drivers: Array<{ id: string; name: string; team: string; country: string; championships: number; debut: number; helmet: string; whyWatch?: string }>;
-  tracks: Array<{ id: string; name: string; country: string; lengthKm: number; corners: number; chars: string; raceLaps?: number; drsZones?: number; direction?: string; signatureFeatures?: string[]; whyInteresting?: string }>;
+  tracks: Array<{ id: string; name: string; country: string; lengthKm: number; corners: number; chars: string; city?: string; raceLaps?: number; raceDistanceKm?: number; firstGpYear?: number; drsZones?: number; lapTimeRange?: string; direction?: string; signatureFeatures?: string[]; whyInteresting?: string }>;
   calendar: Array<{ round: number; name: string; country: string; track: string; date: string; sprint: boolean; status: string }>;
   raceResults: Record<string, {
     headline?: string;
@@ -536,6 +536,28 @@ export default function Home() {
                     <p>{event.country}</p>
                     <h3>{event.name}</h3>
                     <div className="calendar-meta"><span>{formatWeekendDate(event.date)}</span><span>{track?.name || "No circuit"}</span>{event.sprint && <em>Sprint weekend</em>}</div>
+                    {track && <div className="calendar-track">
+                      <div className="calendar-track-visual" aria-hidden="true">
+                        <svg viewBox="0 0 200 120" role="img"><path d={data.trackOutlinePaths[track.id]} /></svg>
+                      </div>
+                      <div className="calendar-track-facts" aria-label={`${track.name} facts`}>
+                        <span><b>{track.lengthKm}</b> km</span>
+                        <span><b>{track.corners}</b> corners</span>
+                        <span><b>{track.raceLaps || "—"}</b> laps</span>
+                      </div>
+                      <p className="calendar-track-story">{track.whyInteresting || track.chars}</p>
+                      <details className="calendar-track-details">
+                        <summary>Explore this track</summary>
+                        <dl>
+                          {track.city && <><dt>Setting</dt><dd>{track.city}</dd></>}
+                          {track.direction && <><dt>Direction</dt><dd>{track.direction}</dd></>}
+                          <dt>DRS zones</dt><dd>{track.drsZones ?? "—"}</dd>
+                          {track.lapTimeRange && <><dt>Typical lap</dt><dd>{track.lapTimeRange}</dd></>}
+                          {track.firstGpYear && <><dt>First Grand Prix</dt><dd>{track.firstGpYear}</dd></>}
+                        </dl>
+                        {!!track.signatureFeatures?.length && <ul>{track.signatureFeatures.map((feature) => <li key={feature}>{feature}</li>)}</ul>}
+                      </details>
+                    </div>}
                     {state === "completed" && <button className="calendar-link" onClick={() => { setSelectedRound(event.round); setActive("road"); document.getElementById("content")?.scrollIntoView(); }}>View race story</button>}
                   </article>;
                 })}

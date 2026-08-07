@@ -183,7 +183,7 @@ select { min-height: 46px; background: var(--paper); color: var(--ink); border: 
 .next-picks label { color: var(--muted); font-size: 8px; text-transform: uppercase; letter-spacing: .1em; font-weight: 800; }
 .next-picks select { margin-top: 6px; width: 100%; }
 .calendar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-.calendar-card { min-height: 250px; border: 1px solid var(--line); border-top: 5px solid var(--line); background: var(--paper); padding: 22px; display: flex; flex-direction: column; position: relative; }
+.calendar-card { min-height: 560px; border: 1px solid var(--line); border-top: 5px solid var(--line); background: var(--paper); padding: 22px; display: flex; flex-direction: column; position: relative; }
 .calendar-card.completed { border-top-color: var(--blue); }
 .calendar-card.next { border: 2px solid var(--red); border-top-width: 7px; box-shadow: 0 14px 34px color-mix(in srgb, var(--red) 14%, transparent); }
 .calendar-card.austin-stop { background: var(--yellow); color: #151515; }
@@ -194,8 +194,24 @@ select { min-height: 46px; background: var(--paper); color: var(--ink); border: 
 .calendar-card.austin-stop .calendar-status b, .calendar-card.austin-stop .calendar-meta { color: #343434; }
 .calendar-card > p { margin: 28px 0 4px; color: var(--muted); font-size: 9px; text-transform: uppercase; letter-spacing: .12em; }
 .calendar-card h3 { margin: 0 0 20px; font: 900 28px/.9 var(--font-display); text-transform: uppercase; }
-.calendar-meta { margin-top: auto; border-top: 1px solid var(--line); padding-top: 12px; color: var(--muted); display: grid; gap: 3px; font-size: 10px; }
+.calendar-meta { border-top: 1px solid var(--line); padding-top: 12px; color: var(--muted); display: grid; gap: 3px; font-size: 10px; }
 .calendar-meta em { color: var(--red); font-style: normal; font-weight: 800; text-transform: uppercase; }
+.calendar-track { margin-top: 16px; display: grid; gap: 14px; }
+.calendar-track-visual { min-height: 112px; display: grid; place-items: center; border-radius: 3px; background: var(--soft); }
+.calendar-track-visual svg { width: min(100%, 210px); height: 118px; padding: 12px; overflow: visible; }
+.calendar-track-visual path { fill: none; stroke: var(--ink); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.calendar-card.next .calendar-track-visual path { stroke: var(--red); }
+.calendar-card.austin-stop .calendar-track-visual { background: rgba(255,255,255,.42); }
+.calendar-track-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.calendar-track-facts span { color: var(--muted); font-size: 11px; line-height: 1.25; text-transform: uppercase; letter-spacing: .04em; }
+.calendar-track-facts b { display: block; color: var(--ink); font: 700 20px/1.05 var(--font-display); text-transform: none; }
+.calendar-track-story { margin: 0; color: var(--ink); font-size: 14px; line-height: 1.5; text-transform: none; letter-spacing: 0; }
+.calendar-track-details { border-top: 1px solid var(--line); padding-top: 12px; }
+.calendar-track-details summary { color: var(--red); cursor: pointer; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .045em; }
+.calendar-track-details dl { margin: 14px 0; display: grid; grid-template-columns: 1fr auto; gap: 7px 12px; font-size: 13px; }
+.calendar-track-details dt { color: var(--muted); }
+.calendar-track-details dd { margin: 0; text-align: right; font-weight: 650; }
+.calendar-track-details ul { margin: 0; padding-left: 18px; font-size: 13px; line-height: 1.45; }
 .calendar-link { margin-top: 15px; border: 0; background: var(--ink); color: var(--bg); min-height: 38px; cursor: pointer; font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
 .standings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; }
 .standings-table { border: 1px solid var(--line); background: var(--paper); padding: 28px; }
@@ -435,6 +451,7 @@ h2, h3, h4 { font-weight: 700 !important; letter-spacing: -.01em !important; lin
 .calendar-card > p { font-size: 12px; letter-spacing: .07em; }
 .calendar-card h3 { font-size: 25px; }
 .calendar-meta { font-size: 14px; line-height: 1.45; }
+.calendar-track-story { font-size: 15px; }
 .calendar-link { font-size: 12px; }
 .standings-head h3 { font-size: 42px; }
 .standings-head > span { font-weight: 700; }
