@@ -16,8 +16,8 @@ type F1Data = {
     notablePerformances?: Array<string | { id?: string; driver?: string; reason?: string; note?: string }>;
     sourceUrl?: string;
     meta: { poleDriver?: string; fastestLap?: string; safetyCars?: number; weatherRace?: string; note?: string };
-    results: Array<{ id: string; grid?: number | null; finish: number | string; pts: number; gap?: string; retirement?: string; note?: string }>;
-    sprint?: { note?: string; results: Array<{ id: string; finish: number | string; pts: number }> } | null;
+    results: Array<{ id: string; team?: string; grid?: number | null; finish: number | string; pts: number; gap?: string; retirement?: string; note?: string }>;
+    sprint?: { note?: string; results: Array<{ id: string; team?: string; finish: number | string; pts: number }> } | null;
   }>;
   trackOutlinePaths: Record<string, string>;
 };
@@ -93,29 +93,33 @@ function driverStandings(data: F1Data, throughRound?: number): Standing[] {
   return [...table.values()].sort((a, b) => b.points - a.points || b.wins - a.wins);
 }
 
-function teamStandings(data: F1Data, drivers: Standing[]) {
-  return data.teams.map((team) => {
-    const ids = data.drivers.filter((d) => d.team === team.id).map((d) => d.id);
-    return { ...team, points: drivers.filter((d) => ids.includes(d.id)).reduce((sum, d) => sum + d.points, 0) };
-  }).sort((a, b) => b.points - a.points);
+function teamStandings(data: F1Data, throughRound?: number) {
+  const points = new Map(data.teams.map((team) => [team.id, 0]));
+  for (const round of completedRounds(data).filter((r) => throughRound === undefined || r <= throughRound)) {
+    const race = data.raceResults[String(round)];
+    for (const result of [...(race.results || []), ...(race.sprint?.results || [])]) {
+      const team = result.team || data.drivers.find((driver) => driver.id === result.id)?.team;
+      if (team) points.set(team, (points.get(team) || 0) + (Number(result.pts) || 0));
+    }
+  }
+  return data.teams.map((team) => ({ ...team, points: points.get(team.id) || 0 })).sort((a, b) => b.points - a.points);
 }
 
 function teamRoundScores(data: F1Data, round: number) {
   const race = data.raceResults[String(round)];
   const scores = new Map(data.teams.map((team) => [team.id, 0]));
   for (const result of [...(race?.results || []), ...(race?.sprint?.results || [])]) {
-    const team = data.drivers.find((driver) => driver.id === result.id)?.team;
+    const team = result.team || data.drivers.find((driver) => driver.id === result.id)?.team;
     if (team) scores.set(team, (scores.get(team) || 0) + (Number(result.pts) || 0));
   }
   return scores;
 }
 
 function teamRecentScores(data: F1Data, teamId: string) {
-  const driverIds = data.drivers.filter((driver) => driver.team === teamId).map((driver) => driver.id);
   return completedRounds(data).slice(-5).map((round) => {
     const race = data.raceResults[String(round)];
     return [...(race.results || []), ...(race.sprint?.results || [])]
-      .filter((result) => driverIds.includes(result.id))
+      .filter((result) => (result.team || data.drivers.find((driver) => driver.id === result.id)?.team) === teamId)
       .reduce((sum, result) => sum + (Number(result.pts) || 0), 0);
   });
 }
@@ -205,14 +209,14 @@ export default function Home() {
   }, [weekendPicks, hydrated]);
 
   const standings = useMemo(() => data ? driverStandings(data) : [], [data]);
-  const teams = useMemo(() => data ? teamStandings(data, standings) : [], [data, standings]);
+  const teams = useMemo(() => data ? teamStandings(data) : [], [data]);
   const rounds = useMemo(() => data ? completedRounds(data) : [], [data]);
   const latestRound = rounds.at(-1) || 0;
   const displayRound = selectedRound || latestRound;
   const race = data && latestRound ? data.raceResults[String(displayRound)] : null;
   const raceCalendar = data?.calendar.find((r) => r.round === displayRound);
-  const raceTeamTable = useMemo(() => data ? teamStandings(data, driverStandings(data, displayRound)) : [], [data, displayRound]);
-  const previousTeamTable = useMemo(() => data && displayRound > 1 ? teamStandings(data, driverStandings(data, displayRound - 1)) : [], [data, displayRound]);
+  const raceTeamTable = useMemo(() => data ? teamStandings(data, displayRound) : [], [data, displayRound]);
+  const previousTeamTable = useMemo(() => data && displayRound > 1 ? teamStandings(data, displayRound - 1) : [], [data, displayRound]);
   const weekendTeamScores = useMemo(() => data ? teamRoundScores(data, displayRound) : new Map<string, number>(), [data, displayRound]);
   const weekendTeamRanking = useMemo(() => [...raceTeamTable].sort((a, b) => (weekendTeamScores.get(b.id) || 0) - (weekendTeamScores.get(a.id) || 0)), [raceTeamTable, weekendTeamScores]);
   const austin = data?.calendar.find((r) => r.round === AUSTIN_ROUND);
@@ -232,7 +236,7 @@ export default function Home() {
   }, [data, latestRound]);
   const latestTeamScores = useMemo(() => data ? teamRoundScores(data, latestRound) : new Map<string, number>(), [data, latestRound]);
   const previousDriverTable = useMemo(() => data && latestRound > 1 ? driverStandings(data, latestRound - 1) : [], [data, latestRound]);
-  const previousTeamStandings = useMemo(() => data && latestRound > 1 ? teamStandings(data, driverStandings(data, latestRound - 1)) : [], [data, latestRound]);
+  const previousTeamStandings = useMemo(() => data && latestRound > 1 ? teamStandings(data, latestRound - 1) : [], [data, latestRound]);
 
   function savePicks(next: Partial<Picks>) {
     setPicks((current) => ({ ...current, ...next }));

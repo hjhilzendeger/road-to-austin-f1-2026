@@ -2,7 +2,7 @@
   "meta": {
     "title": "F1 2026 Season Tracker — underlying dataset",
     "generatedFrom": "f1-2026-season-tracker.html",
-    "exportedAt": "2026-07-27T15:27:36.117Z",
+    "exportedAt": "2026-08-24T12:00:00.000Z",
     "sources": {
       "calendarEntryListAndSeasonNarrative": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship",
       "raceClassificationsAndPoints": "https://www.formula1.com/en/results/2026/races",
@@ -620,6 +620,22 @@
       "previousTeam": "Racing Bulls (2025)",
       "pronunciation": "EE-zak HAD-jar",
       "whyWatch": "Promoted to the senior Red Bull team after an impressive rookie season."
+    },
+    {
+      "id": "TSU",
+      "name": "Yuki Tsunoda",
+      "team": "racingbulls",
+      "country": "Japan",
+      "dob": "2000-05-11",
+      "debut": 2021,
+      "championships": 0,
+      "helmet": "White, red & black",
+      "number": 22,
+      "abbr": "TSU",
+      "rookie2026": false,
+      "previousTeam": "Red Bull Racing (2025)",
+      "pronunciation": "YOO-kee tsoo-NOH-dah",
+      "whyWatch": "Returned from reserve duties for the Dutch Grand Prix when Hadjar's injury triggered a two-team substitution."
     },
     {
       "id": "VER",
@@ -1249,7 +1265,7 @@
       "track": "zandvoort",
       "date": "2026-08-21/23",
       "sprint": true,
-      "status": "next"
+      "status": "done"
     },
     {
       "round": 13,
@@ -1258,7 +1274,7 @@
       "track": "monza",
       "date": "2026-09-04/06",
       "sprint": false,
-      "status": "future"
+      "status": "next"
     },
     {
       "round": 14,
@@ -2681,42 +2697,42 @@
         {
           "id": "HAD",
           "grid": 5,
-          "finish": 3,
+          "finish": 4,
           "laps": 78,
           "gap": "+23.394s",
-          "pts": 15
+          "pts": 12
         },
         {
           "id": "PIA",
           "grid": 7,
-          "finish": 4,
+          "finish": 5,
           "laps": 78,
           "gap": "+24.261s",
-          "pts": 12
+          "pts": 10
         },
         {
           "id": "LAW",
           "grid": 10,
-          "finish": 5,
+          "finish": 6,
           "laps": 78,
           "gap": "+26.553s",
-          "pts": 10
+          "pts": 8
         },
         {
           "id": "LIN",
           "grid": null,
-          "finish": 6,
+          "finish": 7,
           "laps": 78,
           "gap": "+29.010s",
-          "pts": 8
+          "pts": 6
         },
         {
           "id": "GAS",
           "grid": 9,
-          "finish": 7,
+          "finish": 3,
           "laps": 78,
           "gap": "+30.369s",
-          "pts": 6,
+          "pts": 15,
           "onTrackPenalty": "Two separate 5s penalties — speeding in the pit lane"
         },
         {
@@ -4105,6 +4121,81 @@
         }
       ],
       "sprint": null
+    },
+    "12": {
+      "meta": {
+        "poleDriver": "NOR",
+        "fastestLap": "LEC",
+        "safetyCars": null,
+        "weatherQuali": null,
+        "weatherRace": "Changeable conditions; the race was red-flagged after Verstappen crashed on lap 1.",
+        "note": "Hadjar missed the weekend with a wrist injury. Lawson substituted for him at Red Bull, while reserve driver Tsunoda filled Lawson's Racing Bulls seat. Perez started from the pit lane after parc ferme changes. Colapinto and Lawson received 10-second penalties for yellow-flag infringements; Sainz received 10 seconds for causing a collision. Exact safety-car count was not added because it could not be reliably confirmed from the official summary."
+      },
+      "headline": "Norris masters a dramatic Zandvoort race after an early red flag",
+      "recap": "Lando Norris won from pole for McLaren after retaking the lead from Kimi Antonelli in the final third of the race. Antonelli and George Russell completed a double Mercedes podium, while home favourite Max Verstappen crashed out on the opening lap. The result gave Norris a second consecutive Grand Prix victory and kept the leading driver and team contests moving toward Austin.",
+      "keyMoments": [
+        { "lap": 1, "label": "Verstappen crashes at home", "detail": "Verstappen lost the rear of his Red Bull and hit the wall, bringing out an early red flag; he reported that he was okay." },
+        { "lap": null, "label": "Antonelli takes the lead", "detail": "After the restart, Antonelli passed Norris and opened a gap at the front." },
+        { "lap": null, "label": "Norris fights back", "detail": "Norris closed the gap and reclaimed first place in the final third before winning by 11.536 seconds." }
+      ],
+      "notablePerformances": [
+        { "id": "NOR", "note": "Won both from pole and after having to retake the lead on track." },
+        { "id": "ANT", "note": "Led after the restart and finished second, 11.536 seconds behind Norris." },
+        { "id": "RUS", "note": "Won the Sprint and completed a double Mercedes podium in the Grand Prix." },
+        { "id": "LAW", "note": "Finished seventh while substituting for the injured Hadjar at Red Bull." }
+      ],
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races/1292/netherlands/race-result",
+      "results": [
+        { "id": "NOR", "team": "mclaren", "grid": 1, "finish": 1, "laps": 72, "gap": "2:04:44.859", "pts": 25 },
+        { "id": "ANT", "team": "mercedes", "grid": 3, "finish": 2, "laps": 72, "gap": "+11.536s", "pts": 18 },
+        { "id": "RUS", "team": "mercedes", "grid": 2, "finish": 3, "laps": 72, "gap": "+15.906s", "pts": 15 },
+        { "id": "HAM", "team": "ferrari", "grid": 5, "finish": 4, "laps": 72, "gap": "+16.755s", "pts": 12 },
+        { "id": "LEC", "team": "ferrari", "grid": 6, "finish": 5, "laps": 72, "gap": "+17.258s", "pts": 10, "note": "Set the fastest lap: 1:14.230 on lap 60." },
+        { "id": "PIA", "team": "mclaren", "grid": 4, "finish": 6, "laps": 72, "gap": "+32.332s", "pts": 8 },
+        { "id": "LAW", "team": "redbull", "grid": 8, "finish": 7, "laps": 72, "gap": "+79.915s", "pts": 6, "note": "Substituted for Isack Hadjar at Red Bull." },
+        { "id": "HUL", "team": "audi", "grid": 13, "finish": 8, "laps": 71, "gap": "+1 lap", "pts": 4 },
+        { "id": "ALO", "team": "astonmartin", "grid": 18, "finish": 9, "laps": 71, "gap": "+1 lap", "pts": 2 },
+        { "id": "GAS", "team": "alpine", "grid": 11, "finish": 10, "laps": 71, "gap": "+1 lap", "pts": 1 },
+        { "id": "TSU", "team": "racingbulls", "grid": 12, "finish": 11, "laps": 71, "gap": "+1 lap", "pts": 0, "note": "Reserve driver substituting for Lawson at Racing Bulls." },
+        { "id": "LIN", "team": "racingbulls", "grid": 10, "finish": 12, "laps": 71, "gap": "+1 lap", "pts": 0 },
+        { "id": "BOR", "team": "audi", "grid": 9, "finish": 13, "laps": 71, "gap": "+1 lap", "pts": 0 },
+        { "id": "COL", "team": "alpine", "grid": 14, "finish": 14, "laps": 70, "gap": "+2 laps", "pts": 0, "onTrackPenalty": "10s — failing to slow for yellow flags" },
+        { "id": "PER", "team": "cadillac", "grid": 22, "finish": 15, "laps": 70, "gap": "+2 laps", "pts": 0, "note": "Started from the pit lane after parc ferme changes." },
+        { "id": "SAI", "team": "williams", "grid": 17, "finish": 16, "laps": 70, "gap": "+2 laps", "pts": 0, "onTrackPenalty": "10s — causing a collision" },
+        { "id": "ALB", "team": "williams", "grid": 16, "finish": 17, "laps": 66, "gap": "DNF", "pts": 0, "retirement": "Not classified" },
+        { "id": "BOT", "team": "cadillac", "grid": 21, "finish": "DNF", "laps": 61, "gap": "DNF", "pts": 0 },
+        { "id": "OCO", "team": "haas", "grid": 15, "finish": "DNF", "laps": 52, "gap": "DNF", "pts": 0 },
+        { "id": "STR", "team": "astonmartin", "grid": 19, "finish": "DNF", "laps": 45, "gap": "DNF", "pts": 0 },
+        { "id": "BEA", "team": "haas", "grid": 20, "finish": "DNF", "laps": 2, "gap": "DNF", "pts": 0 },
+        { "id": "VER", "team": "redbull", "grid": 7, "finish": "DNF", "laps": 0, "gap": "DNF", "pts": 0, "retirement": "Crashed on lap 1; race red-flagged" }
+      ],
+      "sprint": {
+        "note": "George Russell won the 24-lap Sprint for Mercedes.",
+        "results": [
+          { "id": "RUS", "team": "mercedes", "finish": 1, "pts": 8 },
+          { "id": "LEC", "team": "ferrari", "finish": 2, "pts": 7 },
+          { "id": "NOR", "team": "mclaren", "finish": 3, "pts": 6 },
+          { "id": "ANT", "team": "mercedes", "finish": 4, "pts": 5 },
+          { "id": "PIA", "team": "mclaren", "finish": 5, "pts": 4 },
+          { "id": "VER", "team": "redbull", "finish": 6, "pts": 3 },
+          { "id": "HAM", "team": "ferrari", "finish": 7, "pts": 2 },
+          { "id": "GAS", "team": "alpine", "finish": 8, "pts": 1 },
+          { "id": "BOR", "team": "audi", "finish": 9, "pts": 0 },
+          { "id": "LIN", "team": "racingbulls", "finish": 10, "pts": 0 },
+          { "id": "LAW", "team": "redbull", "finish": 11, "pts": 0 },
+          { "id": "COL", "team": "alpine", "finish": 12, "pts": 0 },
+          { "id": "TSU", "team": "racingbulls", "finish": 13, "pts": 0 },
+          { "id": "OCO", "team": "haas", "finish": 14, "pts": 0 },
+          { "id": "BEA", "team": "haas", "finish": 15, "pts": 0 },
+          { "id": "ALB", "team": "williams", "finish": 16, "pts": 0 },
+          { "id": "STR", "team": "astonmartin", "finish": 17, "pts": 0 },
+          { "id": "ALO", "team": "astonmartin", "finish": 18, "pts": 0 },
+          { "id": "BOT", "team": "cadillac", "finish": 19, "pts": 0 },
+          { "id": "SAI", "team": "williams", "finish": 20, "pts": 0 },
+          { "id": "PER", "team": "cadillac", "finish": 21, "pts": 0 },
+          { "id": "HUL", "team": "audi", "finish": "DNF", "pts": 0 }
+        ]
+      }
     }
   },
   "trackOutlinePaths": {
