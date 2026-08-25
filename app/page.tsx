@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import FamilyChallenge from "./FamilyChallenge";
 
-type F1Data = {
+export type F1Data = {
   meta: { exportedAt?: string };
   pointsSystem: { racePoints: Record<string, number>; sprintPoints: Record<string, number> };
   teams: Array<{ id: string; name: string; shortName: string; color: string; color2: string; country: string; championships: number; engine: string; note: string; storyline2026?: string; chassis?: string }>;
@@ -175,6 +176,7 @@ export default function Home() {
     const initialize = () => {
       setNow(Date.now());
       const storedTheme = localStorage.getItem(THEME_KEY);
+      if (window.location.hash === "#challenge") setActive("challenge");
       const initialTheme = storedTheme || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
       setTheme(initialTheme);
       const storedPicks = localStorage.getItem(PICKS_KEY);
@@ -289,6 +291,7 @@ export default function Home() {
             ["learn", "Learn F1"],
             ["grid", "Drivers & teams"],
             ["austin", "Austin"],
+            ["challenge", "Family Challenge"],
             ["race", "Race day"],
           ].map(([id, label]) => (
             <button key={id} className={active === id ? "active" : ""} onClick={() => { setActive(id); document.getElementById("content")?.scrollIntoView(); }}>{label}</button>
@@ -732,6 +735,7 @@ export default function Home() {
               </div>
             </>
           )}
+          {active === "challenge" && <FamilyChallenge data={data} nextRace={nextRace} />}
         </section>
       </main>
 
