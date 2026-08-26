@@ -6,6 +6,7 @@ const display = Archivo({ variable: "--font-display", subsets: ["latin"], weight
 const body = Source_Sans_3({ variable: "--font-body", subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://road-to-austin-f1-2026.vercel.app"),
   title: "Road to Austin | F1 2026 Family Companion",
   description: "A fun, neutral guide to the 2026 Formula 1 season and the road to the United States Grand Prix in Austin.",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },

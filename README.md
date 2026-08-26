@@ -4,7 +4,7 @@ A family-friendly Formula 1 companion for following the 2026 season on the way
 to the United States Grand Prix at Circuit of the Americas.
 
 Public site:
-https://road-to-austin-f1-2026.heather-hilzendeger.chatgpt.site
+https://road-to-austin-f1-2026.vercel.app
 
 ## What is included
 
