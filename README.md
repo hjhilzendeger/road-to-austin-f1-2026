@@ -17,6 +17,17 @@ https://road-to-austin-f1-2026.heather-hilzendeger.chatgpt.site
 - Device-local predictions, theme choice, and imported data
 - Drag-and-drop updates using the supplied F1 JSON format
 - Downloadable presenter guide
+- Family prediction groups, private pre-race picks, scoring, and leaderboards
+
+## Deploy on Vercel
+
+1. Import this repository into Vercel.
+2. Open **Storage** in the Vercel project and add a Neon Postgres database. This supplies `DATABASE_URL`.
+3. Add a secret environment variable named `SESSION_SECRET` with a long random value.
+4. Redeploy. The first Family Challenge request creates its database tables automatically.
+
+The game uses a signed browser-based player identity. Family members join with
+the private six-character family code; no Supabase account is required.
 
 ## Run locally
 
@@ -34,10 +45,10 @@ npm run dev
 
 Then open the local address shown in the terminal.
 
-To create a production build:
+To validate the Vercel production build:
 
 ```bash
-npm run build
+npm run build:vercel
 ```
 
 ## Project structure
@@ -65,5 +76,6 @@ To change the default dataset for a new deployment, replace
 
 ## Data and privacy
 
-Predictions, theme choice, and imported JSON are stored only in the visitor's
-browser. The site does not require an account and does not use a database.
+Theme choice and imported JSON stay in the visitor's browser. Shared Family
+Challenge groups and predictions are stored in Postgres. A signed, HTTP-only
+cookie remembers each player; no email address or password is collected.

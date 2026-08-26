@@ -617,6 +617,7 @@ footer { font-size: 13px; line-height: 1.5; }
 .family-bar > div:nth-child(2) span { font-size: 12px; }
 .family-bar > div:nth-child(2) strong { letter-spacing: .2em; font-size: 26px; color: var(--red); }
 .family-bar a { color: inherit; }
+.challenge-signout { border: 0; padding: 0; background: transparent; color: inherit; font: inherit; text-decoration: underline; cursor: pointer; }
 .challenge-grid { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(280px, .7fr); gap: 20px; align-items: start; }
 .challenge-help { max-width: 620px; }
 .prediction-fields { display: grid; grid-template-columns: 1fr 1fr; column-gap: 16px; margin-top: 25px; }

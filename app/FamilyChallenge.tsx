@@ -65,13 +65,15 @@ export default function FamilyChallenge({ data, nextRace }: { data: F1Data; next
     </section>
     {error && <p className="challenge-error" role="alert">{error}</p>}
     {state === null && <p className="challenge-loading">Loading your family grid…</p>}
-    {state?.signedIn === false && <section className="challenge-signin"><p className="eyebrow">Keep the scores together</p><h3>Sign in to join the family grid</h3><p>Your picks, scores and family leaderboard will stay available on any device.</p><a className="challenge-button" href="/signin-with-chatgpt?return_to=%2F%23challenge">Sign in with ChatGPT</a></section>}
-    {state?.signedIn && !state.profile?.groupId && <section className="challenge-onboard">
+    {state !== null && (!state.signedIn || !state.profile?.groupId) && <>
+      <section className="challenge-signin"><p className="eyebrow">No account required</p><h3>Choose a family nickname</h3><p>Create a family grid or join one with its private code. This browser will remember your player.</p></section>
+      <section className="challenge-onboard">
       <div><p className="eyebrow">Start a league</p><h3>Create your family</h3><label>Your nickname<input value={nickname} onChange={(event) => setNickname(event.target.value)} placeholder="e.g. Pit Lane Nana" /></label><label>Family name<input value={groupName} onChange={(event) => setGroupName(event.target.value)} /></label><button disabled={busy} onClick={() => post({ action: "create_group", name: groupName, nickname })}>Create family</button></div>
       <div><p className="eyebrow">Have a code?</p><h3>Join your family</h3><label>Your nickname<input value={nickname} onChange={(event) => setNickname(event.target.value)} placeholder="e.g. Turn One Tom" /></label><label>Six-character family code<input value={inviteCode} onChange={(event) => setInviteCode(event.target.value.toUpperCase())} /></label><button disabled={busy || !inviteCode} onClick={() => post({ action: "join_group", inviteCode, nickname })}>Join family</button></div>
-    </section>}
+      </section>
+    </>}
     {state?.signedIn && state.profile?.groupId && <>
-      <section className="family-bar"><div><p className="eyebrow">Your grid</p><h3>{state.group?.name}</h3></div><div><span>Invite family with code</span><strong>{state.group?.inviteCode}</strong></div><a href="/signout-with-chatgpt?return_to=%2F">Sign out</a></section>
+      <section className="family-bar"><div><p className="eyebrow">Your grid</p><h3>{state.group?.name}</h3></div><div><span>Invite family with code</span><strong>{state.group?.inviteCode}</strong></div><button className="challenge-signout" onClick={() => post({ action: "sign_out" })}>Leave this player</button></section>
       <div className="challenge-grid">
         <section className="prediction-card"><p className="eyebrow">Level {level} of 4 · {savedCount ? "Welcome back" : "Rookie"}</p><h3>{nextRace ? `Pick the ${nextRace.name}` : "Next picks open soon"}</h3><p className="challenge-help">Start with a winner. Each choice introduces another part of an F1 weekend.</p>
           {nextRace && <div className="prediction-fields">
