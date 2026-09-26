@@ -27,7 +27,7 @@ type Standing = { id: string; points: number; wins: number; lastFive: number[] }
 type Picks = { winner: string; surprise: string; team: string };
 type WeekendPick = { winner?: string; team?: string; impressed?: string };
 
-const AUSTIN_ROUND = 17;
+const AUSTIN_ROUND = 18;
 const AUSTIN_DATE = new Date("2026-10-25T20:00:00Z");
 const DATA_KEY = "f1-austin-data-v2";
 const PICKS_KEY = "f1-austin-picks-v1";
@@ -303,7 +303,7 @@ export default function Home() {
       <main id="top">
         {active === "road" && <section className="hero" aria-labelledby="hero-title">
           <div className="hero-copy">
-            <p className="eyebrow"><span>Round 17</span> Circuit of the Americas · Oct 23–25</p>
+            <p className="eyebrow"><span>Round {austin?.round || AUSTIN_ROUND}</span> Circuit of the Americas · Oct 23–25</p>
             <h1 id="hero-title">Every race brings<br />Austin <em>closer.</em></h1>
             <p className="hero-intro">Your family’s friendly guide to the stories, rivalries and tiny details that make Formula 1 thrilling—no prior knowledge required.</p>
             <div className="hero-actions">
@@ -693,7 +693,7 @@ export default function Home() {
               <div className="austin-grid">
                 <article className="austin-track austin-facts">
                   <div><span>UNITED STATES GRAND PRIX</span><h3>{cota?.name}</h3><p>{cota?.chars}</p></div>
-                  <div className="austin-fact-copy"><strong>Round 17</strong><p>The family’s destination race arrives after six more championship weekends. Follow the evolving driver and team battles, then bring those stories with you to Austin.</p></div>
+                  <div className="austin-fact-copy"><strong>Round {austin?.round || AUSTIN_ROUND}</strong><p>The family’s destination race arrives after {roundsToAustin} more championship weekends. Follow the evolving driver and team battles, then bring those stories with you to Austin.</p></div>
                   <div className="track-numbers"><span><b>{cota?.lengthKm}</b> km</span><span><b>{cota?.corners}</b> corners</span><span><b>Oct 23–25</b> 2026</span></div>
                 </article>
                 <article className="look-for">

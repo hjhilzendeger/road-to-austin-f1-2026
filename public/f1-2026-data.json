@@ -2,7 +2,7 @@
   "meta": {
     "title": "F1 2026 Season Tracker — underlying dataset",
     "generatedFrom": "f1-2026-season-tracker.html",
-    "exportedAt": "2026-08-24T12:00:00.000Z",
+    "exportedAt": "2026-09-26T23:30:00.000Z",
     "sources": {
       "calendarEntryListAndSeasonNarrative": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship",
       "raceClassificationsAndPoints": "https://www.formula1.com/en/results/2026/races",
@@ -986,6 +986,28 @@
       "whyInteresting": "Combines Monaco-style tight streets with the longest straight in F1, producing extreme speed contrasts."
     },
     {
+      "id": "sepang",
+      "name": "Sepang International Circuit",
+      "country": "Malaysia",
+      "lengthKm": 5.543,
+      "corners": 15,
+      "chars": "Wide, flowing circuit with long straights, heavy braking zones and tropical heat.",
+      "city": "Kuala Lumpur",
+      "timezone": "MYT (UTC+8)",
+      "raceLaps": 56,
+      "raceDistanceKm": 310.408,
+      "firstGpYear": 1999,
+      "drsZones": null,
+      "lapTimeRange": "To be established for the 2026 cars",
+      "direction": "Clockwise",
+      "signatureFeatures": [
+        "Two long straights separated by the final hairpin",
+        "A very wide layout that encourages different racing lines",
+        "Tropical heat and sudden rain can transform strategy"
+      ],
+      "whyInteresting": "Sepang returns as the host venue for the Bahrain Grand Prix in Malaysia, adding a fast, technical challenge before Singapore."
+    },
+    {
       "id": "marinabay",
       "name": "Marina Bay Street Circuit",
       "country": "Singapore",
@@ -1274,7 +1296,7 @@
       "track": "monza",
       "date": "2026-09-04/06",
       "sprint": false,
-      "status": "next"
+      "status": "done"
     },
     {
       "round": 14,
@@ -1283,7 +1305,7 @@
       "track": "madring",
       "date": "2026-09-11/13",
       "sprint": false,
-      "status": "future"
+      "status": "done"
     },
     {
       "round": 15,
@@ -1292,10 +1314,19 @@
       "track": "baku",
       "date": "2026-09-25/26",
       "sprint": false,
-      "status": "future"
+      "status": "done"
     },
     {
       "round": 16,
+      "name": "Bahrain Grand Prix in Malaysia",
+      "country": "Malaysia",
+      "track": "sepang",
+      "date": "2026-10-02/04",
+      "sprint": false,
+      "status": "next"
+    },
+    {
+      "round": 17,
       "name": "Singapore Grand Prix",
       "country": "Singapore",
       "track": "marinabay",
@@ -1304,7 +1335,7 @@
       "status": "future"
     },
     {
-      "round": 17,
+      "round": 18,
       "name": "United States Grand Prix",
       "country": "United States",
       "track": "cota",
@@ -1313,7 +1344,7 @@
       "status": "future"
     },
     {
-      "round": 18,
+      "round": 19,
       "name": "Mexico City Grand Prix",
       "country": "Mexico",
       "track": "mexicocity",
@@ -1322,7 +1353,7 @@
       "status": "future"
     },
     {
-      "round": 19,
+      "round": 20,
       "name": "São Paulo Grand Prix",
       "country": "Brazil",
       "track": "interlagos",
@@ -1331,7 +1362,7 @@
       "status": "future"
     },
     {
-      "round": 20,
+      "round": 21,
       "name": "Las Vegas Grand Prix",
       "country": "United States",
       "track": "lasvegas",
@@ -1340,7 +1371,7 @@
       "status": "future"
     },
     {
-      "round": 21,
+      "round": 22,
       "name": "Qatar Grand Prix",
       "country": "Qatar",
       "track": "lusail",
@@ -1349,7 +1380,7 @@
       "status": "future"
     },
     {
-      "round": 22,
+      "round": 23,
       "name": "Abu Dhabi Grand Prix",
       "country": "United Arab Emirates",
       "track": "yasmarina",
@@ -4196,6 +4227,160 @@
           { "id": "HUL", "team": "audi", "finish": "DNF", "pts": 0 }
         ]
       }
+    },
+    "13": {
+      "meta": {
+        "poleDriver": "GAS",
+        "fastestLap": "ANT",
+        "fastestLapTime": "1:23.504",
+        "fastestLapLap": 53,
+        "safetyCars": null,
+        "weatherQuali": null,
+        "weatherRace": null,
+        "note": "Antonelli started 19th after an engine-related grid penalty. Perez received a five-second penalty for failing to follow Race Director instructions."
+      },
+      "headline": "Antonelli charges from 19th to win at Monza",
+      "recap": "Kimi Antonelli turned an engine-penalty setback into a remarkable Italian Grand Prix victory, passing Mercedes team-mate George Russell late in the race. Max Verstappen completed the podium, while Charles Leclerc's opening-lap retirement ended Ferrari's strongest home hope almost immediately.",
+      "keyMoments": [
+        { "lap": 1, "label": "Leclerc's home race ends early", "detail": "Leclerc crashed on the opening lap, removing one Ferrari from the fight before the race had settled." },
+        { "lap": null, "label": "Strategy opens the door", "detail": "A virtual-safety-car phase helped Antonelli convert his recovery drive into a challenge for the lead." },
+        { "lap": null, "label": "Antonelli completes the comeback", "detail": "Antonelli passed Russell late and won from 19th on the grid, also setting the fastest lap on lap 53." }
+      ],
+      "notablePerformances": [
+        { "id": "ANT", "note": "Won from 19th on the grid and set the fastest lap." },
+        { "id": "RUS", "note": "Finished second to secure a Mercedes one-two." },
+        { "id": "GAS", "note": "Took pole and finished seventh for Alpine." },
+        { "id": "LIN", "note": "Scored four points with an eighth-place finish for Racing Bulls." }
+      ],
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races/1293/italy/race-result",
+      "results": [
+        { "id": "ANT", "team": "mercedes", "grid": 19, "finish": 1, "laps": 53, "gap": "1:51:15.281", "pts": 25 },
+        { "id": "RUS", "team": "mercedes", "grid": null, "finish": 2, "laps": 53, "gap": "+3.857s", "pts": 18 },
+        { "id": "VER", "team": "redbull", "grid": null, "finish": 3, "laps": 53, "gap": "+14.718s", "pts": 15 },
+        { "id": "NOR", "team": "mclaren", "grid": null, "finish": 4, "laps": 53, "gap": "+19.056s", "pts": 12 },
+        { "id": "PIA", "team": "mclaren", "grid": null, "finish": 5, "laps": 53, "gap": "+19.253s", "pts": 10 },
+        { "id": "HAM", "team": "ferrari", "grid": null, "finish": 6, "laps": 53, "gap": "+24.655s", "pts": 8 },
+        { "id": "GAS", "team": "alpine", "grid": 1, "finish": 7, "laps": 53, "gap": "+27.351s", "pts": 6 },
+        { "id": "LIN", "team": "racingbulls", "grid": null, "finish": 8, "laps": 53, "gap": "+45.136s", "pts": 4 },
+        { "id": "COL", "team": "alpine", "grid": null, "finish": 9, "laps": 53, "gap": "+47.353s", "pts": 2 },
+        { "id": "TSU", "team": "racingbulls", "grid": null, "finish": 10, "laps": 53, "gap": "+58.187s", "pts": 1 },
+        { "id": "BOR", "team": "audi", "grid": null, "finish": 11, "laps": 53, "gap": "+65.187s", "pts": 0 },
+        { "id": "HUL", "team": "audi", "grid": null, "finish": 12, "laps": 53, "gap": "+66.187s", "pts": 0 },
+        { "id": "SAI", "team": "williams", "grid": null, "finish": 13, "laps": 53, "gap": "+74.117s", "pts": 0 },
+        { "id": "LAW", "team": "redbull", "grid": null, "finish": 14, "laps": 53, "gap": "+75.609s", "pts": 0 },
+        { "id": "BEA", "team": "haas", "grid": null, "finish": 15, "laps": 53, "gap": "+78.958s", "pts": 0 },
+        { "id": "OCO", "team": "haas", "grid": null, "finish": 16, "laps": 52, "gap": "+1 lap", "pts": 0 },
+        { "id": "ALB", "team": "williams", "grid": null, "finish": 17, "laps": 52, "gap": "+1 lap", "pts": 0 },
+        { "id": "PER", "team": "cadillac", "grid": null, "finish": 18, "laps": 52, "gap": "+1 lap", "pts": 0, "onTrackPenalty": "5s — failing to follow Race Director instructions" },
+        { "id": "BOT", "team": "cadillac", "grid": null, "finish": 19, "laps": 51, "gap": "+2 laps", "pts": 0 },
+        { "id": "STR", "team": "astonmartin", "grid": null, "finish": "DNF", "laps": 26, "gap": "DNF", "pts": 0 },
+        { "id": "ALO", "team": "astonmartin", "grid": null, "finish": "DNF", "laps": 23, "gap": "DNF", "pts": 0 },
+        { "id": "LEC", "team": "ferrari", "grid": null, "finish": "DNF", "laps": 1, "gap": "DNF", "pts": 0 }
+      ],
+      "sprint": null
+    },
+    "14": {
+      "meta": {
+        "poleDriver": "NOR",
+        "fastestLap": "RUS",
+        "fastestLapTime": "1:35.587",
+        "fastestLapLap": 49,
+        "safetyCars": null,
+        "weatherQuali": null,
+        "weatherRace": null,
+        "note": "Gasly received a five-second penalty for speeding in the pit lane."
+      },
+      "headline": "Antonelli wins Madrid's first Grand Prix",
+      "recap": "Kimi Antonelli won the inaugural race at Madring after a virtual-safety-car period reshaped the strategy contest. Max Verstappen finished second and pole-sitter Lando Norris third, while Mercedes again put both cars in the top five.",
+      "keyMoments": [
+        { "lap": null, "label": "Norris leads from pole", "detail": "Norris controlled the early phase before the timing of the virtual safety car changed the strategic picture." },
+        { "lap": null, "label": "Antonelli seizes the opportunity", "detail": "Mercedes used the interruption to put Antonelli in position to take and hold the lead." },
+        { "lap": 49, "label": "Russell sets the pace", "detail": "Russell recorded the race's fastest lap on his way to fifth place." }
+      ],
+      "notablePerformances": [
+        { "id": "ANT", "note": "Won for the second consecutive weekend and strengthened his championship lead." },
+        { "id": "VER", "note": "Finished second, 4.351 seconds behind Antonelli." },
+        { "id": "COL", "note": "Scored six points for Alpine with seventh place." },
+        { "id": "LAW", "note": "Finished sixth for Red Bull after a strong team result." }
+      ],
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races/1294/spain/race-result",
+      "results": [
+        { "id": "ANT", "team": "mercedes", "grid": null, "finish": 1, "laps": 57, "gap": "1:34:23.754", "pts": 25 },
+        { "id": "VER", "team": "redbull", "grid": null, "finish": 2, "laps": 57, "gap": "+4.351s", "pts": 18 },
+        { "id": "NOR", "team": "mclaren", "grid": 1, "finish": 3, "laps": 57, "gap": "+5.089s", "pts": 15 },
+        { "id": "LEC", "team": "ferrari", "grid": null, "finish": 4, "laps": 57, "gap": "+29.116s", "pts": 12 },
+        { "id": "RUS", "team": "mercedes", "grid": null, "finish": 5, "laps": 57, "gap": "+29.829s", "pts": 10 },
+        { "id": "LAW", "team": "redbull", "grid": null, "finish": 6, "laps": 57, "gap": "+86.746s", "pts": 8 },
+        { "id": "COL", "team": "alpine", "grid": null, "finish": 7, "laps": 57, "gap": "+94.281s", "pts": 6 },
+        { "id": "PIA", "team": "mclaren", "grid": null, "finish": 8, "laps": 57, "gap": "+95.839s", "pts": 4 },
+        { "id": "LIN", "team": "racingbulls", "grid": null, "finish": 9, "laps": 56, "gap": "+1 lap", "pts": 2 },
+        { "id": "HUL", "team": "audi", "grid": null, "finish": 10, "laps": 56, "gap": "+1 lap", "pts": 1 },
+        { "id": "OCO", "team": "haas", "grid": null, "finish": 11, "laps": 56, "gap": "+1 lap", "pts": 0 },
+        { "id": "GAS", "team": "alpine", "grid": null, "finish": 12, "laps": 56, "gap": "+1 lap", "pts": 0, "onTrackPenalty": "5s — speeding in the pit lane" },
+        { "id": "BOR", "team": "audi", "grid": null, "finish": 13, "laps": 56, "gap": "+1 lap", "pts": 0 },
+        { "id": "TSU", "team": "racingbulls", "grid": null, "finish": 14, "laps": 56, "gap": "+1 lap", "pts": 0 },
+        { "id": "ALB", "team": "williams", "grid": null, "finish": 15, "laps": 56, "gap": "+1 lap", "pts": 0 },
+        { "id": "BEA", "team": "haas", "grid": null, "finish": 16, "laps": 56, "gap": "+1 lap", "pts": 0 },
+        { "id": "ALO", "team": "astonmartin", "grid": null, "finish": 17, "laps": 55, "gap": "+2 laps", "pts": 0 },
+        { "id": "BOT", "team": "cadillac", "grid": null, "finish": 18, "laps": 54, "gap": "+3 laps", "pts": 0 },
+        { "id": "SAI", "team": "williams", "grid": null, "finish": "DNF", "laps": 43, "gap": "DNF", "pts": 0 },
+        { "id": "PER", "team": "cadillac", "grid": null, "finish": "DNF", "laps": 31, "gap": "DNF", "pts": 0 },
+        { "id": "STR", "team": "astonmartin", "grid": null, "finish": "DNF", "laps": 12, "gap": "DNF", "pts": 0 },
+        { "id": "HAM", "team": "ferrari", "grid": null, "finish": "DNF", "laps": 6, "gap": "DNF", "pts": 0 }
+      ],
+      "sprint": null
+    },
+    "15": {
+      "meta": {
+        "classificationStatus": "provisional",
+        "poleDriver": "RUS",
+        "fastestLap": "RUS",
+        "fastestLapTime": "1:44.916",
+        "fastestLapLap": 49,
+        "safetyCars": 2,
+        "weatherQuali": null,
+        "weatherRace": null,
+        "note": "The official Formula 1 results page labelled this classification provisional when the data was retrieved on September 26, 2026."
+      },
+      "headline": "Russell holds off Verstappen in a chaotic Baku finish",
+      "recap": "George Russell converted pole position into victory in Baku, resisting Max Verstappen by just 0.196 seconds at the line. Isack Hadjar made it a double Red Bull podium, while incidents and two safety-car periods reshuffled the field behind them.",
+      "keyMoments": [
+        { "lap": null, "label": "Early crashes scramble the order", "detail": "Incidents involving Colapinto, Gasly, Norris and later Albon triggered safety-car periods and broke up the strategy plans." },
+        { "lap": null, "label": "Russell absorbs the pressure", "detail": "Verstappen closed rapidly late in the race, but Russell kept the lead despite a reported power concern." },
+        { "lap": 51, "label": "A near photo finish", "detail": "Russell crossed the line only 0.196 seconds ahead of Verstappen, with Hadjar completing the podium." }
+      ],
+      "notablePerformances": [
+        { "id": "RUS", "note": "Won from pole, set the fastest lap and held off Verstappen by 0.196 seconds." },
+        { "id": "HAD", "note": "Finished third to give Red Bull two cars on the podium." },
+        { "id": "ANT", "note": "Recovered from 16th on the grid to finish fifth." },
+        { "id": "OCO", "note": "Finished eighth as Haas placed both cars in the points." }
+      ],
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races/1295/azerbaijann/race-result",
+      "results": [
+        { "id": "RUS", "team": "mercedes", "grid": 1, "finish": 1, "laps": 51, "gap": "1:38:02.143", "pts": 25 },
+        { "id": "VER", "team": "redbull", "grid": null, "finish": 2, "laps": 51, "gap": "+0.196s", "pts": 18 },
+        { "id": "HAD", "team": "redbull", "grid": null, "finish": 3, "laps": 51, "gap": "+10.704s", "pts": 15 },
+        { "id": "LEC", "team": "ferrari", "grid": null, "finish": 4, "laps": 51, "gap": "+14.136s", "pts": 12 },
+        { "id": "ANT", "team": "mercedes", "grid": 16, "finish": 5, "laps": 51, "gap": "+14.512s", "pts": 10 },
+        { "id": "HAM", "team": "ferrari", "grid": null, "finish": 6, "laps": 51, "gap": "+22.382s", "pts": 8 },
+        { "id": "LIN", "team": "racingbulls", "grid": null, "finish": 7, "laps": 51, "gap": "+31.159s", "pts": 6 },
+        { "id": "OCO", "team": "haas", "grid": null, "finish": 8, "laps": 51, "gap": "+31.189s", "pts": 4 },
+        { "id": "BEA", "team": "haas", "grid": null, "finish": 9, "laps": 51, "gap": "+31.929s", "pts": 2 },
+        { "id": "SAI", "team": "williams", "grid": null, "finish": 10, "laps": 51, "gap": "+32.416s", "pts": 1 },
+        { "id": "HUL", "team": "audi", "grid": null, "finish": 11, "laps": 51, "gap": "+33.231s", "pts": 0 },
+        { "id": "LAW", "team": "racingbulls", "grid": null, "finish": 12, "laps": 51, "gap": "+34.013s", "pts": 0 },
+        { "id": "BOR", "team": "audi", "grid": null, "finish": 13, "laps": 51, "gap": "+34.230s", "pts": 0 },
+        { "id": "PIA", "team": "mclaren", "grid": null, "finish": 14, "laps": 51, "gap": "+36.401s", "pts": 0 },
+        { "id": "PER", "team": "cadillac", "grid": null, "finish": 15, "laps": 51, "gap": "+41.400s", "pts": 0 },
+        { "id": "BOT", "team": "cadillac", "grid": null, "finish": 16, "laps": 49, "gap": "DNF", "pts": 0 },
+        { "id": "COL", "team": "alpine", "grid": null, "finish": "DNF", "laps": null, "gap": "DNF", "pts": 0 },
+        { "id": "GAS", "team": "alpine", "grid": null, "finish": "DNF", "laps": null, "gap": "DNF", "pts": 0 },
+        { "id": "NOR", "team": "mclaren", "grid": null, "finish": "DNF", "laps": null, "gap": "DNF", "pts": 0 },
+        { "id": "ALB", "team": "williams", "grid": null, "finish": "DNF", "laps": null, "gap": "DNF", "pts": 0 },
+        { "id": "ALO", "team": "astonmartin", "grid": null, "finish": "DNF", "laps": null, "gap": "DNF", "pts": 0 },
+        { "id": "STR", "team": "astonmartin", "grid": null, "finish": "DNF", "laps": null, "gap": "DNF", "pts": 0 }
+      ],
+      "sprint": null
     }
   },
   "trackOutlinePaths": {
