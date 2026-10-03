@@ -2,7 +2,7 @@
   "meta": {
     "title": "F1 2026 Season Tracker — underlying dataset",
     "generatedFrom": "f1-2026-season-tracker.html",
-    "exportedAt": "2026-09-26T23:30:00.000Z",
+    "exportedAt": "2026-10-03T20:00:00.000Z",
     "sources": {
       "calendarEntryListAndSeasonNarrative": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship",
       "raceClassificationsAndPoints": "https://www.formula1.com/en/results/2026/races",
@@ -1389,6 +1389,54 @@
       "status": "future"
     }
   ],
+  "weekendUpdates": {
+    "16": {
+      "status": "qualifying-complete",
+      "updatedAt": "2026-10-03T20:00:00.000Z",
+      "headline": "Verstappen takes his first pole of 2026 at Sepang",
+      "recap": "Max Verstappen topped all three qualifying segments and secured pole with a 1:35.130 lap. Lewis Hamilton qualified second and Isack Hadjar third, although Hadjar's five-place power-unit penalty moves him to eighth on the starting grid.",
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races/1308/bahrain/qualifying",
+      "startingGridSourceUrl": "https://www.formula1.com/en/results/2026/races/1308/bahrain/starting-grid",
+      "qualifying": [
+        { "position": 1, "id": "VER", "team": "redbull", "q1": "1:36.477", "q2": "1:35.696", "q3": "1:35.130" },
+        { "position": 2, "id": "HAM", "team": "ferrari", "q1": "1:36.595", "q2": "1:36.032", "q3": "1:35.428" },
+        { "position": 3, "id": "HAD", "team": "redbull", "q1": "1:36.898", "q2": "1:36.192", "q3": "1:35.558" },
+        { "position": 4, "id": "ANT", "team": "mercedes", "q1": "1:37.041", "q2": "1:35.959", "q3": "1:35.631" },
+        { "position": 5, "id": "LEC", "team": "ferrari", "q1": "1:36.730", "q2": "1:35.970", "q3": "1:35.666" },
+        { "position": 6, "id": "NOR", "team": "mclaren", "q1": "1:37.092", "q2": "1:36.173", "q3": "1:35.757" },
+        { "position": 7, "id": "PIA", "team": "mclaren", "q1": "1:36.852", "q2": "1:36.020", "q3": "1:35.762" },
+        { "position": 8, "id": "RUS", "team": "mercedes", "q1": "1:37.264", "q2": "1:36.245", "q3": "1:35.871" },
+        { "position": 9, "id": "GAS", "team": "alpine", "q1": "1:37.174", "q2": "1:36.410", "q3": "1:37.210" },
+        { "position": 10, "id": "BOR", "team": "audi", "q1": "1:37.106", "q2": "1:36.814", "q3": "1:37.673" },
+        { "position": 11, "id": "LAW", "team": "racingbulls", "q1": "1:37.332", "q2": "1:37.023", "q3": null },
+        { "position": 12, "id": "ALO", "team": "astonmartin", "q1": "1:37.721", "q2": "1:37.220", "q3": null },
+        { "position": 13, "id": "SAI", "team": "williams", "q1": "1:37.651", "q2": "1:37.527", "q3": null },
+        { "position": 14, "id": "STR", "team": "astonmartin", "q1": "1:37.729", "q2": "1:37.566", "q3": null },
+        { "position": 15, "id": "COL", "team": "alpine", "q1": "1:37.179", "q2": "DNF", "q3": null },
+        { "position": 16, "id": "LIN", "team": "racingbulls", "q1": "1:37.883", "q2": "DNF", "q3": null },
+        { "position": 17, "id": "HUL", "team": "audi", "q1": "1:37.970", "q2": null, "q3": null },
+        { "position": 18, "id": "BEA", "team": "haas", "q1": "1:37.980", "q2": null, "q3": null },
+        { "position": 19, "id": "OCO", "team": "haas", "q1": "1:38.233", "q2": null, "q3": null },
+        { "position": 20, "id": "ALB", "team": "williams", "q1": "1:38.600", "q2": null, "q3": null },
+        { "position": 21, "id": "BOT", "team": "cadillac", "q1": "1:38.611", "q2": null, "q3": null },
+        { "position": 22, "id": "PER", "team": "cadillac", "q1": "1:38.933", "q2": null, "q3": null }
+      ],
+      "startingGrid": [
+        { "position": 1, "id": "VER" }, { "position": 2, "id": "HAM" },
+        { "position": 3, "id": "ANT" }, { "position": 4, "id": "LEC" },
+        { "position": 5, "id": "NOR" }, { "position": 6, "id": "PIA" },
+        { "position": 7, "id": "RUS" }, { "position": 8, "id": "HAD", "penalty": "Five-place grid penalty for an additional power-unit element" },
+        { "position": 9, "id": "GAS" }, { "position": 10, "id": "BOR" },
+        { "position": 11, "id": "LAW" }, { "position": 12, "id": "ALO" },
+        { "position": 13, "id": "SAI" }, { "position": 14, "id": "STR" },
+        { "position": 15, "id": "HUL" }, { "position": 16, "id": "BEA" },
+        { "position": 17, "id": "OCO" }, { "position": 18, "id": "ALB" },
+        { "position": 19, "id": "BOT" }, { "position": 20, "id": "PER" },
+        { "position": 21, "id": "COL", "penalty": "Five places for the previous-round collision plus 10 places for an additional power-unit element" },
+        { "position": 22, "id": "LIN", "penalty": "30-place penalty for additional power-unit elements" }
+      ]
+    }
+  },
   "raceResults": {
     "1": {
       "meta": {
@@ -4332,7 +4380,7 @@
     },
     "15": {
       "meta": {
-        "classificationStatus": "provisional",
+        "classificationStatus": "final",
         "poleDriver": "RUS",
         "fastestLap": "RUS",
         "fastestLapTime": "1:44.916",
@@ -4340,7 +4388,7 @@
         "safetyCars": 2,
         "weatherQuali": null,
         "weatherRace": null,
-        "note": "The official Formula 1 results page labelled this classification provisional when the data was retrieved on September 26, 2026."
+        "note": "Classification confirmed against the official Formula 1 results listing on October 3, 2026."
       },
       "headline": "Russell holds off Verstappen in a chaotic Baku finish",
       "recap": "George Russell converted pole position into victory in Baku, resisting Max Verstappen by just 0.196 seconds at the line. Isack Hadjar made it a double Red Bull podium, while incidents and two safety-car periods reshuffled the field behind them.",
