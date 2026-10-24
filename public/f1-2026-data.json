@@ -1675,6 +1675,326 @@
       "headline": "Verstappen wins Singapore Grand Prix and Sprint",
       "recap": "Max Verstappen won the Singapore Grand Prix ahead of Charles Leclerc and Kimi Antonelli, after also winning the Sprint.",
       "sourceUrl": "https://www.formula1.com/en/results/2026/races/1296/singapore/race-result"
+    },
+    "18": {
+      "status": "qualifying-complete",
+      "updatedAt": "2026-10-24T22:30:00.000Z",
+      "headline": "Antonelli takes pole for United States Grand Prix",
+      "recap": "Kimi Antonelli claimed pole at Circuit of The Americas with a 1:34.035, ahead of Max Verstappen and Isack Hadjar. Lewis Hamilton topped FP3 as Ferrari swept the three practice sessions. Qualifying order is provisional pending grid penalties.",
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races/1297/united-states/qualifying",
+      "qualifying": [
+        {
+          "position": 1,
+          "id": "ANT",
+          "team": "mercedes",
+          "q1": "1:35.390",
+          "q2": "1:34.278",
+          "q3": "1:34.035"
+        },
+        {
+          "position": 2,
+          "id": "VER",
+          "team": "redbull",
+          "q1": "1:35.215",
+          "q2": "1:34.471",
+          "q3": "1:34.214"
+        },
+        {
+          "position": 3,
+          "id": "HAD",
+          "team": "redbull",
+          "q1": "1:35.286",
+          "q2": "1:34.887",
+          "q3": "1:34.250"
+        },
+        {
+          "position": 4,
+          "id": "LEC",
+          "team": "ferrari",
+          "q1": "1:35.200",
+          "q2": "1:34.198",
+          "q3": "1:34.267"
+        },
+        {
+          "position": 5,
+          "id": "HAM",
+          "team": "ferrari",
+          "q1": "1:35.355",
+          "q2": "1:34.833",
+          "q3": "1:34.311"
+        },
+        {
+          "position": 6,
+          "id": "RUS",
+          "team": "mercedes",
+          "q1": "1:35.730",
+          "q2": "1:34.305",
+          "q3": "1:34.476"
+        },
+        {
+          "position": 7,
+          "id": "PIA",
+          "team": "mclaren",
+          "q1": "1:35.842",
+          "q2": "1:34.818",
+          "q3": "1:34.803"
+        },
+        {
+          "position": 8,
+          "id": "NOR",
+          "team": "mclaren",
+          "q1": "1:35.029",
+          "q2": "1:34.539",
+          "q3": "1:35.049"
+        },
+        {
+          "position": 9,
+          "id": "LIN",
+          "team": "racingbulls",
+          "q1": "1:35.755",
+          "q2": "1:34.950",
+          "q3": "1:36.049"
+        },
+        {
+          "position": 10,
+          "id": "LAW",
+          "team": "racingbulls",
+          "q1": "1:35.662",
+          "q2": "1:35.058",
+          "q3": null
+        },
+        {
+          "position": 11,
+          "id": "GAS",
+          "team": "alpine",
+          "q1": "1:35.969",
+          "q2": "1:35.080",
+          "q3": null
+        },
+        {
+          "position": 12,
+          "id": "HUL",
+          "team": "audi",
+          "q1": "1:35.704",
+          "q2": "1:35.158",
+          "q3": null
+        },
+        {
+          "position": 13,
+          "id": "BOR",
+          "team": "audi",
+          "q1": "1:35.632",
+          "q2": "1:35.691",
+          "q3": null
+        },
+        {
+          "position": 14,
+          "id": "COL",
+          "team": "alpine",
+          "q1": "1:35.898",
+          "q2": "1:35.722",
+          "q3": null
+        },
+        {
+          "position": 15,
+          "id": "ALO",
+          "team": "astonmartin",
+          "q1": "1:36.240",
+          "q2": "1:35.818",
+          "q3": null
+        },
+        {
+          "position": 16,
+          "id": "BEA",
+          "team": "haas",
+          "q1": "1:36.175",
+          "q2": "1:36.031",
+          "q3": null
+        },
+        {
+          "position": 17,
+          "id": "OCO",
+          "team": "haas",
+          "q1": "1:36.531",
+          "q2": null,
+          "q3": null
+        },
+        {
+          "position": 18,
+          "id": "STR",
+          "team": "astonmartin",
+          "q1": "1:36.677",
+          "q2": null,
+          "q3": null
+        },
+        {
+          "position": 19,
+          "id": "SAI",
+          "team": "williams",
+          "q1": "1:36.770",
+          "q2": null,
+          "q3": null
+        },
+        {
+          "position": 20,
+          "id": "ALB",
+          "team": "williams",
+          "q1": "1:36.967",
+          "q2": null,
+          "q3": null
+        },
+        {
+          "position": 21,
+          "id": "PER",
+          "team": "cadillac",
+          "q1": "1:37.433",
+          "q2": null,
+          "q3": null
+        },
+        {
+          "position": 22,
+          "id": "BOT",
+          "team": "cadillac",
+          "q1": "1:37.523",
+          "q2": null,
+          "q3": null
+        }
+      ],
+      "practice3": [
+        {
+          "position": 1,
+          "id": "HAM",
+          "team": "ferrari",
+          "time": "1:34.893"
+        },
+        {
+          "position": 2,
+          "id": "VER",
+          "team": "redbull",
+          "time": "1:35.061"
+        },
+        {
+          "position": 3,
+          "id": "LEC",
+          "team": "ferrari",
+          "time": "1:35.127"
+        },
+        {
+          "position": 4,
+          "id": "ANT",
+          "team": "mercedes",
+          "time": "1:35.196"
+        },
+        {
+          "position": 5,
+          "id": "RUS",
+          "team": "mercedes",
+          "time": "1:35.381"
+        },
+        {
+          "position": 6,
+          "id": "PIA",
+          "team": "mclaren",
+          "time": "1:35.531"
+        },
+        {
+          "position": 7,
+          "id": "HUL",
+          "team": "audi",
+          "time": "1:35.591"
+        },
+        {
+          "position": 8,
+          "id": "NOR",
+          "team": "mclaren",
+          "time": "1:35.706"
+        },
+        {
+          "position": 9,
+          "id": "GAS",
+          "team": "alpine",
+          "time": "1:35.904"
+        },
+        {
+          "position": 10,
+          "id": "HAD",
+          "team": "redbull",
+          "time": "1:35.930"
+        },
+        {
+          "position": 11,
+          "id": "LAW",
+          "team": "racingbulls",
+          "time": "1:35.931"
+        },
+        {
+          "position": 12,
+          "id": "LIN",
+          "team": "racingbulls",
+          "time": "1:36.081"
+        },
+        {
+          "position": 13,
+          "id": "BOR",
+          "team": "audi",
+          "time": "1:36.176"
+        },
+        {
+          "position": 14,
+          "id": "BEA",
+          "team": "haas",
+          "time": "1:36.235"
+        },
+        {
+          "position": 15,
+          "id": "COL",
+          "team": "alpine",
+          "time": "1:36.251"
+        },
+        {
+          "position": 16,
+          "id": "ALO",
+          "team": "astonmartin",
+          "time": "1:36.455"
+        },
+        {
+          "position": 17,
+          "id": "OCO",
+          "team": "haas",
+          "time": "1:36.742"
+        },
+        {
+          "position": 18,
+          "id": "STR",
+          "team": "astonmartin",
+          "time": "1:37.131"
+        },
+        {
+          "position": 19,
+          "id": "ALB",
+          "team": "williams",
+          "time": "1:37.668"
+        },
+        {
+          "position": 20,
+          "id": "SAI",
+          "team": "williams",
+          "time": "1:37.711"
+        },
+        {
+          "position": 21,
+          "id": "PER",
+          "team": "cadillac",
+          "time": "1:37.884"
+        },
+        {
+          "position": 22,
+          "id": "BOT",
+          "team": "cadillac",
+          "time": "1:38.765"
+        }
+      ],
+      "practice3SourceUrl": "https://www.formula1.com/en/results/2026/races/1297/united-states/practice/3"
     }
   },
   "raceResults": {
