@@ -1685,7 +1685,8 @@
         "safetyCars": 2,
         "weatherQuali": null,
         "weatherRace": "Partly cloudy",
-        "note": "Both safety car periods were Virtual Safety Cars (Hadjar's smoking Red Bull on lap 11, then Bottas's retirement) rather than a full physical Safety Car."
+        "note": "Automated classification from Jolpica; verify against official F1 results.",
+        "classificationStatus": "provisional"
       },
       "headline": "Russell leads a Mercedes 1-2 in a chaotic season opener",
       "recap": "George Russell held off a fast-recovering Charles Leclerc and Lewis Hamilton to win the 2026 curtain-raiser, with teammate Kimi Antonelli completing a Mercedes 1-2. Two Virtual Safety Cars and a one-stop strategy gamble shaped a wild afternoon that also saw both McLarens fail to start.",
@@ -1716,7 +1717,7 @@
           "note": "F1 race debut ended in retirement after smoke forced him off track."
         }
       ],
-      "sourceUrl": "https://www.formula1.com/en/latest/article/russell-wins-action-packed-australian-gp-from-antonelli-as-mercedes-secure-1.4WRxPAtF4dFtrKCsWIiQX2",
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races",
       "results": [
         {
           "id": "RUS",
@@ -1731,7 +1732,7 @@
           "grid": 2,
           "finish": 2,
           "laps": 58,
-          "gap": "+2.974s",
+          "gap": "+2.974",
           "pts": 18
         },
         {
@@ -1739,7 +1740,7 @@
           "grid": 4,
           "finish": 3,
           "laps": 58,
-          "gap": "+15.519s",
+          "gap": "+15.519",
           "pts": 15
         },
         {
@@ -1747,7 +1748,7 @@
           "grid": 7,
           "finish": 4,
           "laps": 58,
-          "gap": "+16.144s",
+          "gap": "+16.144",
           "pts": 12
         },
         {
@@ -1755,7 +1756,7 @@
           "grid": 6,
           "finish": 5,
           "laps": 58,
-          "gap": "+51.741s",
+          "gap": "+51.741",
           "pts": 10
         },
         {
@@ -1763,16 +1764,15 @@
           "grid": 20,
           "finish": 6,
           "laps": 58,
-          "gap": "+54.617s",
-          "pts": 8,
-          "note": "Recovered from 20th after a qualifying crash."
+          "gap": "+54.617",
+          "pts": 8
         },
         {
           "id": "BEA",
           "grid": 12,
           "finish": 7,
           "laps": 57,
-          "gap": "+1 lap",
+          "gap": "+4.593",
           "pts": 6
         },
         {
@@ -1780,7 +1780,7 @@
           "grid": 9,
           "finish": 8,
           "laps": 57,
-          "gap": "+1 lap",
+          "gap": "+11.816",
           "pts": 4
         },
         {
@@ -1788,7 +1788,7 @@
           "grid": 10,
           "finish": 9,
           "laps": 57,
-          "gap": "+1 lap",
+          "gap": "+12.775",
           "pts": 2
         },
         {
@@ -1796,7 +1796,7 @@
           "grid": 14,
           "finish": 10,
           "laps": 57,
-          "gap": "+1 lap",
+          "gap": "+29.027",
           "pts": 1
         },
         {
@@ -1804,7 +1804,7 @@
           "grid": 13,
           "finish": 11,
           "laps": 57,
-          "gap": "+1 lap",
+          "gap": "+29.850",
           "pts": 0
         },
         {
@@ -1812,7 +1812,7 @@
           "grid": 15,
           "finish": 12,
           "laps": 57,
-          "gap": "+1 lap",
+          "gap": "+56.075",
           "pts": 0
         },
         {
@@ -1820,7 +1820,7 @@
           "grid": 8,
           "finish": 13,
           "laps": 57,
-          "gap": "+1 lap",
+          "gap": "+57.173",
           "pts": 0
         },
         {
@@ -1828,7 +1828,7 @@
           "grid": 16,
           "finish": 14,
           "laps": 56,
-          "gap": "+2 laps",
+          "gap": "+8.487",
           "pts": 0
         },
         {
@@ -1836,7 +1836,7 @@
           "grid": 21,
           "finish": 15,
           "laps": 56,
-          "gap": "+2 laps",
+          "gap": "+36.886",
           "pts": 0
         },
         {
@@ -1844,61 +1844,56 @@
           "grid": 18,
           "finish": 16,
           "laps": 55,
-          "gap": "+3 laps",
+          "gap": "+7.850",
           "pts": 0
         },
         {
           "id": "STR",
           "grid": 22,
-          "finish": "NC",
+          "finish": 17,
           "laps": 43,
-          "gap": "+15 laps",
+          "gap": "Lapped",
           "pts": 0
         },
         {
           "id": "ALO",
           "grid": 17,
-          "finish": "DNF",
+          "finish": 18,
           "laps": 21,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Retired (cause not confirmed)"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "BOT",
           "grid": 19,
-          "finish": "DNF",
+          "finish": 19,
           "laps": 15,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Retired (cause not confirmed)"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "HAD",
           "grid": 3,
-          "finish": "DNF",
+          "finish": 20,
           "laps": 10,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Smoke from the rear of the car (F1 race debut); triggered the first VSC"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "PIA",
           "grid": 5,
-          "finish": "DNS",
+          "finish": 21,
           "laps": 0,
-          "gap": "DNS",
-          "pts": 0,
-          "retirement": "Crashed driving to the grid before the race"
+          "gap": "Did not start",
+          "pts": 0
         },
         {
           "id": "HUL",
           "grid": 11,
-          "finish": "DNS",
+          "finish": 22,
           "laps": 0,
-          "gap": "DNS",
-          "pts": 0,
-          "retirement": "Technical issue, unable to start (Audi's race debut)"
+          "gap": "Did not start",
+          "pts": 0
         }
       ],
       "sprint": null
@@ -1912,7 +1907,8 @@
         "weatherQuali": null,
         "weatherRace": "Cloudy",
         "weatherSprint": "Cool (~15°C), cloudy and dry, breezy (~19 km/h wind)",
-        "note": "One full Safety Car in the Grand Prix (lap 10, triggered by Stroll's retirement). The Sprint also had its own late Safety Car restart."
+        "note": "Automated classification from Jolpica; verify against official F1 results.",
+        "classificationStatus": "provisional"
       },
       "headline": "Antonelli beats Russell in an all-Mercedes headline act at Shanghai",
       "recap": "Kimi Antonelli converted pole into his first Grand Prix win, resisting an early challenge from Hamilton and controlling the gap to teammate Russell after the race's only Safety Car. Both McLarens and both Williams cars failed to start due to technical issues.",
@@ -1943,7 +1939,7 @@
           "note": "Did not start due to an electrical issue, part of a disastrous weekend for McLaren."
         }
       ],
-      "sourceUrl": "https://www.formulaonehistory.com/2026-chinese-grand-prix/",
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races",
       "results": [
         {
           "id": "ANT",
@@ -1958,7 +1954,7 @@
           "grid": 2,
           "finish": 2,
           "laps": 56,
-          "gap": "+5.515s",
+          "gap": "+5.515",
           "pts": 18
         },
         {
@@ -1966,7 +1962,7 @@
           "grid": 3,
           "finish": 3,
           "laps": 56,
-          "gap": "+25.267s",
+          "gap": "+25.267",
           "pts": 15
         },
         {
@@ -1974,7 +1970,7 @@
           "grid": 4,
           "finish": 4,
           "laps": 56,
-          "gap": "+28.894s",
+          "gap": "+28.894",
           "pts": 12
         },
         {
@@ -1982,7 +1978,7 @@
           "grid": 10,
           "finish": 5,
           "laps": 56,
-          "gap": "+57.268s",
+          "gap": "+57.268",
           "pts": 10
         },
         {
@@ -1990,7 +1986,7 @@
           "grid": 7,
           "finish": 6,
           "laps": 56,
-          "gap": "+59.647s",
+          "gap": "+59.647",
           "pts": 8
         },
         {
@@ -1998,7 +1994,7 @@
           "grid": 14,
           "finish": 7,
           "laps": 56,
-          "gap": "+80.588s",
+          "gap": "+1:20.588",
           "pts": 6
         },
         {
@@ -2006,7 +2002,7 @@
           "grid": 9,
           "finish": 8,
           "laps": 56,
-          "gap": "+87.247s",
+          "gap": "+1:27.247",
           "pts": 4
         },
         {
@@ -2014,7 +2010,7 @@
           "grid": 17,
           "finish": 9,
           "laps": 55,
-          "gap": "+1 lap",
+          "gap": "+11.673",
           "pts": 2
         },
         {
@@ -2022,7 +2018,7 @@
           "grid": 12,
           "finish": 10,
           "laps": 55,
-          "gap": "+1 lap",
+          "gap": "+12.403",
           "pts": 1
         },
         {
@@ -2030,7 +2026,7 @@
           "grid": 11,
           "finish": 11,
           "laps": 55,
-          "gap": "+1 lap",
+          "gap": "+21.109",
           "pts": 0
         },
         {
@@ -2038,7 +2034,7 @@
           "grid": 15,
           "finish": 12,
           "laps": 55,
-          "gap": "+1 lap",
+          "gap": "+22.828",
           "pts": 0
         },
         {
@@ -2046,7 +2042,7 @@
           "grid": 19,
           "finish": 13,
           "laps": 55,
-          "gap": "+1 lap",
+          "gap": "+56.158",
           "pts": 0
         },
         {
@@ -2054,7 +2050,7 @@
           "grid": 13,
           "finish": 14,
           "laps": 55,
-          "gap": "+1 lap",
+          "gap": "+1:06.256",
           "pts": 0
         },
         {
@@ -2062,71 +2058,64 @@
           "grid": 21,
           "finish": 15,
           "laps": 55,
-          "gap": "+1 lap",
+          "gap": "+1:14.641",
           "pts": 0
         },
         {
           "id": "VER",
           "grid": 8,
-          "finish": "DNF",
+          "finish": 16,
           "laps": 45,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Suspected power unit failure while running 6th"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "ALO",
           "grid": 18,
-          "finish": "DNF",
+          "finish": 17,
           "laps": 32,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Retired (cause not confirmed)"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "STR",
           "grid": 20,
-          "finish": "DNF",
+          "finish": 18,
           "laps": 9,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Stopped on track; triggered the race's only Safety Car"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "PIA",
           "grid": 5,
-          "finish": "DNS",
+          "finish": 19,
           "laps": 0,
-          "gap": "DNS",
-          "pts": 0,
-          "retirement": "Car issue before the race"
+          "gap": "Did not start",
+          "pts": 0
         },
         {
           "id": "NOR",
           "grid": 6,
-          "finish": "DNS",
+          "finish": 20,
           "laps": 0,
-          "gap": "DNS",
-          "pts": 0,
-          "retirement": "Electrical issue, unable to start"
+          "gap": "Did not start",
+          "pts": 0
         },
         {
           "id": "BOR",
           "grid": 16,
-          "finish": "DNS",
+          "finish": 21,
           "laps": 0,
-          "gap": "DNS",
-          "pts": 0,
-          "retirement": "Car issue before the race"
+          "gap": "Did not start",
+          "pts": 0
         },
         {
           "id": "ALB",
           "grid": 22,
-          "finish": "DNS",
+          "finish": 22,
           "laps": 0,
-          "gap": "DNS",
-          "pts": 0,
-          "retirement": "Car issue before the race"
+          "gap": "Did not start",
+          "pts": 0
         }
       ],
       "sprint": {
@@ -2197,7 +2186,8 @@
         "safetyCars": 1,
         "weatherQuali": null,
         "weatherRace": "Cloudy, dry, cool (high-teens °C)",
-        "note": "Safety car deployed for Oliver Bearman's heavy crash."
+        "note": "Automated classification from Jolpica; verify against official F1 results.",
+        "classificationStatus": "provisional"
       },
       "headline": "Antonelli completes a hat-trick of wins at Suzuka",
       "recap": "Kimi Antonelli made it three wins from three races, converting pole to victory at Suzuka ahead of Oscar Piastri and Charles Leclerc. Oliver Bearman's heavy crash brought out the race's only Safety Car.",
@@ -2219,7 +2209,7 @@
           "note": "Recovered to finish 2nd after a difficult start to the season."
         }
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/2026_Japanese_Grand_Prix",
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races",
       "results": [
         {
           "id": "ANT",
@@ -2234,7 +2224,7 @@
           "grid": 3,
           "finish": 2,
           "laps": 53,
-          "gap": "+13.722s",
+          "gap": "+13.722",
           "pts": 18
         },
         {
@@ -2242,7 +2232,7 @@
           "grid": 4,
           "finish": 3,
           "laps": 53,
-          "gap": "+15.270s",
+          "gap": "+15.270",
           "pts": 15
         },
         {
@@ -2250,7 +2240,7 @@
           "grid": 2,
           "finish": 4,
           "laps": 53,
-          "gap": "+15.754s",
+          "gap": "+15.754",
           "pts": 12
         },
         {
@@ -2258,7 +2248,7 @@
           "grid": 5,
           "finish": 5,
           "laps": 53,
-          "gap": "+23.479s",
+          "gap": "+23.479",
           "pts": 10
         },
         {
@@ -2266,7 +2256,7 @@
           "grid": 6,
           "finish": 6,
           "laps": 53,
-          "gap": "+25.037s",
+          "gap": "+25.037",
           "pts": 8
         },
         {
@@ -2274,7 +2264,7 @@
           "grid": 7,
           "finish": 7,
           "laps": 53,
-          "gap": "+32.340s",
+          "gap": "+32.340",
           "pts": 6
         },
         {
@@ -2282,7 +2272,7 @@
           "grid": 11,
           "finish": 8,
           "laps": 53,
-          "gap": "+32.677s",
+          "gap": "+32.677",
           "pts": 4
         },
         {
@@ -2290,7 +2280,7 @@
           "grid": 14,
           "finish": 9,
           "laps": 53,
-          "gap": "+50.180s",
+          "gap": "+50.180",
           "pts": 2
         },
         {
@@ -2298,7 +2288,7 @@
           "grid": 12,
           "finish": 10,
           "laps": 53,
-          "gap": "+51.216s",
+          "gap": "+51.216",
           "pts": 1
         },
         {
@@ -2306,7 +2296,7 @@
           "grid": 13,
           "finish": 11,
           "laps": 53,
-          "gap": "+52.280s",
+          "gap": "+52.280",
           "pts": 0
         },
         {
@@ -2314,7 +2304,7 @@
           "grid": 8,
           "finish": 12,
           "laps": 53,
-          "gap": "+56.154s",
+          "gap": "+56.154",
           "pts": 0
         },
         {
@@ -2322,7 +2312,7 @@
           "grid": 9,
           "finish": 13,
           "laps": 53,
-          "gap": "+59.078s",
+          "gap": "+59.078",
           "pts": 0
         },
         {
@@ -2330,7 +2320,7 @@
           "grid": 10,
           "finish": 14,
           "laps": 53,
-          "gap": "+59.848s",
+          "gap": "+59.848",
           "pts": 0
         },
         {
@@ -2338,7 +2328,7 @@
           "grid": 16,
           "finish": 15,
           "laps": 53,
-          "gap": "+65.008s",
+          "gap": "+1:05.008",
           "pts": 0
         },
         {
@@ -2346,7 +2336,7 @@
           "grid": 15,
           "finish": 16,
           "laps": 53,
-          "gap": "+65.773s",
+          "gap": "+1:05.773",
           "pts": 0
         },
         {
@@ -2354,7 +2344,7 @@
           "grid": 19,
           "finish": 17,
           "laps": 53,
-          "gap": "+92.453s",
+          "gap": "+1:32.453",
           "pts": 0
         },
         {
@@ -2362,7 +2352,7 @@
           "grid": 21,
           "finish": 18,
           "laps": 52,
-          "gap": "+1 lap",
+          "gap": "+26.548",
           "pts": 0
         },
         {
@@ -2370,7 +2360,7 @@
           "grid": 20,
           "finish": 19,
           "laps": 52,
-          "gap": "+1 lap",
+          "gap": "+42.621",
           "pts": 0
         },
         {
@@ -2378,25 +2368,24 @@
           "grid": 17,
           "finish": 20,
           "laps": 51,
-          "gap": "+2 laps",
+          "gap": "+5.067",
           "pts": 0
         },
         {
           "id": "STR",
           "grid": 22,
-          "finish": "DNF",
+          "finish": 21,
           "laps": 30,
-          "gap": "DNF",
+          "gap": "Retired",
           "pts": 0
         },
         {
           "id": "BEA",
           "grid": 18,
-          "finish": "DNF",
+          "finish": 22,
           "laps": 20,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Heavy crash — triggered the safety car"
+          "gap": "Retired",
+          "pts": 0
         }
       ],
       "sprint": null
@@ -2409,7 +2398,8 @@
         "weatherQuali": null,
         "weatherRace": "Cloudy; race start moved 3 hours earlier due to forecast storms, track dry at start after earlier morning rain",
         "weatherSprint": null,
-        "note": "Safety car deployed in the opening laps after separate incidents for Hadjar (wall contact, Turn 14) and Gasly (flipped after contact with Lawson). Grid confirmed for P1-P10 only; positions 11-22 not reliably sourced."
+        "note": "Automated classification from Jolpica; verify against official F1 results.",
+        "classificationStatus": "provisional"
       },
       "headline": "Antonelli holds off Norris for a third straight win",
       "recap": "Kimi Antonelli survived a three-way scrap at the start and late pressure from Lando Norris to win a Safety-Car-interrupted Miami Grand Prix, extending his perfect start to the season. The race began three hours earlier than scheduled due to forecast storms.",
@@ -2440,7 +2430,7 @@
           "note": "Retired after flipping his Alpine following contact with Lawson."
         }
       ],
-      "sourceUrl": "https://www.formula1.com/en/latest/article/antonelli-wins-thrilling-miami-grand-prix-from-norris-and-piastri.2bxaKuYKJjxlXx8KOJf7lc",
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races",
       "results": [
         {
           "id": "ANT",
@@ -2455,7 +2445,7 @@
           "grid": 4,
           "finish": 2,
           "laps": 57,
-          "gap": "+3.264s",
+          "gap": "+3.264",
           "pts": 18
         },
         {
@@ -2463,7 +2453,7 @@
           "grid": 7,
           "finish": 3,
           "laps": 57,
-          "gap": "+27.092s",
+          "gap": "+27.092",
           "pts": 15
         },
         {
@@ -2471,7 +2461,7 @@
           "grid": 5,
           "finish": 4,
           "laps": 57,
-          "gap": "+43.051s",
+          "gap": "+43.051",
           "pts": 12
         },
         {
@@ -2479,7 +2469,7 @@
           "grid": 2,
           "finish": 5,
           "laps": 57,
-          "gap": "+48.949s",
+          "gap": "+48.949",
           "pts": 10
         },
         {
@@ -2487,7 +2477,7 @@
           "grid": 6,
           "finish": 6,
           "laps": 57,
-          "gap": "+53.753s",
+          "gap": "+53.753",
           "pts": 8
         },
         {
@@ -2495,7 +2485,7 @@
           "grid": 8,
           "finish": 7,
           "laps": 57,
-          "gap": "+61.871s",
+          "gap": "+1:01.871",
           "pts": 6
         },
         {
@@ -2503,127 +2493,120 @@
           "grid": 3,
           "finish": 8,
           "laps": 57,
-          "gap": "+64.245s",
-          "pts": 4,
-          "onTrackPenalty": "20s — leaving the track repeatedly without justifiable reason"
+          "gap": "+1:04.245",
+          "pts": 4
         },
         {
           "id": "SAI",
-          "grid": null,
+          "grid": 13,
           "finish": 9,
           "laps": 57,
-          "gap": "+82.072s",
+          "gap": "+1:22.072",
           "pts": 2
         },
         {
           "id": "ALB",
-          "grid": null,
+          "grid": 15,
           "finish": 10,
           "laps": 57,
-          "gap": "+90.972s",
+          "gap": "+1:30.972",
           "pts": 1
         },
         {
           "id": "BEA",
-          "grid": null,
+          "grid": 12,
           "finish": 11,
           "laps": 56,
-          "gap": "+1 lap",
+          "gap": "+6.400",
           "pts": 0
         },
         {
           "id": "BOR",
-          "grid": null,
+          "grid": 21,
           "finish": 12,
           "laps": 56,
-          "gap": "+1 lap",
+          "gap": "+9.353",
           "pts": 0
         },
         {
           "id": "OCO",
-          "grid": null,
+          "grid": 14,
           "finish": 13,
           "laps": 56,
-          "gap": "+1 lap",
+          "gap": "+13.873",
           "pts": 0
         },
         {
           "id": "LIN",
-          "grid": null,
+          "grid": 16,
           "finish": 14,
           "laps": 56,
-          "gap": "+1 lap",
+          "gap": "+44.781",
           "pts": 0
         },
         {
           "id": "ALO",
-          "grid": null,
+          "grid": 17,
           "finish": 15,
           "laps": 56,
-          "gap": "+1 lap",
+          "gap": "+1:14.964",
           "pts": 0
         },
         {
           "id": "PER",
-          "grid": null,
+          "grid": 20,
           "finish": 16,
           "laps": 56,
-          "gap": "+1 lap",
+          "gap": "+1:17.513",
           "pts": 0
         },
         {
           "id": "STR",
-          "grid": null,
+          "grid": 18,
           "finish": 17,
           "laps": 56,
-          "gap": "+1 lap",
+          "gap": "+1:22.631",
           "pts": 0
         },
         {
           "id": "BOT",
-          "grid": null,
+          "grid": 19,
           "finish": 18,
           "laps": 55,
-          "gap": "+2 laps",
+          "gap": "+1:08.255",
           "pts": 0
         },
         {
           "id": "HUL",
           "grid": 10,
-          "finish": "DNF",
+          "finish": 19,
           "laps": 7,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Retired (cause not confirmed)"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "LAW",
-          "grid": null,
-          "finish": "DNF",
+          "grid": 11,
+          "finish": 20,
           "laps": 6,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Involved in first-lap incident with Gasly"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "GAS",
           "grid": 9,
-          "finish": "DNF",
+          "finish": 21,
           "laps": 4,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Car flipped after contact with Lawson"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "HAD",
-          "grid": null,
-          "finish": "DNF",
+          "grid": 22,
+          "finish": 22,
           "laps": 4,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Hit the wall at Turn 14, suspension damage",
-          "onTrackPenalty": "5s — crossing the white line at pit exit",
-          "hardwarePenalty": "Disqualified from qualifying (technical nonconformity); started from the pit lane"
+          "gap": "Retired",
+          "pts": 0
         }
       ],
       "sprint": {
@@ -2689,7 +2672,8 @@
         "weatherQuali": null,
         "weatherRace": "Cloudy; damp at the start (drivers started on intermediate tyres)",
         "weatherSprint": null,
-        "note": "One Virtual Safety Car (mid-race, for Perez's suspension failure/debris) and one full Safety Car (late race, for the Norris/Piastri collision) which ran to the finish."
+        "note": "Automated classification from Jolpica; verify against official F1 results.",
+        "classificationStatus": "provisional"
       },
       "headline": "Antonelli wins an attrition-heavy Canadian GP",
       "recap": "Kimi Antonelli extended his championship lead with victory at Montreal ahead of Lewis Hamilton and Max Verstappen, in a race that claimed 18 retirements. A late Safety Car for the Norris/Piastri collision neutralized the finish after an earlier VSC for Perez's suspension failure.",
@@ -2716,7 +2700,7 @@
           "note": "Biggest mover of the race, gaining 7 positions from P22 to finish 15th."
         }
       ],
-      "sourceUrl": "https://www.si.com/onsi/f1/news/f1-results-and-report-from-the-2026-canadian-grand-prix",
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races",
       "results": [
         {
           "id": "ANT",
@@ -2731,7 +2715,7 @@
           "grid": 5,
           "finish": 2,
           "laps": 68,
-          "gap": "+10.768s",
+          "gap": "+10.768",
           "pts": 18
         },
         {
@@ -2739,7 +2723,7 @@
           "grid": 6,
           "finish": 3,
           "laps": 68,
-          "gap": "+11.276s",
+          "gap": "+11.276",
           "pts": 15
         },
         {
@@ -2747,7 +2731,7 @@
           "grid": 8,
           "finish": 4,
           "laps": 68,
-          "gap": "+44.151s",
+          "gap": "+44.151",
           "pts": 12
         },
         {
@@ -2755,7 +2739,7 @@
           "grid": 7,
           "finish": 5,
           "laps": 67,
-          "gap": "+1 lap",
+          "gap": "+5.033",
           "pts": 10
         },
         {
@@ -2763,7 +2747,7 @@
           "grid": 10,
           "finish": 6,
           "laps": 67,
-          "gap": "+1 lap",
+          "gap": "+19.510",
           "pts": 8
         },
         {
@@ -2771,7 +2755,7 @@
           "grid": 12,
           "finish": 7,
           "laps": 67,
-          "gap": "+1 lap",
+          "gap": "+34.235",
           "pts": 6
         },
         {
@@ -2779,7 +2763,7 @@
           "grid": 14,
           "finish": 8,
           "laps": 67,
-          "gap": "+1 lap",
+          "gap": "+34.572",
           "pts": 4
         },
         {
@@ -2787,7 +2771,7 @@
           "grid": 15,
           "finish": 9,
           "laps": 67,
-          "gap": "+1 lap",
+          "gap": "+58.014",
           "pts": 2
         },
         {
@@ -2795,7 +2779,7 @@
           "grid": 16,
           "finish": 10,
           "laps": 67,
-          "gap": "+1 lap",
+          "gap": "+59.049",
           "pts": 1
         },
         {
@@ -2803,7 +2787,7 @@
           "grid": 4,
           "finish": 11,
           "laps": 66,
-          "gap": "+2 laps",
+          "gap": "+12.699",
           "pts": 0
         },
         {
@@ -2811,7 +2795,7 @@
           "grid": 11,
           "finish": 12,
           "laps": 66,
-          "gap": "+2 laps",
+          "gap": "+14.182",
           "pts": 0
         },
         {
@@ -2819,16 +2803,15 @@
           "grid": 13,
           "finish": 13,
           "laps": 66,
-          "gap": "+2 laps",
-          "pts": 0,
-          "onTrackPenalty": "5s — Virtual Safety Car infringement"
+          "gap": "+21.156",
+          "pts": 0
         },
         {
           "id": "OCO",
           "grid": 17,
           "finish": 14,
           "laps": 66,
-          "gap": "+2 laps",
+          "gap": "+1:08.635",
           "pts": 0
         },
         {
@@ -2836,71 +2819,64 @@
           "grid": 22,
           "finish": 15,
           "laps": 64,
-          "gap": "+4 laps",
-          "pts": 0,
-          "hardwarePenalty": "Started from the pit lane after Aston Martin changed power unit elements ahead of the race"
+          "gap": "+18.397",
+          "pts": 0
         },
         {
           "id": "BOT",
           "grid": 21,
           "finish": 16,
           "laps": 64,
-          "gap": "+4 laps",
+          "gap": "+53.390",
           "pts": 0
         },
         {
           "id": "PER",
           "grid": 20,
-          "finish": "DNF",
+          "finish": 17,
           "laps": 39,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Suspension failure"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "NOR",
           "grid": 3,
-          "finish": "DNF",
+          "finish": 18,
           "laps": 38,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Collided with Piastri while fighting for 4th place"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "RUS",
           "grid": 1,
-          "finish": "DNF",
+          "finish": 19,
           "laps": 29,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Retired (cause not confirmed)"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "ALO",
           "grid": 19,
-          "finish": "DNF",
+          "finish": 20,
           "laps": 23,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Retired (cause not confirmed)"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "ALB",
           "grid": 18,
-          "finish": "DNF",
+          "finish": 21,
           "laps": 11,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Retired (cause not confirmed)"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "LIN",
           "grid": 9,
-          "finish": "DNS",
+          "finish": 22,
           "laps": 0,
-          "gap": "DNS",
-          "pts": 0,
-          "retirement": "Car not ready in time; formation lap issue"
+          "gap": "Did not start",
+          "pts": 0
         }
       ],
       "sprint": {
@@ -2964,7 +2940,8 @@
         "safetyCars": 3,
         "weatherQuali": null,
         "weatherRace": "Sunny, dry, ~23°C",
-        "note": "A dramatic weekend: Stroll's crash (lap 60) brought out the first Safety Car; Leclerc crashed at the same corner on the restart, triggering a second Safety Car that became a red flag for track repairs (resurfacing work had broken up at Turn 19); the race then resumed with a Safety Car-led restart lap before a standing start. Grid confirmed for P1-P10 only; positions 11-22 not reliably sourced."
+        "note": "Automated classification from Jolpica; verify against official F1 results.",
+        "classificationStatus": "provisional"
       },
       "headline": "Antonelli wins a red-flag-interrupted Monaco classic",
       "recap": "Kimi Antonelli led every lap from pole to claim a fifth straight victory, surviving two Safety Car periods, a red flag for track damage, and a standing restart. Hamilton held on for 2nd as George Russell's afternoon collapsed through penalties.",
@@ -2995,7 +2972,7 @@
           "note": "Finished on the podium in 3rd for Red Bull."
         }
       ],
-      "sourceUrl": "https://www.f1-fansite.com/f1-result/race-report-results-2026-monaco-formula-1-grand-prix/",
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races",
       "results": [
         {
           "id": "ANT",
@@ -3010,80 +2987,79 @@
           "grid": 3,
           "finish": 2,
           "laps": 78,
-          "gap": "+6.271s",
+          "gap": "+6.271",
           "pts": 18
         },
         {
           "id": "HAD",
           "grid": 5,
-          "finish": 4,
+          "finish": 3,
           "laps": 78,
-          "gap": "+23.394s",
-          "pts": 12
+          "gap": "+23.394",
+          "pts": 15
         },
         {
           "id": "PIA",
           "grid": 7,
-          "finish": 5,
+          "finish": 4,
           "laps": 78,
-          "gap": "+24.261s",
-          "pts": 10
+          "gap": "+24.261",
+          "pts": 12
         },
         {
           "id": "LAW",
           "grid": 10,
-          "finish": 6,
+          "finish": 5,
           "laps": 78,
-          "gap": "+26.553s",
-          "pts": 8
+          "gap": "+26.553",
+          "pts": 10
         },
         {
           "id": "LIN",
-          "grid": null,
-          "finish": 7,
+          "grid": 15,
+          "finish": 6,
           "laps": 78,
-          "gap": "+29.010s",
-          "pts": 6
+          "gap": "+29.010",
+          "pts": 8
         },
         {
           "id": "GAS",
           "grid": 9,
-          "finish": 3,
+          "finish": 7,
           "laps": 78,
-          "gap": "+30.369s",
-          "pts": 15,
-          "onTrackPenalty": "Two separate 5s penalties — speeding in the pit lane"
+          "gap": "+30.369",
+          "pts": 6
         },
         {
           "id": "ALB",
-          "grid": null,
+          "grid": 11,
           "finish": 8,
           "laps": 78,
-          "gap": "+33.413s",
+          "gap": "+33.413",
           "pts": 4
         },
         {
           "id": "OCO",
-          "grid": null,
+          "grid": 17,
           "finish": 9,
           "laps": 78,
-          "gap": "+37.140s",
+          "gap": "+37.140",
           "pts": 2
         },
         {
           "id": "ALO",
-          "grid": null,
+          "grid": 21,
           "finish": 10,
           "laps": 78,
-          "gap": "+41.899s",
+          "gap": "+41.899",
           "pts": 1
         },
         {
           "id": "BOR",
-          "grid": null,
+          "grid": 16,
           "finish": 11,
           "laps": 78,
-          "gap": "+42.748s",
+          "gap": "+42.748",
           "pts": 0
         },
         {
@@ -3091,100 +3067,88 @@
           "grid": 6,
           "finish": 12,
           "laps": 78,
-          "gap": "+43.353s",
-          "pts": 0,
-          "note": "Drive-through penalty for failing to serve an earlier time penalty correctly."
+          "gap": "+43.353",
+          "pts": 0
         },
         {
           "id": "HUL",
-          "grid": null,
+          "grid": 13,
           "finish": 13,
           "laps": 78,
-          "gap": "+44.102s",
-          "pts": 0,
-          "onTrackPenalty": "10s — causing a collision"
+          "gap": "+44.102",
+          "pts": 0
         },
         {
           "id": "COL",
-          "grid": null,
+          "grid": 14,
           "finish": 14,
           "laps": 78,
-          "gap": "+48.964s",
-          "pts": 0,
-          "onTrackPenalty": "5s — speeding in the pit lane"
+          "gap": "+48.964",
+          "pts": 0
         },
         {
           "id": "PER",
-          "grid": null,
+          "grid": 18,
           "finish": 15,
           "laps": 78,
-          "gap": "+49.153s",
-          "pts": 0,
-          "onTrackPenalty": "10s — false start"
+          "gap": "+49.153",
+          "pts": 0
         },
         {
           "id": "SAI",
-          "grid": null,
-          "finish": "DNF",
+          "grid": 12,
+          "finish": 16,
           "laps": 70,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Eliminated after contact with Hulkenberg at the restart"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "LEC",
           "grid": 4,
-          "finish": "DNF",
+          "finish": 17,
           "laps": 64,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Crashed at Anthony Noghes on the restart, triggering the second Safety Car/red flag"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "STR",
-          "grid": null,
-          "finish": "DNF",
+          "grid": 22,
+          "finish": 18,
           "laps": 56,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Crashed at Anthony Noghes, triggering the first Safety Car",
-          "onTrackPenalty": "5s — exceeding track limits"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "NOR",
           "grid": 8,
-          "finish": "DNF",
+          "finish": 19,
           "laps": 43,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Power unit problem, in McLaren's 1000th Grand Prix"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "BEA",
-          "grid": null,
-          "finish": "DNF",
+          "grid": 19,
+          "finish": 20,
           "laps": 27,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Retired after early damage"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "BOT",
-          "grid": null,
-          "finish": "DNF",
+          "grid": 20,
+          "finish": 21,
           "laps": 15,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Brake issues"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "VER",
           "grid": 2,
-          "finish": "DNF",
+          "finish": 22,
           "laps": 0,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Poor start followed by power unit trouble"
+          "gap": "Retired",
+          "pts": 0
         }
       ],
       "sprint": null
@@ -3416,7 +3380,8 @@
         "safetyCars": 1,
         "weatherQuali": "Hot",
         "weatherRace": "Hot and dry (Styrian heat visibly degraded tyres late in the race)",
-        "note": "One Virtual Safety Car mid-race (cost Antonelli track position with an awkwardly timed stop). A late single-yellow-flag incident (Verstappen's crash at Turn 9, final laps) did not bring out a full Safety Car. Grid confirmed for P1-P10 only; positions 11-22 not reliably sourced."
+        "note": "Automated classification from Jolpica; verify against official F1 results.",
+        "classificationStatus": "provisional"
       },
       "headline": "Russell wins from pole as Antonelli fights back for the fastest lap",
       "recap": "George Russell controlled the race from pole to beat Max Verstappen, whose hard tyres faded late in the Styrian heat. Kimi Antonelli recovered from an early VSC pit-stop setback to take 3rd and the fastest lap of the race.",
@@ -3443,7 +3408,7 @@
           "note": "Limited championship damage on a rare off-day by setting the fastest lap for consolation."
         }
       ],
-      "sourceUrl": "https://www.total-motorsport.com/austrian-gp-fastest-lap-2026/",
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races",
       "results": [
         {
           "id": "RUS",
@@ -3458,7 +3423,7 @@
           "grid": 5,
           "finish": 2,
           "laps": 71,
-          "gap": "+1.611s",
+          "gap": "+1.611",
           "pts": 18
         },
         {
@@ -3466,7 +3431,7 @@
           "grid": 4,
           "finish": 3,
           "laps": 71,
-          "gap": "+1.986s",
+          "gap": "+1.986",
           "pts": 15
         },
         {
@@ -3474,7 +3439,7 @@
           "grid": 7,
           "finish": 4,
           "laps": 71,
-          "gap": "+21.809s",
+          "gap": "+21.809",
           "pts": 12
         },
         {
@@ -3482,7 +3447,7 @@
           "grid": 3,
           "finish": 5,
           "laps": 71,
-          "gap": "+26.393s",
+          "gap": "+26.393",
           "pts": 10
         },
         {
@@ -3490,7 +3455,7 @@
           "grid": 8,
           "finish": 6,
           "laps": 71,
-          "gap": "+29.399s",
+          "gap": "+29.399",
           "pts": 8
         },
         {
@@ -3498,7 +3463,7 @@
           "grid": 6,
           "finish": 7,
           "laps": 71,
-          "gap": "+31.505s",
+          "gap": "+31.505",
           "pts": 6
         },
         {
@@ -3506,7 +3471,7 @@
           "grid": 2,
           "finish": 8,
           "laps": 71,
-          "gap": "+45.659s",
+          "gap": "+45.659",
           "pts": 4
         },
         {
@@ -3514,7 +3479,7 @@
           "grid": 9,
           "finish": 9,
           "laps": 70,
-          "gap": "+1 lap",
+          "gap": "+15.334",
           "pts": 2
         },
         {
@@ -3522,108 +3487,104 @@
           "grid": 10,
           "finish": 10,
           "laps": 70,
-          "gap": "+1 lap",
+          "gap": "+19.030",
           "pts": 1
         },
         {
           "id": "BOR",
-          "grid": null,
+          "grid": 12,
           "finish": 11,
           "laps": 70,
-          "gap": "+1 lap",
+          "gap": "+30.315",
           "pts": 0
         },
         {
           "id": "HUL",
-          "grid": null,
+          "grid": 14,
           "finish": 12,
           "laps": 70,
-          "gap": "+1 lap",
+          "gap": "+38.484",
           "pts": 0
         },
         {
           "id": "GAS",
-          "grid": null,
+          "grid": 11,
           "finish": 13,
           "laps": 70,
-          "gap": "+1 lap",
+          "gap": "+39.251",
           "pts": 0
         },
         {
           "id": "BEA",
-          "grid": null,
+          "grid": 13,
           "finish": 14,
           "laps": 70,
-          "gap": "+1 lap",
+          "gap": "+1:02.677",
           "pts": 0
         },
         {
           "id": "COL",
-          "grid": null,
+          "grid": 16,
           "finish": 15,
           "laps": 70,
-          "gap": "+1 lap",
+          "gap": "+1:05.647",
           "pts": 0
         },
         {
           "id": "OCO",
-          "grid": null,
+          "grid": 15,
           "finish": 16,
           "laps": 69,
-          "gap": "+2 laps",
+          "gap": "+25.932",
           "pts": 0
         },
         {
           "id": "ALB",
-          "grid": null,
+          "grid": 18,
           "finish": 17,
           "laps": 69,
-          "gap": "+2 laps",
+          "gap": "+28.082",
           "pts": 0
         },
         {
           "id": "ALO",
-          "grid": null,
+          "grid": 21,
           "finish": 18,
           "laps": 68,
-          "gap": "+3 laps",
+          "gap": "+4.833",
           "pts": 0
         },
         {
           "id": "STR",
-          "grid": null,
-          "finish": "DNF",
+          "grid": 22,
+          "finish": 19,
           "laps": 45,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Retired (cause not confirmed)"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "SAI",
-          "grid": null,
-          "finish": "DNF",
+          "grid": 17,
+          "finish": 20,
           "laps": 23,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Retired (cause not confirmed)"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "PER",
-          "grid": null,
-          "finish": "DNF",
+          "grid": 19,
+          "finish": 21,
           "laps": 4,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Retired (cause not confirmed)"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "BOT",
-          "grid": null,
-          "finish": "DNF",
+          "grid": 20,
+          "finish": 22,
           "laps": 2,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Retired (cause not confirmed)"
+          "gap": "Retired",
+          "pts": 0
         }
       ],
       "sprint": null
@@ -3636,7 +3597,8 @@
         "weatherQuali": null,
         "weatherRace": "Dry, fine conditions",
         "weatherSprint": null,
-        "note": "Safety car came out on lap 48/52 after Verstappen's late spin and ran to the chequered flag, so Leclerc won under Safety Car conditions. Fastest lap for this round could not be confirmed from available sources."
+        "note": "Automated classification from Jolpica; verify against official F1 results.",
+        "classificationStatus": "provisional"
       },
       "headline": "Leclerc wins under Safety Car after a late Verstappen spin",
       "recap": "Charles Leclerc took his first win since October 2024 after Max Verstappen spun out with four laps to go, bringing out a Safety Car that ran to the flag. George Russell recovered from a lap-35 puncture-forced pit stop to finish 2nd, gaining 18 points on championship leader Antonelli.",
@@ -3667,7 +3629,7 @@
           "note": "Gained 18 points on the championship leader with a recovery drive to 2nd."
         }
       ],
-      "sourceUrl": "https://sports.yahoo.com/f1/breaking-news/live/british-grand-prix-results-charles-leclerc-wins-under-safety-car-after-late-max-verstappen-spin-123000818.html",
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races",
       "results": [
         {
           "id": "LEC",
@@ -3682,16 +3644,15 @@
           "grid": 4,
           "finish": 2,
           "laps": 52,
-          "gap": "+0.427s",
-          "pts": 18,
-          "note": "Recovered from an unplanned lap-35 pit stop for a slow puncture."
+          "gap": "+0.427",
+          "pts": 18
         },
         {
           "id": "HAM",
           "grid": 3,
           "finish": 3,
           "laps": 52,
-          "gap": "+0.772s",
+          "gap": "+0.772",
           "pts": 15
         },
         {
@@ -3699,7 +3660,7 @@
           "grid": 6,
           "finish": 4,
           "laps": 52,
-          "gap": "+1.149s",
+          "gap": "+1.149",
           "pts": 12
         },
         {
@@ -3707,7 +3668,7 @@
           "grid": 5,
           "finish": 5,
           "laps": 52,
-          "gap": "+1.598s",
+          "gap": "+1.598",
           "pts": 10
         },
         {
@@ -3715,7 +3676,7 @@
           "grid": 10,
           "finish": 6,
           "laps": 52,
-          "gap": "+2.023s",
+          "gap": "+2.023",
           "pts": 8
         },
         {
@@ -3723,7 +3684,7 @@
           "grid": 9,
           "finish": 7,
           "laps": 52,
-          "gap": "+2.214s",
+          "gap": "+2.214",
           "pts": 6
         },
         {
@@ -3731,7 +3692,7 @@
           "grid": 11,
           "finish": 8,
           "laps": 52,
-          "gap": "+2.413s",
+          "gap": "+2.413",
           "pts": 4
         },
         {
@@ -3739,7 +3700,7 @@
           "grid": 19,
           "finish": 9,
           "laps": 52,
-          "gap": "+3.229s",
+          "gap": "+3.229",
           "pts": 2
         },
         {
@@ -3747,7 +3708,7 @@
           "grid": 15,
           "finish": 10,
           "laps": 52,
-          "gap": "+3.445s",
+          "gap": "+3.445",
           "pts": 1
         },
         {
@@ -3755,7 +3716,7 @@
           "grid": 8,
           "finish": 11,
           "laps": 52,
-          "gap": "+4.014s",
+          "gap": "+4.014",
           "pts": 0
         },
         {
@@ -3763,7 +3724,7 @@
           "grid": 13,
           "finish": 12,
           "laps": 52,
-          "gap": "+5.245s",
+          "gap": "+5.245",
           "pts": 0
         },
         {
@@ -3771,7 +3732,7 @@
           "grid": 17,
           "finish": 13,
           "laps": 52,
-          "gap": "+5.512s",
+          "gap": "+5.512",
           "pts": 0
         },
         {
@@ -3779,7 +3740,7 @@
           "grid": 20,
           "finish": 14,
           "laps": 52,
-          "gap": "+7.403s",
+          "gap": "+7.403",
           "pts": 0
         },
         {
@@ -3787,16 +3748,15 @@
           "grid": 1,
           "finish": 15,
           "laps": 52,
-          "gap": "+8.005s",
-          "pts": 0,
-          "onTrackPenalty": "5s — exceeding track limits"
+          "gap": "+8.005",
+          "pts": 0
         },
         {
           "id": "BOT",
           "grid": 18,
           "finish": 16,
           "laps": 52,
-          "gap": "+8.162s",
+          "gap": "+8.162",
           "pts": 0
         },
         {
@@ -3804,16 +3764,15 @@
           "grid": 14,
           "finish": 17,
           "laps": 51,
-          "gap": "+1 lap",
-          "pts": 0,
-          "onTrackPenalty": "1 lap added — overtaking the Safety Car"
+          "gap": "+4.391",
+          "pts": 0
         },
         {
           "id": "ALO",
           "grid": 21,
           "finish": 18,
           "laps": 51,
-          "gap": "+1 lap",
+          "gap": "+4.980",
           "pts": 0
         },
         {
@@ -3821,35 +3780,32 @@
           "grid": 22,
           "finish": 19,
           "laps": 51,
-          "gap": "+1 lap",
+          "gap": "+6.750",
           "pts": 0
         },
         {
           "id": "VER",
           "grid": 7,
-          "finish": "DNF",
+          "finish": 20,
           "laps": 46,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Spun and beached in the gravel while running 3rd, lap 48; brought out the race-ending Safety Car"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "ALB",
           "grid": 16,
-          "finish": "DNF",
+          "finish": 21,
           "laps": 43,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Retired (cause not confirmed)"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "HUL",
           "grid": 12,
-          "finish": "DNF",
+          "finish": 22,
           "laps": 36,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Retired (cause not confirmed)"
+          "gap": "Retired",
+          "pts": 0
         }
       ],
       "sprint": {
@@ -3999,7 +3955,8 @@
         "safetyCars": 1,
         "weatherQuali": null,
         "weatherRace": null,
-        "note": "Virtual Safety Car deployed around lap 20 (Hamilton served his penalty and pitted under it). Ferrari were separately fined €30,000 (€10,000 suspended) after a mechanic was struck during that pit stop — a team fine, not an added time penalty on Hamilton's result. Grid reflects five late power-unit-element penalties applied after qualifying. Fastest lap and session weather could not be confirmed from available sources."
+        "note": "Automated classification from Jolpica; verify against official F1 results.",
+        "classificationStatus": "provisional"
       },
       "headline": "Antonelli wins at Spa as Russell crashes out on lap one",
       "recap": "Kimi Antonelli claimed his sixth win of the season at Spa-Francorchamps, ahead of Charles Leclerc and Max Verstappen, after teammate George Russell crashed out on the opening lap following contact with Lewis Hamilton. Hamilton was handed a 5-second penalty for the incident but still finished 4th.",
@@ -4025,7 +3982,7 @@
           "note": "Out on lap 1 — his championship gap to Antonelli grew to roughly 50 points."
         }
       ],
-      "sourceUrl": "https://www.formula1.com/en/latest/article/antonelli-charges-to-pole-position-in-exhilarating-belgian-gp-qualifying.zpGgC6xi6e3QnZEOmi6qS",
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races",
       "results": [
         {
           "id": "ANT",
@@ -4040,7 +3997,7 @@
           "grid": 4,
           "finish": 2,
           "laps": 44,
-          "gap": "+1.9s",
+          "gap": "+1.952",
           "pts": 18
         },
         {
@@ -4048,7 +4005,7 @@
           "grid": 2,
           "finish": 3,
           "laps": 44,
-          "gap": "+11.5s",
+          "gap": "+11.586",
           "pts": 15
         },
         {
@@ -4056,16 +4013,15 @@
           "grid": 5,
           "finish": 4,
           "laps": 44,
-          "gap": "+17.2s",
-          "pts": 12,
-          "onTrackPenalty": "5s — causing a collision with Russell at Turn 5 (Les Combes), opening lap"
+          "gap": "+17.245",
+          "pts": 12
         },
         {
           "id": "PIA",
           "grid": 6,
           "finish": 5,
           "laps": 44,
-          "gap": "+18.9s",
+          "gap": "+18.988",
           "pts": 10
         },
         {
@@ -4073,25 +4029,23 @@
           "grid": 21,
           "finish": 6,
           "laps": 44,
-          "gap": "+23.3s",
-          "pts": 8,
-          "hardwarePenalty": "30-place grid penalty — additional ICE, exhaust system and turbocharger"
+          "gap": "+23.307",
+          "pts": 8
         },
         {
           "id": "NOR",
           "grid": 13,
           "finish": 7,
           "laps": 44,
-          "gap": "+24.0s",
-          "pts": 6,
-          "hardwarePenalty": "10-place grid penalty — additional control electronics unit"
+          "gap": "+24.014",
+          "pts": 6
         },
         {
           "id": "BOR",
           "grid": 8,
           "finish": 8,
           "laps": 44,
-          "gap": "+49.1s",
+          "gap": "+49.140",
           "pts": 4
         },
         {
@@ -4099,7 +4053,7 @@
           "grid": 7,
           "finish": 9,
           "laps": 44,
-          "gap": "+50.4s",
+          "gap": "+50.406",
           "pts": 2
         },
         {
@@ -4107,7 +4061,7 @@
           "grid": 11,
           "finish": 10,
           "laps": 44,
-          "gap": "+76.0s",
+          "gap": "+1:16.037",
           "pts": 1
         },
         {
@@ -4115,7 +4069,7 @@
           "grid": 10,
           "finish": 11,
           "laps": 44,
-          "gap": "+76.9s",
+          "gap": "+1:16.991",
           "pts": 0
         },
         {
@@ -4123,7 +4077,7 @@
           "grid": 9,
           "finish": 12,
           "laps": 44,
-          "gap": "+77.5s",
+          "gap": "+1:17.523",
           "pts": 0
         },
         {
@@ -4131,7 +4085,7 @@
           "grid": 12,
           "finish": 13,
           "laps": 44,
-          "gap": "+78.3s",
+          "gap": "+1:18.348",
           "pts": 0
         },
         {
@@ -4139,7 +4093,7 @@
           "grid": 14,
           "finish": 14,
           "laps": 44,
-          "gap": "+94.4s",
+          "gap": "+1:34.465",
           "pts": 0
         },
         {
@@ -4147,7 +4101,7 @@
           "grid": 15,
           "finish": 15,
           "laps": 44,
-          "gap": "+102.6s",
+          "gap": "+1:44.684",
           "pts": 0
         },
         {
@@ -4155,16 +4109,15 @@
           "grid": 19,
           "finish": 16,
           "laps": 44,
-          "gap": "+103.6s",
-          "pts": 0,
-          "hardwarePenalty": "10-place grid penalty — battery pack replacement"
+          "gap": "+1:45.856",
+          "pts": 0
         },
         {
           "id": "OCO",
           "grid": 16,
           "finish": 17,
           "laps": 44,
-          "gap": "+108.9s",
+          "gap": "+1:50.925",
           "pts": 0
         },
         {
@@ -4172,46 +4125,40 @@
           "grid": 17,
           "finish": 18,
           "laps": 43,
-          "gap": "+1 lap",
+          "gap": "+1:00.979",
           "pts": 0
         },
         {
           "id": "ALO",
           "grid": 22,
-          "finish": "DNF",
+          "finish": 19,
           "laps": 42,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Retired — classified 2 laps behind the winner",
-          "hardwarePenalty": "20-place grid penalty — additional power unit elements"
+          "gap": "+20.848",
+          "pts": 0
         },
         {
           "id": "STR",
           "grid": 20,
-          "finish": "DNF",
+          "finish": 20,
           "laps": 25,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Retired — classified 19 laps behind the winner",
-          "hardwarePenalty": "10-place grid penalty — additional MGU-K"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "PER",
           "grid": 18,
-          "finish": "DNF",
+          "finish": 21,
           "laps": 13,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Retired — classified 31 laps behind the winner"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "RUS",
           "grid": 3,
-          "finish": "DNF",
+          "finish": 22,
           "laps": 0,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Crashed at Turn 5 (Les Combes) on the opening lap after contact with Hamilton"
+          "gap": "Retired",
+          "pts": 0
         }
       ],
       "sprint": null
@@ -4223,7 +4170,8 @@
         "safetyCars": null,
         "weatherQuali": null,
         "weatherRace": null,
-        "note": "Norris ended Mercedes' run of ten consecutive poles. Hamilton (qualified 2nd, impeding Piastri) and Antonelli (qualified 4th, failing to slow under yellow flags) each took a 3-place grid penalty, promoting Leclerc to the front row and Piastri/Verstappen to row two. Grid confirmed for P1-P8 only; positions 9-22 not reliably sourced. Fastest lap and safety-car count could not be confirmed from available sources. Drivers raised concerns about the track surface after resurfacing work."
+        "note": "Automated classification from Jolpica; verify against official F1 results.",
+        "classificationStatus": "provisional"
       },
       "headline": "Norris ends Mercedes' pole streak and wins a chaotic Hungarian GP",
       "recap": "Lando Norris converted his first pole of the season into his maiden 2026 win, inheriting the lead when teammate Oscar Piastri retired with a gearbox failure after contact with backmarker Carlos Sainz. Max Verstappen and championship leader Kimi Antonelli completed the podium as Lewis Hamilton took his fourth penalty in three race weekends.",
@@ -4254,14 +4202,14 @@
           "note": "Recovered from as low as 21st place after early trouble to finish 7th."
         }
       ],
-      "sourceUrl": "https://www.formula1.com/en/latest/article/norris-beats-verstappen-and-antonelli-to-victory-in-dramatic-hungarian-gp.5JQmohRAKABD2asRsMWogj",
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races",
       "results": [
         {
           "id": "NOR",
           "grid": 1,
           "finish": 1,
           "laps": 70,
-          "gap": "70 Laps",
+          "gap": "1:39:56.180",
           "pts": 25
         },
         {
@@ -4269,7 +4217,7 @@
           "grid": 4,
           "finish": 2,
           "laps": 70,
-          "gap": "+15.0s",
+          "gap": "+15.080",
           "pts": 18
         },
         {
@@ -4277,7 +4225,7 @@
           "grid": 7,
           "finish": 3,
           "laps": 70,
-          "gap": "+18.7s",
+          "gap": "+18.728",
           "pts": 15
         },
         {
@@ -4285,7 +4233,7 @@
           "grid": 2,
           "finish": 4,
           "laps": 70,
-          "gap": "+23.8s",
+          "gap": "+23.840",
           "pts": 12
         },
         {
@@ -4293,150 +4241,144 @@
           "grid": 5,
           "finish": 5,
           "laps": 70,
-          "gap": "+24.5s",
-          "pts": 10,
-          "onTrackPenalty": "5s — speeding in the pit lane (finished 4th on the road)"
+          "gap": "+24.540",
+          "pts": 10
         },
         {
           "id": "HAD",
-          "grid": null,
+          "grid": 8,
           "finish": 6,
           "laps": 70,
-          "gap": "+55.4s",
+          "gap": "+55.488",
           "pts": 8
         },
         {
           "id": "RUS",
-          "grid": 8,
+          "grid": 6,
           "finish": 7,
           "laps": 70,
-          "gap": "+57.5s",
-          "pts": 6,
-          "note": "Recovered from as low as 21st place."
+          "gap": "+57.503",
+          "pts": 6
         },
         {
           "id": "LAW",
-          "grid": null,
+          "grid": 11,
           "finish": 8,
           "laps": 69,
-          "gap": "+1 lap",
+          "gap": "+28.033",
           "pts": 4
         },
         {
           "id": "HUL",
-          "grid": null,
+          "grid": 10,
           "finish": 9,
           "laps": 69,
-          "gap": "+1 lap",
-          "pts": 2,
-          "note": "First points of the season for Hulkenberg and Audi's works return."
+          "gap": "+30.382",
+          "pts": 2
         },
         {
           "id": "LIN",
-          "grid": null,
+          "grid": 9,
           "finish": 10,
           "laps": 69,
-          "gap": "+1 lap",
+          "gap": "+51.050",
           "pts": 1
         },
         {
           "id": "BOR",
-          "grid": null,
+          "grid": 14,
           "finish": 11,
           "laps": 69,
-          "gap": "+1 lap",
+          "gap": "+52.028",
           "pts": 0
         },
         {
           "id": "GAS",
-          "grid": null,
+          "grid": 12,
           "finish": 12,
           "laps": 69,
-          "gap": "+1 lap",
+          "gap": "+53.429",
           "pts": 0
         },
         {
           "id": "STR",
-          "grid": null,
+          "grid": 20,
           "finish": 13,
           "laps": 69,
-          "gap": "+1 lap",
+          "gap": "+1:03.828",
           "pts": 0
         },
         {
           "id": "ALO",
-          "grid": null,
+          "grid": 16,
           "finish": 14,
           "laps": 69,
-          "gap": "+1 lap",
+          "gap": "+1:06.052",
           "pts": 0
         },
         {
           "id": "COL",
-          "grid": null,
+          "grid": 13,
           "finish": 15,
           "laps": 68,
-          "gap": "+2 laps",
+          "gap": "+3.876",
           "pts": 0
         },
         {
           "id": "OCO",
-          "grid": null,
+          "grid": 15,
           "finish": 16,
           "laps": 68,
-          "gap": "+2 laps",
+          "gap": "+12.859",
           "pts": 0
         },
         {
           "id": "ALB",
-          "grid": null,
+          "grid": 19,
           "finish": 17,
           "laps": 68,
-          "gap": "+2 laps",
+          "gap": "+52.729",
           "pts": 0
         },
         {
           "id": "SAI",
-          "grid": null,
+          "grid": 18,
           "finish": 18,
           "laps": 68,
-          "gap": "+2 laps",
+          "gap": "+52.973",
           "pts": 0
         },
         {
           "id": "BEA",
-          "grid": null,
+          "grid": 17,
           "finish": 19,
           "laps": 68,
-          "gap": "+2 laps",
+          "gap": "+57.198",
           "pts": 0
         },
         {
           "id": "PIA",
           "grid": 3,
-          "finish": "DNF",
-          "laps": null,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Gearbox failure after contact with Sainz while lapping him"
+          "finish": 20,
+          "laps": 55,
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "PER",
-          "grid": null,
-          "finish": "DNF",
-          "laps": null,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Retired (cause not confirmed)"
+          "grid": 22,
+          "finish": 21,
+          "laps": 48,
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "BOT",
-          "grid": null,
-          "finish": "DNF",
-          "laps": null,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Retired (cause not confirmed)"
+          "grid": 21,
+          "finish": 22,
+          "laps": 13,
+          "gap": "Retired",
+          "pts": 0
         }
       ],
       "sprint": null
@@ -4448,7 +4390,8 @@
         "safetyCars": null,
         "weatherQuali": null,
         "weatherRace": "Changeable conditions; the race was red-flagged after Verstappen crashed on lap 1.",
-        "note": "Hadjar missed the weekend with a wrist injury. Lawson substituted for him at Red Bull, while reserve driver Tsunoda filled Lawson's Racing Bulls seat. Perez started from the pit lane after parc ferme changes. Colapinto and Lawson received 10-second penalties for yellow-flag infringements; Sainz received 10 seconds for causing a collision. Exact safety-car count was not added because it could not be reliably confirmed from the official summary."
+        "note": "Automated classification from Jolpica; verify against official F1 results.",
+        "classificationStatus": "provisional"
       },
       "headline": "Norris masters a dramatic Zandvoort race after an early red flag",
       "recap": "Lando Norris won from pole for McLaren after retaking the lead from Kimi Antonelli in the final third of the race. Antonelli and George Russell completed a double Mercedes podium, while home favourite Max Verstappen crashed out on the opening lap. The result gave Norris a second consecutive Grand Prix victory and kept the leading driver and team contests moving toward Austin.",
@@ -4487,11 +4430,10 @@
           "note": "Finished seventh while substituting for the injured Hadjar at Red Bull."
         }
       ],
-      "sourceUrl": "https://www.formula1.com/en/results/2026/races/1292/netherlands/race-result",
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races",
       "results": [
         {
           "id": "NOR",
-          "team": "mclaren",
           "grid": 1,
           "finish": 1,
           "laps": 72,
@@ -4500,200 +4442,171 @@
         },
         {
           "id": "ANT",
-          "team": "mercedes",
           "grid": 3,
           "finish": 2,
           "laps": 72,
-          "gap": "+11.536s",
+          "gap": "+11.536",
           "pts": 18
         },
         {
           "id": "RUS",
-          "team": "mercedes",
           "grid": 2,
           "finish": 3,
           "laps": 72,
-          "gap": "+15.906s",
+          "gap": "+15.906",
           "pts": 15
         },
         {
           "id": "HAM",
-          "team": "ferrari",
           "grid": 5,
           "finish": 4,
           "laps": 72,
-          "gap": "+16.755s",
+          "gap": "+16.755",
           "pts": 12
         },
         {
           "id": "LEC",
-          "team": "ferrari",
           "grid": 6,
           "finish": 5,
           "laps": 72,
-          "gap": "+17.258s",
-          "pts": 10,
-          "note": "Set the fastest lap: 1:14.230 on lap 60."
+          "gap": "+17.258",
+          "pts": 10
         },
         {
           "id": "PIA",
-          "team": "mclaren",
           "grid": 4,
           "finish": 6,
           "laps": 72,
-          "gap": "+32.332s",
+          "gap": "+32.332",
           "pts": 8
         },
         {
           "id": "LAW",
-          "team": "redbull",
           "grid": 8,
           "finish": 7,
           "laps": 72,
-          "gap": "+79.915s",
-          "pts": 6,
-          "note": "Substituted for Isack Hadjar at Red Bull."
+          "gap": "+1:19.915",
+          "pts": 6
         },
         {
           "id": "HUL",
-          "team": "audi",
           "grid": 13,
           "finish": 8,
           "laps": 71,
-          "gap": "+1 lap",
+          "gap": "+36.049",
           "pts": 4
         },
         {
           "id": "ALO",
-          "team": "astonmartin",
           "grid": 18,
           "finish": 9,
           "laps": 71,
-          "gap": "+1 lap",
+          "gap": "+48.393",
           "pts": 2
         },
         {
           "id": "GAS",
-          "team": "alpine",
           "grid": 11,
           "finish": 10,
           "laps": 71,
-          "gap": "+1 lap",
+          "gap": "+49.640",
           "pts": 1
         },
         {
           "id": "TSU",
-          "team": "racingbulls",
           "grid": 12,
           "finish": 11,
           "laps": 71,
-          "gap": "+1 lap",
-          "pts": 0,
-          "note": "Reserve driver substituting for Lawson at Racing Bulls."
+          "gap": "+54.322",
+          "pts": 0
         },
         {
           "id": "LIN",
-          "team": "racingbulls",
           "grid": 10,
           "finish": 12,
           "laps": 71,
-          "gap": "+1 lap",
+          "gap": "+1:05.680",
           "pts": 0
         },
         {
           "id": "BOR",
-          "team": "audi",
           "grid": 9,
           "finish": 13,
           "laps": 71,
-          "gap": "+1 lap",
+          "gap": "+1:06.235",
           "pts": 0
         },
         {
           "id": "COL",
-          "team": "alpine",
           "grid": 14,
           "finish": 14,
           "laps": 70,
-          "gap": "+2 laps",
-          "pts": 0,
-          "onTrackPenalty": "10s — failing to slow for yellow flags"
+          "gap": "+20.534",
+          "pts": 0
         },
         {
           "id": "PER",
-          "team": "cadillac",
           "grid": 22,
           "finish": 15,
           "laps": 70,
-          "gap": "+2 laps",
-          "pts": 0,
-          "note": "Started from the pit lane after parc ferme changes."
+          "gap": "+58.582",
+          "pts": 0
         },
         {
           "id": "SAI",
-          "team": "williams",
           "grid": 17,
           "finish": 16,
           "laps": 70,
-          "gap": "+2 laps",
-          "pts": 0,
-          "onTrackPenalty": "10s — causing a collision"
+          "gap": "+1:10.271",
+          "pts": 0
         },
         {
           "id": "ALB",
-          "team": "williams",
           "grid": 16,
           "finish": 17,
           "laps": 66,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Not classified"
+          "gap": "Retired",
+          "pts": 0
         },
         {
           "id": "BOT",
-          "team": "cadillac",
           "grid": 21,
-          "finish": "DNF",
+          "finish": 18,
           "laps": 61,
-          "gap": "DNF",
+          "gap": "Retired",
           "pts": 0
         },
         {
           "id": "OCO",
-          "team": "haas",
           "grid": 15,
-          "finish": "DNF",
+          "finish": 19,
           "laps": 52,
-          "gap": "DNF",
+          "gap": "Retired",
           "pts": 0
         },
         {
           "id": "STR",
-          "team": "astonmartin",
           "grid": 19,
-          "finish": "DNF",
+          "finish": 20,
           "laps": 45,
-          "gap": "DNF",
+          "gap": "Retired",
           "pts": 0
         },
         {
           "id": "BEA",
-          "team": "haas",
           "grid": 20,
-          "finish": "DNF",
+          "finish": 21,
           "laps": 2,
-          "gap": "DNF",
+          "gap": "Retired",
           "pts": 0
         },
         {
           "id": "VER",
-          "team": "redbull",
           "grid": 7,
-          "finish": "DNF",
+          "finish": 22,
           "laps": 0,
-          "gap": "DNF",
-          "pts": 0,
-          "retirement": "Crashed on lap 1; race red-flagged"
+          "gap": "Retired",
+          "pts": 0
         }
       ],
       "sprint": {
@@ -4843,7 +4756,8 @@
         "safetyCars": null,
         "weatherQuali": null,
         "weatherRace": null,
-        "note": "Antonelli started 19th after an engine-related grid penalty. Perez received a five-second penalty for failing to follow Race Director instructions."
+        "note": "Automated classification from Jolpica; verify against official F1 results.",
+        "classificationStatus": "provisional"
       },
       "headline": "Antonelli charges from 19th to win at Monza",
       "recap": "Kimi Antonelli turned an engine-penalty setback into a remarkable Italian Grand Prix victory, passing Mercedes team-mate George Russell late in the race. Max Verstappen completed the podium, while Charles Leclerc's opening-lap retirement ended Ferrari's strongest home hope almost immediately.",
@@ -4882,11 +4796,10 @@
           "note": "Scored four points with an eighth-place finish for Racing Bulls."
         }
       ],
-      "sourceUrl": "https://www.formula1.com/en/results/2026/races/1293/italy/race-result",
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races",
       "results": [
         {
           "id": "ANT",
-          "team": "mercedes",
           "grid": 19,
           "finish": 1,
           "laps": 53,
@@ -4895,192 +4808,170 @@
         },
         {
           "id": "RUS",
-          "team": "mercedes",
-          "grid": null,
+          "grid": 2,
           "finish": 2,
           "laps": 53,
-          "gap": "+3.857s",
+          "gap": "+3.857",
           "pts": 18
         },
         {
           "id": "VER",
-          "team": "redbull",
-          "grid": null,
+          "grid": 5,
           "finish": 3,
           "laps": 53,
-          "gap": "+14.718s",
+          "gap": "+14.718",
           "pts": 15
         },
         {
           "id": "NOR",
-          "team": "mclaren",
-          "grid": null,
+          "grid": 8,
           "finish": 4,
           "laps": 53,
-          "gap": "+19.056s",
+          "gap": "+19.056",
           "pts": 12
         },
         {
           "id": "PIA",
-          "team": "mclaren",
-          "grid": null,
+          "grid": 6,
           "finish": 5,
           "laps": 53,
-          "gap": "+19.253s",
+          "gap": "+19.253",
           "pts": 10
         },
         {
           "id": "HAM",
-          "team": "ferrari",
-          "grid": null,
+          "grid": 4,
           "finish": 6,
           "laps": 53,
-          "gap": "+24.655s",
+          "gap": "+24.655",
           "pts": 8
         },
         {
           "id": "GAS",
-          "team": "alpine",
           "grid": 1,
           "finish": 7,
           "laps": 53,
-          "gap": "+27.351s",
+          "gap": "+27.351",
           "pts": 6
         },
         {
           "id": "LIN",
-          "team": "racingbulls",
-          "grid": null,
+          "grid": 9,
           "finish": 8,
           "laps": 53,
-          "gap": "+45.136s",
+          "gap": "+45.136",
           "pts": 4
         },
         {
           "id": "COL",
-          "team": "alpine",
-          "grid": null,
+          "grid": 7,
           "finish": 9,
           "laps": 53,
-          "gap": "+47.353s",
+          "gap": "+47.353",
           "pts": 2
         },
         {
           "id": "TSU",
-          "team": "racingbulls",
-          "grid": null,
+          "grid": 15,
           "finish": 10,
           "laps": 53,
-          "gap": "+58.187s",
+          "gap": "+58.187",
           "pts": 1
         },
         {
           "id": "BOR",
-          "team": "audi",
-          "grid": null,
+          "grid": 10,
           "finish": 11,
           "laps": 53,
-          "gap": "+65.187s",
+          "gap": "+1:05.187",
           "pts": 0
         },
         {
           "id": "HUL",
-          "team": "audi",
-          "grid": null,
+          "grid": 12,
           "finish": 12,
           "laps": 53,
-          "gap": "+66.187s",
+          "gap": "+1:06.187",
           "pts": 0
         },
         {
           "id": "SAI",
-          "team": "williams",
-          "grid": null,
+          "grid": 13,
           "finish": 13,
           "laps": 53,
-          "gap": "+74.117s",
+          "gap": "+1:14.117",
           "pts": 0
         },
         {
           "id": "LAW",
-          "team": "redbull",
-          "grid": null,
+          "grid": 22,
           "finish": 14,
           "laps": 53,
-          "gap": "+75.609s",
+          "gap": "+1:15.609",
           "pts": 0
         },
         {
           "id": "BEA",
-          "team": "haas",
-          "grid": null,
+          "grid": 11,
           "finish": 15,
           "laps": 53,
-          "gap": "+78.958s",
+          "gap": "+1:18.958",
           "pts": 0
         },
         {
           "id": "OCO",
-          "team": "haas",
-          "grid": null,
+          "grid": 14,
           "finish": 16,
           "laps": 52,
-          "gap": "+1 lap",
+          "gap": "+6.591",
           "pts": 0
         },
         {
           "id": "ALB",
-          "team": "williams",
-          "grid": null,
+          "grid": 20,
           "finish": 17,
           "laps": 52,
-          "gap": "+1 lap",
+          "gap": "+20.268",
           "pts": 0
         },
         {
           "id": "PER",
-          "team": "cadillac",
-          "grid": null,
+          "grid": 17,
           "finish": 18,
           "laps": 52,
-          "gap": "+1 lap",
-          "pts": 0,
-          "onTrackPenalty": "5s — failing to follow Race Director instructions"
+          "gap": "+1:13.372",
+          "pts": 0
         },
         {
           "id": "BOT",
-          "team": "cadillac",
-          "grid": null,
+          "grid": 16,
           "finish": 19,
           "laps": 51,
-          "gap": "+2 laps",
+          "gap": "+12.880",
           "pts": 0
         },
         {
           "id": "STR",
-          "team": "astonmartin",
-          "grid": null,
-          "finish": "DNF",
+          "grid": 18,
+          "finish": 20,
           "laps": 26,
-          "gap": "DNF",
+          "gap": "Retired",
           "pts": 0
         },
         {
           "id": "ALO",
-          "team": "astonmartin",
-          "grid": null,
-          "finish": "DNF",
+          "grid": 21,
+          "finish": 21,
           "laps": 23,
-          "gap": "DNF",
+          "gap": "Retired",
           "pts": 0
         },
         {
           "id": "LEC",
-          "team": "ferrari",
-          "grid": null,
-          "finish": "DNF",
+          "grid": 3,
+          "finish": 22,
           "laps": 1,
-          "gap": "DNF",
+          "gap": "Retired",
           "pts": 0
         }
       ],
@@ -5095,7 +4986,8 @@
         "safetyCars": null,
         "weatherQuali": null,
         "weatherRace": null,
-        "note": "Gasly received a five-second penalty for speeding in the pit lane."
+        "note": "Automated classification from Jolpica; verify against official F1 results.",
+        "classificationStatus": "provisional"
       },
       "headline": "Antonelli wins Madrid's first Grand Prix",
       "recap": "Kimi Antonelli won the inaugural race at Madring after a virtual-safety-car period reshaped the strategy contest. Max Verstappen finished second and pole-sitter Lando Norris third, while Mercedes again put both cars in the top five.",
@@ -5134,12 +5026,11 @@
           "note": "Finished sixth for Red Bull after a strong team result."
         }
       ],
-      "sourceUrl": "https://www.formula1.com/en/results/2026/races/1294/spain/race-result",
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races",
       "results": [
         {
           "id": "ANT",
-          "team": "mercedes",
-          "grid": null,
+          "grid": 2,
           "finish": 1,
           "laps": 57,
           "gap": "1:34:23.754",
@@ -5147,192 +5038,170 @@
         },
         {
           "id": "VER",
-          "team": "redbull",
-          "grid": null,
+          "grid": 3,
           "finish": 2,
           "laps": 57,
-          "gap": "+4.351s",
+          "gap": "+4.351",
           "pts": 18
         },
         {
           "id": "NOR",
-          "team": "mclaren",
           "grid": 1,
           "finish": 3,
           "laps": 57,
-          "gap": "+5.089s",
+          "gap": "+5.089",
           "pts": 15
         },
         {
           "id": "LEC",
-          "team": "ferrari",
-          "grid": null,
+          "grid": 5,
           "finish": 4,
           "laps": 57,
-          "gap": "+29.116s",
+          "gap": "+29.116",
           "pts": 12
         },
         {
           "id": "RUS",
-          "team": "mercedes",
-          "grid": null,
+          "grid": 6,
           "finish": 5,
           "laps": 57,
-          "gap": "+29.829s",
+          "gap": "+29.829",
           "pts": 10
         },
         {
           "id": "LAW",
-          "team": "redbull",
-          "grid": null,
+          "grid": 8,
           "finish": 6,
           "laps": 57,
-          "gap": "+86.746s",
+          "gap": "+1:26.746",
           "pts": 8
         },
         {
           "id": "COL",
-          "team": "alpine",
-          "grid": null,
+          "grid": 9,
           "finish": 7,
           "laps": 57,
-          "gap": "+94.281s",
+          "gap": "+1:34.281",
           "pts": 6
         },
         {
           "id": "PIA",
-          "team": "mclaren",
-          "grid": null,
+          "grid": 7,
           "finish": 8,
           "laps": 57,
-          "gap": "+95.839s",
+          "gap": "+1:35.839",
           "pts": 4
         },
         {
           "id": "LIN",
-          "team": "racingbulls",
-          "grid": null,
+          "grid": 10,
           "finish": 9,
           "laps": 56,
-          "gap": "+1 lap",
+          "gap": "+10.408",
           "pts": 2
         },
         {
           "id": "HUL",
-          "team": "audi",
-          "grid": null,
+          "grid": 11,
           "finish": 10,
           "laps": 56,
-          "gap": "+1 lap",
+          "gap": "+11.298",
           "pts": 1
         },
         {
           "id": "OCO",
-          "team": "haas",
-          "grid": null,
+          "grid": 13,
           "finish": 11,
           "laps": 56,
-          "gap": "+1 lap",
+          "gap": "+15.143",
           "pts": 0
         },
         {
           "id": "GAS",
-          "team": "alpine",
-          "grid": null,
+          "grid": 14,
           "finish": 12,
           "laps": 56,
-          "gap": "+1 lap",
-          "pts": 0,
-          "onTrackPenalty": "5s — speeding in the pit lane"
+          "gap": "+26.152",
+          "pts": 0
         },
         {
           "id": "BOR",
-          "team": "audi",
-          "grid": null,
+          "grid": 12,
           "finish": 13,
           "laps": 56,
-          "gap": "+1 lap",
+          "gap": "+28.389",
           "pts": 0
         },
         {
           "id": "TSU",
-          "team": "racingbulls",
-          "grid": null,
+          "grid": 15,
           "finish": 14,
           "laps": 56,
-          "gap": "+1 lap",
+          "gap": "+1:00.163",
           "pts": 0
         },
         {
           "id": "ALB",
-          "team": "williams",
-          "grid": null,
+          "grid": 16,
           "finish": 15,
           "laps": 56,
-          "gap": "+1 lap",
+          "gap": "+1:26.212",
           "pts": 0
         },
         {
           "id": "BEA",
-          "team": "haas",
-          "grid": null,
+          "grid": 22,
           "finish": 16,
           "laps": 56,
-          "gap": "+1 lap",
+          "gap": "+1:29.963",
           "pts": 0
         },
         {
           "id": "ALO",
-          "team": "astonmartin",
-          "grid": null,
+          "grid": 17,
           "finish": 17,
           "laps": 55,
-          "gap": "+2 laps",
+          "gap": "+33.776",
           "pts": 0
         },
         {
           "id": "BOT",
-          "team": "cadillac",
-          "grid": null,
+          "grid": 19,
           "finish": 18,
           "laps": 54,
-          "gap": "+3 laps",
+          "gap": "+49.246",
           "pts": 0
         },
         {
           "id": "SAI",
-          "team": "williams",
-          "grid": null,
-          "finish": "DNF",
+          "grid": 20,
+          "finish": 19,
           "laps": 43,
-          "gap": "DNF",
+          "gap": "Retired",
           "pts": 0
         },
         {
           "id": "PER",
-          "team": "cadillac",
-          "grid": null,
-          "finish": "DNF",
+          "grid": 18,
+          "finish": 20,
           "laps": 31,
-          "gap": "DNF",
+          "gap": "Retired",
           "pts": 0
         },
         {
           "id": "STR",
-          "team": "astonmartin",
-          "grid": null,
-          "finish": "DNF",
+          "grid": 21,
+          "finish": 21,
           "laps": 12,
-          "gap": "DNF",
+          "gap": "Retired",
           "pts": 0
         },
         {
           "id": "HAM",
-          "team": "ferrari",
-          "grid": null,
-          "finish": "DNF",
+          "grid": 4,
+          "finish": 22,
           "laps": 6,
-          "gap": "DNF",
+          "gap": "Retired",
           "pts": 0
         }
       ],
