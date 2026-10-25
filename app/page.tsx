@@ -681,7 +681,7 @@ export default function Home() {
                     <div className="helmet-dot" title={driver.helmet}></div>
                     <p>{driver.country} · {team.shortName}</p>
                     <h3>{driver.name}</h3>
-                    <p aria-label={`T-cam identification: ${yellowTCamDrivers[team.id] === driver.id ? "fluorescent yellow-green" : "black"}`} style={{display:"flex",alignItems:"center",gap:"8px",fontWeight:800,fontSize:"12px"}}><span aria-hidden="true" style={{width:12,height:12,borderRadius:"50%",display:"inline-block",background:yellowTCamDrivers[team.id] === driver.id ? "#D7FF20" : "#111111",border:"1px solid #808080"}} />{yellowTCamDrivers[team.id] === driver.id ? "Yellow-green T-cam" : "Black T-cam"}</p>
+                    <p aria-label={`T-cam identification: ${yellowTCamDrivers[team.id] === driver.id ? "fluorescent yellow-green" : "black"}`} style={{display:"flex",alignItems:"center",gap:"8px",fontWeight:800,fontSize:"12px"}}>T-cam <span aria-hidden="true" style={{width:14,height:14,borderRadius:"50%",display:"inline-block",background:yellowTCamDrivers[team.id] === driver.id ? "#D7FF20" : "#111111",border:"2px solid #808080",flexShrink:0}} /></p>
                     <div className="driver-score"><strong>{row.points}</strong><span>championship points</span></div>
                     <div className="form" aria-label={`Last five race scores: ${row.lastFive.join(", ")}`}>
                       {row.lastFive.map((pts, i) => <i key={i} style={{ height: `${Math.max(12, Math.min(100, pts * 4))}%` }}></i>)}
