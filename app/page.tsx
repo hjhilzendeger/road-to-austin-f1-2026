@@ -34,7 +34,14 @@ const PICKS_KEY = "f1-austin-picks-v1";
 const WEEKEND_PICKS_KEY = "f1-austin-weekend-picks-v1";
 const THEME_KEY = "f1-austin-theme";
 
+const yellowTCamDrivers: Record<string, string> = {
+  mclaren: "NOR", mercedes: "ANT", ferrari: "HAM", redbull: "HAD",
+  williams: "SAI", astonmartin: "ALO", racingbulls: "LAW",
+  haas: "BEA", audi: "BOR", alpine: "COL", cadillac: "BOT",
+};
+
 const glossary = [
+  ["T-cam (yellow or black)", "The camera housing above and behind the driver. Teams use fluorescent yellow on one car and black on the other so spectators can tell teammates apart. Yellow does not mean the lead driver."],
   ["Qualifying", "Saturday’s speed contest. Each driver’s best lap sets where they start on Sunday."],
   ["Constructor", "F1’s word for a team. Both of its drivers score toward the team championship."],
   ["DRS", "A movable rear-wing flap that reduces drag to help a following car attempt an overtake in designated zones."],
@@ -633,6 +640,21 @@ export default function Home() {
                 <div><strong>11</strong><span>teams</span><p>Each team builds its own car and scores both drivers’ points.</p></div>
                 <div><strong>25</strong><span>points for a win</span><p>Then 18, 15, 12… down to one point for 10th.</p></div>
               </div>
+              <section className="glossary" aria-label="Identify drivers by T-cam color">
+                <div className="section-heading compact"><div><p className="eyebrow">Trackside spotting guide</p><h2>Who has the yellow T-cam?</h2><p>The fluorescent yellow-green camera pod sits above and behind the driver's helmet. The teammate's pod is black. Neither color indicates seniority or speed.</p></div></div>
+                <div className="glossary-grid">
+                  {data.teams.map((team) => {
+                    const yellowId = yellowTCamDrivers[team.id];
+                    const yellow = data.drivers.find((driver) => driver.id === yellowId);
+                    const black = data.drivers.find((driver) => driver.team === team.id && driver.id !== yellowId);
+                    return <article key={team.id} style={{padding: "16px", border: "1px solid var(--line)", background: "var(--paper)"}}>
+                      <strong>{team.shortName}</strong>
+                      <p><span style={{color: "#a3bd00", fontWeight: 900}}>● Yellow</span> {yellow?.name || "Not listed"}</p>
+                      <p><span style={{fontWeight: 900}}>● Black</span> {black?.name || "Not listed"}</p>
+                    </article>;
+                  })}
+                </div>
+              </section>
               <section className="glossary">
                 <div className="section-heading compact"><div><p className="eyebrow">Tap to learn</p><h2>Words you’ll hear</h2></div></div>
                 <div className="glossary-grid">{glossary.map(([term, definition]) =>
