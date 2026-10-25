@@ -1678,7 +1678,7 @@
     },
     "18": {
       "status": "qualifying-complete",
-      "updatedAt": "2026-10-24T22:30:00.000Z",
+      "updatedAt": "2026-10-25T19:30:00.000Z",
       "headline": "Antonelli takes pole for United States Grand Prix",
       "recap": "Kimi Antonelli claimed pole at Circuit of The Americas with a 1:34.035, ahead of Max Verstappen and Isack Hadjar. Lewis Hamilton topped FP3 as Ferrari swept the three practice sessions. Qualifying order is provisional pending grid penalties.",
       "sourceUrl": "https://www.formula1.com/en/results/2026/races/1297/united-states/qualifying",
@@ -1994,7 +1994,103 @@
           "time": "1:38.765"
         }
       ],
-      "practice3SourceUrl": "https://www.formula1.com/en/results/2026/races/1297/united-states/practice/3"
+      "practice3SourceUrl": "https://www.formula1.com/en/results/2026/races/1297/united-states/practice/3",
+      "startingGridSourceUrl": "https://www.formula1.com/en/latest/article/official-grid-who-starts-where-for-the-2026-united-states-grand-prix.3eD3xBDo1wI0V0VIWo2wMY",
+      "startingGrid": [
+        {
+          "position": 1,
+          "id": "ANT"
+        },
+        {
+          "position": 2,
+          "id": "VER"
+        },
+        {
+          "position": 3,
+          "id": "HAD"
+        },
+        {
+          "position": 4,
+          "id": "LEC"
+        },
+        {
+          "position": 5,
+          "id": "HAM"
+        },
+        {
+          "position": 6,
+          "id": "RUS"
+        },
+        {
+          "position": 7,
+          "id": "PIA"
+        },
+        {
+          "position": 8,
+          "id": "NOR"
+        },
+        {
+          "position": 9,
+          "id": "LAW"
+        },
+        {
+          "position": 10,
+          "id": "GAS"
+        },
+        {
+          "position": 11,
+          "id": "HUL"
+        },
+        {
+          "position": 12,
+          "id": "ALO"
+        },
+        {
+          "position": 13,
+          "id": "BEA"
+        },
+        {
+          "position": 14,
+          "id": "LIN",
+          "penalty": "Five-place power-unit penalty"
+        },
+        {
+          "position": 15,
+          "id": "OCO"
+        },
+        {
+          "position": 16,
+          "id": "SAI"
+        },
+        {
+          "position": 17,
+          "id": "ALB"
+        },
+        {
+          "position": 18,
+          "id": "PER"
+        },
+        {
+          "position": 19,
+          "id": "BOT"
+        },
+        {
+          "position": 20,
+          "id": "COL",
+          "penalty": "Ten-place power-unit penalty"
+        },
+        {
+          "position": 21,
+          "id": "BOR",
+          "penalty": "Power-unit penalties; back of grid"
+        },
+        {
+          "position": "Pit lane",
+          "id": "STR",
+          "penalty": "Pit-lane start following power-unit and set-up changes under parc fermé"
+        }
+      ],
+      "gridNote": "Final starting grid: Lance Stroll starts from pit lane; 21 cars occupy grid positions."
     }
   },
   "raceResults": {
