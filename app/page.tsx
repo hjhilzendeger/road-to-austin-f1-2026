@@ -640,6 +640,21 @@ export default function Home() {
                 <div><strong>11</strong><span>teams</span><p>Each team builds its own car and scores both drivers’ points.</p></div>
                 <div><strong>25</strong><span>points for a win</span><p>Then 18, 15, 12… down to one point for 10th.</p></div>
               </div>
+              <section className="glossary" aria-label="Identify drivers by T-cam color">
+                <div className="section-heading compact"><div><p className="eyebrow">Trackside spotting guide</p><h2>Who has the yellow T-cam?</h2><p>The fluorescent yellow-green camera pod sits above and behind the driver's helmet. The teammate's pod is black. Neither color indicates seniority or speed.</p></div></div>
+                <div className="glossary-grid">
+                  {data.teams.map((team) => {
+                    const yellowId = yellowTCamDrivers[team.id];
+                    const yellow = data.drivers.find((driver) => driver.id === yellowId);
+                    const black = data.drivers.find((driver) => driver.team === team.id && driver.id !== yellowId);
+                    return <article key={team.id} style={{padding: "16px", border: "1px solid var(--line)", background: "var(--paper)"}}>
+                      <strong>{team.shortName}</strong>
+                      <p><span style={{color: "#a3bd00", fontWeight: 900}}>● Yellow</span> {yellow?.name || "Not listed"}</p>
+                      <p><span style={{fontWeight: 900}}>● Black</span> {black?.name || "Not listed"}</p>
+                    </article>;
+                  })}
+                </div>
+              </section>
               <section className="glossary">
                 <div className="section-heading compact"><div><p className="eyebrow">Tap to learn</p><h2>Words you’ll hear</h2></div></div>
                 <div className="glossary-grid">{glossary.map(([term, definition]) =>
