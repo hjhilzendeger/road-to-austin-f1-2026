@@ -34,7 +34,14 @@ const PICKS_KEY = "f1-austin-picks-v1";
 const WEEKEND_PICKS_KEY = "f1-austin-weekend-picks-v1";
 const THEME_KEY = "f1-austin-theme";
 
+const yellowTCamDrivers: Record<string, string> = {
+  mclaren: "NOR", mercedes: "ANT", ferrari: "HAM", redbull: "HAD",
+  williams: "SAI", astonmartin: "ALO", racingbulls: "LAW",
+  haas: "BEA", audi: "BOR", alpine: "COL", cadillac: "BOT",
+};
+
 const glossary = [
+  ["T-cam (yellow or black)", "The camera housing above and behind the driver. Teams use fluorescent yellow on one car and black on the other so spectators can tell teammates apart. Yellow does not mean the lead driver."],
   ["Qualifying", "Saturday’s speed contest. Each driver’s best lap sets where they start on Sunday."],
   ["Constructor", "F1’s word for a team. Both of its drivers score toward the team championship."],
   ["DRS", "A movable rear-wing flap that reduces drag to help a following car attempt an overtake in designated zones."],
