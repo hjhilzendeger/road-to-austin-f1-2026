@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
-import { Archivo, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
-
-const display = Archivo({ variable: "--font-display", subsets: ["latin"], weight: ["500", "600", "700", "800"] });
-const body = Source_Sans_3({ variable: "--font-body", subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://road-to-austin-f1-2026.vercel.app"),
@@ -24,5 +20,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en" suppressHydrationWarning><body className={`${display.variable} ${body.variable}`}>{children}</body></html>;
+  return <html lang="en" suppressHydrationWarning><body>{children}</body></html>;
 }
