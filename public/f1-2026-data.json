@@ -6485,7 +6485,7 @@
         "safetyCars": null,
         "weatherQuali": null,
         "weatherRace": null,
-        "note": "Formula 1 race-result page labels this classification provisional as of October 25, 2026; update if FIA stewards amend it."
+        "note": "Automated classification from Jolpica; verify against official F1 results."
       },
       "headline": "Antonelli wins Austin Grand Prix from pole",
       "recap": "Kimi Antonelli won the 56-lap United States Grand Prix at Circuit of The Americas by 13.078 seconds over Charles Leclerc, with Max Verstappen third. Lewis Hamilton finished fourth and Lando Norris fifth. Bottas, Colapinto and Bearman retired.",
@@ -6520,11 +6520,10 @@
           "note": "Finished third."
         }
       ],
-      "sourceUrl": "https://www.formula1.com/en/results/2026/races/1297/united-states/race-result",
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races",
       "results": [
         {
           "id": "ANT",
-          "team": "mercedes",
           "grid": 1,
           "finish": 1,
           "laps": 56,
@@ -6533,191 +6532,170 @@
         },
         {
           "id": "LEC",
-          "team": "ferrari",
           "grid": 4,
           "finish": 2,
           "laps": 56,
-          "gap": "+13.078s",
+          "gap": "+13.078",
           "pts": 18
         },
         {
           "id": "VER",
-          "team": "redbull",
           "grid": 2,
           "finish": 3,
           "laps": 56,
-          "gap": "+17.485s",
+          "gap": "+17.485",
           "pts": 15
         },
         {
           "id": "HAM",
-          "team": "ferrari",
           "grid": 5,
           "finish": 4,
           "laps": 56,
-          "gap": "+18.515s",
+          "gap": "+18.515",
           "pts": 12
         },
         {
           "id": "NOR",
-          "team": "mclaren",
           "grid": 8,
           "finish": 5,
           "laps": 56,
-          "gap": "+30.521s",
+          "gap": "+30.521",
           "pts": 10
         },
         {
           "id": "HAD",
-          "team": "redbull",
           "grid": 3,
           "finish": 6,
           "laps": 56,
-          "gap": "+34.373s",
+          "gap": "+34.373",
           "pts": 8
         },
         {
           "id": "PIA",
-          "team": "mclaren",
           "grid": 7,
           "finish": 7,
           "laps": 56,
-          "gap": "+52.674s",
+          "gap": "+52.674",
           "pts": 6
         },
         {
           "id": "RUS",
-          "team": "mercedes",
           "grid": 6,
           "finish": 8,
           "laps": 56,
-          "gap": "+54.303s",
+          "gap": "+54.303",
           "pts": 4
         },
         {
           "id": "LAW",
-          "team": "racingbulls",
           "grid": 9,
           "finish": 9,
           "laps": 56,
-          "gap": "+79.183s",
+          "gap": "+1:19.183",
           "pts": 2
         },
         {
           "id": "GAS",
-          "team": "alpine",
           "grid": 10,
           "finish": 10,
           "laps": 56,
-          "gap": "+87.516s",
+          "gap": "+1:27.516",
           "pts": 1
         },
         {
           "id": "HUL",
-          "team": "audi",
           "grid": 11,
           "finish": 11,
           "laps": 56,
-          "gap": "+94.945s",
+          "gap": "+1:34.945",
           "pts": 0
         },
         {
           "id": "LIN",
-          "team": "racingbulls",
           "grid": 14,
           "finish": 12,
           "laps": 55,
-          "gap": "+1 lap",
+          "gap": "+6.344",
           "pts": 0
         },
         {
           "id": "BOR",
-          "team": "audi",
           "grid": 21,
           "finish": 13,
           "laps": 55,
-          "gap": "+1 lap",
+          "gap": "+14.197",
           "pts": 0
         },
         {
           "id": "OCO",
-          "team": "haas",
           "grid": 15,
           "finish": 14,
           "laps": 55,
-          "gap": "+1 lap",
+          "gap": "+21.042",
           "pts": 0
         },
         {
           "id": "STR",
-          "team": "astonmartin",
-          "grid": null,
+          "grid": 22,
           "finish": 15,
           "laps": 55,
-          "gap": "+1 lap",
+          "gap": "+49.418",
           "pts": 0
         },
         {
           "id": "ALO",
-          "team": "astonmartin",
           "grid": 12,
           "finish": 16,
           "laps": 55,
-          "gap": "+1 lap",
+          "gap": "+1:00.668",
           "pts": 0
         },
         {
           "id": "ALB",
-          "team": "williams",
           "grid": 17,
           "finish": 17,
           "laps": 55,
-          "gap": "+1 lap",
+          "gap": "+1:02.176",
           "pts": 0
         },
         {
           "id": "SAI",
-          "team": "williams",
           "grid": 16,
           "finish": 18,
           "laps": 55,
-          "gap": "+1 lap",
+          "gap": "+1:02.835",
           "pts": 0
         },
         {
           "id": "PER",
-          "team": "cadillac",
           "grid": 18,
           "finish": 19,
           "laps": 55,
-          "gap": "+1 lap",
+          "gap": "+1:22.809",
           "pts": 0
         },
         {
           "id": "BOT",
-          "team": "cadillac",
           "grid": 19,
-          "finish": "DNF",
+          "finish": 20,
           "laps": 48,
-          "gap": "DNF",
+          "gap": "Retired",
           "pts": 0
         },
         {
           "id": "COL",
-          "team": "alpine",
           "grid": 20,
-          "finish": "DNF",
+          "finish": 21,
           "laps": 35,
-          "gap": "DNF",
+          "gap": "Retired",
           "pts": 0
         },
         {
           "id": "BEA",
-          "team": "haas",
           "grid": 13,
-          "finish": "DNF",
+          "finish": 22,
           "laps": 24,
-          "gap": "DNF",
+          "gap": "Retired",
           "pts": 0
         }
       ],
