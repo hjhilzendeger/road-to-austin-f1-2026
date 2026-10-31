@@ -656,7 +656,7 @@ footer { font-size: 13px; line-height: 1.5; }
 .standings-replay input { display: block; width: 100%; min-height: 44px; accent-color: var(--red); }
 .replay-rows { position: relative; }
 .standing-points-bar { display: block; height: 3px; margin-top: 4px; background: var(--line); }
-.standing-points-bar i { display: block; height: 100%; transition: width 600ms ease-in-out; }
+.standing-points-bar i { display: block; height: 100%; transition: width 400ms ease-in-out; }
 @media (prefers-reduced-motion: reduce) {
   .standing-points-bar i { transition: none; }
 }
