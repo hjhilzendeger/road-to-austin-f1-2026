@@ -133,6 +133,7 @@ export default function Home() {
   const [hydrated, setHydrated] = useState(false);
   const [theme, setTheme] = useState("dark");
   const [active, setActive] = useState("road");
+  const [standingsVisit, setStandingsVisit] = useState(0);
   const [selectedRound, setSelectedRound] = useState<number | null>(null);
   const [showAllDrivers, setShowAllDrivers] = useState(false);
   const [gridView, setGridView] = useState<"drivers" | "teams">("drivers");
@@ -249,7 +250,7 @@ export default function Home() {
             ["challenge", "Family Challenge"],
             ["race", "Race day"],
           ].map(([id, label]) => (
-            <button key={id} className={active === id ? "active" : ""} onClick={() => { setActive(id); document.getElementById("content")?.scrollIntoView(); }}>{label}</button>
+            <button key={id} className={active === id ? "active" : ""} onClick={() => { if (id === "standings") setStandingsVisit((visit) => visit + 1); setActive(id); document.getElementById("content")?.scrollIntoView(); }}>{label}</button>
           ))}
         </nav>
         <ThemeButton theme={theme} setTheme={setTheme} />
@@ -531,8 +532,8 @@ export default function Home() {
             <>
               <div className="section-heading"><div><p className="eyebrow">After round {latestRound}</p><h2>Championship standings</h2><p>Drivers race for individual honors. Teams combine both cars to fight for the Constructors’ Championship.</p></div></div>
               <div className="standings-grid">
-                <StandingsReplay data={data} kind="drivers" />
-                <StandingsReplay data={data} kind="teams" />
+                <StandingsReplay key={`drivers-${standingsVisit}`} data={data} kind="drivers" />
+                <StandingsReplay key={`teams-${standingsVisit}`} data={data} kind="teams" />
               </div>
             </>
           )}
