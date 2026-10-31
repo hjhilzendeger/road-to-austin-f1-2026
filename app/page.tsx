@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import StandingsReplay from "./StandingsReplay";
+import { completedRounds, driverStandings, teamStandings } from "./standings";
 import FamilyChallenge from "./FamilyChallenge";
 
 export type F1Data = {
@@ -23,7 +25,6 @@ export type F1Data = {
   trackOutlinePaths: Record<string, string>;
 };
 
-type Standing = { id: string; points: number; wins: number; lastFive: number[] };
 type Picks = { winner: string; surprise: string; team: string };
 type WeekendPick = { winner?: string; team?: string; impressed?: string };
 
@@ -75,42 +76,6 @@ function driverName(data: F1Data, id?: string) {
 function teamForDriver(data: F1Data, id: string) {
   const driver = data.drivers.find((d) => d.id === id);
   return data.teams.find((t) => t.id === driver?.team);
-}
-
-function completedRounds(data: F1Data) {
-  return Object.keys(data.raceResults).map(Number).sort((a, b) => a - b);
-}
-
-function driverStandings(data: F1Data, throughRound?: number): Standing[] {
-  const table = new Map<string, Standing>(data.drivers.map((d) => [d.id, { id: d.id, points: 0, wins: 0, lastFive: [] }]));
-  for (const round of completedRounds(data).filter((r) => throughRound === undefined || r <= throughRound)) {
-    const race = data.raceResults[String(round)];
-    for (const result of race.results || []) {
-      const row = table.get(result.id);
-      if (!row) continue;
-      row.points += Number(result.pts) || 0;
-      if (result.finish === 1) row.wins += 1;
-      row.lastFive.push(Number(result.pts) || 0);
-      row.lastFive = row.lastFive.slice(-5);
-    }
-    for (const result of race.sprint?.results || []) {
-      const row = table.get(result.id);
-      if (row) row.points += Number(result.pts) || 0;
-    }
-  }
-  return [...table.values()].sort((a, b) => b.points - a.points || b.wins - a.wins);
-}
-
-function teamStandings(data: F1Data, throughRound?: number) {
-  const points = new Map(data.teams.map((team) => [team.id, 0]));
-  for (const round of completedRounds(data).filter((r) => throughRound === undefined || r <= throughRound)) {
-    const race = data.raceResults[String(round)];
-    for (const result of [...(race.results || []), ...(race.sprint?.results || [])]) {
-      const team = result.team || data.drivers.find((driver) => driver.id === result.id)?.team;
-      if (team) points.set(team, (points.get(team) || 0) + (Number(result.pts) || 0));
-    }
-  }
-  return data.teams.map((team) => ({ ...team, points: points.get(team.id) || 0 })).sort((a, b) => b.points - a.points);
 }
 
 function teamRoundScores(data: F1Data, round: number) {
@@ -168,11 +133,10 @@ export default function Home() {
   const [hydrated, setHydrated] = useState(false);
   const [theme, setTheme] = useState("dark");
   const [active, setActive] = useState("road");
+  const [standingsVisit, setStandingsVisit] = useState(0);
   const [selectedRound, setSelectedRound] = useState<number | null>(null);
   const [showAllDrivers, setShowAllDrivers] = useState(false);
   const [gridView, setGridView] = useState<"drivers" | "teams">("drivers");
-  const [showFullDriverStandings, setShowFullDriverStandings] = useState(false);
-  const [showFullTeamStandings, setShowFullTeamStandings] = useState(false);
   const [dropState, setDropState] = useState("");
   const [picks, setPicks] = useState<Picks>({ winner: "", surprise: "", team: "" });
   const [weekendPicks, setWeekendPicks] = useState<Record<string, WeekendPick>>({});
@@ -234,19 +198,6 @@ export default function Home() {
   const roundsToAustin = data ? data.calendar.filter((r) => r.round > latestRound && r.round < AUSTIN_ROUND && r.status !== "cancelled").length : 0;
   const nextRace = data?.calendar.find((r) => r.status === "next") || data?.calendar.find((r) => r.round > latestRound && r.status === "future");
   const nextTrack = data?.tracks.find((track) => track.id === nextRace?.track);
-  const latestDriverScores = useMemo(() => {
-    const scores = new Map<string, number>();
-    if (!data || !latestRound) return scores;
-    const latest = data.raceResults[String(latestRound)];
-    for (const result of [...(latest?.results || []), ...(latest?.sprint?.results || [])]) {
-      scores.set(result.id, (scores.get(result.id) || 0) + Number(result.pts || 0));
-    }
-    return scores;
-  }, [data, latestRound]);
-  const latestTeamScores = useMemo(() => data ? teamRoundScores(data, latestRound) : new Map<string, number>(), [data, latestRound]);
-  const previousDriverTable = useMemo(() => data && latestRound > 1 ? driverStandings(data, latestRound - 1) : [], [data, latestRound]);
-  const previousTeamStandings = useMemo(() => data && latestRound > 1 ? teamStandings(data, latestRound - 1) : [], [data, latestRound]);
-
   function savePicks(next: Partial<Picks>) {
     setPicks((current) => ({ ...current, ...next }));
   }
@@ -278,8 +229,6 @@ export default function Home() {
   const driverBattles = closePairs(standings, 4, 10);
   const teamBattles = closePairs(teams, 4, 8);
   const visibleDrivers = showAllDrivers ? standings : standings.slice(0, 8);
-  const visibleDriverStandings = showFullDriverStandings ? standings : standings.slice(0, 10);
-  const visibleTeamStandings = showFullTeamStandings ? teams : teams.slice(0, 8);
   const currentWeekendPick = weekendPicks[String(displayRound)] || {};
   const nextWeekendPick = nextRace ? weekendPicks[String(nextRace.round)] || {} : {};
 
@@ -301,7 +250,7 @@ export default function Home() {
             ["challenge", "Family Challenge"],
             ["race", "Race day"],
           ].map(([id, label]) => (
-            <button key={id} className={active === id ? "active" : ""} onClick={() => { setActive(id); document.getElementById("content")?.scrollIntoView(); }}>{label}</button>
+            <button key={id} className={active === id ? "active" : ""} onClick={() => { if (id === "standings") setStandingsVisit((visit) => visit + 1); setActive(id); document.getElementById("content")?.scrollIntoView(); }}>{label}</button>
           ))}
         </nav>
         <ThemeButton theme={theme} setTheme={setTheme} />
@@ -583,39 +532,8 @@ export default function Home() {
             <>
               <div className="section-heading"><div><p className="eyebrow">After round {latestRound}</p><h2>Championship standings</h2><p>Drivers race for individual honors. Teams combine both cars to fight for the Constructors’ Championship.</p></div></div>
               <div className="standings-grid">
-                <section className="standings-table" aria-labelledby="driver-standings-title">
-                  <div className="standings-head"><div><p className="eyebrow">World Championship</p><h3 id="driver-standings-title">Drivers</h3></div><span>{standings.length}</span></div>
-                  {visibleDriverStandings.map((row, index) => {
-                    const team = teamForDriver(data, row.id);
-                    const previousIndex = previousDriverTable.findIndex((driver) => driver.id === row.id);
-                    const change = previousIndex < 0 ? 0 : previousIndex - index;
-                    return <div className="standing-row" key={row.id}>
-                      <span>{index + 1}</span><i style={{ background: team?.color }}></i>
-                      <div><b>{driverName(data, row.id)}</b><small>{team?.shortName} · {row.wins} win{row.wins === 1 ? "" : "s"}</small></div>
-                      <em className="standing-change">{change > 0 ? `↑${change}` : change < 0 ? `↓${Math.abs(change)}` : "—"}</em>
-                      <em>+{latestDriverScores.get(row.id) || 0} latest</em>
-                      <span className="leader-gap">{index === 0 ? "Leader" : `−${standings[0].points - row.points}`}</span>
-                      <strong>{row.points}<small>pts</small></strong>
-                    </div>;
-                  })}
-                  <button className="standings-toggle" onClick={() => setShowFullDriverStandings(!showFullDriverStandings)}>{showFullDriverStandings ? "Show top 10" : "Show all 22 drivers"}</button>
-                </section>
-                <section className="standings-table" aria-labelledby="team-standings-title">
-                  <div className="standings-head"><div><p className="eyebrow">Constructors’ Championship</p><h3 id="team-standings-title">Teams</h3></div><span>{teams.length}</span></div>
-                  {visibleTeamStandings.map((team, index) => {
-                    const previousIndex = previousTeamStandings.findIndex((row) => row.id === team.id);
-                    const change = previousIndex < 0 ? 0 : previousIndex - index;
-                    return <div className="standing-row team-standing-row" key={team.id}>
-                      <span>{index + 1}</span><i style={{ background: team.color }}></i>
-                      <div><b>{team.shortName}</b><small>{team.engine}</small></div>
-                      <em className="standing-change">{change > 0 ? `↑${change}` : change < 0 ? `↓${Math.abs(change)}` : "—"}</em>
-                      <em>+{latestTeamScores.get(team.id) || 0} latest</em>
-                      <span className="leader-gap">{index === 0 ? "Leader" : `−${teams[0].points - team.points}`}</span>
-                      <strong>{team.points}<small>pts</small></strong>
-                    </div>;
-                  })}
-                  <button className="standings-toggle" onClick={() => setShowFullTeamStandings(!showFullTeamStandings)}>{showFullTeamStandings ? "Show top 8" : "Show all 11 teams"}</button>
-                </section>
+                <StandingsReplay key={`drivers-${standingsVisit}`} data={data} kind="drivers" />
+                <StandingsReplay key={`teams-${standingsVisit}`} data={data} kind="teams" />
               </div>
             </>
           )}
@@ -641,7 +559,7 @@ export default function Home() {
                 <div><strong>25</strong><span>points for a win</span><p>Then 18, 15, 12… down to one point for 10th.</p></div>
               </div>
               <section className="glossary" aria-label="Identify drivers by T-cam color">
-                <div className="section-heading compact"><div><p className="eyebrow">Trackside spotting guide</p><h2>Who has the yellow T-cam?</h2><p>The fluorescent yellow-green camera pod sits above and behind the driver's helmet. The teammate's pod is black. Neither color indicates seniority or speed.</p></div></div>
+                <div className="section-heading compact"><div><p className="eyebrow">Trackside spotting guide</p><h2>Who has the yellow T-cam?</h2><p>The fluorescent yellow-green camera pod sits above and behind the driver’s helmet. The teammate’s pod is black. Neither color indicates seniority or speed.</p></div></div>
                 <div className="glossary-grid">
                   {data.teams.map((team) => {
                     const yellowId = yellowTCamDrivers[team.id];
