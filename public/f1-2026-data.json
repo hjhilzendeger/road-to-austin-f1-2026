@@ -2091,6 +2091,362 @@
         }
       ],
       "gridNote": "Final starting grid: Lance Stroll starts from pit lane; 21 cars occupy grid positions."
+    },
+    "19": {
+      "status": "practice-complete",
+      "updatedAt": "2026-10-31T14:13:00.000Z",
+      "headline": "Leclerc fastest in both Mexico City Friday practice sessions",
+      "recap": "Charles Leclerc topped FP1 (1:18.128) and FP2 (1:17.827). Ten reserve and junior drivers participated in FP1. Verstappen and Lawson each received a one-place grid penalty and one penalty point for their FP2 collision; grid positions remain pending qualifying.",
+      "sourceUrl": "https://www.fia.com/news/f1-leclerc-continues-set-pace-mexico-ahead-norris-and-russell",
+      "practice1": [
+        {
+          "position": 1,
+          "id": "LEC",
+          "team": "ferrari",
+          "time": "1:18.128",
+          "laps": 29
+        },
+        {
+          "position": 2,
+          "id": "ANT",
+          "team": "mercedes",
+          "time": "1:18.787",
+          "laps": 30
+        },
+        {
+          "position": 3,
+          "id": "VESTI",
+          "team": "mercedes",
+          "time": "1:18.861",
+          "laps": 24,
+          "name": "Frederik Vesti",
+          "substitutingFor": "RUS"
+        },
+        {
+          "position": 4,
+          "id": "HAM",
+          "team": "ferrari",
+          "time": "1:18.866",
+          "laps": 25
+        },
+        {
+          "position": 5,
+          "id": "IWASA",
+          "team": "redbull",
+          "time": "1:19.113",
+          "laps": 23,
+          "name": "Ayumu Iwasa",
+          "substitutingFor": "VER"
+        },
+        {
+          "position": 6,
+          "id": "GAS",
+          "team": "alpine",
+          "time": "1:19.210",
+          "laps": 33
+        },
+        {
+          "position": 7,
+          "id": "ALO",
+          "team": "astonmartin",
+          "time": "1:19.357",
+          "laps": 29
+        },
+        {
+          "position": 8,
+          "id": "PIA",
+          "team": "mclaren",
+          "time": "1:19.376",
+          "laps": 30
+        },
+        {
+          "position": 9,
+          "id": "BEA",
+          "team": "haas",
+          "time": "1:19.412",
+          "laps": 28
+        },
+        {
+          "position": 10,
+          "id": "LIN",
+          "team": "racingbulls",
+          "time": "1:19.478",
+          "laps": 30
+        },
+        {
+          "position": 11,
+          "id": "HAD",
+          "team": "redbull",
+          "time": "1:19.545",
+          "laps": 21
+        },
+        {
+          "position": 12,
+          "id": "TSOLOV",
+          "team": "racingbulls",
+          "time": "1:19.604",
+          "laps": 29,
+          "name": "Nikola Tsolov",
+          "substitutingFor": "LAW"
+        },
+        {
+          "position": 13,
+          "id": "HUL",
+          "team": "audi",
+          "time": "1:19.608",
+          "laps": 27
+        },
+        {
+          "position": 14,
+          "id": "MINI",
+          "team": "alpine",
+          "time": "1:19.946",
+          "laps": 22,
+          "name": "Gabriele Minì",
+          "substitutingFor": "COL"
+        },
+        {
+          "position": 15,
+          "id": "HIRAKAWA",
+          "team": "haas",
+          "time": "1:19.982",
+          "laps": 30,
+          "name": "Ryō Hirakawa",
+          "substitutingFor": "OCO"
+        },
+        {
+          "position": 16,
+          "id": "SAI",
+          "team": "williams",
+          "time": "1:20.006",
+          "laps": 31
+        },
+        {
+          "position": 17,
+          "id": "FORNAROLI",
+          "team": "mclaren",
+          "time": "1:20.235",
+          "laps": 25,
+          "name": "Leonardo Fornaroli",
+          "substitutingFor": "NOR"
+        },
+        {
+          "position": 18,
+          "id": "PER",
+          "team": "cadillac",
+          "time": "1:20.395",
+          "laps": 31
+        },
+        {
+          "position": 19,
+          "id": "CRAWFORD",
+          "team": "astonmartin",
+          "time": "1:20.803",
+          "laps": 15,
+          "name": "Jak Crawford",
+          "substitutingFor": "STR"
+        },
+        {
+          "position": 20,
+          "id": "BROWNING",
+          "team": "williams",
+          "time": "1:20.869",
+          "laps": 33,
+          "name": "Luke Browning",
+          "substitutingFor": "ALB"
+        },
+        {
+          "position": 21,
+          "id": "SLATER",
+          "team": "audi",
+          "time": "1:20.945",
+          "laps": 14,
+          "name": "Freddie Slater",
+          "substitutingFor": "BOR"
+        },
+        {
+          "position": 22,
+          "id": "HERTA",
+          "team": "cadillac",
+          "time": "1:21.365",
+          "laps": 30,
+          "name": "Colton Herta",
+          "substitutingFor": "BOT"
+        }
+      ],
+      "practice1SourceUrl": "https://www.fia.com/news/f1-leclerc-tops-fp1-mexico-city-f1-rookies-get-chance-shine",
+      "practice2": [
+        {
+          "position": 1,
+          "id": "LEC",
+          "team": "ferrari",
+          "time": "1:17.827",
+          "laps": 35
+        },
+        {
+          "position": 2,
+          "id": "NOR",
+          "team": "mclaren",
+          "time": "1:17.930",
+          "laps": 33
+        },
+        {
+          "position": 3,
+          "id": "RUS",
+          "team": "mercedes",
+          "time": "1:17.933",
+          "laps": 31
+        },
+        {
+          "position": 4,
+          "id": "ANT",
+          "team": "mercedes",
+          "time": "1:18.044",
+          "laps": 33
+        },
+        {
+          "position": 5,
+          "id": "VER",
+          "team": "redbull",
+          "time": "1:18.138",
+          "laps": 26
+        },
+        {
+          "position": 6,
+          "id": "HAD",
+          "team": "redbull",
+          "time": "1:18.237",
+          "laps": 31
+        },
+        {
+          "position": 7,
+          "id": "LIN",
+          "team": "racingbulls",
+          "time": "1:18.389",
+          "laps": 34
+        },
+        {
+          "position": 8,
+          "id": "GAS",
+          "team": "alpine",
+          "time": "1:18.407",
+          "laps": 33
+        },
+        {
+          "position": 9,
+          "id": "LAW",
+          "team": "racingbulls",
+          "time": "1:18.455",
+          "laps": 32
+        },
+        {
+          "position": 10,
+          "id": "PIA",
+          "team": "mclaren",
+          "time": "1:18.469",
+          "laps": 31
+        },
+        {
+          "position": 11,
+          "id": "HAM",
+          "team": "ferrari",
+          "time": "1:18.512",
+          "laps": 13
+        },
+        {
+          "position": 12,
+          "id": "ALO",
+          "team": "astonmartin",
+          "time": "1:18.596",
+          "laps": 30
+        },
+        {
+          "position": 13,
+          "id": "OCO",
+          "team": "haas",
+          "time": "1:18.774",
+          "laps": 32
+        },
+        {
+          "position": 14,
+          "id": "BEA",
+          "team": "haas",
+          "time": "1:18.849",
+          "laps": 32
+        },
+        {
+          "position": 15,
+          "id": "HUL",
+          "team": "audi",
+          "time": "1:19.023",
+          "laps": 35
+        },
+        {
+          "position": 16,
+          "id": "COL",
+          "team": "alpine",
+          "time": "1:19.132",
+          "laps": 34
+        },
+        {
+          "position": 17,
+          "id": "SAI",
+          "team": "williams",
+          "time": "1:19.248",
+          "laps": 28
+        },
+        {
+          "position": 18,
+          "id": "PER",
+          "team": "cadillac",
+          "time": "1:19.406",
+          "laps": 33
+        },
+        {
+          "position": 19,
+          "id": "ALB",
+          "team": "williams",
+          "time": "1:19.578",
+          "laps": 31
+        },
+        {
+          "position": 20,
+          "id": "STR",
+          "team": "astonmartin",
+          "time": "1:19.631",
+          "laps": 24
+        },
+        {
+          "position": 21,
+          "id": "BOT",
+          "team": "cadillac",
+          "time": "1:20.165",
+          "laps": 33
+        },
+        {
+          "position": 22,
+          "id": "BOR",
+          "team": "audi",
+          "time": "1:20.174",
+          "laps": 12
+        }
+      ],
+      "practice2SourceUrl": "https://www.fia.com/news/f1-leclerc-continues-set-pace-mexico-ahead-norris-and-russell",
+      "gridPenalties": [
+        {
+          "id": "VER",
+          "places": 1,
+          "penaltyPoints": 1,
+          "reason": "FP2 contact with Liam Lawson at Turns 12–14"
+        },
+        {
+          "id": "LAW",
+          "places": 1,
+          "penaltyPoints": 1,
+          "reason": "FP2 contact with Max Verstappen at Turns 12–14"
+        }
+      ],
+      "penaltiesSourceUrl": "https://www.formula1.com/en/latest/article/verstappen-and-lawson-get-grid-penalties-after-clumsy-mexico-city-practice-clash.2m2ey8Pl7g5IfQfGeepilD"
     }
   },
   "raceResults": {
