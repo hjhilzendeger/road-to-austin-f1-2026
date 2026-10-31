@@ -37,7 +37,7 @@ function Replay({ data, kind }: { data: F1Data; kind: "drivers" | "teams" }) {
         setIndex(index + 1);
         if (index + 1 === frames.length - 1) setPlaying(false);
       }
-    }, 1800);
+    }, 1100);
     return () => window.clearTimeout(timer);
   }, [playing, index, frames.length]);
 
@@ -51,7 +51,7 @@ function Replay({ data, kind }: { data: F1Data; kind: "drivers" | "teams" }) {
       element.getAnimations().forEach((animation) => animation.cancel());
       if (!reduced && before !== undefined && before !== top) {
         element.animate([{ transform: `translateY(${before - top}px)` }, { transform: "translateY(0)" }],
-          { duration: 600, easing: "ease-in-out" });
+          { duration: 400, easing: "ease-in-out" });
       }
       next.set(id, top);
     });
