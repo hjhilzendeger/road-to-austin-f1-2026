@@ -10,7 +10,8 @@
     "build": "next build",
     "build:vercel": "next build",
     "start": "next start",
-    "test": "npm run build",
+    "test": "npm run test:standings && npm run build",
+    "test:standings": "node --test tests/standings.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
   },
   "dependencies": {

@@ -646,3 +646,17 @@ footer { font-size: 13px; line-height: 1.5; }
   .prediction-fields > label:first-child, .prediction-fields > button { grid-column: auto; }
   .challenge-rules > div { grid-row: auto; }
 }
+.standings-replay { padding: 16px 0; border-bottom: 1px solid var(--line); }
+.standings-replay p { min-height: 2.5em; margin: 0 0 12px; font-weight: 700; }
+.replay-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.replay-buttons button { min-height: 44px; padding: 8px 12px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); cursor: pointer; font: inherit; }
+.replay-buttons button:disabled { opacity: .45; cursor: default; }
+.standings-replay button:focus-visible, .standings-replay input:focus-visible, .standings-toggle:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+.standings-replay label, .standings-replay small { display: block; font-size: 12px; color: var(--muted); }
+.standings-replay input { display: block; width: 100%; min-height: 44px; accent-color: var(--red); }
+.replay-rows { position: relative; }
+.standing-points-bar { display: block; height: 3px; margin-top: 4px; background: var(--line); }
+.standing-points-bar i { display: block; height: 100%; transition: width 600ms ease-in-out; }
+@media (prefers-reduced-motion: reduce) {
+  .standing-points-bar i { transition: none; }
+}

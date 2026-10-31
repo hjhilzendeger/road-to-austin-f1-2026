@@ -51,6 +51,23 @@ To validate the Vercel production build:
 npm run build:vercel
 ```
 
+## Championship replay
+
+Open **Standings** to replay Drivers and Constructors independently. Tables
+initially show the latest completed Grand Prix. **Play** starts from Round 1
+when at the end; **Pause** holds the current race. **Restart** returns to the
+first race and pauses. Previous/Next and the keyboard-accessible race slider
+step through completed races. Playback stops at the final race.
+
+Points include the published Grand Prix and sprint scores, with the existing
+ranking tie-breaks. Only calendar rounds marked `done` with nonempty Grand Prix
+results participate; practice, qualifying, sprint-only, cancelled and future
+rounds do not. Reduced-motion preferences disable row and points-bar motion.
+Imported datasets reset each replay to their latest completed race.
+
+Run `npm run test:standings` for scoring and round-filter regression checks,
+`npm run lint` for lint checks, and `npm run build:vercel` for production validation.
+
 ## Project structure
 
 - `app/page.tsx` - content, calculations, and interactions
