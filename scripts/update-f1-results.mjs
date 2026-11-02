@@ -1,9 +1,9 @@
 // Update only races that can be matched unambiguously to the dashboard calendar.
 // Run with Node 22+. Fails closed if the source is incomplete or inconsistent.
 import fs from 'node:fs/promises';
+import { resolveDriverId } from './f1-driver-ids.mjs';
 const path = 'public/f1-2026-data.json';
 const data = JSON.parse(await fs.readFile(path, 'utf8'));
-const driverIds = new Set(data.drivers.map(d => d.id));
 const normalize = s => String(s).toLowerCase().replace(/grand prix|formula 1|2026|[^a-z]/g, '');
 const aliases = { 'unitedstates':'unitedstates', 'mexicocity':'mexicocity', 'saopaulo':'saopaulo', 'abudhabi':'abudhabi' };
 function match(a,b) { const x=normalize(a),y=normalize(b); return x===y || aliases[x]===y; }
@@ -26,8 +26,7 @@ for(const race of races) {
   const full=(await get(base+'/'+round+'/results/?limit=100'))[0];
   if(!full || !Array.isArray(full.Results) || full.Results.length<18) continue;
   const entries=full.Results.map(r=>{
-    const id=r.Driver.code;
-    if(!driverIds.has(id)) throw new Error('Unknown driver '+id+' at round '+round);
+    const id=resolveDriverId(r.Driver, data.drivers, round);
     const pos=Number(r.position);
     const finish=Number.isInteger(pos)&&pos>0?pos:'DNF';
     const gap=r.Time?.time || (r.status==='Finished'?'Finished':r.status);

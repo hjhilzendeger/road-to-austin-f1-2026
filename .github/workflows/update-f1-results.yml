@@ -13,6 +13,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Test results importer
+        run: node --test tests/update-f1-results.test.mjs
       - name: Fetch and validate results
         run: node scripts/update-f1-results.mjs
       - name: Commit changes
