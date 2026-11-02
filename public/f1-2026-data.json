@@ -7072,6 +7072,196 @@
         }
       ],
       "sprint": null
+    },
+    "19": {
+      "meta": {
+        "classificationStatus": "provisional",
+        "note": "Automated classification from Jolpica; verify against official F1 results."
+      },
+      "headline": "Mexico City Grand Prix results",
+      "recap": "Results imported automatically; official confirmation pending.",
+      "keyMoments": [],
+      "notablePerformances": [],
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races",
+      "results": [
+        {
+          "id": "VER",
+          "grid": 5,
+          "finish": 1,
+          "laps": 71,
+          "gap": "2:20:28.772",
+          "pts": 25
+        },
+        {
+          "id": "HAM",
+          "grid": 1,
+          "finish": 2,
+          "laps": 71,
+          "gap": "+0.799",
+          "pts": 18
+        },
+        {
+          "id": "ANT",
+          "grid": 4,
+          "finish": 3,
+          "laps": 71,
+          "gap": "+4.006",
+          "pts": 15
+        },
+        {
+          "id": "LEC",
+          "grid": 3,
+          "finish": 4,
+          "laps": 71,
+          "gap": "+10.707",
+          "pts": 12
+        },
+        {
+          "id": "NOR",
+          "grid": 6,
+          "finish": 5,
+          "laps": 71,
+          "gap": "+11.778",
+          "pts": 10
+        },
+        {
+          "id": "RUS",
+          "grid": 2,
+          "finish": 6,
+          "laps": 71,
+          "gap": "+12.263",
+          "pts": 8
+        },
+        {
+          "id": "PIA",
+          "grid": 12,
+          "finish": 7,
+          "laps": 71,
+          "gap": "+19.475",
+          "pts": 6
+        },
+        {
+          "id": "COL",
+          "grid": 11,
+          "finish": 8,
+          "laps": 71,
+          "gap": "+20.204",
+          "pts": 4
+        },
+        {
+          "id": "LAW",
+          "grid": 22,
+          "finish": 9,
+          "laps": 71,
+          "gap": "+20.899",
+          "pts": 2
+        },
+        {
+          "id": "GAS",
+          "grid": 9,
+          "finish": 10,
+          "laps": 71,
+          "gap": "+21.483",
+          "pts": 1
+        },
+        {
+          "id": "BOR",
+          "grid": 13,
+          "finish": 11,
+          "laps": 71,
+          "gap": "+22.041",
+          "pts": 0
+        },
+        {
+          "id": "HAD",
+          "grid": 7,
+          "finish": 12,
+          "laps": 71,
+          "gap": "+22.503",
+          "pts": 0
+        },
+        {
+          "id": "HIR",
+          "grid": 18,
+          "finish": 13,
+          "laps": 71,
+          "gap": "+25.373",
+          "pts": 0
+        },
+        {
+          "id": "ALB",
+          "grid": 16,
+          "finish": 14,
+          "laps": 71,
+          "gap": "+27.562",
+          "pts": 0
+        },
+        {
+          "id": "SAI",
+          "grid": 15,
+          "finish": 15,
+          "laps": 71,
+          "gap": "+28.638",
+          "pts": 0
+        },
+        {
+          "id": "HUL",
+          "grid": 10,
+          "finish": 16,
+          "laps": 71,
+          "gap": "+29.977",
+          "pts": 0
+        },
+        {
+          "id": "PER",
+          "grid": 20,
+          "finish": 17,
+          "laps": 71,
+          "gap": "+30.695",
+          "pts": 0
+        },
+        {
+          "id": "LIN",
+          "grid": 8,
+          "finish": 18,
+          "laps": 58,
+          "gap": "Retired",
+          "pts": 0
+        },
+        {
+          "id": "BEA",
+          "grid": 14,
+          "finish": 19,
+          "laps": 47,
+          "gap": "Retired",
+          "pts": 0
+        },
+        {
+          "id": "BOT",
+          "grid": 21,
+          "finish": 20,
+          "laps": 42,
+          "gap": "Retired",
+          "pts": 0
+        },
+        {
+          "id": "STR",
+          "grid": 19,
+          "finish": 21,
+          "laps": 5,
+          "gap": "Retired",
+          "pts": 0
+        },
+        {
+          "id": "ALO",
+          "grid": 17,
+          "finish": 22,
+          "laps": 5,
+          "gap": "Retired",
+          "pts": 0
+        }
+      ],
+      "sprint": null
     }
   },
   "trackOutlinePaths": {
