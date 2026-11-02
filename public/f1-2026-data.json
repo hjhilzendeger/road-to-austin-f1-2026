@@ -652,6 +652,22 @@
       "previousTeam": "Same team as 2025 (Red Bull Racing)",
       "pronunciation": "maks FUR-stah-pen",
       "whyWatch": "Four-time World Champion, now racing under #3 after Norris inherited #1 as reigning champion."
+    },
+    {
+      "id": "HIR",
+      "name": "Ryo Hirakawa",
+      "team": "haas",
+      "country": "Japan",
+      "dob": "1994-03-07",
+      "debut": 2026,
+      "championships": 0,
+      "helmet": "To confirm",
+      "number": 50,
+      "abbr": "HIR",
+      "rookie2026": true,
+      "previousTeam": "Haas reserve driver",
+      "pronunciation": "To confirm",
+      "whyWatch": "Listed by Jolpica in the 2026 Mexico City Grand Prix classification; official confirmation pending."
     }
   ],
   "tracks": [
