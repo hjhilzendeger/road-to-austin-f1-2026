@@ -548,14 +548,14 @@
       "country": "Italy",
       "dob": "2006-08-25",
       "debut": 2025,
-      "championships": 0,
+      "championships": 1,
       "helmet": "To confirm",
       "number": 12,
       "abbr": "ANT",
       "rookie2026": false,
       "previousTeam": "Same team as 2025 (Mercedes)",
       "pronunciation": "KEE-mee an-toh-NELL-ee",
-      "whyWatch": "Leading the 2026 championship in only his second F1 season, aged 19."
+      "whyWatch": "Clinched his first drivers’ championship with third place in Mexico City, in only his second F1 season."
     },
     {
       "id": "RUS",
@@ -1366,7 +1366,7 @@
       "track": "mexicocity",
       "date": "2026-10-30/11-01",
       "sprint": false,
-      "status": "next"
+      "status": "done"
     },
     {
       "round": 20,
@@ -1375,7 +1375,7 @@
       "track": "interlagos",
       "date": "2026-11-06/08",
       "sprint": false,
-      "status": "future"
+      "status": "next"
     },
     {
       "round": 21,
@@ -2109,11 +2109,11 @@
       "gridNote": "Final starting grid: Lance Stroll starts from pit lane; 21 cars occupy grid positions."
     },
     "19": {
-      "status": "practice-complete",
-      "updatedAt": "2026-10-31T14:13:00.000Z",
-      "headline": "Leclerc fastest in both Mexico City Friday practice sessions",
-      "recap": "Charles Leclerc topped FP1 (1:18.128) and FP2 (1:17.827). Ten reserve and junior drivers participated in FP1. Verstappen and Lawson each received a one-place grid penalty and one penalty point for their FP2 collision; grid positions remain pending qualifying.",
-      "sourceUrl": "https://www.fia.com/news/f1-leclerc-continues-set-pace-mexico-ahead-norris-and-russell",
+      "status": "race-complete",
+      "updatedAt": "2026-11-02T03:04:55.927Z",
+      "headline": "Verstappen wins in Mexico as Antonelli seals the title",
+      "recap": "Max Verstappen beat Lewis Hamilton by 0.799 seconds after 71 laps in Mexico City. Third place secured Kimi Antonelli his first drivers’ championship. Post-race penalties reshuffled the points finishers, with Liam Lawson seventh and Ryo Hirakawa tenth on his Grand Prix debut.",
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races/1298/mexico/race-result",
       "practice1": [
         {
           "position": 1,
@@ -2223,7 +2223,7 @@
         },
         {
           "position": 15,
-          "id": "HIRAKAWA",
+          "id": "HIR",
           "team": "haas",
           "time": "1:19.982",
           "laps": 30,
@@ -7075,14 +7075,47 @@
     },
     "19": {
       "meta": {
-        "classificationStatus": "provisional",
-        "note": "Automated classification from Jolpica; verify against official F1 results."
+        "classificationStatus": "final",
+        "note": "Verified against the official F1 classification, including post-race penalties for Piastri, Colapinto and Gasly. Non-finishers are shown as DNF; the official table lists them as NC.",
+        "poleDriver": "HAM",
+        "fastestLap": "HAM",
+        "fastestLapTime": "1:19.268",
+        "fastestLapLap": 50
       },
-      "headline": "Mexico City Grand Prix results",
-      "recap": "Results imported automatically; official confirmation pending.",
-      "keyMoments": [],
-      "notablePerformances": [],
-      "sourceUrl": "https://www.formula1.com/en/results/2026/races",
+      "headline": "Verstappen wins in Mexico as Antonelli seals the title",
+      "recap": "Max Verstappen beat Lewis Hamilton by 0.799 seconds after 71 laps in Mexico City. Third place secured Kimi Antonelli his first drivers’ championship. Post-race penalties reshuffled the points finishers, with Liam Lawson seventh and Ryo Hirakawa tenth on his Grand Prix debut.",
+      "keyMoments": [
+        {
+          "lap": 27,
+          "label": "Verstappen emerges ahead",
+          "detail": "Leclerc served a time penalty during his stop, allowing Verstappen to move ahead."
+        },
+        {
+          "lap": 46,
+          "label": "Red flag interrupts the race",
+          "detail": "Barrier damage after Bottas’s crash brought the race to a halt."
+        },
+        {
+          "lap": 71,
+          "label": "A winner and a champion",
+          "detail": "Verstappen held off Hamilton; Antonelli’s podium clinched the title."
+        }
+      ],
+      "notablePerformances": [
+        {
+          "id": "ANT",
+          "note": "Third place secured his first drivers’ title."
+        },
+        {
+          "id": "HIR",
+          "note": "Tenth after post-race penalties, earning a point on debut."
+        },
+        {
+          "id": "LAW",
+          "note": "Seventh after starting from the pit lane."
+        }
+      ],
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races/1298/mexico/race-result",
       "results": [
         {
           "id": "VER",
@@ -7133,65 +7166,42 @@
           "pts": 8
         },
         {
-          "id": "PIA",
-          "grid": 12,
+          "id": "LAW",
+          "grid": null,
           "finish": 7,
           "laps": 71,
-          "gap": "+19.475",
-          "pts": 6
-        },
-        {
-          "id": "COL",
-          "grid": 11,
-          "finish": 8,
-          "laps": 71,
-          "gap": "+20.204",
-          "pts": 4
-        },
-        {
-          "id": "LAW",
-          "grid": 22,
-          "finish": 9,
-          "laps": 71,
           "gap": "+20.899",
-          "pts": 2
-        },
-        {
-          "id": "GAS",
-          "grid": 9,
-          "finish": 10,
-          "laps": 71,
-          "gap": "+21.483",
-          "pts": 1
+          "pts": 6,
+          "note": "Pit-lane start."
         },
         {
           "id": "BOR",
           "grid": 13,
-          "finish": 11,
+          "finish": 8,
           "laps": 71,
           "gap": "+22.041",
-          "pts": 0
+          "pts": 4
         },
         {
           "id": "HAD",
           "grid": 7,
-          "finish": 12,
+          "finish": 9,
           "laps": 71,
           "gap": "+22.503",
-          "pts": 0
+          "pts": 2
         },
         {
           "id": "HIR",
           "grid": 18,
-          "finish": 13,
+          "finish": 10,
           "laps": 71,
           "gap": "+25.373",
-          "pts": 0
+          "pts": 1
         },
         {
           "id": "ALB",
           "grid": 16,
-          "finish": 14,
+          "finish": 11,
           "laps": 71,
           "gap": "+27.562",
           "pts": 0
@@ -7199,31 +7209,58 @@
         {
           "id": "SAI",
           "grid": 15,
-          "finish": 15,
+          "finish": 12,
           "laps": 71,
           "gap": "+28.638",
           "pts": 0
         },
         {
+          "id": "PIA",
+          "grid": 12,
+          "finish": 13,
+          "laps": 71,
+          "gap": "+29.475",
+          "pts": 0,
+          "note": "10-second post-race penalty for causing a collision."
+        },
+        {
           "id": "HUL",
           "grid": 10,
-          "finish": 16,
+          "finish": 14,
           "laps": 71,
           "gap": "+29.977",
           "pts": 0
         },
         {
+          "id": "COL",
+          "grid": 11,
+          "finish": 15,
+          "laps": 71,
+          "gap": "+30.204",
+          "pts": 0,
+          "note": "10-second post-race penalty for failing to slow under yellow flags."
+        },
+        {
           "id": "PER",
           "grid": 20,
-          "finish": 17,
+          "finish": 16,
           "laps": 71,
           "gap": "+30.695",
           "pts": 0
         },
         {
+          "id": "GAS",
+          "grid": 9,
+          "finish": 17,
+          "laps": 71,
+          "gap": "+51.483",
+          "pts": 0,
+          "note": "Post-race stop-and-go penalty for failing to slow under yellow flags."
+        },
+        {
           "id": "LIN",
           "grid": 8,
-          "finish": 18,
+          "finish": "DNF",
           "laps": 58,
           "gap": "Retired",
           "pts": 0
@@ -7231,7 +7268,7 @@
         {
           "id": "BEA",
           "grid": 14,
-          "finish": 19,
+          "finish": "DNF",
           "laps": 47,
           "gap": "Retired",
           "pts": 0
@@ -7239,7 +7276,7 @@
         {
           "id": "BOT",
           "grid": 21,
-          "finish": 20,
+          "finish": "DNF",
           "laps": 42,
           "gap": "Retired",
           "pts": 0
@@ -7247,7 +7284,7 @@
         {
           "id": "STR",
           "grid": 19,
-          "finish": 21,
+          "finish": "DNF",
           "laps": 5,
           "gap": "Retired",
           "pts": 0
@@ -7255,13 +7292,16 @@
         {
           "id": "ALO",
           "grid": 17,
-          "finish": 22,
+          "finish": "DNF",
           "laps": 5,
           "gap": "Retired",
           "pts": 0
         }
       ],
-      "sprint": null
+      "sprint": null,
+      "reportSourceUrl": "https://www.formula1.com/en/latest/article/antonelli-crowned-youngest-ever-f1-champion-as-verstappen-wins-eventful-mexico-city-grand-prix.xpMMeef0KmRURs9IDs3LH",
+      "fastestLapsSourceUrl": "https://www.formula1.com/en/results/2026/races/1298/mexico/fastest-laps",
+      "startingGridSourceUrl": "https://www.formula1.com/en/results/2026/races/1298/mexico/starting-grid"
     }
   },
   "trackOutlinePaths": {
