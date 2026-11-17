@@ -2,7 +2,7 @@
   "meta": {
     "title": "F1 2026 Season Tracker — underlying dataset",
     "generatedFrom": "f1-2026-season-tracker.html",
-    "exportedAt": "2026-10-25T21:50:00.000Z",
+    "exportedAt": "2026-11-17T17:06:01.608Z",
     "sources": {
       "calendarEntryListAndSeasonNarrative": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship",
       "raceClassificationsAndPoints": "https://www.formula1.com/en/results/2026/races",
@@ -668,6 +668,22 @@
       "previousTeam": "Haas reserve driver",
       "pronunciation": "To confirm",
       "whyWatch": "Listed by Jolpica in the 2026 Mexico City Grand Prix classification; official confirmation pending."
+    },
+    {
+      "id": "CAM",
+      "name": "Rafael Câmara",
+      "team": "haas",
+      "country": "Brazil",
+      "dob": "2005-05-05",
+      "debut": 2026,
+      "championships": 0,
+      "helmet": "To confirm",
+      "number": 51,
+      "abbr": "CAM",
+      "rookie2026": true,
+      "previousTeam": "Invicta Racing (Formula 2)",
+      "pronunciation": "To confirm",
+      "whyWatch": "Made his Formula 1 debut for Haas at his home Grand Prix in São Paulo."
     }
   ],
   "tracks": [
@@ -1375,7 +1391,7 @@
       "track": "interlagos",
       "date": "2026-11-06/08",
       "sprint": false,
-      "status": "next"
+      "status": "done"
     },
     {
       "round": 21,
@@ -1384,7 +1400,7 @@
       "track": "lasvegas",
       "date": "2026-11-19/21",
       "sprint": false,
-      "status": "future"
+      "status": "next"
     },
     {
       "round": 22,
@@ -2463,6 +2479,13 @@
         }
       ],
       "penaltiesSourceUrl": "https://www.formula1.com/en/latest/article/verstappen-and-lawson-get-grid-penalties-after-clumsy-mexico-city-practice-clash.2m2ey8Pl7g5IfQfGeepilD"
+    },
+    "20": {
+      "status": "race-complete",
+      "updatedAt": "2026-11-17T17:06:01.608Z",
+      "headline": "Norris wins in São Paulo as Mercedes clinches the constructors’ title",
+      "recap": "Lando Norris won a race that started wet and ended in rain, finishing 14.602 seconds ahead of Max Verstappen. Isack Hadjar completed a double podium for Red Bull. George Russell and Kimi Antonelli finished fourth and fifth to secure the constructors’ championship for Mercedes.",
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races/1299/brazil/race-result"
     }
   },
   "raceResults": {
@@ -7302,6 +7325,219 @@
       "reportSourceUrl": "https://www.formula1.com/en/latest/article/antonelli-crowned-youngest-ever-f1-champion-as-verstappen-wins-eventful-mexico-city-grand-prix.xpMMeef0KmRURs9IDs3LH",
       "fastestLapsSourceUrl": "https://www.formula1.com/en/results/2026/races/1298/mexico/fastest-laps",
       "startingGridSourceUrl": "https://www.formula1.com/en/results/2026/races/1298/mexico/starting-grid"
+    },
+    "20": {
+      "meta": {
+        "classificationStatus": "final",
+        "note": "Verified against Formula 1’s official race classification, including time penalties.",
+        "poleDriver": "NOR",
+        "fastestLap": "ANT",
+        "fastestLapTime": "1:12.689",
+        "fastestLapLap": 55
+      },
+      "headline": "Norris wins in São Paulo as Mercedes clinches the constructors’ title",
+      "recap": "Lando Norris won a race that started wet and ended in rain, finishing 14.602 seconds ahead of Max Verstappen. Isack Hadjar completed a double podium for Red Bull. George Russell and Kimi Antonelli finished fourth and fifth to secure the constructors’ championship for Mercedes.",
+      "keyMoments": [],
+      "notablePerformances": [
+        {
+          "id": "VER",
+          "note": "Finished second after starting 21st."
+        },
+        {
+          "id": "HAD",
+          "note": "Finished third to give Red Bull two podium places."
+        },
+        {
+          "id": "CAM",
+          "note": "Finished 20th on his Grand Prix debut."
+        }
+      ],
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races/1299/brazil/race-result",
+      "results": [
+        {
+          "id": "NOR",
+          "grid": 1,
+          "finish": 1,
+          "laps": 71,
+          "gap": "1:35:23.504",
+          "pts": 25
+        },
+        {
+          "id": "VER",
+          "grid": 21,
+          "finish": 2,
+          "laps": 71,
+          "gap": "+14.602",
+          "pts": 18
+        },
+        {
+          "id": "HAD",
+          "grid": 5,
+          "finish": 3,
+          "laps": 71,
+          "gap": "+24.485",
+          "pts": 15
+        },
+        {
+          "id": "RUS",
+          "grid": 7,
+          "finish": 4,
+          "laps": 71,
+          "gap": "+33.991",
+          "pts": 12
+        },
+        {
+          "id": "ANT",
+          "grid": 2,
+          "finish": 5,
+          "laps": 71,
+          "gap": "+41.017",
+          "pts": 10,
+          "note": "Five-second penalty for an unsafe release."
+        },
+        {
+          "id": "PIA",
+          "grid": 10,
+          "finish": 6,
+          "laps": 71,
+          "gap": "+56.475",
+          "pts": 8
+        },
+        {
+          "id": "LAW",
+          "grid": 3,
+          "finish": 7,
+          "laps": 71,
+          "gap": "+75.402",
+          "pts": 6
+        },
+        {
+          "id": "LEC",
+          "grid": 14,
+          "finish": 8,
+          "laps": 71,
+          "gap": "+78.586",
+          "pts": 4,
+          "note": "Five-second penalty for causing a collision."
+        },
+        {
+          "id": "HAM",
+          "grid": 20,
+          "finish": 9,
+          "laps": 70,
+          "gap": "+1 lap",
+          "pts": 2
+        },
+        {
+          "id": "HUL",
+          "grid": 4,
+          "finish": 10,
+          "laps": 70,
+          "gap": "+1 lap",
+          "pts": 1
+        },
+        {
+          "id": "LIN",
+          "grid": 18,
+          "finish": 11,
+          "laps": 70,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "ALO",
+          "grid": 8,
+          "finish": 12,
+          "laps": 70,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "COL",
+          "grid": 13,
+          "finish": 13,
+          "laps": 70,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "GAS",
+          "grid": 15,
+          "finish": 14,
+          "laps": 70,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "ALB",
+          "grid": 9,
+          "finish": 15,
+          "laps": 70,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "BOR",
+          "grid": 19,
+          "finish": 16,
+          "laps": 70,
+          "gap": "+1 lap",
+          "pts": 0
+        },
+        {
+          "id": "BEA",
+          "grid": 6,
+          "finish": 17,
+          "laps": 70,
+          "gap": "+1 lap",
+          "pts": 0,
+          "note": "Five-second penalty for an unsafe release."
+        },
+        {
+          "id": "PER",
+          "grid": 22,
+          "finish": 18,
+          "laps": 69,
+          "gap": "+2 laps",
+          "pts": 0
+        },
+        {
+          "id": "SAI",
+          "grid": 12,
+          "finish": 19,
+          "laps": 69,
+          "gap": "+2 laps",
+          "pts": 0
+        },
+        {
+          "id": "CAM",
+          "grid": 11,
+          "finish": 20,
+          "laps": 69,
+          "gap": "+2 laps",
+          "pts": 0
+        },
+        {
+          "id": "STR",
+          "grid": 16,
+          "finish": "DNF",
+          "laps": 30,
+          "gap": "Retired",
+          "pts": 0
+        },
+        {
+          "id": "BOT",
+          "grid": 17,
+          "finish": "DNS",
+          "laps": 0,
+          "gap": "Did not start",
+          "pts": 0
+        }
+      ],
+      "sprint": null,
+      "reportSourceUrl": "https://www.formula1.com/en/latest/article/norris-beats-verstappen-in-wet-sao-paulo-gp-thriller-as-mercedes-win-constructors-championship.7JN7MXLZf5lk5l0C3gfKGI",
+      "fastestLapsSourceUrl": "https://www.formula1.com/en/results/2026/races/1299/brazil/fastest-laps",
+      "startingGridSourceUrl": "https://www.formula1.com/en/results/2026/races/1299/brazil/starting-grid"
     }
   },
   "trackOutlinePaths": {
