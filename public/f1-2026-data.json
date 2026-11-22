@@ -7538,6 +7538,196 @@
       "reportSourceUrl": "https://www.formula1.com/en/latest/article/norris-beats-verstappen-in-wet-sao-paulo-gp-thriller-as-mercedes-win-constructors-championship.7JN7MXLZf5lk5l0C3gfKGI",
       "fastestLapsSourceUrl": "https://www.formula1.com/en/results/2026/races/1299/brazil/fastest-laps",
       "startingGridSourceUrl": "https://www.formula1.com/en/results/2026/races/1299/brazil/starting-grid"
+    },
+    "21": {
+      "meta": {
+        "classificationStatus": "provisional",
+        "note": "Automated classification from Jolpica; verify against official F1 results."
+      },
+      "headline": "Las Vegas Grand Prix results",
+      "recap": "Results imported automatically; official confirmation pending.",
+      "keyMoments": [],
+      "notablePerformances": [],
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races",
+      "results": [
+        {
+          "id": "VER",
+          "grid": 1,
+          "finish": 1,
+          "laps": 50,
+          "gap": "1:27:39.624",
+          "pts": 25
+        },
+        {
+          "id": "NOR",
+          "grid": 3,
+          "finish": 2,
+          "laps": 50,
+          "gap": "+0.639",
+          "pts": 18
+        },
+        {
+          "id": "PIA",
+          "grid": 17,
+          "finish": 3,
+          "laps": 50,
+          "gap": "+1.529",
+          "pts": 15
+        },
+        {
+          "id": "ANT",
+          "grid": 6,
+          "finish": 4,
+          "laps": 50,
+          "gap": "+2.574",
+          "pts": 12
+        },
+        {
+          "id": "GAS",
+          "grid": 8,
+          "finish": 5,
+          "laps": 50,
+          "gap": "+2.927",
+          "pts": 10
+        },
+        {
+          "id": "COL",
+          "grid": 9,
+          "finish": 6,
+          "laps": 50,
+          "gap": "+7.955",
+          "pts": 8
+        },
+        {
+          "id": "HAM",
+          "grid": 11,
+          "finish": 7,
+          "laps": 50,
+          "gap": "+12.795",
+          "pts": 6
+        },
+        {
+          "id": "SAI",
+          "grid": 20,
+          "finish": 8,
+          "laps": 50,
+          "gap": "+12.938",
+          "pts": 4
+        },
+        {
+          "id": "RUS",
+          "grid": 2,
+          "finish": 9,
+          "laps": 50,
+          "gap": "+13.192",
+          "pts": 2
+        },
+        {
+          "id": "LEC",
+          "grid": 10,
+          "finish": 10,
+          "laps": 50,
+          "gap": "+17.554",
+          "pts": 1
+        },
+        {
+          "id": "HUL",
+          "grid": 12,
+          "finish": 11,
+          "laps": 50,
+          "gap": "+22.720",
+          "pts": 0
+        },
+        {
+          "id": "BOR",
+          "grid": 13,
+          "finish": 12,
+          "laps": 50,
+          "gap": "+28.602",
+          "pts": 0
+        },
+        {
+          "id": "BEA",
+          "grid": 22,
+          "finish": 13,
+          "laps": 50,
+          "gap": "+28.843",
+          "pts": 0
+        },
+        {
+          "id": "LAW",
+          "grid": 7,
+          "finish": 14,
+          "laps": 50,
+          "gap": "+36.588",
+          "pts": 0
+        },
+        {
+          "id": "HAD",
+          "grid": 4,
+          "finish": 15,
+          "laps": 50,
+          "gap": "+46.488",
+          "pts": 0
+        },
+        {
+          "id": "CAM",
+          "grid": 15,
+          "finish": 16,
+          "laps": 50,
+          "gap": "+47.814",
+          "pts": 0
+        },
+        {
+          "id": "STR",
+          "grid": 21,
+          "finish": 17,
+          "laps": 50,
+          "gap": "+1:08.353",
+          "pts": 0
+        },
+        {
+          "id": "BOT",
+          "grid": 19,
+          "finish": 18,
+          "laps": 50,
+          "gap": "+1:11.673",
+          "pts": 0
+        },
+        {
+          "id": "ALO",
+          "grid": 18,
+          "finish": 19,
+          "laps": 49,
+          "gap": "Retired",
+          "pts": 0
+        },
+        {
+          "id": "LIN",
+          "grid": 5,
+          "finish": 20,
+          "laps": 19,
+          "gap": "Retired",
+          "pts": 0
+        },
+        {
+          "id": "PER",
+          "grid": 16,
+          "finish": 21,
+          "laps": 17,
+          "gap": "Retired",
+          "pts": 0
+        },
+        {
+          "id": "ALB",
+          "grid": 14,
+          "finish": 22,
+          "laps": 0,
+          "gap": "Did not start",
+          "pts": 0
+        }
+      ],
+      "sprint": null
     }
   },
   "trackOutlinePaths": {
