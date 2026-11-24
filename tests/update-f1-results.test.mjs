@@ -22,7 +22,7 @@ test('HIR resolves only with validated source and canonical identities', () => {
   assert.equal(resolveDriverId({code: 'VER'}, data.drivers, 19), 'VER');
 });
 
-async function runImporter(t, mutate = () => {}, prepare = () => {}) {
+async function runImporter(t, mutate = () => {}, prepare = () => {}, failures = []) {
   const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'f1-import-'));
   t.after(() => fs.rm(dir, {recursive: true, force: true}));
   await fs.mkdir(path.join(dir, 'public'));
@@ -37,13 +37,17 @@ async function runImporter(t, mutate = () => {}, prepare = () => {}) {
   await fs.writeFile(path.join(dir, 'mock.mjs'), `
     import fs from 'node:fs';
     const payload = JSON.parse(fs.readFileSync('source.json'));
+    const failures = ${JSON.stringify(failures)};
     globalThis.fetch = async url => {
+      const failure = failures.shift();
+      if (failure === 'reset') throw new TypeError('fetch failed', {cause: Object.assign(new Error('read ECONNRESET'), {code: 'ECONNRESET'})});
+      if (failure) return {ok: false, status: failure, json: async () => ({})};
       if (!['https://api.jolpi.ca/ergast/f1/2026/results/1/?limit=100',
             'https://api.jolpi.ca/ergast/f1/2026/19/results/?limit=100'].includes(url)) throw new Error('Unexpected URL '+url);
       return {ok: true, json: async () => payload};
     };
   `);
-  const result = spawnSync(process.execPath, ['--import', path.join(dir, 'mock.mjs'), path.join(root, 'scripts/update-f1-results.mjs')], {cwd: dir, encoding: 'utf8'});
+  const result = spawnSync(process.execPath, ['--import', path.join(dir, 'mock.mjs'), path.join(root, 'scripts/update-f1-results.mjs')], {cwd: dir, encoding: 'utf8', env: {...process.env, F1_FETCH_RETRY_BASE_MS: '1'}});
   const after = await fs.readFile(path.join(dir, 'public/f1-2026-data.json'), 'utf8');
   return {result, before, after, input};
 }
@@ -88,4 +92,26 @@ test('provisional imports preserve authored editorial content and sprint', async
   const race = JSON.parse(after).raceResults['19'];
   for (const key of ['headline', 'recap', 'keyMoments', 'notablePerformances', 'sprint']) assert.deepEqual(race[key], existing[key]);
   assert.equal(race.meta.custom, 'keep');
+});
+
+test('transient API errors are retried and the import still succeeds', async t => {
+  const {result, after} = await runImporter(t, () => {}, () => {}, [502, 'reset', 429]);
+  assert.equal(result.status, 0, result.stderr);
+  assert.match(result.stdout, /retrying/);
+  assert.equal(JSON.parse(after).raceResults['19'].results.length, 22);
+});
+
+test('persistent API errors abort without writing any data', async t => {
+  const {result, before, after} = await runImporter(t, () => {}, () => {}, [502, 502, 502, 502, 502]);
+  assert.notEqual(result.status, 0);
+  assert.match(result.stderr, /Results API 502/);
+  assert.equal(after, before);
+});
+
+test('client errors are not retried', async t => {
+  const {result, before, after} = await runImporter(t, () => {}, () => {}, [404]);
+  assert.notEqual(result.status, 0);
+  assert.match(result.stderr, /Results API 404/);
+  assert.doesNotMatch(result.stdout, /retrying/);
+  assert.equal(after, before);
 });

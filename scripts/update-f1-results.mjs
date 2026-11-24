@@ -7,10 +7,29 @@ const data = JSON.parse(await fs.readFile(path, 'utf8'));
 const normalize = s => String(s).toLowerCase().replace(/grand prix|formula 1|2026|[^a-z]/g, '');
 const aliases = { 'unitedstates':'unitedstates', 'mexicocity':'mexicocity', 'saopaulo':'saopaulo', 'abudhabi':'abudhabi' };
 function match(a,b) { const x=normalize(a),y=normalize(b); return x===y || aliases[x]===y; }
+// The results API occasionally returns 5xx/429 or drops the connection.
+// Retry those transient failures with backoff; other errors still fail closed.
+const RETRIES=Number(process.env.F1_FETCH_RETRIES ?? 4);
+const RETRY_BASE_MS=Number(process.env.F1_FETCH_RETRY_BASE_MS ?? 5000);
+const transientStatus=s=>s===429||s>=500;
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 async function get(url) {
-  const res=await fetch(url,{headers:{'User-Agent':'road-to-austin-2026-results-bot'}});
-  if(!res.ok) throw new Error('Results API '+res.status);
-  return (await res.json()).MRData.RaceTable.Races || [];
+  for(let attempt=0;;attempt++) {
+    let res, err;
+    try {
+      res=await fetch(url,{headers:{'User-Agent':'road-to-austin-2026-results-bot'}});
+    } catch(e) { err=e; }
+    if(res?.ok) return (await res.json()).MRData.RaceTable.Races || [];
+    const retryable=err || transientStatus(res.status);
+    const reason=err ? (err.cause?.code || err.message) : 'HTTP '+res.status;
+    if(!retryable || attempt>=RETRIES) {
+      if(err) throw err;
+      throw new Error('Results API '+res.status);
+    }
+    const wait=RETRY_BASE_MS*2**attempt;
+    console.log(`Results API ${reason} for ${url}; retrying in ${wait/1000}s (${attempt+1}/${RETRIES})`);
+    await sleep(wait);
+  }
 }
 const base='https://api.jolpi.ca/ergast/f1/2026';
 const races=await get(base+'/results/1/?limit=100');
