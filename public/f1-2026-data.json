@@ -2,7 +2,7 @@
   "meta": {
     "title": "F1 2026 Season Tracker — underlying dataset",
     "generatedFrom": "f1-2026-season-tracker.html",
-    "exportedAt": "2026-11-17T17:06:01.608Z",
+    "exportedAt": "2026-11-24T18:30:00.000Z",
     "sources": {
       "calendarEntryListAndSeasonNarrative": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship",
       "raceClassificationsAndPoints": "https://www.formula1.com/en/results/2026/races",
@@ -1400,7 +1400,7 @@
       "track": "lasvegas",
       "date": "2026-11-19/21",
       "sprint": false,
-      "status": "next"
+      "status": "done"
     },
     {
       "round": 22,
@@ -1409,7 +1409,7 @@
       "track": "lusail",
       "date": "2026-11-27/29",
       "sprint": false,
-      "status": "future"
+      "status": "next"
     },
     {
       "round": 23,
@@ -2486,6 +2486,13 @@
       "headline": "Norris wins in São Paulo as Mercedes clinches the constructors’ title",
       "recap": "Lando Norris won a race that started wet and ended in rain, finishing 14.602 seconds ahead of Max Verstappen. Isack Hadjar completed a double podium for Red Bull. George Russell and Kimi Antonelli finished fourth and fifth to secure the constructors’ championship for Mercedes.",
       "sourceUrl": "https://www.formula1.com/en/results/2026/races/1299/brazil/race-result"
+    },
+    "21": {
+      "status": "race-complete",
+      "updatedAt": "2026-11-24T18:30:00.000Z",
+      "headline": "Verstappen wins from pole in Las Vegas as McLaren take second and third",
+      "recap": "Max Verstappen won the Las Vegas Grand Prix from pole position, finishing 0.639 seconds ahead of Lando Norris. Oscar Piastri completed the podium after starting 17th. Kimi Antonelli was fourth, with Pierre Gasly and Franco Colapinto taking fifth and sixth for Alpine. Charles Leclerc and Isack Hadjar each received 10-second time penalties.",
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races/1300/las-vegas/race-result"
     }
   },
   "raceResults": {
@@ -7541,14 +7548,31 @@
     },
     "21": {
       "meta": {
-        "classificationStatus": "provisional",
-        "note": "Automated classification from Jolpica; verify against official F1 results."
+        "classificationStatus": "final",
+        "note": "Verified against Formula 1’s official race classification, including time penalties.",
+        "poleDriver": "VER",
+        "fastestLap": "LAW",
+        "fastestLapTime": "1:35.591",
+        "fastestLapLap": 50
       },
-      "headline": "Las Vegas Grand Prix results",
-      "recap": "Results imported automatically; official confirmation pending.",
+      "headline": "Verstappen wins from pole in Las Vegas as McLaren take second and third",
+      "recap": "Max Verstappen won the Las Vegas Grand Prix from pole position, finishing 0.639 seconds ahead of Lando Norris. Oscar Piastri completed the podium after starting 17th. Kimi Antonelli was fourth, with Pierre Gasly and Franco Colapinto taking fifth and sixth for Alpine. Charles Leclerc and Isack Hadjar each received 10-second time penalties.",
       "keyMoments": [],
-      "notablePerformances": [],
-      "sourceUrl": "https://www.formula1.com/en/results/2026/races",
+      "notablePerformances": [
+        {
+          "id": "PIA",
+          "note": "Finished third after starting 17th."
+        },
+        {
+          "id": "SAI",
+          "note": "Finished eighth after starting 20th."
+        },
+        {
+          "id": "LAW",
+          "note": "Set the fastest lap of the race, a 1:35.591 on the final lap."
+        }
+      ],
+      "sourceUrl": "https://www.formula1.com/en/results/2026/races/1300/las-vegas/race-result",
       "results": [
         {
           "id": "VER",
@@ -7705,7 +7729,7 @@
         {
           "id": "LIN",
           "grid": 5,
-          "finish": 20,
+          "finish": "DNF",
           "laps": 19,
           "gap": "Retired",
           "pts": 0
@@ -7713,7 +7737,7 @@
         {
           "id": "PER",
           "grid": 16,
-          "finish": 21,
+          "finish": "DNF",
           "laps": 17,
           "gap": "Retired",
           "pts": 0
@@ -7721,7 +7745,7 @@
         {
           "id": "ALB",
           "grid": 14,
-          "finish": 22,
+          "finish": "DNS",
           "laps": 0,
           "gap": "Did not start",
           "pts": 0
